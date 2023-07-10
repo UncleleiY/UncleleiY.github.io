@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://uncleleiy.github.io/2023/06/11/blog-4-python/</loc>
+    
+    <lastmod>2023-07-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://uncleleiy.github.io/2023/06/10/blog-3-hexo-debug/</loc>
     
     <lastmod>2023-07-10</lastmod>
@@ -47,15 +56,6 @@
   </url>
   
   <url>
-    <loc>https://uncleleiy.github.io/2023/06/11/blog-4-python/</loc>
-    
-    <lastmod>2023-07-10</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://uncleleiy.github.io/2023/06/14/blog-6-python/</loc>
     
     <lastmod>2023-07-10</lastmod>
@@ -83,7 +83,7 @@
   </url>
   
   <url>
-    <loc>https://uncleleiy.github.io/contact/index.html</loc>
+    <loc>https://uncleleiy.github.io/categories/index.html</loc>
     
     <lastmod>2023-07-10</lastmod>
     
@@ -92,7 +92,7 @@
   </url>
   
   <url>
-    <loc>https://uncleleiy.github.io/categories/index.html</loc>
+    <loc>https://uncleleiy.github.io/contact/index.html</loc>
     
     <lastmod>2023-07-10</lastmod>
     
