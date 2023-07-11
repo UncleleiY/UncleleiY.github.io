@@ -258,25 +258,6 @@
     
     
     <entry>
-      <title>优化日志</title>
-      <link href="/2023/06/13/blog-update-recording/"/>
-      <url>/2023/06/13/blog-update-recording/</url>
-      
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>版本更新计划</p><p>1.首页：对首页进行重构，对展示形式进行优化<br>2.标签：优化标签页和分类页面<br>3.归档：优化归档页面，提高搜索效率<br>4.关于：对关于板块进行改版<br>5.导航：导航页面的网址进行更迭<br>6.留言：增加留言板板块，并部署相关内容<br>7.友链：增加友链板块，加入相关博客位置<br>6.完毕准备工作，完成域名分发，优化访问效率</p><p>源码学习计划</p><p>1.html+css+javascript<br>2.查看源码解析，尝试修改源码<br>3.从前端开始自定义部署，完成个人项目<br>4.打造高效数据流、建立个人系统知识库</p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> optimize </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>wsl 备份问题</title>
       <link href="/2023/06/12/blog-5-wsl-debug/"/>
       <url>/2023/06/12/blog-5-wsl-debug/</url>

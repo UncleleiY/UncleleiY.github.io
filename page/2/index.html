@@ -127,6 +127,18 @@
             </li>
           
         
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/navigate/">
+                <i class="iconfont icon-map"></i>
+                导航
+              </a>
+            </li>
+          
+        
         
           <li class="nav-item" id="search-btn">
             <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
@@ -406,50 +418,6 @@ height = input(
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2023/06/13/blog-update-recording/">优化日志</a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2023/06/13/blog-update-recording/">
-          
-          
-            
-          
-          版本更新计划
-1.首页：对首页进行重构，对展示形式进行优化2.标签：优化标签页和分类页面3.归档：优化归档页面，提高搜索效率4.关于：对关于板块进行改版5.导航：导航页面的网址进行更迭6.留言：增加留言板板块，并部署相关内容7.友链：增加友链板块，加入相关博客位置6.完毕准备工作，完成域名分发，优化访问效率
-源码学习计划
-1.html+css+javascript2.查看源码解析，尝试修改源码3.
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2023-06-13 19:42" pubdate>
-              2023-06-13
-            </time>
-          </div>
-        
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/optimize/">optimize</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
         <a href="/2023/06/12/blog-5-wsl-debug/">wsl 备份问题</a>
       </h1>
 
@@ -491,6 +459,59 @@ C:\Users\uncle&gt;shutdown Ubuntu-22.04
             <i class="iconfont icon-tags"></i>
             
               <a href="/tags/wsl/">wsl</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/06/11/blog-4-python/">python 学习记录(1-10)</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2023/06/11/blog-4-python/">
+          
+          
+            
+          
+          python 学习记录1. 打印字符串print(&quot;hello world!&quot;)
+print(&quot;hello again&quot;)
+print(&quot;I like typing this.&quot;)
+print(&quot;This is fun.&quot;)
+print(&#x27;Yay! Printing.&#x27;)
+print(&quot;I
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-06-11 21:00" pubdate>
+              2023-06-11
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/python/">python</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/python/">python</a>
             
           </div>
         
@@ -556,7 +577,7 @@ C:\Users\uncle&gt;shutdown Ubuntu-22.04
 
   <footer class="text-center mt-5 py-3">
   <div class="footer-content">
-     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
   </div>
   
   <div class="statistics">
@@ -593,7 +614,7 @@ C:\Users\uncle&gt;shutdown Ubuntu-22.04
           <script>
             var now = new Date();
             function createtime() {
-              var grt = new Date("10/15/2020 23:49:00");//在此处修改你的建站时间
+              var grt = new Date("06/06/2023 12:00:00");//在此处修改你的建站时间
               now.setTime(now.getTime() + 250);
               days = (now - grt) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
               hours = (now - grt) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
@@ -601,7 +622,7 @@ C:\Users\uncle&gt;shutdown Ubuntu-22.04
               mnum = Math.floor(minutes); if (String(mnum).length == 1) { mnum = "0" + mnum; }
               seconds = (now - grt) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
               snum = Math.round(seconds); if (String(snum).length == 1) { snum = "0" + snum; }
-              document.getElementById("timeDate").innerHTML = "本站已运行 " + dnum + " 天 ";
+              document.getElementById("timeDate").innerHTML = "本站已勉强存活 " + dnum + " 天 ";
               document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
             }
             setInterval("createtime()", 250);

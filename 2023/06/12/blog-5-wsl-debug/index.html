@@ -140,6 +140,18 @@
             </li>
           
         
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/navigate/">
+                <i class="iconfont icon-map"></i>
+                导航
+              </a>
+            </li>
+          
+        
         
           <li class="nav-item" id="search-btn">
             <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
@@ -288,9 +300,9 @@ Error code: Wsl/E_ACCESSDENIED</code></pre></div>
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/06/13/blog-update-recording/">
+                      <a href="/2023/06/14/blog-6-python/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">优化日志</span>
+                        <span class="hidden-mobile">python 学习记录(11-20)</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -368,7 +380,7 @@ Error code: Wsl/E_ACCESSDENIED</code></pre></div>
 
   <footer class="text-center mt-5 py-3">
   <div class="footer-content">
-     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
   </div>
   
   <div class="statistics">
@@ -405,7 +417,7 @@ Error code: Wsl/E_ACCESSDENIED</code></pre></div>
           <script>
             var now = new Date();
             function createtime() {
-              var grt = new Date("10/15/2020 23:49:00");//在此处修改你的建站时间
+              var grt = new Date("06/06/2023 12:00:00");//在此处修改你的建站时间
               now.setTime(now.getTime() + 250);
               days = (now - grt) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
               hours = (now - grt) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
@@ -413,7 +425,7 @@ Error code: Wsl/E_ACCESSDENIED</code></pre></div>
               mnum = Math.floor(minutes); if (String(mnum).length == 1) { mnum = "0" + mnum; }
               seconds = (now - grt) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
               snum = Math.round(seconds); if (String(snum).length == 1) { snum = "0" + snum; }
-              document.getElementById("timeDate").innerHTML = "本站已运行 " + dnum + " 天 ";
+              document.getElementById("timeDate").innerHTML = "本站已勉强存活 " + dnum + " 天 ";
               document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
             }
             setInterval("createtime()", 250);

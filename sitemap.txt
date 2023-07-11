@@ -5,7 +5,6 @@ https://uncleleiy.github.io/2023/06/06/blog-1-markdown/
 https://uncleleiy.github.io/2023/06/26/blog-19-C/
 https://uncleleiy.github.io/2023/06/07/blog-2-linux-vasp/
 https://uncleleiy.github.io/2023/06/14/blog-6-python/
-https://uncleleiy.github.io/2023/06/13/blog-update-recording/
 https://uncleleiy.github.io/about/index.html
 https://uncleleiy.github.io/categories/index.html
 https://uncleleiy.github.io/contact/index.html
@@ -15,8 +14,8 @@ https://uncleleiy.github.io/2023/06/24/blog-17-C/
 https://uncleleiy.github.io/2023/06/25/blog-18-C/
 https://uncleleiy.github.io/2023/06/28/blog-21-python/
 https://uncleleiy.github.io/2023/06/29/blog-22-python/
-https://uncleleiy.github.io/2023/06/30/blog-23-shell-python-scripts/
 https://uncleleiy.github.io/2023/07/01/blog-24-shell-scripts/
+https://uncleleiy.github.io/2023/06/30/blog-23-shell-python-scripts/
 https://uncleleiy.github.io/2023/07/02/blog-25-shell-scripts/
 https://uncleleiy.github.io/2023/07/02/blog-28-textbooks/
 https://uncleleiy.github.io/2023/06/12/blog-5-wsl-debug/
@@ -30,7 +29,6 @@ https://uncleleiy.github.io/tags/shell/
 https://uncleleiy.github.io/tags/books/
 https://uncleleiy.github.io/tags/hexo/
 https://uncleleiy.github.io/tags/wsl/
-https://uncleleiy.github.io/tags/optimize/
 https://uncleleiy.github.io/categories/grammar/
 https://uncleleiy.github.io/categories/C/
 https://uncleleiy.github.io/categories/linux/
