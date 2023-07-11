@@ -21,8 +21,8 @@ https://uncleleiy.github.io/2023/07/02/blog-25-shell-scripts/
 https://uncleleiy.github.io/2023/07/02/blog-28-textbooks/
 https://uncleleiy.github.io/2023/06/12/blog-5-wsl-debug/
 https://uncleleiy.github.io/
-https://uncleleiy.github.io/tags/C/
 https://uncleleiy.github.io/tags/Markdown/
+https://uncleleiy.github.io/tags/C/
 https://uncleleiy.github.io/tags/linux/
 https://uncleleiy.github.io/tags/vasp/
 https://uncleleiy.github.io/tags/python/
@@ -31,8 +31,8 @@ https://uncleleiy.github.io/tags/books/
 https://uncleleiy.github.io/tags/hexo/
 https://uncleleiy.github.io/tags/wsl/
 https://uncleleiy.github.io/tags/optimize/
-https://uncleleiy.github.io/categories/C/
 https://uncleleiy.github.io/categories/grammar/
+https://uncleleiy.github.io/categories/C/
 https://uncleleiy.github.io/categories/linux/
 https://uncleleiy.github.io/categories/python/
 https://uncleleiy.github.io/categories/scripts/
