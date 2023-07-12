@@ -14,8 +14,8 @@ https://uncleleiy.github.io/2023/07/11/blog-C-9/
 https://uncleleiy.github.io/2023/07/10/blog-C-8/
 https://uncleleiy.github.io/2023/06/25/blog-6-python/
 https://uncleleiy.github.io/2023/07/02/blog-9-shell-scripts/
-https://uncleleiy.github.io/categories/index.html
 https://uncleleiy.github.io/about/index.html
+https://uncleleiy.github.io/categories/index.html
 https://uncleleiy.github.io/contact/index.html
 https://uncleleiy.github.io/friends/index.html
 https://uncleleiy.github.io/tags/index.html
