@@ -16,8 +16,8 @@ https://uncleleiy.github.io/2023/06/06/blog-1-markdown/
 https://uncleleiy.github.io/navigate/index.html
 https://uncleleiy.github.io/about/index.html
 https://uncleleiy.github.io/categories/index.html
-https://uncleleiy.github.io/contact/index.html
 https://uncleleiy.github.io/friends/index.html
+https://uncleleiy.github.io/contact/index.html
 https://uncleleiy.github.io/tags/index.html
 https://uncleleiy.github.io/
 https://uncleleiy.github.io/tags/Markdown/
