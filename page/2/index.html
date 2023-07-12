@@ -195,29 +195,29 @@
   <div class="row mx-auto index-card">
     
     
-    <article class="col-12 col-md-12 mx-auto index-info">
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2023/07/02/blog-9-shell-scripts/" target="_blank">
+          <img src="/img/d.jpg" srcset="/img/loading.gif" alt="shell-vasp 任务目录脚本">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2023/06/26/blog-19-C/">C++ 简单学习记录(0)</a>
+        <a href="/2023/07/02/blog-9-shell-scripts/">shell-vasp 任务目录脚本</a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2023/06/26/blog-19-C/">
+        <a href="/2023/07/02/blog-9-shell-scripts/">
           
           
             
           
-          C++学习笔记 （未完待续）第一章至第四章范例/*
-#include &lt;iostream&gt;
-#include &lt;cmath&gt;
-int main()
-&#123;
-    using namespace std;
-    double area;
-    cin &gt;&gt; area;
-    double x;
-    x = sqrt(area); 
-    cou
+          vasp生成任务目录的脚本#!/usr/bin/env bash
+echo &quot;&quot;&quot;
+This script is used to make some new directories 
+and then execute different calculation-tasks for you choose
+Now the following tasks can be ex
         </a>
       </p>
 
@@ -225,8 +225,8 @@ int main()
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2023-06-26 18:00" pubdate>
-              2023-06-26
+            <time datetime="2023-07-02 16:00" pubdate>
+              2023-07-02
             </time>
           </div>
         
@@ -234,7 +234,7 @@ int main()
           <div class="post-meta mr-3">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/C/">C++</a>
+              <a href="/categories/scripts/">scripts</a>
             
           </div>
         
@@ -242,7 +242,9 @@ int main()
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/C/">C++</a>
+              <a href="/tags/vasp/">vasp</a>
+            
+              <a href="/tags/shell/">shell</a>
             
           </div>
         
@@ -253,26 +255,32 @@ int main()
   <div class="row mx-auto index-card">
     
     
-    <article class="col-12 col-md-12 mx-auto index-info">
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2023/06/30/blog-8-shell-scripts/" target="_blank">
+          <img src="/img/d.jpg" srcset="/img/loading.gif" alt="shell 文件上传下载脚本">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2023/06/25/blog-18-C/">C++ 简单学习记录(2)</a>
+        <a href="/2023/06/30/blog-8-shell-scripts/">shell 文件上传下载脚本</a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2023/06/25/blog-18-C/">
+        <a href="/2023/06/30/blog-8-shell-scripts/">
           
           
             
           
-          C++学习笔记//第一题，编写小程序转换身高单位，问题主要在与如何表达变量，需要遵循变量有意义的原则；/*
-#include &lt;iostream&gt;
-int main()
-&#123;
-	using namespace std;
-	const int t = 10;
-	int height,meter,dmeter,cmeter;
-	cout &lt;&lt; &quot;enter y
+          自定义超算上传下载文件的脚本#!/bin/env bash
+# The script is used to sent or receive files to the Super Calculation Client 
+
+echo -n &quot;Choose to upload or download: (u/d)? &quot; 
+read choice
+
+a=u # a=upload
+b=d
         </a>
       </p>
 
@@ -280,8 +288,8 @@ int main()
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2023-06-25 21:00" pubdate>
-              2023-06-25
+            <time datetime="2023-06-30 15:00" pubdate>
+              2023-06-30
             </time>
           </div>
         
@@ -289,7 +297,7 @@ int main()
           <div class="post-meta mr-3">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/C/">C++</a>
+              <a href="/categories/scripts/">scripts</a>
             
           </div>
         
@@ -297,7 +305,7 @@ int main()
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/C/">C++</a>
+              <a href="/tags/shell/">shell</a>
             
           </div>
         
@@ -308,25 +316,31 @@ int main()
   <div class="row mx-auto index-card">
     
     
-    <article class="col-12 col-md-12 mx-auto index-info">
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2023/06/28/blog-7-shell-python-scripts/" target="_blank">
+          <img src="/img/d.jpg" srcset="/img/loading.gif" alt="shell+python 作图脚本">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2023/06/24/blog-17-C/">C++ 简单学习记录(1)</a>
+        <a href="/2023/06/28/blog-7-shell-python-scripts/">shell+python 作图脚本</a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2023/06/24/blog-17-C/">
+        <a href="/2023/06/28/blog-7-shell-python-scripts/">
           
           
             
           
-          C++学习笔记//number 1: show your name and address directly;/*
-#include &lt;iostream&gt;
-using namespace std;
-int main()
-&#123;
-	cout &lt;&lt; &quot;enter your name:XX&quot; &lt;&lt; endl;
-	cout &lt;&lt; &
+          1.使用python作图的脚本(一)#!/usr/bin/python3 python3
+import matplotlib.pyplot as plt
+import numpy as np
+
+x,y = np.loadtxt(&#x27;input.dat&#x27;, delimiter = &#x27;,&#x27;, usecols=(0, 1), unpack=True)
+
+plt.xl
         </a>
       </p>
 
@@ -334,8 +348,8 @@ int main()
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2023-06-24 20:00" pubdate>
-              2023-06-24
+            <time datetime="2023-06-28 15:00" pubdate>
+              2023-06-28
             </time>
           </div>
         
@@ -343,7 +357,7 @@ int main()
           <div class="post-meta mr-3">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/C/">C++</a>
+              <a href="/categories/scripts/">scripts</a>
             
           </div>
         
@@ -351,7 +365,9 @@ int main()
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/C/">C++</a>
+              <a href="/tags/python/">python</a>
+            
+              <a href="/tags/shell/">shell</a>
             
           </div>
         
@@ -362,14 +378,20 @@ int main()
   <div class="row mx-auto index-card">
     
     
-    <article class="col-12 col-md-12 mx-auto index-info">
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2023/06/25/blog-6-python/" target="_blank">
+          <img src="/img/a.jpg" srcset="/img/loading.gif" alt="python 学习记录(11-20)">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2023/06/14/blog-6-python/">python 学习记录(11-20)</a>
+        <a href="/2023/06/25/blog-6-python/">python 学习记录(11-20)</a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2023/06/14/blog-6-python/">
+        <a href="/2023/06/25/blog-6-python/">
           
           
             
@@ -387,8 +409,8 @@ height = input(
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2023-06-14 21:00" pubdate>
-              2023-06-14
+            <time datetime="2023-06-25 15:00" pubdate>
+              2023-06-25
             </time>
           </div>
         
@@ -415,14 +437,20 @@ height = input(
   <div class="row mx-auto index-card">
     
     
-    <article class="col-12 col-md-12 mx-auto index-info">
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2023/06/18/blog-5-wsl-debug/" target="_blank">
+          <img src="/img/e.jpg" srcset="/img/loading.gif" alt="wsl 备份问题">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2023/06/12/blog-5-wsl-debug/">wsl 备份问题</a>
+        <a href="/2023/06/18/blog-5-wsl-debug/">wsl 备份问题</a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2023/06/12/blog-5-wsl-debug/">
+        <a href="/2023/06/18/blog-5-wsl-debug/">
           
           
             
@@ -441,8 +469,8 @@ C:\Users\uncle&gt;shutdown Ubuntu-22.04
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2023-06-12 16:00" pubdate>
-              2023-06-12
+            <time datetime="2023-06-18 16:00" pubdate>
+              2023-06-18
             </time>
           </div>
         
@@ -469,14 +497,20 @@ C:\Users\uncle&gt;shutdown Ubuntu-22.04
   <div class="row mx-auto index-card">
     
     
-    <article class="col-12 col-md-12 mx-auto index-info">
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2023/06/15/blog-4-python/" target="_blank">
+          <img src="/img/a.jpg" srcset="/img/loading.gif" alt="python 学习记录(1-10)">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2023/06/11/blog-4-python/">python 学习记录(1-10)</a>
+        <a href="/2023/06/15/blog-4-python/">python 学习记录(1-10)</a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2023/06/11/blog-4-python/">
+        <a href="/2023/06/15/blog-4-python/">
           
           
             
@@ -494,8 +528,8 @@ print(&quot;I
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2023-06-11 21:00" pubdate>
-              2023-06-11
+            <time datetime="2023-06-15 15:00" pubdate>
+              2023-06-15
             </time>
           </div>
         
@@ -622,7 +656,7 @@ print(&quot;I
               mnum = Math.floor(minutes); if (String(mnum).length == 1) { mnum = "0" + mnum; }
               seconds = (now - grt) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
               snum = Math.round(seconds); if (String(snum).length == 1) { snum = "0" + snum; }
-              document.getElementById("timeDate").innerHTML = "本站已勉强存活 " + dnum + " 天 ";
+              document.getElementById("timeDate").innerHTML = "小站已勉强存活 " + dnum + " 天 ";
               document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
             }
             setInterval("createtime()", 250);

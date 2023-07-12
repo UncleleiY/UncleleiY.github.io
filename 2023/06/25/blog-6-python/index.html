@@ -1,0 +1,1450 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+    <head>
+        <meta charset="UTF-8">
+        <!-- 通过cdn引入霞鹜文楷字体 -->
+        <link rel="stylesheet" href="https://npm.elemecdn.com/lxgw-wenkai-screen-webfont/style.css" media="print" onload="this.media='all'">
+        <link rel="apple-touch-icon" sizes="76x76" href="/img/self.gif">
+        <link rel="icon" type="image/png" href="/img/self.gif">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <!-- 谷歌广告 -->
+        <script data-ad-client="ca-pub-2387054913975173" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
+        </script>
+        
+                <meta name="baidu-site-verification" content="code-PdLAgt4JZr">
+                <meta name="theme-color" content="#2f4154">
+                <meta name="description" content="工欲善其事，必先利其器">
+                <meta name="author" content="Uncle_yang">
+                <meta name="keywords" content="知识、管理">
+                <title>
+                    python 学习记录(11-20) - 诗意の理性
+                </title>
+
+                <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/gradient-dark.min.css" />
+    
+  
+
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+                    <script  src="/js/utils.js" ></script>
+                        <script  src="/js/color-schema.js" ></script>
+    <meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="诗意の理性" type="application/atom+xml">
+</head>
+
+
+<body>
+  <header style="height: 75vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Uncle-yang</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/navigate/">
+                <i class="iconfont icon-map"></i>
+                导航
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('/img/sun.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container page-header text-center fade-in-up">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-author" aria-hidden="true"></i>
+      Uncle_yang
+    </span>
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2023-06-25 15:00" pubdate>
+        2023年6月25日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      4.3k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      84
+       分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+    <a href="https://github.com/phh95/hexo_blog" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#70B7FD; color:#fff; position: absolute; top: 0; border: 0; right: 0; z-index: 1031;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto" id="post">
+            <!-- SEO header -->
+            <h1 style="display: none">python 学习记录(11-20)</h1>
+            
+            <div class="markdown-body" id="post-body">
+              <h1 id="python-学习记录"><a href="#python-学习记录" class="headerlink" title="python 学习记录"></a>python 学习记录</h1><h2 id="11-1-input-函数"><a href="#11-1-input-函数" class="headerlink" title="11.1 input()函数"></a>11.1 input()函数</h2><div class="hljs"><pre><code class="hljs python"><span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;#&quot;</span> * <span class="hljs-number">75</span>) <span class="hljs-comment">#####</span>
+
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;how old are you ?&quot;</span>, end=<span class="hljs-string">&#x27; &#x27;</span>)
+age = <span class="hljs-built_in">input</span>()
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;how tall are you ?&quot;</span>, end=<span class="hljs-string">&#x27; &#x27;</span>)
+height = <span class="hljs-built_in">input</span>()
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;how much do you weight ?&quot;</span>, end=<span class="hljs-string">&#x27; &#x27;</span>)
+weight = <span class="hljs-built_in">input</span>()
+
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;ok , you&#x27;re <span class="hljs-subst">&#123;age&#125;</span> years old, <span class="hljs-subst">&#123;height&#125;</span> cm tall and <span class="hljs-subst">&#123;weight&#125;</span> kg heavy.&quot;</span>)
+
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;#&quot;</span> * <span class="hljs-number">75</span>) <span class="hljs-comment">#####</span>
+
+<span class="hljs-comment"># my own test one</span>
+add = <span class="hljs-string">&quot;+&quot;</span>
+minus = <span class="hljs-string">&quot;-&quot;</span>
+mutiply = <span class="hljs-string">&quot;*&quot;</span>
+division = <span class="hljs-string">&quot;/&quot;</span>
+addwithadd = add * <span class="hljs-number">75</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;&quot;&quot;calculation preparing now ......</span>
+<span class="hljs-string"><span class="hljs-subst">&#123;addwithadd&#125;</span>&quot;&quot;&quot;</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;here you input the first number : &quot;</span>,end=<span class="hljs-string">&#x27; &#x27;</span>)
+a = <span class="hljs-built_in">int</span>(<span class="hljs-built_in">input</span>())
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;here you input the second number : &quot;</span>,end=<span class="hljs-string">&#x27; &#x27;</span>)
+b = <span class="hljs-built_in">int</span>(<span class="hljs-built_in">input</span>())
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;<span class="hljs-subst">&#123;a&#125;</span> <span class="hljs-subst">&#123;add&#125;</span> <span class="hljs-subst">&#123;b&#125;</span> = &quot;</span>,a + b)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;<span class="hljs-subst">&#123;a&#125;</span> <span class="hljs-subst">&#123;minus&#125;</span> <span class="hljs-subst">&#123;b&#125;</span> = &quot;</span>,a - b)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;<span class="hljs-subst">&#123;a&#125;</span> <span class="hljs-subst">&#123;mutiply&#125;</span> <span class="hljs-subst">&#123;b&#125;</span> = &quot;</span>,a * b)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;<span class="hljs-subst">&#123;a&#125;</span> <span class="hljs-subst">&#123;division&#125;</span> <span class="hljs-subst">&#123;b&#125;</span> = &quot;</span>,a / b)</code></pre></div>
+<div class="hljs"><pre><code class="hljs coffeescript"><span class="hljs-comment">######</span><span class="hljs-comment">######</span><span class="hljs-comment">######</span><span class="hljs-comment">######</span><span class="hljs-comment">######</span><span class="hljs-comment">######</span><span class="hljs-comment">######</span><span class="hljs-comment">######</span><span class="hljs-comment">######</span><span class="hljs-comment">######</span><span class="hljs-comment">######</span><span class="hljs-comment">######</span><span class="hljs-comment">###</span>
+<span class="hljs-comment">how old are you ? 23</span>
+<span class="hljs-comment">how tall are you ? 165</span>
+<span class="hljs-comment">how much do you weight ? 96</span>
+<span class="hljs-comment">ok , you&#x27;re 23 years old, 165 cm tall and 96 kg heavy.</span>
+<span class="hljs-comment">###</span><span class="hljs-comment">######</span><span class="hljs-comment">######</span><span class="hljs-comment">######</span><span class="hljs-comment">######</span><span class="hljs-comment">######</span><span class="hljs-comment">######</span><span class="hljs-comment">######</span><span class="hljs-comment">######</span><span class="hljs-comment">######</span><span class="hljs-comment">######</span><span class="hljs-comment">######</span><span class="hljs-comment">######</span>
+calculation preparing now ......
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+here you input the first number :  <span class="hljs-number">23</span>
+here you input the second number :  <span class="hljs-number">65</span>
+<span class="hljs-number">23</span> + <span class="hljs-number">65</span> =  <span class="hljs-number">88</span>
+<span class="hljs-number">23</span> - <span class="hljs-number">65</span> =  <span class="hljs-number">-42</span>
+<span class="hljs-number">23</span> * <span class="hljs-number">65</span> =  <span class="hljs-number">1495</span>
+<span class="hljs-number">23</span> / <span class="hljs-number">65</span> =  <span class="hljs-number">0.35384615384615387</span></code></pre></div>
+
+<h2 id="12-1-input-函数与提示"><a href="#12-1-input-函数与提示" class="headerlink" title="12.1 input()函数与提示"></a>12.1 input()函数与提示</h2><div class="hljs"><pre><code class="hljs python"><span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;#&quot;</span> * <span class="hljs-number">75</span>) <span class="hljs-comment">#####</span>
+
+age = <span class="hljs-built_in">input</span>(<span class="hljs-string">&quot;How old are you? &quot;</span>)
+height = <span class="hljs-built_in">input</span>(<span class="hljs-string">&quot;How tall are you? &quot;</span>)
+weight = <span class="hljs-built_in">input</span>(<span class="hljs-string">&quot;How much do you weight? &quot;</span>)
+
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;Yeah , you&#x27;re <span class="hljs-subst">&#123;age&#125;</span> years old, <span class="hljs-subst">&#123;height&#125;</span> cm tall and <span class="hljs-subst">&#123;weight&#125;</span> kg heavy.&quot;</span>)
+
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;#&quot;</span> * <span class="hljs-number">75</span>) <span class="hljs-comment">#####</span>
+
+<span class="hljs-comment"># my own test one</span>
+
+question = <span class="hljs-built_in">input</span>(<span class="hljs-string">&quot;only number can be input? &quot;</span>)
+unknown = <span class="hljs-built_in">input</span>(<span class="hljs-string">&quot;still need time to study...&quot;</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;the answer maybe I get : <span class="hljs-subst">&#123;question&#125;</span> , <span class="hljs-subst">&#123;unknown&#125;</span>&quot;</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;actully, input-function can input not only about numbers but also some strings that you put in !&quot;</span>)</code></pre></div>
+<div class="hljs"><pre><code class="hljs coffeescript"><span class="hljs-comment">######</span><span class="hljs-comment">######</span><span class="hljs-comment">######</span><span class="hljs-comment">######</span><span class="hljs-comment">######</span><span class="hljs-comment">######</span><span class="hljs-comment">######</span><span class="hljs-comment">######</span><span class="hljs-comment">######</span><span class="hljs-comment">######</span><span class="hljs-comment">######</span><span class="hljs-comment">######</span><span class="hljs-comment">###</span>
+<span class="hljs-comment">How old are you? 23</span>
+<span class="hljs-comment">How tall are you? 165</span>
+<span class="hljs-comment">How much do you weight? 46</span>
+<span class="hljs-comment">Yeah , you&#x27;re 23 years old, 165 cm tall and 46 kg heavy.</span>
+<span class="hljs-comment">###</span><span class="hljs-comment">######</span><span class="hljs-comment">######</span><span class="hljs-comment">######</span><span class="hljs-comment">######</span><span class="hljs-comment">######</span><span class="hljs-comment">######</span><span class="hljs-comment">######</span><span class="hljs-comment">######</span><span class="hljs-comment">######</span><span class="hljs-comment">######</span><span class="hljs-comment">######</span><span class="hljs-comment">######</span>
+only number can be input? <span class="hljs-number">66</span>
+still need time to study...
+the answer maybe I get : <span class="hljs-number">66</span> ,
+actully, input-function can input <span class="hljs-keyword">not</span> only about numbers but also some strings that you put <span class="hljs-keyword">in</span> !</code></pre></div>
+
+<h2 id="13-1-引入三个参数并打印"><a href="#13-1-引入三个参数并打印" class="headerlink" title="13.1 引入三个参数并打印"></a>13.1 引入三个参数并打印</h2><blockquote>
+<p>python3  ex13.1.py  0 1 2</p>
+</blockquote>
+<div class="hljs"><pre><code class="hljs python"><span class="hljs-keyword">from</span> sys <span class="hljs-keyword">import</span> argv
+<span class="hljs-comment"># read the WYSS section for how to run this </span>
+script, first, second, third = argv
+
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;the script is called:&quot;</span>, script)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;your first variable is:&quot;</span>, first)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;your second variable is:&quot;</span>, second)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;your third variable is:&quot;</span>, third)</code></pre></div>
+<div class="hljs"><pre><code class="hljs applescript"><span class="hljs-keyword">the</span> <span class="hljs-keyword">script</span> <span class="hljs-keyword">is</span> called: ex13<span class="hljs-number">.1</span>.py
+your <span class="hljs-keyword">first</span> variable <span class="hljs-keyword">is</span>: <span class="hljs-number">0</span>
+your <span class="hljs-keyword">second</span> variable <span class="hljs-keyword">is</span>: <span class="hljs-number">1</span>
+your <span class="hljs-keyword">third</span> variable <span class="hljs-keyword">is</span>: <span class="hljs-number">2</span></code></pre></div>
+
+<h3 id="13-2-引入两个参数并打印"><a href="#13-2-引入两个参数并打印" class="headerlink" title="13.2 引入两个参数并打印"></a>13.2 引入两个参数并打印</h3><blockquote>
+<p>python3  ex13.1.py  left right</p>
+</blockquote>
+<div class="hljs"><pre><code class="hljs python"><span class="hljs-keyword">from</span> sys <span class="hljs-keyword">import</span> argv
+<span class="hljs-comment"># read the wyss section for how to run this</span>
+script, a, b = argv
+
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;the script is called:&quot;</span>, script)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;your first variable is:&quot;</span>, a)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;your second variable is:&quot;</span>, b)
+
+<span class="hljs-comment">#    script, a, b = argv</span>
+<span class="hljs-comment">#    ValueError: too many values to unpack (expected 3)</span>
+<span class="hljs-comment">#    error from the first name: &lt;script&gt; ,it&#x27;s not an argument ! ! !</span></code></pre></div>
+<div class="hljs"><pre><code class="hljs vim">the script <span class="hljs-keyword">is</span> called: ex13.<span class="hljs-number">2</span>.<span class="hljs-keyword">py</span>
+your <span class="hljs-keyword">first</span> variable <span class="hljs-keyword">is</span>: <span class="hljs-keyword">left</span>
+your second variable <span class="hljs-keyword">is</span>: <span class="hljs-keyword">right</span></code></pre></div>
+
+<h3 id="13-3-输入四个参数并打印"><a href="#13-3-输入四个参数并打印" class="headerlink" title="13.3 输入四个参数并打印"></a>13.3 输入四个参数并打印</h3><blockquote>
+<p>python3  ex13.3.py  i m n o</p>
+</blockquote>
+<div class="hljs"><pre><code class="hljs python"><span class="hljs-comment"># from sys import it (wrong !)</span>
+
+<span class="hljs-keyword">from</span> sys <span class="hljs-keyword">import</span> argv
+script, a, b, c, d = argv
+
+<span class="hljs-built_in">print</span>(script)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;a = &quot;</span>,a)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;b = &quot;</span>,b)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;c = &quot;</span>,c)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;d = &quot;</span>,d)
+
+<span class="hljs-comment"># ImportError: cannot import name &#x27;it&#x27; from &#x27;sys&#x27; (unknown location)</span>
+<span class="hljs-comment"># error from the name of &lt;it&gt;, this argument must be &lt;argv&gt;, defined by system ! ! !</span></code></pre></div>
+<div class="hljs"><pre><code class="hljs abnf">ex13.<span class="hljs-number">3</span>.py
+<span class="hljs-attribute">a</span> <span class="hljs-operator">=</span>  i
+<span class="hljs-attribute">b</span> <span class="hljs-operator">=</span>  m
+<span class="hljs-attribute">c</span> <span class="hljs-operator">=</span>  n
+<span class="hljs-attribute">d</span> <span class="hljs-operator">=</span>  o</code></pre></div>
+
+<h3 id="13-4-输入两个参数并做四则运算"><a href="#13-4-输入两个参数并做四则运算" class="headerlink" title="13.4 输入两个参数并做四则运算"></a>13.4 输入两个参数并做四则运算</h3><blockquote>
+<p>python3  ex13.4.py  20  40</p>
+</blockquote>
+<div class="hljs"><pre><code class="hljs python"><span class="hljs-keyword">from</span> sys <span class="hljs-keyword">import</span> argv
+
+script, a, b = argv
+
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;this script is: <span class="hljs-subst">&#123;script&#125;</span>, It&#x27;s used to do some calculations !&quot;</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;#&quot;</span> * <span class="hljs-number">75</span>) <span class="hljs-comment">#####</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;a + b =&quot;</span>, <span class="hljs-built_in">int</span>(a) + <span class="hljs-built_in">int</span>(b))
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;a - b =&quot;</span>, <span class="hljs-built_in">int</span>(a) - <span class="hljs-built_in">int</span>(b))
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;a * b =&quot;</span>, <span class="hljs-built_in">int</span>(a) * <span class="hljs-built_in">int</span>(b))
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;a / b =&quot;</span>, <span class="hljs-built_in">int</span>(a) / <span class="hljs-built_in">int</span>(b))
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;#&quot;</span> * <span class="hljs-number">75</span>) <span class="hljs-comment">#####</span>
+
+c = <span class="hljs-built_in">input</span>()
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;a * b / c&quot;</span>,<span class="hljs-built_in">int</span>(a) * <span class="hljs-built_in">int</span>(b) / <span class="hljs-built_in">int</span>(c))
+
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;#&quot;</span> * <span class="hljs-number">75</span>) <span class="hljs-comment">#####</span>
+
+
+<span class="hljs-comment"># TypeError: unsupported operand type(s) for -: &#x27;str&#x27; and &#x27;str&#x27;</span>
+<span class="hljs-comment"># how to solve ---&gt;  let &quot;a&quot; convert int : int(a)</span>
+<span class="hljs-comment"># SyntaxError: unterminated string literal (detected at line 8)</span>
+<span class="hljs-comment"># how to solve : add &lt;&quot;&gt; in the end </span></code></pre></div>
+<div class="hljs"><pre><code class="hljs clean">###########################################################################
+a + b = <span class="hljs-number">60</span>
+a - b = <span class="hljs-number">-20</span>
+a * b = <span class="hljs-number">800</span>
+a / b = <span class="hljs-number">0.5</span>
+###########################################################################
+<span class="hljs-number">20</span>
+a * b / c <span class="hljs-number">40.0</span>
+###########################################################################</code></pre></div>
+
+<h2 id="14-1-询问个人信息并打印"><a href="#14-1-询问个人信息并打印" class="headerlink" title="14.1 询问个人信息并打印"></a>14.1 询问个人信息并打印</h2><blockquote>
+<p>python3  ex14.1.py  leigeigei</p>
+</blockquote>
+<div class="hljs"><pre><code class="hljs python"><span class="hljs-keyword">from</span> sys <span class="hljs-keyword">import</span> argv
+
+script, user_name = argv
+prompt = <span class="hljs-string">&#x27;&gt; &#x27;</span>
+
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;hello <span class="hljs-subst">&#123;user_name&#125;</span>, I&#x27;m the <span class="hljs-subst">&#123;script&#125;</span> script.&quot;</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;I&#x27;d like to ask you a few questions.&quot;</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;Do you like me, <span class="hljs-subst">&#123;user_name&#125;</span>?&quot;</span>)
+likes = <span class="hljs-built_in">input</span>(prompt)
+
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;Where do you live, <span class="hljs-subst">&#123;user_name&#125;</span>?&quot;</span>)
+lives = <span class="hljs-built_in">input</span>(prompt)
+
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;What kind of computer do you have?&quot;</span>)
+computer = <span class="hljs-built_in">input</span>(prompt)
+
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;&quot;&quot;</span>
+<span class="hljs-string">Alright, so you said <span class="hljs-subst">&#123;likes&#125;</span> about liking me.</span>
+<span class="hljs-string">You live in <span class="hljs-subst">&#123;lives&#125;</span>. Not sure where that is.</span>
+<span class="hljs-string">And you have a <span class="hljs-subst">&#123;computer&#125;</span> computer. Nice.</span>
+<span class="hljs-string">&quot;&quot;&quot;</span>)</code></pre></div>
+<div class="hljs"><pre><code class="hljs vbnet">hello leigeigei, I<span class="hljs-comment">&#x27;m the ex14.1.py script.</span>
+I<span class="hljs-comment">&#x27;d like to ask you a few questions.</span>
+<span class="hljs-keyword">Do</span> you <span class="hljs-built_in">like</span> <span class="hljs-keyword">me</span>, leigeigei?
+&gt; yes
+<span class="hljs-keyword">Where</span> <span class="hljs-keyword">do</span> you live, leigeigei?
+&gt; cq
+What kind <span class="hljs-keyword">of</span> computer <span class="hljs-keyword">do</span> you have?
+&gt; legion
+
+Alright, so you said yes about liking <span class="hljs-keyword">me</span>.
+You live <span class="hljs-keyword">in</span> cq. <span class="hljs-built_in">Not</span> sure <span class="hljs-keyword">where</span> that <span class="hljs-built_in">is</span>.
+<span class="hljs-built_in">And</span> you have a legion computer. Nice.</code></pre></div>
+
+<h3 id="14-2-询问密码账号并返回"><a href="#14-2-询问密码账号并返回" class="headerlink" title="14.2 询问密码账号并返回"></a>14.2 询问密码账号并返回</h3><blockquote>
+<p>python3  ex14.2.py  leigeigei</p>
+</blockquote>
+<div class="hljs"><pre><code class="hljs python">
+<span class="hljs-keyword">from</span> sys <span class="hljs-keyword">import</span> argv
+
+script, user_name = argv
+prompt = <span class="hljs-string">&quot;--&gt; &quot;</span>
+
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;THIS IS THE LOG IN SYSTEM &amp; VERSION14.2: <span class="hljs-subst">&#123;script&#125;</span>&quot;</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;#&quot;</span> * <span class="hljs-number">50</span>) <span class="hljs-comment">#####</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;please enter your user_name: <span class="hljs-subst">&#123;user_name&#125;</span>&quot;</span>)
+
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;please enter your QQnumber: <span class="hljs-subst">&#123;user_name&#125;</span>&quot;</span>)
+QQnumber = <span class="hljs-built_in">input</span>(prompt)
+
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;please enter your QQkey: <span class="hljs-subst">&#123;user_name&#125;</span>&quot;</span>)
+QQkey = <span class="hljs-built_in">input</span>(prompt)
+x = <span class="hljs-string">&quot;*&quot;</span> * <span class="hljs-number">6</span>
+
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;&quot;&quot;WARNING: Make sure what you input is really true,</span>
+<span class="hljs-string">or you can&#x27;t log in the system !</span>
+<span class="hljs-string">user name: <span class="hljs-subst">&#123;user_name&#125;</span></span>
+<span class="hljs-string">user QQnumber: <span class="hljs-subst">&#123;QQnumber&#125;</span></span>
+<span class="hljs-string">user QQkey: <span class="hljs-subst">&#123;x&#125;</span>&quot;&quot;&quot;</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;#&quot;</span> * <span class="hljs-number">50</span>) <span class="hljs-comment">#####</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;log in successfully !&quot;</span>)</code></pre></div>
+<div class="hljs"><pre><code class="hljs coffeescript">THIS IS THE LOG IN SYSTEM &amp; VERSION14<span class="hljs-number">.2</span>: ex14<span class="hljs-number">.2</span>.py
+<span class="hljs-comment">######</span><span class="hljs-comment">######</span><span class="hljs-comment">######</span><span class="hljs-comment">######</span><span class="hljs-comment">######</span><span class="hljs-comment">######</span><span class="hljs-comment">######</span><span class="hljs-comment">######</span><span class="hljs-comment">##</span>
+please enter your user_name: leigeigei
+please enter your QQnumber: leigeigei
+--&gt; <span class="hljs-number">2734972186</span>
+please enter your QQkey: leigeigei
+--&gt; i don<span class="hljs-string">&#x27;t want show my key to you</span>
+<span class="hljs-string">WARNING: Make sure what you input is really true,</span>
+<span class="hljs-string">or you can&#x27;</span>t log <span class="hljs-keyword">in</span> the system !
+user name: leigeigei
+user QQnumber: <span class="hljs-number">2734972186</span>
+user QQkey: ******
+<span class="hljs-comment">######</span><span class="hljs-comment">######</span><span class="hljs-comment">######</span><span class="hljs-comment">######</span><span class="hljs-comment">######</span><span class="hljs-comment">######</span><span class="hljs-comment">######</span><span class="hljs-comment">######</span><span class="hljs-comment">##</span>
+log <span class="hljs-keyword">in</span> successfully !</code></pre></div>
+
+<h2 id="15-1-读取文件"><a href="#15-1-读取文件" class="headerlink" title="15.1 读取文件"></a>15.1 读取文件</h2><blockquote>
+<p>python3  ex15.1.py  ex15.txt</p>
+</blockquote>
+<div class="hljs"><pre><code class="hljs python"><span class="hljs-keyword">from</span> sys <span class="hljs-keyword">import</span> argv
+
+script, filename = argv
+
+<span class="hljs-comment"># open the file</span>
+txt = <span class="hljs-built_in">open</span>(filename)
+
+<span class="hljs-comment"># print the filename</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;here is the text file <span class="hljs-subst">&#123;filename&#125;</span>:&quot;</span>)
+<span class="hljs-comment"># read the file</span>
+<span class="hljs-built_in">print</span>(txt.read())
+
+<span class="hljs-comment"># do once again</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;type the filename again:&quot;</span>)
+file_again = <span class="hljs-built_in">input</span>(<span class="hljs-string">&quot;&gt; &quot;</span>)
+
+txt_again = <span class="hljs-built_in">open</span>(file_again)
+
+<span class="hljs-built_in">print</span>(txt_again.read())</code></pre></div>
+<div class="hljs"><pre><code class="hljs erlang-repl">here is the text file ex15.txt:
+this is a text for testing !
+
+!!!!!    !
+!!       !
+!!       !
+!!!!!    !
+!!       !
+!!       !
+!!       !
+!!!!!    !
+
+type the filename again:
+&gt; ex15.txt
+this is a text for testing !
+
+!!!!!    !
+!!       !
+!!       !
+!!!!!    !
+!!       !
+!!       !
+!!       !
+!!!!!    !
+</code></pre></div>
+
+<h3 id="15-2-读取文件的测试"><a href="#15-2-读取文件的测试" class="headerlink" title="15.2 读取文件的测试"></a>15.2 读取文件的测试</h3><blockquote>
+<p>python3  ex15.2.py  ex15.txt</p>
+</blockquote>
+<div class="hljs"><pre><code class="hljs python"><span class="hljs-keyword">from</span> sys <span class="hljs-keyword">import</span> argv
+script, filename = argv
+
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;THIS IS ONE NEW VERSION OF THE SCRIPT: &#123;filename&#125;&quot;</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Please enter the filename:&quot;</span>)
+files = <span class="hljs-built_in">input</span>(<span class="hljs-string">&quot;____&quot;</span>)
+
+files = <span class="hljs-built_in">open</span>(files)
+
+<span class="hljs-built_in">print</span>(files.read())</code></pre></div>
+<div class="hljs"><pre><code class="hljs erlang-repl">THIS IS ONE NEW VERSION OF THE SCRIPT: &#123;filename&#125;
+Please enter the filename:
+____ex15.txt
+this is a text for testing !
+
+!!!!!    !
+!!       !
+!!       !
+!!!!!    !
+!!       !
+!!       !
+!!       !
+!!!!!    !
+</code></pre></div>
+<blockquote>
+<p>ex15.txt</p>
+</blockquote>
+<div class="hljs"><pre><code class="hljs erlang-repl">this is a text for testing !
+
+!!!!!    !
+!!       !
+!!       !
+!!!!!    !
+!!       !
+!!       !  
+!!       !
+!!!!!    !</code></pre></div>
+
+<h2 id="16-1-删除文件内容后写入三行数据"><a href="#16-1-删除文件内容后写入三行数据" class="headerlink" title="16.1 删除文件内容后写入三行数据"></a>16.1 删除文件内容后写入三行数据</h2><blockquote>
+<p> python3  ex16.1.py  ex16.txt</p>
+</blockquote>
+<div class="hljs"><pre><code class="hljs python"><span class="hljs-keyword">from</span> sys <span class="hljs-keyword">import</span> argv
+
+script, filename = argv 
+
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;we&#x27;re going to erase <span class="hljs-subst">&#123;filename&#125;</span>.&quot;</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;if you don&#x27;t want that, hit CTRL-C) (^C).&quot;</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;if you do want that, hit RETURN.&quot;</span>)
+<span class="hljs-comment"># input to make one useless choice ,whatever you type in the program will still execuite it&#x27;s command ,hhh</span>
+<span class="hljs-built_in">input</span>(<span class="hljs-string">&quot;?&quot;</span>)
+
+<span class="hljs-comment"># open file to the variable &#x27;target&#x27; and be ready to exec &#x27;write&#x27;</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;opening the file...&quot;</span>)
+target = <span class="hljs-built_in">open</span>(filename, <span class="hljs-string">&#x27;w&#x27;</span>)
+
+<span class="hljs-comment"># delete the all content of the file that opened</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;truncating the file. goodbye!&quot;</span>)
+target.truncate()
+
+<span class="hljs-comment"># ask you to prepare for writing three lines </span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;now I&#x27;m going to ask you for three lines.&quot;</span>)
+line1 = <span class="hljs-built_in">input</span>(<span class="hljs-string">&quot;line 1: &quot;</span>)
+line2 = <span class="hljs-built_in">input</span>(<span class="hljs-string">&quot;line 2: &quot;</span>)
+line3 = <span class="hljs-built_in">input</span>(<span class="hljs-string">&quot;line 3: &quot;</span>)
+
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;I&#x27;m going to write these to the file.&quot;</span>)
+
+<span class="hljs-comment"># execute the operation : &quot;write&quot;</span>
+target.write(line1)
+target.write(<span class="hljs-string">&quot;\n&quot;</span>)
+target.write(line2)
+target.write(<span class="hljs-string">&quot;\n&quot;</span>)
+target.write(line3)
+target.write(<span class="hljs-string">&quot;\n&quot;</span>)
+
+<span class="hljs-comment"># close the file that you wrote in </span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;and finally, we close it.&quot;</span>)
+target.close()
+
+
+<span class="hljs-comment"># target = open(filename, &#x27;W&#x27;) ValueError: invalid mode: &#x27;W&#x27;</span>
+<span class="hljs-comment"># Attention to the word you type in ! </span>
+<span class="hljs-comment"># error from the writing W &amp;&amp; w ! </span>
+
+
+<span class="hljs-comment"># target.wrtie(&quot;\n&quot;)</span>
+<span class="hljs-comment"># AttributeError: &#x27;_io.TextIOWrapper&#x27; object has no attribute &#x27;wrtie&#x27;. Did you mean: &#x27;write&#x27;?</span>
+<span class="hljs-comment"># error from the word I typed in &quot;wrtie&quot;, I should revise it to &quot;write&quot; !</span></code></pre></div>
+<div class="hljs"><pre><code class="hljs vhdl">we<span class="hljs-symbol">&#x27;re</span> going <span class="hljs-keyword">to</span> erase ex16.txt.
+<span class="hljs-keyword">if</span> you don<span class="hljs-symbol">&#x27;t</span> want that, hit CTRL-C (^C).
+<span class="hljs-keyword">if</span> you do want that, hit <span class="hljs-keyword">RETURN</span>.
+?<span class="hljs-keyword">RETURN</span>
+opening the <span class="hljs-keyword">file</span>...
+truncating the <span class="hljs-keyword">file</span>. goodbye!
+now I<span class="hljs-symbol">&#x27;m</span> going <span class="hljs-keyword">to</span> ask you <span class="hljs-keyword">for</span> three lines.
+<span class="hljs-literal">line</span> <span class="hljs-number">1</span>: this <span class="hljs-keyword">is</span> ok
+<span class="hljs-literal">line</span> <span class="hljs-number">2</span>: I am fine
+<span class="hljs-literal">line</span> <span class="hljs-number">3</span>: I love you
+I<span class="hljs-symbol">&#x27;m</span> going <span class="hljs-keyword">to</span> write these <span class="hljs-keyword">to</span> the <span class="hljs-keyword">file</span>.
+<span class="hljs-keyword">and</span> finally, we close it.</code></pre></div>
+<blockquote>
+<p>ex16.txt:</p>
+</blockquote>
+<div class="hljs"><pre><code class="hljs kotlin"><span class="hljs-keyword">this</span> <span class="hljs-keyword">is</span> ok
+I am fine
+I love you</code></pre></div>
+
+<h3 id="16-2-文件写入和关闭测试"><a href="#16-2-文件写入和关闭测试" class="headerlink" title="16.2 文件写入和关闭测试"></a>16.2 文件写入和关闭测试</h3><blockquote>
+<p> python3  ex16.2.py  ex16.txt</p>
+</blockquote>
+<div class="hljs"><pre><code class="hljs python"><span class="hljs-keyword">from</span> sys <span class="hljs-keyword">import</span> argv
+script, filename = argv
+
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;Are you ready to add some words to <span class="hljs-subst">&#123;filename&#125;</span> ?&quot;</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;please type &lt;ok&gt;&quot;</span>)
+<span class="hljs-built_in">input</span>(<span class="hljs-string">&quot;Take few time for you to think what to write...... &quot;</span>)
+
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Opening the file ......&quot;</span>)
+tar = <span class="hljs-built_in">open</span>(filename, <span class="hljs-string">&#x27;w&#x27;</span>)
+
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Here you can write: &quot;</span>)
+ok = <span class="hljs-built_in">input</span>(<span class="hljs-string">&quot;---&gt;&quot;</span>)
+tar.write(ok)
+tar.write(<span class="hljs-string">&quot;\n&quot;</span>)
+
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Writing successfully !&quot;</span>)
+tar.close()
+
+<span class="hljs-comment"># the process can be summaried as follows :</span>
+<span class="hljs-comment"># 1. open &lt;filename&gt; with &#x27;w&#x27; mode, and assign to &lt;tar&gt; </span>
+<span class="hljs-comment"># 2. let &lt;ok&gt; get strings from outside</span>
+<span class="hljs-comment"># 3. tar.write(ok): &lt;tar&gt; commands &#x27;write&#x27; to execute writing from &lt;ok&gt;</span>
+<span class="hljs-comment"># 4. tar.close(): means to close the file that finished the writing process</span></code></pre></div>
+<div class="hljs"><pre><code class="hljs livecodeserver">Are you ready <span class="hljs-built_in">to</span> <span class="hljs-built_in">add</span> some <span class="hljs-keyword">words</span> <span class="hljs-built_in">to</span> ex16.txt ?
+please type &lt;ok&gt;
+Take few <span class="hljs-built_in">time</span> <span class="hljs-keyword">for</span> you <span class="hljs-built_in">to</span> think what <span class="hljs-built_in">to</span> <span class="hljs-built_in">write</span>......
+Opening <span class="hljs-keyword">the</span> <span class="hljs-built_in">file</span> ......
+Here you can <span class="hljs-built_in">write</span>:
+<span class="hljs-comment">---&gt; I wanna go</span>
+Writing successfully !</code></pre></div>
+<blockquote>
+<p> ex16.txt:</p>
+</blockquote>
+<div class="hljs"><pre><code class="hljs css"><span class="hljs-selector-tag">I</span> wanna go</code></pre></div>
+
+<h3 id="16-3-读取文件的测试"><a href="#16-3-读取文件的测试" class="headerlink" title="16.3 读取文件的测试"></a>16.3 读取文件的测试</h3><blockquote>
+<p> python3  ex16.3.py  ex16.txt</p>
+</blockquote>
+<div class="hljs"><pre><code class="hljs python"><span class="hljs-keyword">from</span> sys <span class="hljs-keyword">import</span> argv
+script, filename = argv
+
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;This is the file: <span class="hljs-subst">&#123;filename&#125;</span>&quot;</span>)
+
+x = <span class="hljs-string">&#x27;\n&#x27;</span>
+
+<span class="hljs-built_in">input</span>(<span class="hljs-string">f&quot;sure to read this file? <span class="hljs-subst">&#123;x&#125;</span>&quot;</span>)
+
+tar = <span class="hljs-built_in">open</span>(filename, mode=<span class="hljs-string">&#x27;r&#x27;</span>)
+
+tar.seek(<span class="hljs-number">0</span>)
+
+y = tar.read()
+
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;Well, let&#x27;s look at what the file include: <span class="hljs-subst">&#123;x&#125;</span><span class="hljs-subst">&#123;y&#125;</span>&quot;</span>)
+tar.close()</code></pre></div>
+<div class="hljs"><pre><code class="hljs applescript">This <span class="hljs-keyword">is</span> <span class="hljs-keyword">the</span> <span class="hljs-built_in">file</span>: ex16.txt
+sure <span class="hljs-keyword">to</span> <span class="hljs-built_in">read</span> this <span class="hljs-built_in">file</span>?
+ok
+Well, let&#x27;s look <span class="hljs-keyword">at</span> what <span class="hljs-keyword">the</span> <span class="hljs-built_in">file</span> include:
+I wanna go</code></pre></div>
+
+<h3 id="16-4-有关write-close-read-seek-0-readline-truncate的测试"><a href="#16-4-有关write-close-read-seek-0-readline-truncate的测试" class="headerlink" title="16.4 有关write ,close, read, seek(0), readline, truncate的测试"></a>16.4 有关write ,close, read, seek(0), readline, truncate的测试</h3><blockquote>
+<p> python3  ex16.4.py  ex16.txt</p>
+</blockquote>
+<div class="hljs"><pre><code class="hljs python"><span class="hljs-keyword">from</span> sys <span class="hljs-keyword">import</span> argv
+script, filename = argv
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;#&quot;</span> * <span class="hljs-number">50</span>) <span class="hljs-comment">#####</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;This is the file: <span class="hljs-subst">&#123;filename&#125;</span>&quot;</span>)
+shift = <span class="hljs-string">&#x27;\n&#x27;</span>
+cursor = <span class="hljs-string">&#x27;--&gt; &#x27;</span>
+<span class="hljs-built_in">input</span>(<span class="hljs-string">f&quot;Be sure to write some in the file? <span class="hljs-subst">&#123;shift&#125;</span><span class="hljs-subst">&#123;cursor&#125;</span>&quot;</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;opening the file.....&quot;</span>)
+tar = <span class="hljs-built_in">open</span>(filename, <span class="hljs-string">&#x27;w&#x27;</span>)
+tar.write(<span class="hljs-built_in">input</span>(<span class="hljs-string">f&quot;Here you can write down what you want <span class="hljs-subst">&#123;shift&#125;</span><span class="hljs-subst">&#123;cursor&#125;</span>&quot;</span>))
+tar.close()
+
+<span class="hljs-keyword">from</span> sys <span class="hljs-keyword">import</span> argv
+script, filename = argv
+tar = <span class="hljs-built_in">open</span>(filename, <span class="hljs-string">&#x27;r&#x27;</span>)
+tar.seek(<span class="hljs-number">0</span>)
+out = tar.read()
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;what did you write, let&#x27;s have a look, hhh&quot;</span>)
+<span class="hljs-built_in">print</span>(out)
+
+<span class="hljs-keyword">from</span> sys <span class="hljs-keyword">import</span> argv
+script, filename = argv
+tar = <span class="hljs-built_in">open</span>(filename, <span class="hljs-string">&#x27;r+&#x27;</span>)
+outline = tar.readline()
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;what did you write , let&#x27;s have a look, hhh&quot;</span>)
+<span class="hljs-built_in">print</span>(outline)
+
+<span class="hljs-comment"># empties the file ! ! !</span>
+tar.truncate()
+tar.close
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;THIS PROGRAM IS RUNNING SUCCESSFULLY&quot;</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;#&quot;</span> * <span class="hljs-number">50</span>) <span class="hljs-comment">#####</span>
+
+<span class="hljs-comment"># error : tar.truncate() io.UnsupportedOperation: truncate</span>
+<span class="hljs-comment"># how to solve : change &#x27;r&#x27; ---&gt; &#x27;r+&#x27;</span>
+
+<span class="hljs-comment"># r : only read //if there is no file ,it will send error information</span>
+<span class="hljs-comment"># r+: read and write //if there is no file ,it will send error information</span>
+<span class="hljs-comment"># w : only write //this mode will delete the content before! //if there is no file ,it will create one </span>
+<span class="hljs-comment"># w+: write and read //this mode will delete the content before! //if there is no file ,it will create one</span>
+<span class="hljs-comment"># a : only write //this mode can write additional content!//if there is no file ,it will create one </span>
+<span class="hljs-comment"># a+: write and read //this mode can write additional content!//if there is no file ,it will create one</span></code></pre></div>
+<div class="hljs"><pre><code class="hljs coffeescript"><span class="hljs-comment">######</span><span class="hljs-comment">######</span><span class="hljs-comment">######</span><span class="hljs-comment">######</span><span class="hljs-comment">######</span><span class="hljs-comment">######</span><span class="hljs-comment">######</span><span class="hljs-comment">######</span><span class="hljs-comment">##</span>
+This <span class="hljs-keyword">is</span> the file: ex16.txt
+Be sure to write some <span class="hljs-keyword">in</span> the file?
+--&gt; <span class="hljs-literal">yes</span>
+opening the file.....
+Here you can write down what you want
+--&gt; I like her
+what did you write, let<span class="hljs-string">&#x27;s have a look, hhh</span>
+<span class="hljs-string">I like her</span>
+<span class="hljs-string">what did you write , let&#x27;</span>s have a look, hhh
+I like her
+THIS PROGRAM IS RUNNING SUCCESSFULLY
+<span class="hljs-comment">######</span><span class="hljs-comment">######</span><span class="hljs-comment">######</span><span class="hljs-comment">######</span><span class="hljs-comment">######</span><span class="hljs-comment">######</span><span class="hljs-comment">######</span><span class="hljs-comment">######</span><span class="hljs-comment">##</span></code></pre></div>
+<blockquote>
+<p>ex16.txt</p>
+</blockquote>
+<div class="hljs"><pre><code class="hljs css"><span class="hljs-selector-tag">I</span> love you</code></pre></div>
+
+<h2 id="17-1-复制文件"><a href="#17-1-复制文件" class="headerlink" title="17.1 复制文件"></a>17.1 复制文件</h2><blockquote>
+<p>python3  ex17.1.py  testin  testout</p>
+</blockquote>
+<div class="hljs"><pre><code class="hljs python"><span class="hljs-keyword">from</span> sys <span class="hljs-keyword">import</span> argv
+<span class="hljs-keyword">from</span> os.path <span class="hljs-keyword">import</span> exists
+
+script, from_file, to_file = argv
+
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;copying from <span class="hljs-subst">&#123;from_file&#125;</span> to <span class="hljs-subst">&#123;to_file&#125;</span>&quot;</span>)
+
+<span class="hljs-comment"># we could do these two on one line, how?</span>
+in_file = <span class="hljs-built_in">open</span>(from_file)
+indata = in_file.read()
+
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;the input file is <span class="hljs-subst">&#123;<span class="hljs-built_in">len</span>(indata)&#125;</span> bytes long&quot;</span>)
+
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;does the output file exist? <span class="hljs-subst">&#123;exists(to_file)&#125;</span>&quot;</span>)
+
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;ready, hit RETURN to continue, CTRL-C to abort.&quot;</span>)
+<span class="hljs-built_in">input</span>()
+
+out_file = <span class="hljs-built_in">open</span>(to_file, <span class="hljs-string">&#x27;w&#x27;</span>)
+out_file.write(indata)
+
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;alright, all done.&quot;</span>)
+
+out_file.close()
+in_file.close()</code></pre></div>
+<div class="hljs"><pre><code class="hljs livecodeserver">copying <span class="hljs-built_in">from</span> testin <span class="hljs-built_in">to</span> testout
+<span class="hljs-keyword">the</span> input <span class="hljs-built_in">file</span> is <span class="hljs-number">17</span> <span class="hljs-keyword">bytes</span> <span class="hljs-keyword">long</span>
+does <span class="hljs-keyword">the</span> output <span class="hljs-built_in">file</span> exist? True
+ready, hit <span class="hljs-literal">RETURN</span> <span class="hljs-built_in">to</span> continue, CTRL-C <span class="hljs-built_in">to</span> abort.
+<span class="hljs-literal">RETURN</span>
+alright, all done.</code></pre></div>
+
+<h3 id="17-2-复制文件"><a href="#17-2-复制文件" class="headerlink" title="17.2 复制文件"></a>17.2 复制文件</h3><blockquote>
+<p>python3  ex17.2.py  testin  testout</p>
+</blockquote>
+<div class="hljs"><pre><code class="hljs python"><span class="hljs-keyword">from</span> sys <span class="hljs-keyword">import</span> argv
+
+<span class="hljs-comment"># this is used to distinguish whether the &quot;newf&quot; exists ?</span>
+<span class="hljs-keyword">from</span> os.path <span class="hljs-keyword">import</span> exists
+
+script, dataf, newf = argv
+
+data = <span class="hljs-built_in">open</span>(dataf).read()
+<span class="hljs-comment"># len(file) to find out length of the file</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;the datafile is <span class="hljs-subst">&#123;<span class="hljs-built_in">len</span>(data)&#125;</span> bytes long&quot;</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;does the newfile file exist? <span class="hljs-subst">&#123;exists(newf)&#125;</span>&quot;</span>)
+
+tar = <span class="hljs-built_in">open</span>(newf, <span class="hljs-string">&#x27;w&#x27;</span>)
+tar.write(data)
+tar.close()
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Copied file successfully !&quot;</span>)
+
+<span class="hljs-comment"># f = open(filename).read()</span>
+<span class="hljs-comment"># ...</span>
+<span class="hljs-comment"># f.close()</span>
+
+<span class="hljs-comment"># AttributeError: &#x27;str&#x27; object has no attribute &#x27;close&#x27;</span>
+
+<span class="hljs-comment"># here we can easily see the error information !</span>
+<span class="hljs-comment"># because I can&#x27;t distinguish the difference between &quot;files&quot; and &quot;file variables&quot; !</span></code></pre></div>
+<div class="hljs"><pre><code class="hljs livecodeserver"><span class="hljs-keyword">the</span> datafile is <span class="hljs-number">17</span> <span class="hljs-keyword">bytes</span> <span class="hljs-keyword">long</span>
+does <span class="hljs-keyword">the</span> newfile <span class="hljs-built_in">file</span> exist? True
+Copied <span class="hljs-built_in">file</span> successfully !</code></pre></div>
+
+<h3 id="17-3-使用分号简化代码行"><a href="#17-3-使用分号简化代码行" class="headerlink" title="17.3 使用分号简化代码行"></a>17.3 使用分号简化代码行</h3><div class="hljs"><pre><code class="hljs python"><span class="hljs-keyword">from</span> sys <span class="hljs-keyword">import</span> argv
+<span class="hljs-keyword">from</span> os.path <span class="hljs-keyword">import</span> exists; script, dataf, newf = argv
+
+data = <span class="hljs-built_in">open</span>(dataf).read()
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;the datafile is <span class="hljs-subst">&#123;<span class="hljs-built_in">len</span>(data)&#125;</span> bytes long&quot;</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;does the newfile file exist? <span class="hljs-subst">&#123;exists(newf)&#125;</span>&quot;</span>)
+
+tar = <span class="hljs-built_in">open</span>(newf, <span class="hljs-string">&#x27;w&#x27;</span>); tar.write(data); tar.close()
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Copied file successfully !&quot;</span>)
+
+<span class="hljs-comment"># f = open(filename).read()</span>
+<span class="hljs-comment"># ...</span>
+<span class="hljs-comment"># f.close()</span>
+
+<span class="hljs-comment"># AttributeError: &#x27;str&#x27; object has no attribute &#x27;close&#x27;</span>
+
+<span class="hljs-comment"># here we can easily see the error information !</span>
+<span class="hljs-comment"># because I can&#x27;t distinguish the difference between &quot;files&quot; and &quot;file variables&quot; !</span></code></pre></div>
+<div class="hljs"><pre><code class="hljs livecodeserver"><span class="hljs-keyword">the</span> datafile is <span class="hljs-number">17</span> <span class="hljs-keyword">bytes</span> <span class="hljs-keyword">long</span>
+does <span class="hljs-keyword">the</span> newfile <span class="hljs-built_in">file</span> exist? True
+Copied <span class="hljs-built_in">file</span> successfully !</code></pre></div>
+<blockquote>
+<p>17.4 testin file</p>
+</blockquote>
+<div class="hljs"><pre><code class="hljs ada">THIS <span class="hljs-keyword">IS</span> <span class="hljs-keyword">FOR</span> TEST</code></pre></div>
+<blockquote>
+<p>17.4 testout file</p>
+</blockquote>
+<div class="hljs"><pre><code class="hljs ada">THIS <span class="hljs-keyword">IS</span> <span class="hljs-keyword">FOR</span> TEST</code></pre></div>
+
+<h2 id="18-1-重定义print函数使其同时打印多个参数"><a href="#18-1-重定义print函数使其同时打印多个参数" class="headerlink" title="18.1 重定义print函数使其同时打印多个参数"></a>18.1 重定义print函数使其同时打印多个参数</h2><div class="hljs"><pre><code class="hljs python"><span class="hljs-comment"># this one is like your scripts with argv</span>
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">print_two</span>(<span class="hljs-params">*args</span>):
+    arg1, arg2 = args
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;arg1: <span class="hljs-subst">&#123;arg1&#125;</span>, arg2: <span class="hljs-subst">&#123;arg2&#125;</span>&quot;</span>)
+    
+<span class="hljs-comment"># ok, that *args is actually pointless, we can just do this</span>
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">print_two_again</span>(<span class="hljs-params">arg1, arg2</span>):
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;arg1: <span class="hljs-subst">&#123;arg1&#125;</span>, arg2: <span class="hljs-subst">&#123;arg2&#125;</span>&quot;</span>)
+    
+<span class="hljs-comment"># this just takes one argument</span>
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">print_one</span>(<span class="hljs-params">arg1</span>):
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;arg1: <span class="hljs-subst">&#123;arg1&#125;</span>&quot;</span>)
+
+<span class="hljs-comment"># this one takes no argument</span>
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">print_none</span>():
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;I got nothing.&quot;</span>) 
+    
+print_two(<span class="hljs-string">&quot;hello&quot;</span>, <span class="hljs-string">&quot;dear&quot;</span>)
+print_two_again(<span class="hljs-string">&quot;hello&quot;</span>, <span class="hljs-string">&quot;baby&quot;</span>)
+print_one(<span class="hljs-string">&quot;world&quot;</span>)
+print_none()   
+
+<span class="hljs-comment"># arg1, arg2 = args</span>
+<span class="hljs-comment"># ValueError: not enough values to unpack (expected 2, got 1)</span>
+<span class="hljs-comment"># error from the function : print_two(&quot;hello&quot;)</span>
+<span class="hljs-comment"># I forgot to take out two values !</span></code></pre></div>
+<div class="hljs"><pre><code class="hljs yaml"><span class="hljs-attr">arg1:</span> <span class="hljs-string">hello,</span> <span class="hljs-attr">arg2:</span> <span class="hljs-string">dear</span>
+<span class="hljs-attr">arg1:</span> <span class="hljs-string">hello,</span> <span class="hljs-attr">arg2:</span> <span class="hljs-string">baby</span>
+<span class="hljs-attr">arg1:</span> <span class="hljs-string">world</span>
+<span class="hljs-string">I</span> <span class="hljs-string">got</span> <span class="hljs-string">nothing.</span></code></pre></div>
+
+<h3 id="18-2-自定义print函数同时打印多个字符串"><a href="#18-2-自定义print函数同时打印多个字符串" class="headerlink" title="18.2 自定义print函数同时打印多个字符串"></a>18.2 自定义print函数同时打印多个字符串</h3><div class="hljs"><pre><code class="hljs python">
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">printssss</span>(<span class="hljs-params">*args</span>):
+    a, b, c, d = args
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;a: <span class="hljs-subst">&#123;a&#125;</span>, b: <span class="hljs-subst">&#123;b&#125;</span>, c: <span class="hljs-subst">&#123;c&#125;</span>, d: <span class="hljs-subst">&#123;d&#125;</span>&quot;</span>)
+
+<span class="hljs-comment"># show the difference of the two kinds of function</span>
+
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;print(&quot;I&quot;, &quot;love&quot;, &quot;you&quot;, &quot;baby&quot;)&#x27;</span>)  
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;I&quot;</span>, <span class="hljs-string">&quot;love&quot;</span>, <span class="hljs-string">&quot;you&quot;</span>, <span class="hljs-string">&quot;baby&quot;</span>)
+
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;printssss(&quot;I&quot;, &quot;love&quot;, &quot;you&quot;, &quot;baby&quot;)&#x27;</span>)
+printssss(<span class="hljs-string">&quot;I&quot;</span>, <span class="hljs-string">&quot;love&quot;</span>, <span class="hljs-string">&quot;you&quot;</span>, <span class="hljs-string">&quot;baby&quot;</span>)</code></pre></div>
+<div class="hljs"><pre><code class="hljs stylus"><span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">&quot;I&quot;</span>, <span class="hljs-string">&quot;love&quot;</span>, <span class="hljs-string">&quot;you&quot;</span>, <span class="hljs-string">&quot;baby&quot;</span>)</span></span>
+I love you baby
+<span class="hljs-function"><span class="hljs-title">printssss</span><span class="hljs-params">(<span class="hljs-string">&quot;I&quot;</span>, <span class="hljs-string">&quot;love&quot;</span>, <span class="hljs-string">&quot;you&quot;</span>, <span class="hljs-string">&quot;baby&quot;</span>)</span></span>
+<span class="hljs-selector-tag">a</span>: I, <span class="hljs-selector-tag">b</span>: love, c: you, d: baby</code></pre></div>
+
+<h2 id="19-1-定义新的函数通过多种方式打印不同参数"><a href="#19-1-定义新的函数通过多种方式打印不同参数" class="headerlink" title="19.1 定义新的函数通过多种方式打印不同参数"></a>19.1 定义新的函数通过多种方式打印不同参数</h2><div class="hljs"><pre><code class="hljs python">
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">cheese_and_crackers</span>(<span class="hljs-params">cheese_count, boxes_of_crackers</span>):
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;You have <span class="hljs-subst">&#123;cheese_count&#125;</span> cheeses!&quot;</span>) 
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;You have <span class="hljs-subst">&#123;boxes_of_crackers&#125;</span> boxes of crackers!&quot;</span>) 
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Man that&#x27;s enough for a party!&quot;</span>) 
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Get a blanket.\n&quot;</span>)
+    
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;We can just give the function numbers directly: &quot;</span>)
+cheese_and_crackers(<span class="hljs-number">20</span>, <span class="hljs-number">30</span>)
+
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;OR, we can use variables from our script: &quot;</span>)
+amounta = <span class="hljs-number">10</span>
+amountb = <span class="hljs-number">50</span>
+cheese_and_crackers(amounta, amountb)
+
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;We can even do math inside too: &quot;</span>)
+cheese_and_crackers(<span class="hljs-number">10</span> + <span class="hljs-number">20</span>, <span class="hljs-number">5</span> + <span class="hljs-number">6</span>)
+
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;And we can combine the two, variables and math: &quot;</span>)
+cheese_and_crackers(amounta + <span class="hljs-number">6000</span>, amountb + <span class="hljs-number">1000</span>)</code></pre></div>
+<div class="hljs"><pre><code class="hljs vbnet">We can just give the <span class="hljs-keyword">function</span> numbers directly:
+You have <span class="hljs-number">20</span> cheeses!
+You have <span class="hljs-number">30</span> boxes <span class="hljs-keyword">of</span> crackers!
+Man that<span class="hljs-comment">&#x27;s enough for a party!</span>
+<span class="hljs-keyword">Get</span> a blanket.
+
+<span class="hljs-built_in">OR</span>, we can use variables <span class="hljs-keyword">from</span> our script:
+You have <span class="hljs-number">10</span> cheeses!
+You have <span class="hljs-number">50</span> boxes <span class="hljs-keyword">of</span> crackers!
+Man that<span class="hljs-comment">&#x27;s enough for a party!</span>
+<span class="hljs-keyword">Get</span> a blanket.
+
+We can even <span class="hljs-keyword">do</span> math inside too:
+You have <span class="hljs-number">30</span> cheeses!
+You have <span class="hljs-number">11</span> boxes <span class="hljs-keyword">of</span> crackers!
+Man that<span class="hljs-comment">&#x27;s enough for a party!</span>
+<span class="hljs-keyword">Get</span> a blanket.
+
+<span class="hljs-built_in">And</span> we can combine the two, variables <span class="hljs-built_in">and</span> math:
+You have <span class="hljs-number">6010</span> cheeses!
+You have <span class="hljs-number">1050</span> boxes <span class="hljs-keyword">of</span> crackers!
+Man that<span class="hljs-comment">&#x27;s enough for a party!</span>
+<span class="hljs-keyword">Get</span> a blanket.</code></pre></div>
+
+<h3 id="19-2-使用函数定义四则运算"><a href="#19-2-使用函数定义四则运算" class="headerlink" title="19.2 使用函数定义四则运算"></a>19.2 使用函数定义四则运算</h3><div class="hljs"><pre><code class="hljs python">
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">calculation</span>(<span class="hljs-params">a, b</span>):
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;<span class="hljs-subst">&#123;a&#125;</span> + <span class="hljs-subst">&#123;b&#125;</span> = &quot;</span>, a + b)
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;<span class="hljs-subst">&#123;a&#125;</span> - <span class="hljs-subst">&#123;b&#125;</span> = &quot;</span>, a - b)
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;<span class="hljs-subst">&#123;a&#125;</span> * <span class="hljs-subst">&#123;b&#125;</span> = &quot;</span>, a * b)
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;<span class="hljs-subst">&#123;a&#125;</span> / <span class="hljs-subst">&#123;b&#125;</span> = &quot;</span>, a / b)
+    
+a = <span class="hljs-built_in">int</span>(<span class="hljs-built_in">input</span>(<span class="hljs-string">&quot;please enter the first number: &quot;</span>))
+b = <span class="hljs-built_in">int</span>(<span class="hljs-built_in">input</span>(<span class="hljs-string">&quot;please enter another one: &quot;</span>))
+
+calculation(a, b)</code></pre></div>
+<div class="hljs"><pre><code class="hljs apache"><span class="hljs-attribute">please</span> enter the first number: <span class="hljs-number">666</span>
+<span class="hljs-attribute">please</span> enter another one: <span class="hljs-number">999</span>
+<span class="hljs-attribute">666</span> + <span class="hljs-number">999</span> =  <span class="hljs-number">1665</span>
+<span class="hljs-attribute">666</span> - <span class="hljs-number">999</span> =  -<span class="hljs-number">333</span>
+<span class="hljs-attribute">666</span> * <span class="hljs-number">999</span> =  <span class="hljs-number">665334</span>
+<span class="hljs-attribute">666</span> / <span class="hljs-number">999</span> =  <span class="hljs-number">0</span>.<span class="hljs-number">6666666666666666</span></code></pre></div>
+
+<h3 id="19-3-复制文件并在新文件中加入字符串"><a href="#19-3-复制文件并在新文件中加入字符串" class="headerlink" title="19.3 复制文件并在新文件中加入字符串"></a>19.3 复制文件并在新文件中加入字符串</h3><blockquote>
+<p>python3  ex19.3.py  txt1  txt2</p>
+</blockquote>
+<div class="hljs"><pre><code class="hljs python">
+<span class="hljs-comment"># function TEST</span>
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">TEST</span>(<span class="hljs-params">str1, str2</span>):
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;#&quot;</span> * <span class="hljs-number">50</span>) <span class="hljs-comment">#####</span>
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;this is the combination for str1 &amp;&amp; str2 : &quot;</span>)
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;<span class="hljs-subst">&#123;str1&#125;</span>&quot;</span>)
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;<span class="hljs-subst">&#123;str2&#125;</span>&quot;</span>)
+
+x = <span class="hljs-string">&#x27;\n&#x27;</span>
+str1 = <span class="hljs-string">&quot;HERE YOU CAN SEE WHAT I WANNA SAY !&quot;</span>
+str2 = <span class="hljs-string">&quot;THERE IS NO ANY CONTENT FOR THE PAGE!&quot;</span>
+
+<span class="hljs-comment"># function copy</span>
+<span class="hljs-keyword">from</span> sys <span class="hljs-keyword">import</span> argv
+script, file1, file2 = argv
+
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;ready to copy <span class="hljs-subst">&#123;file1&#125;</span> to <span class="hljs-subst">&#123;file2&#125;</span>....&quot;</span>)
+
+data = <span class="hljs-built_in">open</span>(file1).read()
+
+<span class="hljs-comment"># show what is in the file1 and add what you wanna say</span>
+TEST(str1, str2)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;file1 shows that: <span class="hljs-subst">&#123;x&#125;</span><span class="hljs-subst">&#123;data&#125;</span>&quot;</span>)
+y = <span class="hljs-built_in">input</span>(<span class="hljs-string">f&quot;here you can write to file2 <span class="hljs-subst">&#123;x&#125;</span>&quot;</span>)
+plusdata = data + str1 + x + str2 + x + y
+
+qiao = <span class="hljs-built_in">open</span>(file2, <span class="hljs-string">&#x27;w&#x27;</span>)
+qiao.write(plusdata)    
+qiao.close()  
+<span class="hljs-comment"># attention ! we need to close the &#x27;qiao&#x27;</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;copy successfully !&quot;</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;#&quot;</span> * <span class="hljs-number">50</span>) <span class="hljs-comment">#####</span></code></pre></div>
+<div class="hljs"><pre><code class="hljs clean">ready to copy txt1 to txt2....
+##################################################
+this is the combination for str1 &amp;&amp; str2 :
+HERE YOU CAN SEE WHAT I WANNA SAY !
+THERE IS NO ANY CONTENT FOR THE PAGE!
+file1 shows that:
+Do you still remember the first time I met you ?
+
+here you can write to file2
+I miss u
+copy successfully !
+##################################################</code></pre></div>
+<blockquote>
+<p>19.3 open new txt2:</p>
+</blockquote>
+<div class="hljs"><pre><code class="hljs css">Do you still remember the first <span class="hljs-selector-tag">time</span> <span class="hljs-selector-tag">I</span> met you ?
+HERE YOU CAN SEE WHAT <span class="hljs-selector-tag">I</span> WANNA SAY !
+THERE IS NO ANY <span class="hljs-attribute">CONTENT</span> FOR THE PAGE!
+<span class="hljs-selector-tag">I</span> miss u</code></pre></div>
+<blockquote>
+<p>txt1</p>
+</blockquote>
+<div class="hljs"><pre><code class="hljs coq">Do you still <span class="hljs-built_in">remember</span> the <span class="hljs-built_in">first</span> <span class="hljs-built_in">time</span> I met you ?</code></pre></div>
+<blockquote>
+<p>txt2</p>
+</blockquote>
+<div class="hljs"><pre><code class="hljs pgsql"><span class="hljs-keyword">Do</span> you still remember the first <span class="hljs-type">time</span> I met you ?
+HERE YOU CAN SEE WHAT I WANNA SAY !
+THERE <span class="hljs-keyword">IS</span> <span class="hljs-keyword">NO</span> <span class="hljs-keyword">ANY</span> CONTENT <span class="hljs-keyword">FOR</span> THE PAGE!
+yes , come <span class="hljs-keyword">on</span> !</code></pre></div>
+
+<h2 id="20-1-定义函数使其打印文本内容且显示行数"><a href="#20-1-定义函数使其打印文本内容且显示行数" class="headerlink" title="20.1 定义函数使其打印文本内容且显示行数"></a>20.1 定义函数使其打印文本内容且显示行数</h2><div class="hljs"><pre><code class="hljs python"><span class="hljs-keyword">from</span> sys <span class="hljs-keyword">import</span> argv
+
+script, input_file = argv
+
+<span class="hljs-comment"># function to print input_file</span>
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">print_all</span>(<span class="hljs-params">f</span>):
+    <span class="hljs-built_in">print</span>(f.read())
+    
+<span class="hljs-comment"># function to move the cursor to the start of the file</span>
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">rewind</span>(<span class="hljs-params">f</span>):
+    f.seek(<span class="hljs-number">0</span>)
+
+<span class="hljs-comment"># function to print line count (number) and file</span>
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">print_a_line</span>(<span class="hljs-params">line_count, f</span>):
+    <span class="hljs-built_in">print</span>(line_count, f.readline())
+    
+current_file = <span class="hljs-built_in">open</span>(input_file)
+
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;first let&#x27;s print the whole file:\n&quot;</span>)
+
+print_all(current_file)
+
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;now let&#x27;s rewind, kind of like a tape.&quot;</span>)
+
+rewind(current_file)
+
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;let&#x27;s print three lines:&quot;</span>)
+
+current_line = <span class="hljs-number">1</span>
+print_a_line(current_line, current_file)
+
+current_line = current_line + <span class="hljs-number">1</span>
+print_a_line(current_line, current_file)
+
+current_line = current_line + <span class="hljs-number">1</span>
+print_a_line(current_line, current_file)</code></pre></div>
+<div class="hljs"><pre><code class="hljs vbnet">first <span class="hljs-keyword">let</span><span class="hljs-comment">&#x27;s print the whole file:</span>
+
+THIS <span class="hljs-built_in">IS</span> JUST <span class="hljs-keyword">FOR</span> TEST
+THIS <span class="hljs-built_in">IS</span> JUST <span class="hljs-keyword">FOR</span> TEST
+THIS <span class="hljs-built_in">IS</span> JUST <span class="hljs-keyword">FOR</span> TEST
+
+now <span class="hljs-keyword">let</span><span class="hljs-comment">&#x27;s rewind, kind of like a tape.</span>
+<span class="hljs-keyword">let</span><span class="hljs-comment">&#x27;s print three lines:</span>
+<span class="hljs-number">1</span> THIS <span class="hljs-built_in">IS</span> JUST <span class="hljs-keyword">FOR</span> TEST
+
+<span class="hljs-number">2</span> THIS <span class="hljs-built_in">IS</span> JUST <span class="hljs-keyword">FOR</span> TEST
+
+<span class="hljs-number">3</span> THIS <span class="hljs-built_in">IS</span> JUST <span class="hljs-keyword">FOR</span> TEST</code></pre></div>
+
+<h3 id="20-2-定义函数复制文本参数且多行打印"><a href="#20-2-定义函数复制文本参数且多行打印" class="headerlink" title="20.2 定义函数复制文本参数且多行打印"></a>20.2 定义函数复制文本参数且多行打印</h3><div class="hljs"><pre><code class="hljs python"><span class="hljs-keyword">from</span> sys <span class="hljs-keyword">import</span> argv
+
+script, infile = argv
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">prints</span>(<span class="hljs-params">tar5</span>):
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;infile * 5 = &quot;</span>)
+    <span class="hljs-built_in">print</span>(tar5 * <span class="hljs-number">5</span>)
+
+<span class="hljs-string">&#x27;&#x27;&#x27;</span>
+<span class="hljs-string">def inputs():</span>
+<span class="hljs-string">    input(&quot;here you can input one number: \n&quot;)</span>
+<span class="hljs-string">    print(&quot;write successfully !&quot;)</span>
+<span class="hljs-string">&#x27;&#x27;&#x27;</span>
+
+tar = <span class="hljs-built_in">open</span>(infile).read()
+<span class="hljs-comment"># something = inputs()</span>
+x = <span class="hljs-string">&#x27;\n&#x27;</span>
+tarfive = tar + x
+prints(tarfive)
+
+<span class="hljs-comment">## there I met something wrong !</span></code></pre></div>
+<div class="hljs"><pre><code class="hljs sas"><span class="hljs-keyword">infile</span> <span class="hljs-comment">* 5 =</span>
+<span class="hljs-comment">THIS IS JUST FOR TEST</span>
+<span class="hljs-comment">THIS IS JUST FOR TEST</span>
+<span class="hljs-comment">THIS IS JUST FOR TEST</span>
+<span class="hljs-comment"></span>
+<span class="hljs-comment">THIS IS JUST FOR TEST</span>
+<span class="hljs-comment">THIS IS JUST FOR TEST</span>
+<span class="hljs-comment">THIS IS JUST FOR TEST</span>
+<span class="hljs-comment"></span>
+<span class="hljs-comment">THIS IS JUST FOR TEST</span>
+<span class="hljs-comment">THIS IS JUST FOR TEST</span>
+<span class="hljs-comment">THIS IS JUST FOR TEST</span>
+<span class="hljs-comment"></span>
+<span class="hljs-comment">THIS IS JUST FOR TEST</span>
+<span class="hljs-comment">THIS IS JUST FOR TEST</span>
+<span class="hljs-comment">THIS IS JUST FOR TEST</span>
+<span class="hljs-comment"></span>
+<span class="hljs-comment">THIS IS JUST FOR TEST</span>
+<span class="hljs-comment">THIS IS JUST FOR TEST</span>
+<span class="hljs-comment">THIS IS JUST FOR TEST</span>
+<span class="hljs-comment"></span></code></pre></div>
+
+<p><em>教程参考：learn python the hard way</em></p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/python/">python</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/python/">python</a>
+                    
+                  </div>
+                
+              </div>
+              <p class="note note-warning">
+                <strong>本文作者: </strong><a href="/">Uncle-yang</a> <br>
+                <strong>本文链接: </strong><a href="https://uncleleiy.github.io/2023/06/25/blog-6-python/">https://uncleleiy.github.io/2023/06/25/blog-6-python/</a> <br>
+                <strong>版权声明: </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                   </p>
+                   
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/06/28/blog-7-shell-python-scripts/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">shell+python 作图脚本</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/06/18/blog-5-wsl-debug/">
+                        <span class="hidden-mobile">wsl 备份问题</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+
+
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+    
+
+      
+
+          <!-- 在网页底部添加本站已运行的时间 -->
+          <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+          <script>
+            var now = new Date();
+            function createtime() {
+              var grt = new Date("06/06/2023 12:00:00");//在此处修改你的建站时间
+              now.setTime(now.getTime() + 250);
+              days = (now - grt) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+              hours = (now - grt) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+              if (String(hnum).length == 1) { hnum = "0" + hnum; } minutes = (now - grt) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);
+              mnum = Math.floor(minutes); if (String(mnum).length == 1) { mnum = "0" + mnum; }
+              seconds = (now - grt) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+              snum = Math.round(seconds); if (String(snum).length == 1) { snum = "0" + snum; }
+              document.getElementById("timeDate").innerHTML = "小站已勉强存活 " + dnum + " 天 ";
+              document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+            }
+            setInterval("createtime()", 250);
+          </script>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/js/clipboard-use.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '#post-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 0,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "python 学习记录(11-20)&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 120,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "left",
+      visible: "hover",
+      
+      icon: " ❡ "
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      searchFunc(path, 'local-search-input', 'local-search-result');
+      this.onclick = null
+    }
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+</body>
+</html>
