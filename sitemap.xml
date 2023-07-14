@@ -11,7 +11,97 @@
   </url>
   
   <url>
+    <loc>https://uncleleiy.github.io/2023/06/08/blog-2-linux-vasp/</loc>
+    
+    <lastmod>2023-07-14</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://uncleleiy.github.io/2023/06/10/blog-3-hexo-debug/</loc>
+    
+    <lastmod>2023-07-14</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://uncleleiy.github.io/2023/06/15/blog-4-python/</loc>
+    
+    <lastmod>2023-07-14</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://uncleleiy.github.io/2023/06/18/blog-5-wsl-debug/</loc>
+    
+    <lastmod>2023-07-14</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://uncleleiy.github.io/2023/06/25/blog-6-python/</loc>
+    
+    <lastmod>2023-07-14</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://uncleleiy.github.io/2023/06/28/blog-7-shell-python-scripts/</loc>
+    
+    <lastmod>2023-07-14</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://uncleleiy.github.io/2023/06/30/blog-8-shell-scripts/</loc>
+    
+    <lastmod>2023-07-14</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://uncleleiy.github.io/2023/07/02/blog-9-shell-scripts/</loc>
+    
+    <lastmod>2023-07-14</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://uncleleiy.github.io/2023/07/05/blog-10-textbooks/</loc>
+    
+    <lastmod>2023-07-14</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://uncleleiy.github.io/2023/07/09/blog-C-7/</loc>
+    
+    <lastmod>2023-07-14</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://uncleleiy.github.io/2023/07/10/blog-C-8/</loc>
     
     <lastmod>2023-07-14</lastmod>
     
@@ -22,16 +112,7 @@
   <url>
     <loc>https://uncleleiy.github.io/2023/07/11/blog-C-9/</loc>
     
-    <lastmod>2023-07-12</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://uncleleiy.github.io/2023/07/12/blog-python22/</loc>
-    
-    <lastmod>2023-07-12</lastmod>
+    <lastmod>2023-07-14</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -40,97 +121,16 @@
   <url>
     <loc>https://uncleleiy.github.io/2023/07/12/blog-python21/</loc>
     
-    <lastmod>2023-07-12</lastmod>
+    <lastmod>2023-07-14</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://uncleleiy.github.io/2023/07/10/blog-C-8/</loc>
+    <loc>https://uncleleiy.github.io/2023/07/12/blog-python22/</loc>
     
-    <lastmod>2023-07-12</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://uncleleiy.github.io/2023/07/09/blog-C-7/</loc>
-    
-    <lastmod>2023-07-12</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://uncleleiy.github.io/2023/07/05/blog-10-textbooks/</loc>
-    
-    <lastmod>2023-07-12</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://uncleleiy.github.io/2023/06/08/blog-2-linux-vasp/</loc>
-    
-    <lastmod>2023-07-12</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://uncleleiy.github.io/2023/06/10/blog-3-hexo-debug/</loc>
-    
-    <lastmod>2023-07-12</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://uncleleiy.github.io/2023/06/15/blog-4-python/</loc>
-    
-    <lastmod>2023-07-12</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://uncleleiy.github.io/2023/06/18/blog-5-wsl-debug/</loc>
-    
-    <lastmod>2023-07-12</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://uncleleiy.github.io/2023/06/28/blog-7-shell-python-scripts/</loc>
-    
-    <lastmod>2023-07-12</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://uncleleiy.github.io/2023/06/30/blog-8-shell-scripts/</loc>
-    
-    <lastmod>2023-07-12</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://uncleleiy.github.io/2023/07/02/blog-9-shell-scripts/</loc>
-    
-    <lastmod>2023-07-12</lastmod>
+    <lastmod>2023-07-14</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -146,7 +146,7 @@
   </url>
   
   <url>
-    <loc>https://uncleleiy.github.io/categories/index.html</loc>
+    <loc>https://uncleleiy.github.io/about/index.html</loc>
     
     <lastmod>2023-07-10</lastmod>
     
@@ -155,7 +155,7 @@
   </url>
   
   <url>
-    <loc>https://uncleleiy.github.io/about/index.html</loc>
+    <loc>https://uncleleiy.github.io/categories/index.html</loc>
     
     <lastmod>2023-07-10</lastmod>
     
@@ -214,13 +214,6 @@
   </url>
   
   <url>
-    <loc>https://uncleleiy.github.io/tags/hexo/</loc>
-    <lastmod>2023-07-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://uncleleiy.github.io/tags/linux/</loc>
     <lastmod>2023-07-14</lastmod>
     <changefreq>weekly</changefreq>
@@ -229,6 +222,13 @@
   
   <url>
     <loc>https://uncleleiy.github.io/tags/vasp/</loc>
+    <lastmod>2023-07-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://uncleleiy.github.io/tags/hexo/</loc>
     <lastmod>2023-07-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -279,14 +279,14 @@
   </url>
   
   <url>
-    <loc>https://uncleleiy.github.io/categories/debug/</loc>
+    <loc>https://uncleleiy.github.io/categories/linux/</loc>
     <lastmod>2023-07-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://uncleleiy.github.io/categories/linux/</loc>
+    <loc>https://uncleleiy.github.io/categories/debug/</loc>
     <lastmod>2023-07-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
