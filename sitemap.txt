@@ -1,3 +1,5 @@
+https://uncleleiy.github.io/categories/index.html
+https://uncleleiy.github.io/about/index.html
 https://uncleleiy.github.io/2023/06/06/blog-1-markdown/
 https://uncleleiy.github.io/2023/06/08/blog-2-linux-vasp/
 https://uncleleiy.github.io/2023/06/10/blog-3-hexo-debug/
@@ -14,8 +16,6 @@ https://uncleleiy.github.io/2023/07/11/blog-C-9/
 https://uncleleiy.github.io/2023/07/12/blog-python21/
 https://uncleleiy.github.io/2023/07/12/blog-python22/
 https://uncleleiy.github.io/navigate/index.html
-https://uncleleiy.github.io/about/index.html
-https://uncleleiy.github.io/categories/index.html
 https://uncleleiy.github.io/contact/index.html
 https://uncleleiy.github.io/friends/index.html
 https://uncleleiy.github.io/tags/index.html
