@@ -1,3 +1,4 @@
+https://uncleleiy.github.io/2023/07/21/blog-software-installation/
 https://uncleleiy.github.io/categories/index.html
 https://uncleleiy.github.io/about/index.html
 https://uncleleiy.github.io/2023/06/06/blog-1-markdown/
@@ -29,6 +30,8 @@ https://uncleleiy.github.io/tags/python/
 https://uncleleiy.github.io/tags/wsl/
 https://uncleleiy.github.io/tags/shell/
 https://uncleleiy.github.io/tags/C/
+https://uncleleiy.github.io/tags/software/
+https://uncleleiy.github.io/tags/installation/
 https://uncleleiy.github.io/categories/grammar/
 https://uncleleiy.github.io/categories/textbooks/
 https://uncleleiy.github.io/categories/linux/
@@ -36,3 +39,4 @@ https://uncleleiy.github.io/categories/debug/
 https://uncleleiy.github.io/categories/python/
 https://uncleleiy.github.io/categories/scripts/
 https://uncleleiy.github.io/categories/C/
+https://uncleleiy.github.io/categories/software/
