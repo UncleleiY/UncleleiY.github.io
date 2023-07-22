@@ -23,7 +23,7 @@
                 <meta name="author" content="Uncle_yang">
                 <meta name="keywords" content="知识、管理">
                 <title>
-                    C++ 学习记录(1) - 诗意の理性
+                    VASP 学习笔记 - 诗意の理性
                 </title>
 
                 <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
@@ -195,8 +195,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2023-07-09 21:00" pubdate>
-        2023年7月9日 晚上
+      <time datetime="2023-07-22 22:00" pubdate>
+        2023年7月22日 晚上
       </time>
     </span>
   
@@ -207,7 +207,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      775 字
+      2.5k 字
     </span>
   
 
@@ -217,7 +217,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      14
+      27
        分钟
     </span>
   
@@ -255,178 +255,209 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto" id="post">
             <!-- SEO header -->
-            <h1 style="display: none">C++ 学习记录(1)</h1>
+            <h1 style="display: none">VASP 学习笔记</h1>
             
             <div class="markdown-body" id="post-body">
-              <h1 id="C-学习笔记"><a href="#C-学习笔记" class="headerlink" title="C++学习笔记"></a>C++学习笔记</h1><h2 id="number-1-show-your-name-and-address-directly"><a href="#number-1-show-your-name-and-address-directly" class="headerlink" title="//number 1: show your name and address directly;"></a>//number 1: show your name and address directly;</h2><div class="hljs"><pre><code class="hljs powershell">/*
-<span class="hljs-comment">#include &lt;iostream&gt;</span>
-<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;
-int main()
-&#123;
-	cout &lt;&lt; <span class="hljs-string">&quot;enter your name:XX&quot;</span> &lt;&lt; endl;
-	cout &lt;&lt; <span class="hljs-string">&quot;enter your address:YY&quot;</span> &lt;&lt; endl;
-	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
-&#125;
-*/
- //第一题ok；</code></pre></div>
+              <h1 id="VASP学习总结"><a href="#VASP学习总结" class="headerlink" title="VASP学习总结"></a>VASP学习总结</h1><h2 id="1-VASP简介"><a href="#1-VASP简介" class="headerlink" title="1.VASP简介"></a>1.VASP简介</h2><p>VASP是基于密度泛函理论且使用平面波赝势方法进行第一性原理计算的软件，适用领域包括：</p>
+<ul>
+<li><p>周期性边界条件（或超原胞模型）处理原子、分子、团簇、薄膜等</p>
+</li>
+<li><p>计算材料的结构参数（晶格常数、键长、键角、原子位置）</p>
+</li>
+<li><p>计算材料力学性质（弹性常数、体弹性模量）</p>
+</li>
+<li><p>计算材料的电子结构（能带、能级、、电子态密度、电荷密度等）</p>
+</li>
+<li><p>计算材料的光学、磁学、晶格动力学性质</p>
+</li>
+</ul>
+<h2 id="2-VASP输入文件"><a href="#2-VASP输入文件" class="headerlink" title="2.VASP输入文件"></a>2.VASP输入文件</h2><ul>
+<li><p>INCAR(<a href="zotero://select/library/items/2SS7RBW4">“VASP侯柱峰手册中文版”, p. 6</a>)</p>
+</li>
+<li><p>POSCAR(<a href="zotero://select/library/items/2SS7RBW4">“VASP侯柱峰手册中文版”, p. 7</a>)</p>
+</li>
+<li><p>POTCAR (<a href="zotero://select/library/items/2SS7RBW4">“VASP侯柱峰手册中文版”, p. 8</a>)</p>
+</li>
+<li><p>KPOINTS (<a href="zotero://select/library/items/2SS7RBW4">“VASP侯柱峰手册中文版”, p. 10</a>)</p>
+</li>
+</ul>
+<blockquote>
+<p><strong>INCAR（控制软件进行何种性质的计算）</strong></p>
+<ul>
+<li><p>SYSTEM：定义所计算的体系</p>
+</li>
+<li><p>ISTART,ICHARG,INIWAV：定义如何输入或构造初始电荷密度和波函数</p>
+</li>
+<li><p>定义电子的优化</p>
+<blockquote>
+<p>ENCUT,ENAUG：平面波切断动能和缀加电荷的切断值</p>
+<p>ALGO,IALGO,LDIAG：电子部分优化的方法</p>
+<p>IMIX,AMIX,AMIN,BMIX,WC,INIMIX,MIXPRE,MAXMIX：电荷密度混合的方法</p>
+<p>NELM,NELMIN,NELMDL,EDIFF：自洽迭代步数和收敛标准</p>
+</blockquote>
+</li>
+<li><p>定义离子实或原子的优化</p>
+<blockquote>
+<p>IBRION,NFREE,POTIM,NSW：原子位置优化方法、移动步长和步数</p>
+<p>SMASS,TEBEG,TEEND,POMASS,NBLOCK,KBLOCK,PSTRESS：分子动力学相关参数</p>
+<p>EDIFFG：离子弛豫收敛标准</p>
+</blockquote>
+</li>
+<li><p>定义态密度的积分方法和参数</p>
+<blockquote>
+<p>ISMEAR,SIGMA：smearing方法和参数</p>
+<p>EMIN,EMAX,NEDOS：计算态密度时能量范围和点数</p>
+<p>RWIGS,LORBIT：计算分波态密度的参数</p>
+</blockquote>
+</li>
+<li><p>其他参数</p>
+<blockquote>
+<p>PREC：计算精度控制</p>
+<p>ISPIN,MAGMOM,NUPDOWN：磁性计算</p>
+<p>GGA,VOSKOWN：交换关联函数</p>
+<p>LELF,LVTOT：计算ELF和总的局域势</p>
+<p>ISIF：结构优化参数</p>
+</blockquote>
+</li>
+<li><p>备注：一般要设置的关键词：SYSTEM,ENCUT,ISTART,ICHARG,PREC,ISMEAR,SIGMA；对计算不同的性质，再另外增加相应的关键词。</p>
+</li>
+</ul>
+<p><strong>POSCAR（描述计算体系的晶胞参数及原子位置）</strong></p>
+<ul>
+<li><p>Si-fcc 定义注释行</p>
+</li>
+<li><p>1.0 基矢缩放系数</p>
+</li>
+<li><p>晶格基矢坐标（晶胞有多大）</p>
+</li>
+<li><p>1 原子个数</p>
+</li>
+<li><p>0 0 0 坐标系（笛卡尔还是直接）</p>
+</li>
+<li><p>0 0 0 原子的初始位置</p>
+</li>
+</ul>
+<p><strong>POTCAR（包含体系中各类元素的赝势）</strong></p>
+<ul>
+<li><p>LDA、GGA（PW91、PBE）</p>
+</li>
+<li><p>根据处理价电子的数目区分半芯态赝势</p>
+</li>
+<li><p>根据方法分为超软赝势（USPP）和投影缀加波赝势（PAW）</p>
+</li>
+<li><p>赝势的选取与计算体系相关联，参考(<a href="zotero://select/library/items/2SS7RBW4">“VASP侯柱峰手册中文版”, p. 7</a>)</p>
+</li>
+</ul>
+<p><strong>KPOINTS（描述不可约布里渊区中K点取样）</strong></p>
+<ul>
+<li><p><strong>【自动网格取样方法】</strong></p>
+</li>
+<li><p>automatic generation 定义注释行</p>
+</li>
+<li><p>0 自动产生k点的参数值</p>
+</li>
+<li><p>Monhkorst-Pack</p>
+</li>
+<li><p>9 9 9 基矢方向上分割点数（一般是奇数）</p>
+</li>
+<li><p>0 0 0 是否移动网格点以及移动步长</p>
+</li>
+<li><p><strong>【能带计算line-mode】</strong></p>
+</li>
+<li><p>k-points along high symmetry lines</p>
+</li>
+<li><p>10 沿G-X特殊点之间产生的k点数目</p>
+</li>
+<li><p>Line-mode 程序自动产生k点</p>
+</li>
+<li><p>Reciprocal 各k点相对于倒格矢基矢</p>
+</li>
+<li><p>0 0 0  ！Gamma</p>
+</li>
+<li><p>0 0 0  ！X</p>
+</li>
+</ul>
+</blockquote>
+<h2 id="3-VASP输出文件"><a href="#3-VASP输出文件" class="headerlink" title="3.VASP输出文件"></a>3.VASP输出文件</h2><ul>
+<li><p>OUTCAR（包含计算得到的大部分信息：体积、总能、费米能级、总价电子数、倒格矢基矢、原子受力情况等）</p>
+</li>
+<li><p>CHG和CHGCAR （给出体系的电荷密度，CHG的精度略低，经过迭代后得到自洽的CHG和CHGCAR可以用来画图分析面电荷密度分布，计算能带结构和态密度时，所读入的电荷密度文件CHGCAR必须是经过迭代自洽的文件）</p>
+</li>
+<li><p>DOSCAR（给出计算体系的电子态密度-绝对值）</p>
+</li>
+<li><p>EIGENVAL（给当计算体系的本征值-绝对值）</p>
+</li>
+<li><p>WAVECAR（给出所计算体系的电子波函数，二进制文件，不可编辑）</p>
+</li>
+<li><p>OSZICAR（给出每次迭代离子移动的迭代步）</p>
+</li>
+<li><p>CONTCAR（记录离子弛豫时，每次移动后体系的晶格参数变化、在对体系进行弛豫或分子动力学计算时，最后得到的CONTCAR可以直接拷贝成POSCAR进行后续计算）</p>
+</li>
+<li><p>IBZKPT（给出不可约布里渊区K点的坐标)</p>
+</li>
+</ul>
+<h2 id="4-VASP参数设置"><a href="#4-VASP参数设置" class="headerlink" title="4.VASP参数设置"></a>4.VASP参数设置</h2><ul>
+<li><p>ENCUT（在进行任何性质的计算之前，需要进行ENCUT收敛性的测试，由此来确定一个合适的切断动能值，注意：循环的第一个值，一般取POTCAR中ENMAX中最大的那个值，循环间隔一般取50eV。另外，在对体系的变体积结构优化时，最好保证ENCUT是ENMAX的1.3倍）</p>
+</li>
+<li><p>PREC（PREC是控制计算精度最重要的一个参数，它决定了ENCUT、FFT网格、PORT的默认值，当要提高力和Stress tensor的计算精度时，可以采用High/Accurate，并手动设置ENCUT的值）</p>
+</li>
+<li><p>EDIFF（EDIFF是电子结构部分自洽迭代循环时，判断是否自洽的条件；若EDIFF=0，则进行NELM步迭代后停止）</p>
+</li>
+<li><p>EDIFFG（EDIFFG是控制离子部分的弛豫，注意：当EDIFFG为负数，才是用来控制离子弛豫时，离子或原子所受的力；若EDIFFG=0，则表示离子弛豫NSW步后停止）</p>
+</li>
+<li><p>ISTART和ICHARG（定义如何构建初始的波函数和电荷密度、读入上一次的波函数和电荷密度；计算能带和电子态密度时，一般设置ISTART=1，ICHARG=11；其他情况，一般设置ISTART=0，ICHARG=2；如果计算过程中断需要续算，一般设置ISTART=1，ICHARG=1，其他参数不用变）</p>
+</li>
+<li><p>GGA和VOSKOWN（GGA的选择需要与赝势的类型相一致，采用PW91的GGA需要设置VOSKOWN=1，其他情况使用程序默认值即可）</p>
+</li>
+<li><p>ISIF（用于控制结构参数的优化；当IBRION=0，其默认值为0，其他情况下为2）</p>
+</li>
+<li><p>ISMEAR（用来确定使用何种方法来设置每个波函数的部分占有数fnk，注意：在进行任何静态计算或态密度计算且K点数目大于4时，取ISMEAR=-5；当由于原胞较大而K点数目小于4，取ISMEAR=0，并设置一个合适的SIGMA的值。另外，对于半导体或绝缘体，取ISMEAR=-5；当体系为金属时，取ISMEAR=1或2，并设置一个合适的SIGMA的值；在进行能带结构计算时，ISMEAR和SIGMA采用默认值就好；一般来说，采用ISMEAR=0，并选择合适的SIGMA值都可以得到合理的结果，测试SIGMA后选择entropy T*S最小值所对应的SIGMA，K点若发生变化，也需要重新测试）</p>
+</li>
+<li><p>RWIGS（用于计算分波态密度以及每根能带所对应的波函数按照spd和位置投影；当体系中有多类原子时，一般直接取POTCAR文件中以A为单位的RWIGS的值）</p>
+</li>
+<li><p>K点数目（计算完得到的K点数目与能量的对应值，总能变化在0.001eV左右，然后由此来选择合适的K点数目）</p>
+</li>
+</ul>
+<h2 id="5-VASP计算方法"><a href="#5-VASP计算方法" class="headerlink" title="5.VASP计算方法"></a>5.VASP计算方法</h2><ul>
+<li><p>计算前的准备工作：明确采用何种赝势；平面波切断动能的数值；K点网格的大小；采用Fermi-smearing方法或者Methfessel-Paxton smearing方法时，SIGMA的大小；计算所选取的精度PREC；采用何种交换关联函数</p>
+</li>
+<li><p>不同的计算任务完成后建立相应文件夹保存数据，静态计算完成后得到的自洽电荷密度可以建立目录scf（INCAR，KPOINTS，POSCAR，OUTCAR，CHGCAR，CHG）；计算完能带结构建立目录band（INCAR，KPOINTS，POSCAR，OUTCAR，EIGENVAL）；计算完电子态密度建立目录dos（INCAR，KPOINTS，POSCAR，OUTCAR，DOSCAR）</p>
+</li>
+</ul>
+<blockquote>
+<p><strong>单个原子的计算</strong></p>
+<ul>
+<li><p>检验赝势的好坏（经过检验，无需测试）</p>
+</li>
+<li><p>对称性被破坏后自旋极化情况下的原子基态能量，对体材料的结合能进行修正。</p>
+</li>
+</ul>
+<p><strong>结构优化（晶格常数和原子位置参数的优化）</strong></p>
+<ul>
+<li><p><strong>简单情况？</strong>（只需优化一个晶格常数，采用Birch-Murnaghan状态方程拟合得到晶格常数）</p>
+</li>
+<li><p><strong>复杂情况？</strong>（需优化两个以上的参数：1.以实验的晶格结构参数为基础，先进行一次体积不变的离子弛豫计算，通过ISIF来确定；2.再把优化得到的CONTCAR拷贝成POSCAR，进行一次静态计算；3.对基矢缩放系数取10个左右的点，每个点重复前面两步，得到静态计算下的体积-总能关系（可以使用脚本）；4.之后采用状态方程拟合得到平衡状态下的体积、体弹性模量；5.最后在该体积下，重复前面第二和第三步，得到平衡状态下的其他晶胞参数。 (<a href="zotero://select/library/items/2SS7RBW4">“VASP侯柱峰手册中文版”, p. 23</a>)）</p>
+</li>
+<li><p><strong>一次型优化或全部优化</strong>（一般用于估计，通过ISIF设置，可以提高EDIFF和EDIFFG的精度以获得更准确的晶格参数，计算得到的CONTCAR就包含优化后的晶格参数）</p>
+</li>
+</ul>
+<p><strong>结合能修正</strong></p>
+<ul>
+<li>VASP计算得到的总能已经减去了在以原子参考组态计算得到的原子能量（构造赝势时得到的总能，对应于POTCAR文件中的EATOM）要得到准确的结合能，还需要减去前面单个原子计算得到的修正值。</li>
+</ul>
+<p><strong>自洽的电荷密度</strong></p>
+<ul>
+<li><p>优化得到晶胞参数后，再进行静态的计算就可以得到自洽的电荷密度，需要保存下来用于后续其他性质的计算；另外也可以根据它画出电荷密度图，分析原子间的键合作用。</p>
+</li>
+<li><p>基本步骤：1.准备好INCAR（定义ENCUT、ISTART=0、ICHARG=2、ISMEAR=-5）、POTCAR、KPOINTS、POSCAR（以优化的晶格作为基础，把优化得到的CONTCAR拷贝成POSCAR）2.提交运行 3.保存CHGCAR，并使用VESTA进行面电荷密度的分析。</p>
+</li>
+</ul>
+<p><strong>能带结构的计算</strong></p>
+<ul>
+<li>计算材料的能带结构即色散曲线E(k)</li>
+</ul>
+</blockquote>
 
-<h2 id="number-2-about-multipilcation"><a href="#number-2-about-multipilcation" class="headerlink" title="//number 2: about multipilcation;"></a>//number 2: about multipilcation;</h2><div class="hljs"><pre><code class="hljs perl">/*<span class="hljs-comment">#include &lt;iostream&gt;</span>
-using namespace std;
-<span class="hljs-keyword">int</span> tranfer(<span class="hljs-keyword">int</span> k);
-<span class="hljs-keyword">int</span> main()
-&#123;
-	cout &lt;&lt; <span class="hljs-string">&quot;enter long =&quot;</span>;
-	<span class="hljs-keyword">int</span> <span class="hljs-keyword">x</span>;
-	cin &gt;&gt; <span class="hljs-keyword">x</span>;
-	<span class="hljs-keyword">int</span> <span class="hljs-keyword">ma</span> = tranfer(<span class="hljs-keyword">x</span>);
-	cout &lt;&lt; <span class="hljs-string">&quot;after transfered , the answer is ma =&quot;</span> &lt;&lt; <span class="hljs-keyword">ma</span> &lt;&lt; endl;
-	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
-&#125;
-<span class="hljs-keyword">int</span> tranfer(<span class="hljs-keyword">int</span> k)
-&#123;
-	<span class="hljs-keyword">return</span> <span class="hljs-number">220</span> * k;
-&#125;
-*<span class="hljs-regexp">/</span>
-<span class="hljs-regexp">/</span>/第二题可以直接在cout后面使用乘法输出<span class="hljs-number">220</span>*K；无需调用自定义乘法函数；</code></pre></div>
-
-<h2 id="number-3-call-functions"><a href="#number-3-call-functions" class="headerlink" title="//number 3: call functions;"></a>//number 3: call functions;</h2><div class="hljs"><pre><code class="hljs fsharp"><span class="hljs-operator">/*</span>#include <span class="hljs-operator">&lt;</span>iostream<span class="hljs-operator">&gt;</span>
-<span class="hljs-built_in">using</span> <span class="hljs-keyword">namespace</span> std;
-<span class="hljs-keyword">void</span> f1(<span class="hljs-keyword">void</span>);
-<span class="hljs-keyword">void</span> f2(<span class="hljs-keyword">void</span>);
-int main(<span class="hljs-keyword">void</span>)
-&#123;
-	 f1();
-	 f1();
-	 f2();
-	 f2();
-	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
-&#125;
-<span class="hljs-keyword">void</span> f1(<span class="hljs-keyword">void</span>)
-&#123;
-	cout <span class="hljs-operator">&lt;&lt;</span> <span class="hljs-string">&quot;three blind mice .&quot;</span> <span class="hljs-operator">&lt;&lt;</span> endl;
-&#125;
-<span class="hljs-keyword">void</span> f2(<span class="hljs-keyword">void</span>)
-&#123;
-	cout <span class="hljs-operator">&lt;&lt;</span> <span class="hljs-string">&quot;see how they run .&quot;</span> <span class="hljs-operator">&lt;&lt;</span> endl;
-&#125;
-<span class="hljs-operator">*/</span>
-<span class="hljs-comment">//第三题直接调用无返回值的函数，调用的时候只需要写出函数名和括号，比如此题中的 f2();</span></code></pre></div>
-
-<h2 id="number-4-calculate-the-age-of-mouth"><a href="#number-4-calculate-the-age-of-mouth" class="headerlink" title="//number 4 :calculate the age of mouth;"></a>//number 4 :calculate the age of mouth;</h2><div class="hljs"><pre><code class="hljs excel">/*#include &lt;iostream&gt;
-using namespace std;
-<span class="hljs-built_in">int</span> main()
-&#123;
-	cout &lt;&lt; <span class="hljs-string">&quot;enter your age : &quot;</span>;
-	<span class="hljs-built_in">int</span> age;
-	cin &gt;&gt; age;
-	<span class="hljs-built_in">int</span> <span class="hljs-built_in">month</span>;
-	<span class="hljs-built_in">month</span> = age * <span class="hljs-number">12</span>;
-	cout &lt;&lt; <span class="hljs-string">&quot;your age include : &quot;</span> &lt;&lt; <span class="hljs-built_in">month</span> &lt;&lt; <span class="hljs-string">&quot; months&quot;</span>;
-	return <span class="hljs-number">0</span>;
-&#125;
-*/
-//第四题与第二题类似；在cout中直接计算后输出；</code></pre></div>
-
-<h2 id="number-5-：tranfer-the-temperature"><a href="#number-5-：tranfer-the-temperature" class="headerlink" title="//number 5 ：tranfer the temperature;"></a>//number 5 ：tranfer the temperature;</h2><div class="hljs"><pre><code class="hljs coq">/*#include &lt;iostream&gt;
-<span class="hljs-built_in">using</span> namespace std;
-<span class="hljs-built_in">double</span> tranfer(<span class="hljs-built_in">double</span> x);
-int main()
-&#123;
-	cout &lt;&lt; <span class="hljs-string">&quot;Please enter a Celsius value: &quot;</span>;
-	<span class="hljs-built_in">double</span> m;
-	cin &gt;&gt; m;
-	<span class="hljs-built_in">double</span> n = tranfer(m);
-	cout &lt;&lt; m &lt;&lt; <span class="hljs-string">&quot; degrees Celsius is &quot;</span> &lt;&lt; n &lt;&lt; <span class="hljs-string">&quot; degrees Fahrenheit.&quot;</span> &lt;&lt; endl;
-	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
-&#125;
-<span class="hljs-built_in">double</span> tranfer(<span class="hljs-built_in">double</span> x)
-&#123;
-	<span class="hljs-keyword">return</span> <span class="hljs-number">1.8</span> * x + <span class="hljs-number">32.0</span>;
-&#125;
-*/
-//第五题ok；</code></pre></div>
-
-<h2 id="number-6-light-year-transfer"><a href="#number-6-light-year-transfer" class="headerlink" title="//number 6 : light year transfer;"></a>//number 6 : light year transfer;</h2><div class="hljs"><pre><code class="hljs coq">/*
-#include &lt;iostream&gt;
-<span class="hljs-built_in">using</span> namespace std;
-<span class="hljs-built_in">double</span> trans(<span class="hljs-built_in">double</span> x);
-int main()
-&#123;
-	cout &lt;&lt; <span class="hljs-string">&quot;enter the number of night years : &quot;</span>;
-	<span class="hljs-built_in">double</span> year;
-	cin &gt;&gt; year;
-	<span class="hljs-built_in">double</span> units = trans(year);
-	cout &lt;&lt; year &lt;&lt; <span class="hljs-string">&quot; light years = &quot;</span> &lt;&lt; units &lt;&lt; <span class="hljs-string">&quot; astronomical units. &quot;</span>;
-	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
-&#125;
-<span class="hljs-built_in">double</span> trans(<span class="hljs-built_in">double</span> x)
-&#123;
-	<span class="hljs-keyword">return</span> <span class="hljs-number">63240</span> * x ;
-&#125;
-*/
-//第六题ok；转换的英语单词是convert；</code></pre></div>
-
-<h2 id="number-7-show-the-hours-and-the-minutes"><a href="#number-7-show-the-hours-and-the-minutes" class="headerlink" title="//number 7 : show the hours and the minutes ;"></a>//number 7 : show the hours and the minutes ;</h2><div class="hljs"><pre><code class="hljs fsharp"><span class="hljs-operator">/*</span>
-#include <span class="hljs-operator">&lt;</span>iostream<span class="hljs-operator">&gt;</span>
-<span class="hljs-built_in">using</span> <span class="hljs-keyword">namespace</span> std;
-int main()
-&#123;
-	int m;
-	int n;
-	cin <span class="hljs-operator">&gt;&gt;</span> m;
-    cin <span class="hljs-operator">&gt;&gt;</span> n;
-	cout <span class="hljs-operator">&lt;&lt;</span> <span class="hljs-string">&quot; enter the number of hours : &quot;</span> <span class="hljs-operator">&lt;&lt;</span> m <span class="hljs-operator">&lt;&lt;</span> endl;
-	cout <span class="hljs-operator">&lt;&lt;</span> <span class="hljs-string">&quot; enter the number of minutes : &quot;</span> <span class="hljs-operator">&lt;&lt;</span> n <span class="hljs-operator">&lt;&lt;</span> endl;
-	cout <span class="hljs-operator">&lt;&lt;</span> <span class="hljs-string">&quot; time : &quot;</span> <span class="hljs-operator">&lt;&lt;</span> m <span class="hljs-operator">&lt;&lt;</span> <span class="hljs-string">&quot;:&quot;</span> <span class="hljs-operator">&lt;&lt;</span> n ;
-	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
-&#125;
-<span class="hljs-operator">*/</span>
-<span class="hljs-comment">//第七题改写如下：</span>
-
-<span class="hljs-comment">//number 7 : show the hours and the minutes ;</span>
-<span class="hljs-operator">/*</span>
-#include <span class="hljs-operator">&lt;</span>iostream<span class="hljs-operator">&gt;</span>
-<span class="hljs-built_in">using</span> <span class="hljs-keyword">namespace</span> std;
-<span class="hljs-keyword">void</span> <span class="hljs-keyword">function</span>(<span class="hljs-keyword">void</span>);
-int main(<span class="hljs-keyword">void</span>)
-&#123;
-	<span class="hljs-keyword">function</span>();
-&#125;
-<span class="hljs-keyword">void</span> <span class="hljs-keyword">function</span>(<span class="hljs-keyword">void</span>)
-&#123;
-	int m;
-	int n;
-	cout <span class="hljs-operator">&lt;&lt;</span> <span class="hljs-string">&quot;enter the number of hours : &quot;</span>;
-	cin <span class="hljs-operator">&gt;&gt;</span> m;
-	cout <span class="hljs-operator">&lt;&lt;</span> <span class="hljs-string">&quot;enter the number of minutes : &quot;</span>;
-	cin <span class="hljs-operator">&gt;&gt;</span> n;
-	cout <span class="hljs-operator">&lt;&lt;</span><span class="hljs-string">&quot;time ：&quot;</span> <span class="hljs-operator">&lt;&lt;</span> m <span class="hljs-operator">&lt;&lt;</span> <span class="hljs-string">&quot;:&quot;</span> <span class="hljs-operator">&lt;&lt;</span> n;
-&#125;
-<span class="hljs-operator">*/</span>
-<span class="hljs-comment">//第七题ok；输入函数应该在main函数里面，调用函数显示时间，修改如下：</span>
-
-<span class="hljs-comment">//number 7 : show the hours and the minutes ;</span>
-<span class="hljs-operator">/*</span>
-#include <span class="hljs-operator">&lt;</span>iostream<span class="hljs-operator">&gt;</span>
-<span class="hljs-built_in">using</span> <span class="hljs-keyword">namespace</span> std;
-<span class="hljs-keyword">void</span> display(int a, int b);
-int main()
-&#123;
-	cout <span class="hljs-operator">&lt;&lt;</span> <span class="hljs-string">&quot;enter the number of hours : &quot;</span>;
-	int m;
-	cin <span class="hljs-operator">&gt;&gt;</span> m;
-	cout <span class="hljs-operator">&lt;&lt;</span> <span class="hljs-string">&quot;enter the number of minutes : &quot;</span>;
-	int n;
-	cin <span class="hljs-operator">&gt;&gt;</span> n;
-	display(m, n);
-	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
-&#125;
-<span class="hljs-keyword">void</span> display(int a, int b)
-&#123;
-	cout <span class="hljs-operator">&lt;&lt;</span> <span class="hljs-string">&quot;time : &quot;</span> <span class="hljs-operator">&lt;&lt;</span> a <span class="hljs-operator">&lt;&lt;</span> <span class="hljs-string">&quot;:&quot;</span> <span class="hljs-operator">&lt;&lt;</span> b <span class="hljs-operator">&lt;&lt;</span> endl;
-&#125;
-<span class="hljs-operator">*/</span>
-<span class="hljs-comment">//第七题完美解决，加油！！！</span></code></pre></div>
             </div>
             <hr>
             <div>
@@ -435,7 +466,7 @@ int main()
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/C/">C++</a>
+                      <a class="hover-with-bg" href="/categories/software/">software</a>
                     
                   </div>
                 
@@ -443,14 +474,14 @@ int main()
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/C/">C++</a>
+                      <a class="hover-with-bg" href="/tags/vasp/">vasp</a>
                     
                   </div>
                 
               </div>
               <p class="note note-warning">
                 <strong>本文作者: </strong><a href="/">Uncle-yang</a> <br>
-                <strong>本文链接: </strong><a href="https://uncleleiy.github.io/2023/07/09/blog-C-7/">https://uncleleiy.github.io/2023/07/09/blog-C-7/</a> <br>
+                <strong>本文链接: </strong><a href="https://uncleleiy.github.io/2023/07/22/blog-vasp-2/">https://uncleleiy.github.io/2023/07/22/blog-vasp-2/</a> <br>
                 <strong>版权声明: </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
                    </p>
                    
@@ -459,18 +490,12 @@ int main()
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/07/10/blog-C-8/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">C++ 学习记录(2)</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/07/05/blog-10-textbooks/">
-                        <span class="hidden-mobile">Textbooks for reading</span>
+                      <a href="/2023/07/22/blog-vasp-1/">
+                        <span class="hidden-mobile">VASP 学习笔记</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -653,7 +678,7 @@ int main()
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "C++ 学习记录(1)&nbsp;",
+        "VASP 学习笔记&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 120,

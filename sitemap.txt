@@ -1,6 +1,9 @@
+https://uncleleiy.github.io/2023/07/22/blog-vasp-2/
+https://uncleleiy.github.io/about/index.html
+https://uncleleiy.github.io/2023/07/21/blog-kk/
+https://uncleleiy.github.io/2023/07/22/blog-vasp-1/
 https://uncleleiy.github.io/2023/07/21/blog-software-installation/
 https://uncleleiy.github.io/categories/index.html
-https://uncleleiy.github.io/about/index.html
 https://uncleleiy.github.io/2023/06/06/blog-1-markdown/
 https://uncleleiy.github.io/2023/06/08/blog-2-linux-vasp/
 https://uncleleiy.github.io/2023/06/10/blog-3-hexo-debug/
@@ -32,6 +35,7 @@ https://uncleleiy.github.io/tags/shell/
 https://uncleleiy.github.io/tags/C/
 https://uncleleiy.github.io/tags/software/
 https://uncleleiy.github.io/tags/installation/
+https://uncleleiy.github.io/tags/capital/
 https://uncleleiy.github.io/categories/grammar/
 https://uncleleiy.github.io/categories/textbooks/
 https://uncleleiy.github.io/categories/linux/
@@ -40,3 +44,4 @@ https://uncleleiy.github.io/categories/python/
 https://uncleleiy.github.io/categories/scripts/
 https://uncleleiy.github.io/categories/C/
 https://uncleleiy.github.io/categories/software/
+https://uncleleiy.github.io/categories/Economics/
