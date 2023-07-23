@@ -1,20 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://uncleleiy.github.io/2023/07/15/blog-kk/</loc>
+    <lastmod>2023-07-23</lastmod>
+  </url>
+  <url>
+    <loc>https://uncleleiy.github.io/2023/07/21/blog-vasp-1/</loc>
+    <lastmod>2023-07-23</lastmod>
+  </url>
+  <url>
     <loc>https://uncleleiy.github.io/2023/07/22/blog-vasp-2/</loc>
-    <lastmod>2023-07-22</lastmod>
+    <lastmod>2023-07-23</lastmod>
   </url>
   <url>
-    <loc>https://uncleleiy.github.io/2023/07/21/blog-kk/</loc>
-    <lastmod>2023-07-22</lastmod>
+    <loc>https://uncleleiy.github.io/2023/07/20/blog-software-installation/</loc>
+    <lastmod>2023-07-23</lastmod>
   </url>
   <url>
-    <loc>https://uncleleiy.github.io/2023/07/22/blog-vasp-1/</loc>
-    <lastmod>2023-07-22</lastmod>
+    <loc>https://uncleleiy.github.io/2023/07/16/blog-python21/</loc>
+    <lastmod>2023-07-23</lastmod>
   </url>
   <url>
-    <loc>https://uncleleiy.github.io/2023/07/21/blog-software-installation/</loc>
-    <lastmod>2023-07-21</lastmod>
+    <loc>https://uncleleiy.github.io/2023/07/17/blog-python22/</loc>
+    <lastmod>2023-07-23</lastmod>
   </url>
   <url>
     <loc>https://uncleleiy.github.io/2023/06/06/blog-1-markdown/</loc>
@@ -66,14 +74,6 @@
   </url>
   <url>
     <loc>https://uncleleiy.github.io/2023/07/11/blog-C-9/</loc>
-    <lastmod>2023-07-14</lastmod>
-  </url>
-  <url>
-    <loc>https://uncleleiy.github.io/2023/07/12/blog-python21/</loc>
-    <lastmod>2023-07-14</lastmod>
-  </url>
-  <url>
-    <loc>https://uncleleiy.github.io/2023/07/12/blog-python22/</loc>
     <lastmod>2023-07-14</lastmod>
   </url>
 </urlset> 

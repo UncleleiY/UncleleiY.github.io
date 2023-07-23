@@ -207,7 +207,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      2.5k 字
+      3.7k 字
     </span>
   
 
@@ -217,7 +217,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      27
+      40
        分钟
     </span>
   
@@ -258,9 +258,10 @@
             <h1 style="display: none">VASP 学习笔记</h1>
             
             <div class="markdown-body" id="post-body">
-              <h1 id="VASP学习总结"><a href="#VASP学习总结" class="headerlink" title="VASP学习总结"></a>VASP学习总结</h1><h2 id="1-VASP简介"><a href="#1-VASP简介" class="headerlink" title="1.VASP简介"></a>1.VASP简介</h2><p>VASP是基于密度泛函理论且使用平面波赝势方法进行第一性原理计算的软件，适用领域包括：</p>
+              <p>[TOC]</p>
+<h1 id="VASP-学习总结"><a href="#VASP-学习总结" class="headerlink" title="VASP 学习总结"></a>VASP 学习总结</h1><h2 id="1-VASP简介"><a href="#1-VASP简介" class="headerlink" title="1.VASP简介"></a>1.VASP简介</h2><p>VASP是基于密度泛函理论且使用平面波赝势方法进行第一性原理计算的软件，适用领域包括：</p>
 <ul>
-<li><p>周期性边界条件（或超原胞模型）处理原子、分子、团簇、薄膜等</p>
+<li><p>使用周期性边界条件（或超原胞模型）处理原子、分子、薄膜等</p>
 </li>
 <li><p>计算材料的结构参数（晶格常数、键长、键角、原子位置）</p>
 </li>
@@ -319,7 +320,7 @@
 <p>ISIF：结构优化参数</p>
 </blockquote>
 </li>
-<li><p>备注：一般要设置的关键词：SYSTEM,ENCUT,ISTART,ICHARG,PREC,ISMEAR,SIGMA；对计算不同的性质，再另外增加相应的关键词。</p>
+<li><p>备注：一般要设置的关键词：SYSTEM,ENCUT,ISTART,ICHARG,PREC,ISMEAR,SIGMA；对计算不同的性质，再另外增加相应的关键词</p>
 </li>
 </ul>
 <p><strong>POSCAR（描述计算体系的晶胞参数及原子位置）</strong></p>
@@ -349,9 +350,10 @@
 </li>
 </ul>
 <p><strong>KPOINTS（描述不可约布里渊区中K点取样）</strong></p>
+<blockquote>
+<p><strong>【自动网格取样方法】</strong></p>
+</blockquote>
 <ul>
-<li><p><strong>【自动网格取样方法】</strong></p>
-</li>
 <li><p>automatic generation 定义注释行</p>
 </li>
 <li><p>0 自动产生k点的参数值</p>
@@ -362,8 +364,11 @@
 </li>
 <li><p>0 0 0 是否移动网格点以及移动步长</p>
 </li>
-<li><p><strong>【能带计算line-mode】</strong></p>
-</li>
+</ul>
+<blockquote>
+<p><strong>【能带计算line-mode】</strong></p>
+</blockquote>
+<ul>
 <li><p>k-points along high symmetry lines</p>
 </li>
 <li><p>10 沿G-X特殊点之间产生的k点数目</p>
@@ -379,49 +384,106 @@
 </ul>
 </blockquote>
 <h2 id="3-VASP输出文件"><a href="#3-VASP输出文件" class="headerlink" title="3.VASP输出文件"></a>3.VASP输出文件</h2><ul>
-<li><p>OUTCAR（包含计算得到的大部分信息：体积、总能、费米能级、总价电子数、倒格矢基矢、原子受力情况等）</p>
+<li><p>OUTCAR</p>
+<ul>
+<li>包含计算得到的大部分信息：体积、总能、费米能级、总价电子数、倒格矢基矢、原子受力情况等</li>
+</ul>
 </li>
-<li><p>CHG和CHGCAR （给出体系的电荷密度，CHG的精度略低，经过迭代后得到自洽的CHG和CHGCAR可以用来画图分析面电荷密度分布，计算能带结构和态密度时，所读入的电荷密度文件CHGCAR必须是经过迭代自洽的文件）</p>
+<li><p>CHG/CHGCAR</p>
+<ul>
+<li>给出体系的电荷密度，CHG的精度略低，经过迭代后得到自洽的CHG和CHGCAR可以用来画图分析面电荷密度分布，计算能带结构和态密度时，所读入的电荷密度文件CHGCAR必须是经过迭代自洽的文件</li>
+</ul>
 </li>
-<li><p>DOSCAR（给出计算体系的电子态密度-绝对值）</p>
+<li><p>DOSCAR</p>
+<ul>
+<li>给出计算体系的电子态密度-绝对值</li>
+</ul>
 </li>
-<li><p>EIGENVAL（给当计算体系的本征值-绝对值）</p>
+<li><p>EIGENVAL</p>
+<ul>
+<li>给当计算体系的本征值-绝对值</li>
+</ul>
 </li>
-<li><p>WAVECAR（给出所计算体系的电子波函数，二进制文件，不可编辑）</p>
+<li><p>WAVECAR</p>
+<ul>
+<li>给出所计算体系的电子波函数，二进制文件，不可编辑</li>
+</ul>
 </li>
-<li><p>OSZICAR（给出每次迭代离子移动的迭代步）</p>
+<li><p>OSZICAR</p>
+<ul>
+<li>给出每次迭代离子移动的迭代步</li>
+</ul>
 </li>
-<li><p>CONTCAR（记录离子弛豫时，每次移动后体系的晶格参数变化、在对体系进行弛豫或分子动力学计算时，最后得到的CONTCAR可以直接拷贝成POSCAR进行后续计算）</p>
+<li><p>CONTCAR</p>
+<ul>
+<li>记录离子弛豫时，每次移动后体系的晶格参数变化、在对体系进行弛豫或分子动力学计算时，最后得到的CONTCAR可以直接拷贝成POSCAR进行后续计算</li>
+</ul>
 </li>
-<li><p>IBZKPT（给出不可约布里渊区K点的坐标)</p>
+<li><p>IBZKPT</p>
+<ul>
+<li>给出不可约布里渊区K点的坐标</li>
+</ul>
 </li>
 </ul>
 <h2 id="4-VASP参数设置"><a href="#4-VASP参数设置" class="headerlink" title="4.VASP参数设置"></a>4.VASP参数设置</h2><ul>
-<li><p>ENCUT（在进行任何性质的计算之前，需要进行ENCUT收敛性的测试，由此来确定一个合适的切断动能值，注意：循环的第一个值，一般取POTCAR中ENMAX中最大的那个值，循环间隔一般取50eV。另外，在对体系的变体积结构优化时，最好保证ENCUT是ENMAX的1.3倍）</p>
+<li><p>ENCUT</p>
+<ul>
+<li>在进行任何性质的计算之前，需要进行ENCUT收敛性的测试，由此来确定一个合适的切断动能值，注意：循环的第一个值，一般取POTCAR中ENMAX中最大的那个值，循环间隔一般取50eV。另外，在对体系的变体积结构优化时，最好保证ENCUT是ENMAX的1.3倍</li>
+</ul>
 </li>
-<li><p>PREC（PREC是控制计算精度最重要的一个参数，它决定了ENCUT、FFT网格、PORT的默认值，当要提高力和Stress tensor的计算精度时，可以采用High/Accurate，并手动设置ENCUT的值）</p>
+<li><p>PREC</p>
+<ul>
+<li>PREC是控制计算精度最重要的一个参数，它决定了ENCUT、FFT网格、PORT的默认值，当要提高力和Stress tensor的计算精度时，可以采用High/Accurate，并手动设置ENCUT的值</li>
+</ul>
 </li>
-<li><p>EDIFF（EDIFF是电子结构部分自洽迭代循环时，判断是否自洽的条件；若EDIFF=0，则进行NELM步迭代后停止）</p>
+<li><p>EDIFF</p>
+<ul>
+<li>EDIFF是电子结构部分自洽迭代循环时，判断是否自洽的条件；若EDIFF=0，则进行NELM步迭代后停止</li>
+</ul>
 </li>
-<li><p>EDIFFG（EDIFFG是控制离子部分的弛豫，注意：当EDIFFG为负数，才是用来控制离子弛豫时，离子或原子所受的力；若EDIFFG=0，则表示离子弛豫NSW步后停止）</p>
+<li><p>EDIFFG</p>
+<ul>
+<li>EDIFFG是控制离子部分的弛豫，注意：当EDIFFG为负数，才是用来控制离子弛豫时，离子或原子所受的力；若EDIFFG=0，则表示离子弛豫NSW步后停止</li>
+</ul>
 </li>
-<li><p>ISTART和ICHARG（定义如何构建初始的波函数和电荷密度、读入上一次的波函数和电荷密度；计算能带和电子态密度时，一般设置ISTART=1，ICHARG=11；其他情况，一般设置ISTART=0，ICHARG=2；如果计算过程中断需要续算，一般设置ISTART=1，ICHARG=1，其他参数不用变）</p>
+<li><p>ISTART和ICHARG</p>
+<ul>
+<li>定义如何构建初始的波函数和电荷密度、读入上一次的波函数和电荷密度；计算能带和电子态密度时，一般设置ISTART=1，ICHARG=11；其他情况，一般设置ISTART=0，ICHARG=2；如果计算过程中断需要续算，一般设置ISTART=1，ICHARG=1，其他参数不用变</li>
+</ul>
 </li>
-<li><p>GGA和VOSKOWN（GGA的选择需要与赝势的类型相一致，采用PW91的GGA需要设置VOSKOWN=1，其他情况使用程序默认值即可）</p>
+<li><p>GGA和VOSKOWN</p>
+<ul>
+<li>GGA的选择需要与赝势的类型相一致，采用PW91的GGA需要设置VOSKOWN=1，其他情况使用程序默认值即可</li>
+</ul>
 </li>
-<li><p>ISIF（用于控制结构参数的优化；当IBRION=0，其默认值为0，其他情况下为2）</p>
+<li><p>ISIF</p>
+<ul>
+<li>用于控制结构参数的优化；当IBRION=0，其默认值为0，其他情况下为2；在对原胞的体积或形状进行优化时，ENCUT要略取大一些，例如取1.3*ENCUT或设置PREC=High，用于减小误差</li>
+</ul>
 </li>
-<li><p>ISMEAR（用来确定使用何种方法来设置每个波函数的部分占有数fnk，注意：在进行任何静态计算或态密度计算且K点数目大于4时，取ISMEAR=-5；当由于原胞较大而K点数目小于4，取ISMEAR=0，并设置一个合适的SIGMA的值。另外，对于半导体或绝缘体，取ISMEAR=-5；当体系为金属时，取ISMEAR=1或2，并设置一个合适的SIGMA的值；在进行能带结构计算时，ISMEAR和SIGMA采用默认值就好；一般来说，采用ISMEAR=0，并选择合适的SIGMA值都可以得到合理的结果，测试SIGMA后选择entropy T*S最小值所对应的SIGMA，K点若发生变化，也需要重新测试）</p>
+<li><p>ISMEAR</p>
+<ul>
+<li>用来确定使用何种方法来设置每个波函数的部分占有数fnk，注意：在进行任何静态计算或态密度计算且K点数目大于4时，取ISMEAR=-5；当由于原胞较大而K点数目小于4，取ISMEAR=0，并设置一个合适的SIGMA的值。另外，对于半导体或绝缘体，取ISMEAR=-5；当体系为金属时，取ISMEAR=1或2，并设置一个合适的SIGMA的值；在进行能带结构计算时，ISMEAR和SIGMA采用默认值就好；一般来说，采用ISMEAR=0，并选择合适的SIGMA值都可以得到合理的结果，测试SIGMA后选择entropy T*S最小值所对应的SIGMA，K点若发生变化，也需要重新测试</li>
+</ul>
 </li>
-<li><p>RWIGS（用于计算分波态密度以及每根能带所对应的波函数按照spd和位置投影；当体系中有多类原子时，一般直接取POTCAR文件中以A为单位的RWIGS的值）</p>
+<li><p>RWIGS</p>
+<ul>
+<li>用于计算分波态密度以及每根能带所对应的波函数按照spd和位置投影；当体系中有多类原子时，一般直接取POTCAR文件中以A为单位的RWIGS的值</li>
+</ul>
 </li>
-<li><p>K点数目（计算完得到的K点数目与能量的对应值，总能变化在0.001eV左右，然后由此来选择合适的K点数目）</p>
+<li><p>K-mesh</p>
+<ul>
+<li>计算完得到的K点数目与能量的对应值，总能变化在0.001eV左右，然后由此来选择合适的K点数目</li>
+</ul>
 </li>
 </ul>
 <h2 id="5-VASP计算方法"><a href="#5-VASP计算方法" class="headerlink" title="5.VASP计算方法"></a>5.VASP计算方法</h2><ul>
 <li><p>计算前的准备工作：明确采用何种赝势；平面波切断动能的数值；K点网格的大小；采用Fermi-smearing方法或者Methfessel-Paxton smearing方法时，SIGMA的大小；计算所选取的精度PREC；采用何种交换关联函数</p>
 </li>
 <li><p>不同的计算任务完成后建立相应文件夹保存数据，静态计算完成后得到的自洽电荷密度可以建立目录scf（INCAR，KPOINTS，POSCAR，OUTCAR，CHGCAR，CHG）；计算完能带结构建立目录band（INCAR，KPOINTS，POSCAR，OUTCAR，EIGENVAL）；计算完电子态密度建立目录dos（INCAR，KPOINTS，POSCAR，OUTCAR，DOSCAR）</p>
+  <div class="hljs"><pre><code class="hljs">一、基态性质</code></pre></div>
+
+
 </li>
 </ul>
 <blockquote>
@@ -429,32 +491,93 @@
 <ul>
 <li><p>检验赝势的好坏（经过检验，无需测试）</p>
 </li>
-<li><p>对称性被破坏后自旋极化情况下的原子基态能量，对体材料的结合能进行修正。</p>
+<li><p>对称性被破坏后自旋极化情况下的原子基态能量，对体材料的结合能进行修正</p>
 </li>
 </ul>
 <p><strong>结构优化（晶格常数和原子位置参数的优化）</strong></p>
 <ul>
-<li><p><strong>简单情况？</strong>（只需优化一个晶格常数，采用Birch-Murnaghan状态方程拟合得到晶格常数）</p>
+<li><p><strong>简单情况</strong>（只需优化一个晶格常数，使用脚本采用Birch-Murnaghan状态方程拟合得到晶格常数）</p>
 </li>
-<li><p><strong>复杂情况？</strong>（需优化两个以上的参数：1.以实验的晶格结构参数为基础，先进行一次体积不变的离子弛豫计算，通过ISIF来确定；2.再把优化得到的CONTCAR拷贝成POSCAR，进行一次静态计算；3.对基矢缩放系数取10个左右的点，每个点重复前面两步，得到静态计算下的体积-总能关系（可以使用脚本）；4.之后采用状态方程拟合得到平衡状态下的体积、体弹性模量；5.最后在该体积下，重复前面第二和第三步，得到平衡状态下的其他晶胞参数。 (<a href="zotero://select/library/items/2SS7RBW4">“VASP侯柱峰手册中文版”, p. 23</a>)）</p>
+<li><p><strong>复杂情况</strong>（需优化两个以上的参数：1.以实验的晶格结构参数为基础，先进行一次体积不变的离子弛豫计算，通过ISIF来确定；2.再把优化得到的CONTCAR拷贝成POSCAR，进行一次静态计算；3.对基矢缩放系数取10个左右的点，每个点重复前面两步，得到静态计算下的体积-总能关系（可以使用脚本murn.f）；4.之后采用状态方程拟合得到平衡状态下的体积、体弹性模量；5.最后在该体积下，重复前面第二和第三步，得到平衡状态下的其他晶胞参数 (<a href="zotero://select/library/items/2SS7RBW4">“VASP侯柱峰手册中文版”, p. 23</a>)）</p>
 </li>
 <li><p><strong>一次型优化或全部优化</strong>（一般用于估计，通过ISIF设置，可以提高EDIFF和EDIFFG的精度以获得更准确的晶格参数，计算得到的CONTCAR就包含优化后的晶格参数）</p>
 </li>
 </ul>
 <p><strong>结合能修正</strong></p>
 <ul>
-<li>VASP计算得到的总能已经减去了在以原子参考组态计算得到的原子能量（构造赝势时得到的总能，对应于POTCAR文件中的EATOM）要得到准确的结合能，还需要减去前面单个原子计算得到的修正值。</li>
+<li>VASP计算得到的总能已经减去了在以原子参考组态计算得到的原子能量（构造赝势时得到的总能，对应于POTCAR文件中的EATOM）要得到准确的结合能，还需要减去前面单个原子计算得到的修正值</li>
 </ul>
 <p><strong>自洽的电荷密度</strong></p>
 <ul>
-<li><p>优化得到晶胞参数后，再进行静态的计算就可以得到自洽的电荷密度，需要保存下来用于后续其他性质的计算；另外也可以根据它画出电荷密度图，分析原子间的键合作用。</p>
+<li><p>优化得到晶胞参数后，再进行静态的计算就可以得到自洽的电荷密度，需要保存下来用于后续其他性质的计算；另外也可以根据它画出电荷密度图，分析原子间的键合作用</p>
 </li>
-<li><p>基本步骤：1.准备好INCAR（定义ENCUT、ISTART=0、ICHARG=2、ISMEAR=-5）、POTCAR、KPOINTS、POSCAR（以优化的晶格作为基础，把优化得到的CONTCAR拷贝成POSCAR）2.提交运行 3.保存CHGCAR，并使用VESTA进行面电荷密度的分析。</p>
+<li><p>基本步骤：1.准备好INCAR（定义ENCUT、ISTART=0、ICHARG=2、ISMEAR=-5）、POTCAR、KPOINTS、POSCAR（以优化的晶格作为基础，把优化得到的CONTCAR拷贝成POSCAR）2.提交运行 3.保存CHGCAR，并使用VESTA进行面电荷密度的分析</p>
 </li>
 </ul>
 <p><strong>能带结构的计算</strong></p>
 <ul>
-<li>计算材料的能带结构即色散曲线E(k)</li>
+<li><p>计算材料的能带结构即色散曲线E(k)</p>
+</li>
+<li><p>基本步骤：1.根据特殊K点的走向，选取特殊K点及其分割点数，使用vaspkit的303生成Kpath.in并更改为KPOINTS；2.另外设置ISTART=1，ICHARG=11，并增加NBANDS的值，ISMEAR采用默认值，完成设置后利用前面计算得到的自洽电荷密度作一次非自洽计算，得到本征值文件EIGENVAL；3.最后利用vaspkit的211选项生成绘图文件BAND.dat，用软件origin绘图</p>
+</li>
+</ul>
+<p><strong>电子态密度的计算</strong></p>
+<ul>
+<li><p>计算材料的电子态密度包括总态密度（TDOS）和分波态密度（PDOS）</p>
+</li>
+<li><p>基本步骤：1.准备KPOINTS文件，增加K点网格；2.从POTCAR中找到各类原子的RWIGS（grep命令）；3.准备INCAR文件（ISTART=1,ICHARG=11,ISMEAR=-5以及RWIGS）；4..利用前面计算得到的自洽电荷密度作一次非自洽计算，得到包含态密度值的DOSCAR文件。5.采用split_dos对态密度文件DOSCAR进行分割，得到总态密度DOS0，各个原子的分波态密度DOS1，DOS2…</p>
+</li>
+<li><p>备注：spit_dos和vp两个脚本都需要下载，在运行split_dos程序对DOSCAR文件分割时，要保证当前目录下有对应的OUTCAR和POSCAR文件。此外，分割后的DOS0，DOS1… 等文件的能量值是以费米能级作为能量参考零点</p>
+</li>
+<li><p>DOS0的第一列数据是能量值（eV）；第二列数据是总态密度的值（State/eV.unit cell）；第三列数据是总态密度的积分值，（即电子数electrons）；</p>
+</li>
+<li><p>DOS1是第一个原子的分波态密度值，其中第一列数据是能量值（eV）；第二、三、四列数据分别对应于s、p、d态的分波态密度值（State/eV.atom）；其他DOS文件同理</p>
+</li>
+</ul>
+</blockquote>
+<div class="hljs"><pre><code class="hljs">二、磁性体系</code></pre></div>
+
+<blockquote>
+<ul>
+<li><p>磁性的计算，与非磁性体系计算相比，其实只需要在INCAR中加入ISPIN=2以及设置各类原子的初始磁矩（MAGMOM参数），其他更复杂的磁性性质的计算，包括noncollinear磁性、spin sprial磁性、spin orbital相互作用，需要再增加其他关键词</p>
+</li>
+<li><p>备注：磁性计算推荐采用PAW势 (<a href="zotero://select/library/items/2SS7RBW4">“VASP侯柱峰手册中文版”, p. 30</a>)</p>
+</li>
+</ul>
+</blockquote>
+<div class="hljs"><pre><code class="hljs">三、表面体系</code></pre></div>
+
+<ul>
+<li>在作表面性质计算时，一般采用slab模型（薄片）模拟表面体系。基本步骤：1.材料体性质的计算；2.slab模型的构造；3.表面体系的结构优化；4.表面体系性质的计算</li>
+</ul>
+<blockquote>
+<p><strong>1.材料体性质的计算</strong></p>
+<ul>
+<li><p>这一步包含了前面材料基态性质的计算，主要是为确定后面在进行表面计算时所需要的一些参数：ENCUT，SIGMA（ISMEAR=1或0），体材料的晶格参数（构造slab模型以体材料的晶格参数作为基础）</p>
+</li>
+<li><p>备注：SIGMA优化必须进行，因为后面对表面体系的结构进行优化时，smearing方法一般都是采用Gaussian方法或Methfessel-Paxton smearing方法</p>
+</li>
+</ul>
+<p><strong>2.Slab模型的构造</strong></p>
+<ul>
+<li><p>需要明确几个重要的参数：体材料的晶格参数和模拟的表面（表面的米米勒指数和表面的二维周期性），真空层以及原子层的厚度（slab模型就是由原子层和真空层所组成）</p>
+</li>
+<li><p>对于真空层和原子层要取多厚，可以通过测试不同厚度对总能的影响来确定</p>
+</li>
+</ul>
+<p><strong>3.表面体系的结构优化</strong></p>
+<ul>
+<li><p>在对表面体系的结构优化前，还需要对K点数目或k-mesh大小进行优化，可以通过测试完成</p>
+</li>
+<li><p>对于表面体系的结构进行优化时，主要是对原子的位置进行优化，而不再对超原胞（slab模型得到的）进行优化，一般在POSCAR中采用Selective Dynamic（固定原子位置以进行有选择性的位置弛豫）；另外，在INCAR文件中也应加入控制离子弛豫的关键词（EDIFF，EDIFFG，NSW）；生成的CONTCAR文件即弛豫后得到的最后位置，原子受力的情况可以在OUTCAR中查找TOTAL-FORCE来查看</p>
+</li>
+</ul>
+<p><strong>4.表面体系性质的计算</strong></p>
+<ul>
+<li><p>得到优化的结构之后，就可以进行一系列性质的计算，计算步骤与计算体材料基态性质相同</p>
+</li>
+<li><p>备注：无论是对体材料还是表面体系的结构优化，结构优化完成后，还需要进行静态的计算以得到自洽的电荷密度，再使用这个自洽的电荷密度进行后面的性质计算</p>
+</li>
 </ul>
 </blockquote>
 
@@ -494,7 +617,7 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/07/22/blog-vasp-1/">
+                      <a href="/2023/07/21/blog-vasp-1/">
                         <span class="hidden-mobile">VASP 学习笔记</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
