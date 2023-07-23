@@ -6,7 +6,7 @@
   <link href="https://uncleleiy.github.io/atom.xml" rel="self"/>
   
   <link href="https://uncleleiy.github.io/"/>
-  <updated>2023-07-23T13:41:21.966Z</updated>
+  <updated>2023-07-23T05:35:11.907Z</updated>
   <id>https://uncleleiy.github.io/</id>
   
   <author>
@@ -15,26 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>new page</title>
-    <link href="https://uncleleiy.github.io/2023/07/23/blog-image/"/>
-    <id>https://uncleleiy.github.io/2023/07/23/blog-image/</id>
-    <published>2023-07-23T13:41:21.000Z</published>
-    <updated>2023-07-23T13:41:21.966Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot; cla</summary>
-      
-    
-    
-    
-    
-  </entry>
   
   <entry>
     <title>VASP 学习笔记</title>
@@ -119,6 +99,27 @@
     
     
     <category term="python" scheme="https://uncleleiy.github.io/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>测试页面、优化页面</title>
+    <link href="https://uncleleiy.github.io/2023/07/16/blog-image-test/"/>
+    <id>https://uncleleiy.github.io/2023/07/16/blog-image-test/</id>
+    <published>2023-07-16T07:00:00.000Z</published>
+    <updated>2023-07-23T15:22:55.376Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="图床系统"><a href="#图床系统" class="headerlink" title="图床系统"></a>图床系统</h1><blockquote><p>上传指令：Ctrl+Alt+E</p></blockquote><blockquote><p>图床设置测试</p></blockquote><p><img src="https://cdn.jsdelivr.net/gh/UncleleiY/image@main/blog/images/vasp.process.png" alt="vasp.process"><br><img src="https://cdn.jsdelivr.net/gh/UncleleiY/image@main/blog/images/vasp.scf.png" alt="vasp.scf"><br><img src="https://cdn.jsdelivr.net/gh/UncleleiY/image@main/blog/images/test.jpg" alt="test"><br><img src="https://cdn.jsdelivr.net/gh/UncleleiY/image@main/blog/images/test.a.jpg" alt="test.a"></p><h1 id="评论系统"><a href="#评论系统" class="headerlink" title="评论系统"></a>评论系统</h1><blockquote><p>问题：无法读取数据</p></blockquote><h1 id="导航页面"><a href="#导航页面" class="headerlink" title="导航页面"></a>导航页面</h1><blockquote><p>问题：页面格式乱码</p></blockquote>]]></content>
+    
+    
+    <summary type="html">图床系统、评论系统、导航页面、快速备份、笔记摘录</summary>
+    
+    
+    
+    <category term="test" scheme="https://uncleleiy.github.io/categories/test/"/>
+    
+    
+    <category term="test" scheme="https://uncleleiy.github.io/tags/test/"/>
     
   </entry>
   
