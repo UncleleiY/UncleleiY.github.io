@@ -261,13 +261,6 @@
   </url>
   
   <url>
-    <loc>https://uncleleiy.github.io/tags/books/</loc>
-    <lastmod>2023-07-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://uncleleiy.github.io/tags/linux/</loc>
     <lastmod>2023-07-24</lastmod>
     <changefreq>weekly</changefreq>
@@ -282,6 +275,13 @@
   </url>
   
   <url>
+    <loc>https://uncleleiy.github.io/tags/books/</loc>
+    <lastmod>2023-07-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://uncleleiy.github.io/tags/hexo/</loc>
     <lastmod>2023-07-24</lastmod>
     <changefreq>weekly</changefreq>
@@ -289,14 +289,14 @@
   </url>
   
   <url>
-    <loc>https://uncleleiy.github.io/tags/wsl/</loc>
+    <loc>https://uncleleiy.github.io/tags/python/</loc>
     <lastmod>2023-07-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://uncleleiy.github.io/tags/python/</loc>
+    <loc>https://uncleleiy.github.io/tags/wsl/</loc>
     <lastmod>2023-07-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -347,14 +347,14 @@
   </url>
   
   <url>
-    <loc>https://uncleleiy.github.io/categories/textbooks/</loc>
+    <loc>https://uncleleiy.github.io/categories/linux/</loc>
     <lastmod>2023-07-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://uncleleiy.github.io/categories/linux/</loc>
+    <loc>https://uncleleiy.github.io/categories/textbooks/</loc>
     <lastmod>2023-07-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
