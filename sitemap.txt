@@ -1,3 +1,5 @@
+https://uncleleiy.github.io/marks/index.html
+https://uncleleiy.github.io/navigate/index.html
 https://uncleleiy.github.io/2023/07/16/blog-image-test/
 https://uncleleiy.github.io/2023/07/21/blog-vasp-1/
 https://uncleleiy.github.io/2023/07/15/blog-kk/
@@ -20,7 +22,6 @@ https://uncleleiy.github.io/2023/07/05/blog-10-textbooks/
 https://uncleleiy.github.io/2023/07/09/blog-C-7/
 https://uncleleiy.github.io/2023/07/10/blog-C-8/
 https://uncleleiy.github.io/2023/07/11/blog-C-9/
-https://uncleleiy.github.io/navigate/index.html
 https://uncleleiy.github.io/contact/index.html
 https://uncleleiy.github.io/friends/index.html
 https://uncleleiy.github.io/tags/index.html

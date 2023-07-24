@@ -23,7 +23,7 @@
                 <meta name="author" content="Uncle_yang">
                 <meta name="keywords" content="知识、管理">
                 <title>
-                    wsl 备份问题 - 诗意の理性
+                    marks - 诗意の理性
                 </title>
 
                 <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
@@ -69,7 +69,7 @@
 
 
 <body>
-  <header style="height: 75vh;">
+  <header style="height: 60vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -197,56 +197,6 @@
             </span>
 
             
-              <div class="mt-3">
-  
-    <span class="post-meta mr-2">
-      <i class="iconfont icon-author" aria-hidden="true"></i>
-      Uncle_yang
-    </span>
-  
-  
-    <span class="post-meta">
-      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2023-06-18 16:00" pubdate>
-        2023年6月18日 下午
-      </time>
-    </span>
-  
-</div>
-
-<div class="mt-1">
-  
-    
-    <span class="post-meta mr-2">
-      <i class="iconfont icon-chart"></i>
-      185 字
-    </span>
-  
-
-  
-    
-    <span class="post-meta mr-2">
-      <i class="iconfont icon-clock-fill"></i>
-      
-      
-      2
-       分钟
-    </span>
-  
-
-  
-  
-    
-      <!-- 不蒜子统计文章PV -->
-      <span id="busuanzi_container_page_pv" style="display: none">
-        <i class="iconfont icon-eye" aria-hidden="true"></i>
-        <span id="busuanzi_value_page_pv"></span> 次
-      </span>
-    
-  
-</div>
-
-            
           </div>
 
           
@@ -257,149 +207,24 @@
 
   <main>
     
-      
+      <div class="container nopadding-md">
+        <div class="py-5" id="board"
+          >
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
 
-<div class="container-fluid">
-  <div class="row">
-    <div class="d-none d-lg-block col-lg-2"></div>
-    <div class="col-lg-8 nopadding-md">
-      <div class="container nopadding-md" id="board-ctn">
-        <div class="py-5" id="board">
-          <article class="post-content mx-auto" id="post">
-            <!-- SEO header -->
-            <h1 style="display: none">wsl 备份问题</h1>
-            
-            <div class="markdown-body" id="post-body">
-              <h1 id="备份乌班图子系统时出的一点小问题"><a href="#备份乌班图子系统时出的一点小问题" class="headerlink" title="备份乌班图子系统时出的一点小问题"></a>备份乌班图子系统时出的一点小问题</h1><div class="hljs"><pre><code class="hljs shell">C:\Users\uncle&gt;wsl -l -v
-  NAME            STATE           VERSION
-* Ubuntu-22.04    Running         2
-  Ubuntu-20.04    Stopped         2
+<div class="page-content">
+  
+</div>
 
-C:\Users\uncle&gt;shutdown Ubuntu-22.04
- NAME            STATE           VERSION
-* Ubuntu-22.04    Stopped         2
-  Ubuntu-20.04    Stopped         2
-
-C:\Users\uncle&gt;wsl --export  Ubuntu-22.04 d:\linux
-拒绝访问。
-Error code: Wsl/E_ACCESSDENIED</code></pre></div>
-<p>网上搜了一通，有人说是权限问题，我就用管理员身份打开了powershell，依旧无济于事……</p>
-<p>后面才发觉，是输入的时候没有指定备份文件的名称（上次也没指定但是却可以……）</p>
-<p>于是做以下修改：</p>
-<div class="hljs"><pre><code class="hljs shell">C:\Users\uncle&gt;wsl --export  Ubuntu-22.04 d:\linux\Ubuntu-22.04.tar</code></pre></div>
-<p>ok，问题解决，成功备份到D盘！</p>
-<h4 id="关于文件压缩：http-sobereva-com-672"><a href="#关于文件压缩：http-sobereva-com-672" class="headerlink" title="关于文件压缩：http://sobereva.com/672"></a>关于文件压缩：<a target="_blank" rel="noopener" href="http://sobereva.com/672">http://sobereva.com/672</a></h4>
-            </div>
-            <hr>
-            <div>
-              <div class="post-metas mb-3">
-                
-                  <div class="post-meta mr-3">
-                    <i class="iconfont icon-category"></i>
-                    
-                      <a class="hover-with-bg" href="/categories/debug/">debug</a>
-                    
-                  </div>
-                
-                
-                  <div class="post-meta">
-                    <i class="iconfont icon-tags"></i>
-                    
-                      <a class="hover-with-bg" href="/tags/wsl/">wsl</a>
-                    
-                  </div>
-                
               </div>
-              <p class="note note-warning">
-                <strong>本文作者: </strong><a href="/">Uncle-yang</a> <br>
-                <strong>本文链接: </strong><a href="https://uncleleiy.github.io/2023/06/18/blog-5-wsl-debug/">https://uncleleiy.github.io/2023/06/18/blog-5-wsl-debug/</a> <br>
-                <strong>版权声明: </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
-                   </p>
-                   
-              
-                <div class="post-prevnext row">
-                  <article class="post-prev col-6">
-                    
-                    
-                      <a href="/2023/06/25/blog-6-python/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">python 学习记录(11-20)</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
-                  </article>
-                  <article class="post-next col-6">
-                    
-                    
-                      <a href="/2023/06/15/blog-4-python/">
-                        <span class="hidden-mobile">python 学习记录(1-10)</span>
-                        <span class="visible-mobile">下一篇</span>
-                        <i class="iconfont icon-arrowright"></i>
-                      </a>
-                    
-                  </article>
-                </div>
-              
             </div>
-
-            
-              <!-- Comments -->
-              <article class="comments" id="comments">
-                
-                
-  <div id="vcomments"></div>
-  <script type="text/javascript">
-    function loadValine() {
-      addScript('https://cdn.staticfile.org/valine/1.4.14/Valine.min.js', function () {
-        new Valine({
-          el: "#vcomments",
-          app_id: "lwlZyOoy7M5xcVwEqua7QNvD-MdYXbMMI",
-          app_key: "Y93AC3OrQlZFHIB1tygcqEwz",
-          placeholder: "宝贝儿，来跟我讲讲悄悄话喔 ヾﾉ≧∀≦)o",
-          path: window.location.pathname,
-          avatar: "retro",
-          meta: ["nick","mail","link"],
-          pageSize: "15",
-          lang: "zh-CN",
-          highlight: true,
-          recordIP: false,
-          serverURLs: "https://lwlzyooy.api.lncldglobal.com",
-        });
-      });
-    }
-    waitElementVisible('vcomments', loadValine);
-  </script>
-  <noscript>Please enable JavaScript to view the <a href="https://valine.js.org" rel="nofollow noopener">comments
-      powered by Valine.</a></noscript>
-
-
-
- <!-- <script src="//code.bdstatic.com/npm/leancloud-storage@4.12.0/dist/av-min.js"></script> -->
-
-
-              </article>
-            
-          </article>
+          </div>
         </div>
       </div>
-    </div>
-    
-      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
-        <div id="toc">
-  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
-  <div id="tocbot"></div>
-</div>
-
-      </div>
-    
-  </div>
-</div>
-
-<!-- Custom -->
-
-
-
-
     
   </main>
 
@@ -519,31 +344,6 @@ Error code: Wsl/E_ACCESSDENIED</code></pre></div>
 
 
 
-  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
-  <script>
-    $(document).ready(function () {
-      var boardCtn = $('#board-ctn');
-      var boardTop = boardCtn.offset().top;
-
-      tocbot.init({
-        tocSelector: '#tocbot',
-        contentSelector: '#post-body',
-        headingSelector: 'h1,h2,h3,h4,h5,h6',
-        linkClass: 'tocbot-link',
-        activeLinkClass: 'tocbot-active-link',
-        listClass: 'tocbot-list',
-        isCollapsedClass: 'tocbot-is-collapsed',
-        collapsibleClass: 'tocbot-is-collapsible',
-        collapseDepth: 0,
-        scrollSmooth: true,
-        headingsOffset: -boardTop
-      });
-      if ($('.toc-list-item').length > 0) {
-        $('#toc').css('visibility', 'visible');
-      }
-    });
-  </script>
-
 
 
   <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
@@ -551,7 +351,7 @@ Error code: Wsl/E_ACCESSDENIED</code></pre></div>
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "wsl 备份问题&nbsp;",
+        "marks&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 120,
