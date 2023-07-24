@@ -2,7 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://uncleleiy.github.io/marks/index.html</loc>
+    <loc>https://uncleleiy.github.io/data/index.html</loc>
+    
+    <lastmod>2023-07-24</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://uncleleiy.github.io/tests/index.html</loc>
+    
+    <lastmod>2023-07-24</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://uncleleiy.github.io/2023/07/15/blog-kk-capital/</loc>
     
     <lastmod>2023-07-24</lastmod>
     
@@ -20,25 +38,7 @@
   </url>
   
   <url>
-    <loc>https://uncleleiy.github.io/2023/07/16/blog-image-test/</loc>
-    
-    <lastmod>2023-07-23</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://uncleleiy.github.io/2023/07/21/blog-vasp-1/</loc>
-    
-    <lastmod>2023-07-23</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://uncleleiy.github.io/2023/07/15/blog-kk/</loc>
     
     <lastmod>2023-07-23</lastmod>
     
@@ -218,7 +218,7 @@
   </url>
   
   <url>
-    <loc>https://uncleleiy.github.io/friends/index.html</loc>
+    <loc>https://uncleleiy.github.io/contact/index.html</loc>
     
     <lastmod>2023-07-10</lastmod>
     
@@ -227,7 +227,7 @@
   </url>
   
   <url>
-    <loc>https://uncleleiy.github.io/contact/index.html</loc>
+    <loc>https://uncleleiy.github.io/friends/index.html</loc>
     
     <lastmod>2023-07-10</lastmod>
     
@@ -268,13 +268,6 @@
   </url>
   
   <url>
-    <loc>https://uncleleiy.github.io/tags/hexo/</loc>
-    <lastmod>2023-07-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://uncleleiy.github.io/tags/linux/</loc>
     <lastmod>2023-07-24</lastmod>
     <changefreq>weekly</changefreq>
@@ -289,7 +282,7 @@
   </url>
   
   <url>
-    <loc>https://uncleleiy.github.io/tags/python/</loc>
+    <loc>https://uncleleiy.github.io/tags/hexo/</loc>
     <lastmod>2023-07-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -297,6 +290,13 @@
   
   <url>
     <loc>https://uncleleiy.github.io/tags/wsl/</loc>
+    <lastmod>2023-07-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://uncleleiy.github.io/tags/python/</loc>
     <lastmod>2023-07-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -311,13 +311,6 @@
   
   <url>
     <loc>https://uncleleiy.github.io/tags/C/</loc>
-    <lastmod>2023-07-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://uncleleiy.github.io/tags/test/</loc>
     <lastmod>2023-07-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -361,14 +354,14 @@
   </url>
   
   <url>
-    <loc>https://uncleleiy.github.io/categories/debug/</loc>
+    <loc>https://uncleleiy.github.io/categories/linux/</loc>
     <lastmod>2023-07-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://uncleleiy.github.io/categories/linux/</loc>
+    <loc>https://uncleleiy.github.io/categories/debug/</loc>
     <lastmod>2023-07-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -390,13 +383,6 @@
   
   <url>
     <loc>https://uncleleiy.github.io/categories/C/</loc>
-    <lastmod>2023-07-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://uncleleiy.github.io/categories/test/</loc>
     <lastmod>2023-07-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

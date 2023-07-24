@@ -70,7 +70,7 @@
 
 
 <body>
-  <header style="height: 75vh;">
+  <header style="height: 100vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -163,9 +163,21 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/marks/">
+              <a class="nav-link" href="/data/">
                 <i class="iconfont icon-bookmark-fill"></i>
                 书签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tests/">
+                <i class="iconfont icon-tumblr-fill"></i>
+                测试
               </a>
             </li>
           
@@ -188,10 +200,10 @@
 </nav>
 
     <div class="banner intro-2" id="background" parallax=true
-         style="background: url('/img/sun.jpg') no-repeat center center;
+         style="background: url('/null') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
-        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0)">
           <div class="container page-header text-center fade-in-up">
             <span class="h2" id="subtitle">
               
@@ -250,6 +262,10 @@
             
           </div>
 
+          
+            <div class="scroll-down-bar">
+              <i class="iconfont icon-arrowdown"></i>
+            </div>
           
         </div>
       </div>
@@ -376,34 +392,32 @@ c=band
               <article class="comments" id="comments">
                 
                 
-  <div id="vcomments"></div>
-  <script type="text/javascript">
-    function loadValine() {
-      addScript('https://cdn.staticfile.org/valine/1.4.14/Valine.min.js', function () {
-        new Valine({
-          el: "#vcomments",
-          app_id: "lwlZyOoy7M5xcVwEqua7QNvD-MdYXbMMI",
-          app_key: "Y93AC3OrQlZFHIB1tygcqEwz",
-          placeholder: "宝贝儿，来跟我讲讲悄悄话喔 ヾﾉ≧∀≦)o",
-          path: window.location.pathname,
-          avatar: "retro",
-          meta: ["nick","mail","link"],
-          pageSize: "15",
-          lang: "zh-CN",
-          highlight: true,
-          recordIP: false,
-          serverURLs: "https://lwlzyooy.api.lncldglobal.com",
+    <div id="vcomments"></div>
+    <script type="text/javascript">
+      function loadValine() {
+        addScript('https://cdn.staticfile.org/valine/1.4.14/Valine.min.js', function () {
+          new Valine({
+            el: "#vcomments",
+            app_id: "lwlZyOoy7M5xcVwEqua7QNvD-MdYXbMMI",
+            app_key: "Y93AC3OrQlZFHIB1tygcqEwz",
+            placeholder: "宝贝儿，来跟我讲讲悄悄话喔，讲不出来吧，诶，就是玩儿~ ヾﾉ≧∀≦)o",
+            path: window.location.pathname,
+            avatar: "retro",
+            meta: ["nick","mail","link"],
+            pageSize: "10",
+            lang: "zh-CN",
+            highlight: true,
+            recordIP: false,
+            serverURLs: "https://lwlzyooy.api.lncldglobal.com",
+          });
         });
-      });
-    }
-    waitElementVisible('vcomments', loadValine);
-  </script>
-  <noscript>Please enable JavaScript to view the <a href="https://valine.js.org" rel="nofollow noopener">comments
-      powered by Valine.</a></noscript>
+      }
+      waitElementVisible('vcomments', loadValine);
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://valine.js.org" rel="nofollow noopener">comments
+        powered by Valine.</a></noscript>
+  
 
-
-
- <!-- <script src="//code.bdstatic.com/npm/leancloud-storage@4.12.0/dist/av-min.js"></script> -->
 
 
               </article>
