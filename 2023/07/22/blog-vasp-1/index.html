@@ -284,8 +284,8 @@
             
             <div class="markdown-body" id="post-body">
               <p>[TOC]</p>
-<h1 id="1-VASP计算原理"><a href="#1-VASP计算原理" class="headerlink" title="1.VASP计算原理"></a>1.VASP计算原理</h1><h2 id="1-1-自洽原理"><a href="#1-1-自洽原理" class="headerlink" title="1.1 自洽原理"></a>1.1 自洽原理</h2><p><img src="https://uncleleiy.github.io/image/vasp.scf.png" srcset="/img/loading.gif" alt="vasp.scf"></p>
-<h2 id="1-2-程序框图"><a href="#1-2-程序框图" class="headerlink" title="1.2 程序框图"></a>1.2 程序框图</h2><p><img src="https://uncleleiy.github.io/image/vasp.process.png" srcset="/img/loading.gif" alt="vasp.process"></p>
+<h1 id="1-VASP计算原理"><a href="#1-VASP计算原理" class="headerlink" title="1.VASP计算原理"></a>1.VASP计算原理</h1><h2 id="1-1-自洽原理"><a href="#1-1-自洽原理" class="headerlink" title="1.1 自洽原理"></a>1.1 自洽原理</h2><p><img src="https://cdn.jsdelivr.net/gh/UncleleiY/image@main/blog/images/vasp.scf.png" srcset="/img/loading.gif" alt="vasp.scf"></p>
+<h2 id="1-2-程序框图"><a href="#1-2-程序框图" class="headerlink" title="1.2 程序框图"></a>1.2 程序框图</h2><p><img src="https://cdn.jsdelivr.net/gh/UncleleiY/image@main/blog/images/vasp.process.png" srcset="/img/loading.gif" alt="vasp.process"></p>
 <h1 id="2-VASP计算流程"><a href="#2-VASP计算流程" class="headerlink" title="2.VASP计算流程"></a>2.VASP计算流程</h1><h2 id="2-1-参数测试：k-mesh、ENCUT……"><a href="#2-1-参数测试：k-mesh、ENCUT……" class="headerlink" title="2.1 参数测试：k-mesh、ENCUT……"></a>2.1 参数测试：k-mesh、ENCUT……</h2><p>K点数量直接影响计算精度，K点数量越少，计算精度越低；K点数量越多，计算精度越高，但相应计算成本就会增大，因此K点的取值往往需要进行收敛性测试。</p>
 <p>ENCUT决定体系的截断能，其值越大代表计算精度越高，相应计算成本越大。注意：是对于多元素体系，ENCUT的值必须大于POTCAR中各元素ENMAX值的最大值，且不能小于各元素ENMIN值的最小值。一般设定为ENMAX最大值的1.25到1.5倍，除非对精度有很大的要求。随着ENCUT值的降低，计算精度降低，收敛速度逐渐减慢。</p>
 <h2 id="2-2-结构优化：（GeoOpt）"><a href="#2-2-结构优化：（GeoOpt）" class="headerlink" title="2.2 结构优化：（GeoOpt）"></a>2.2 结构优化：（GeoOpt）</h2><p>结构优化是进行后续计算的前提，在输入文件INCAR中设置相应参数，通过离子驰豫和电子驰豫优化晶胞结构，使得计算体系在限制条件下达到能量最低的状态，优化后的结构将被输出在CONTCAR文件中。结构优化可分为单步优化和多步优化，对于难优化的体系，通过逐步提高精度进行多步优化可以大大缩短时间，减小计算成本。</p>
