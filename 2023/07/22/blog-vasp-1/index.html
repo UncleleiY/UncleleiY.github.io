@@ -1,0 +1,634 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+    <head>
+        <meta charset="UTF-8">
+        <!-- 通过cdn引入霞鹜文楷字体 -->
+        <link rel="stylesheet" href="https://npm.elemecdn.com/lxgw-wenkai-screen-webfont/style.css" media="print" onload="this.media='all'">
+        <link rel="apple-touch-icon" sizes="76x76" href="/img/self.gif">
+        <link rel="icon" type="image/png" href="/img/self.gif">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <!-- 谷歌广告 -->
+        <script data-ad-client="ca-pub-2387054913975173" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
+        </script>
+        
+                <meta name="baidu-site-verification" content="code-PdLAgt4JZr">
+                <meta name="theme-color" content="#2f4154">
+                <meta name="description" content="天行健，君子以自强不息；地势坤，君子以厚德载物">
+                <meta name="author" content="Uncle_yang">
+                <meta name="keywords" content="知识、管理">
+                <title>
+                    VASP 学习笔记 - 诗意の理性
+                </title>
+
+                <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/gradient-dark.min.css" />
+    
+  
+
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+  
+<link rel="stylesheet" href="/css/csdn.css">
+<link rel="stylesheet" href="/css/red.css">
+<link rel="stylesheet" href="/css/new.css">
+
+
+
+                    <script  src="/js/utils.js" ></script>
+                        <script  src="/js/color-schema.js" ></script>
+    <meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="诗意の理性" type="application/atom+xml">
+</head>
+
+
+<body>
+  <header style="height: 100vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Uncle-yang</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/navigate/">
+                <i class="iconfont icon-map"></i>
+                导航
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/data/">
+                <i class="iconfont icon-bookmark-fill"></i>
+                书签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tests/">
+                <i class="iconfont icon-tumblr-fill"></i>
+                测试
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" false
+         style="background: url('/null') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0)">
+          <div class="container page-header text-center fade-in-up">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-author" aria-hidden="true"></i>
+      Uncle_yang
+    </span>
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2023-07-22 21:00" pubdate>
+        2023年7月22日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2.1k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      22
+       分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto" id="post">
+            <!-- SEO header -->
+            <h1 style="display: none">VASP 学习笔记</h1>
+            
+            <div class="markdown-body" id="post-body">
+              <p>[TOC]</p>
+<h1 id="1-VASP计算原理"><a href="#1-VASP计算原理" class="headerlink" title="1.VASP计算原理"></a>1.VASP计算原理</h1><h2 id="1-1-自洽原理"><a href="#1-1-自洽原理" class="headerlink" title="1.1 自洽原理"></a>1.1 自洽原理</h2><p><img src="https://uncleleiy.github.io/image/vasp.scf.png" srcset="/img/loading.gif" alt="vasp.scf"></p>
+<h2 id="1-2-程序框图"><a href="#1-2-程序框图" class="headerlink" title="1.2 程序框图"></a>1.2 程序框图</h2><p><img src="https://uncleleiy.github.io/image/vasp.process.png" srcset="/img/loading.gif" alt="vasp.process"></p>
+<h1 id="2-VASP计算流程"><a href="#2-VASP计算流程" class="headerlink" title="2.VASP计算流程"></a>2.VASP计算流程</h1><h2 id="2-1-参数测试：k-mesh、ENCUT……"><a href="#2-1-参数测试：k-mesh、ENCUT……" class="headerlink" title="2.1 参数测试：k-mesh、ENCUT……"></a>2.1 参数测试：k-mesh、ENCUT……</h2><p>K点数量直接影响计算精度，K点数量越少，计算精度越低；K点数量越多，计算精度越高，但相应计算成本就会增大，因此K点的取值往往需要进行收敛性测试。</p>
+<p>ENCUT决定体系的截断能，其值越大代表计算精度越高，相应计算成本越大。注意：是对于多元素体系，ENCUT的值必须大于POTCAR中各元素ENMAX值的最大值，且不能小于各元素ENMIN值的最小值。一般设定为ENMAX最大值的1.25到1.5倍，除非对精度有很大的要求。随着ENCUT值的降低，计算精度降低，收敛速度逐渐减慢。</p>
+<h2 id="2-2-结构优化：（GeoOpt）"><a href="#2-2-结构优化：（GeoOpt）" class="headerlink" title="2.2 结构优化：（GeoOpt）"></a>2.2 结构优化：（GeoOpt）</h2><p>结构优化是进行后续计算的前提，在输入文件INCAR中设置相应参数，通过离子驰豫和电子驰豫优化晶胞结构，使得计算体系在限制条件下达到能量最低的状态，优化后的结构将被输出在CONTCAR文件中。结构优化可分为单步优化和多步优化，对于难优化的体系，通过逐步提高精度进行多步优化可以大大缩短时间，减小计算成本。</p>
+<h2 id="2-3-单点计算：（SinglePoint）"><a href="#2-3-单点计算：（SinglePoint）" class="headerlink" title="2.3 单点计算：（SinglePoint）"></a>2.3 单点计算：（SinglePoint）</h2><p>单点计算也称静态计算或者静态自洽，几何结构计算前后不发生变化，其目的是在结构优化的基础上，在体系能量达到较低、体系较稳定的情况下固定原子的位置坐标，再对体系中的电子进行调整，以达到体系的最低能量。单点计算需要设置NSW=0，IBRION=-1。</p>
+<h2 id="2-4-能带计算：（Band）"><a href="#2-4-能带计算：（Band）" class="headerlink" title="2.4 能带计算：（Band）"></a>2.4 能带计算：（Band）</h2><p>能带的计算是在静态自洽的基础上完成的，静态自洽计算完成之后会有CHGCAR这个文件，新建一个文件夹名字叫band，把前者目录中的INCAR、POSCAR、POTCAR、CHGCAR复制过来，并通过vaspkit的303选项自动生成高对称点路径文件KPATH.in文件，将其复制为KPOINTS文件并提交计算，其中输入文件INCAR中需要修改和增加参数ISTART=1，ICHAGE=11，LORBIT=10。计算完成后再次使用vaspkit的211选项生成绘图文件BAND.dat。</p>
+<h2 id="2-5-态密度：（DOS）"><a href="#2-5-态密度：（DOS）" class="headerlink" title="2.5 态密度：（DOS）"></a>2.5 态密度：（DOS）</h2><p>态密度即单位能量范围内的能级数，态密度和能带高度相关。能带按照纵坐标轴投影就得到态密度，能带越平，态密度峰就越尖锐，能带越宽，态密度就越平缓。先新建一个目录，命名为DOS，然后复制静态自洽计算里面的INCAR、POSCAR、POTCAR、KPOINTS，CHGCAR过来。并修改一下INCAR，增加EMIN和EMAX参数指定能量范围，LORBIT=10，采点参数NEDOS，计算完成后使用vaspkit的111选项导出TDOS.dat文件并作图。注意：vaspkit处理数据时，将费米能级自动设置为0 ev的位置，若费米能级穿过体系的能带，则其为导体。</p>
+<h2 id="2-6-晶体轨道重叠布局：（Lobster）"><a href="#2-6-晶体轨道重叠布局：（Lobster）" class="headerlink" title="2.6 晶体轨道重叠布局：（Lobster）"></a>2.6 晶体轨道重叠布局：（Lobster）</h2><p>晶体轨道重叠布局COOP(crystal orbital overlap population)可以呈现详细的分子轨道信息，描述体系的成键，非键和反键特征，相应的正值和负值分别代表成键和反键作用，而数值的绝对值大小表示成键强度。它一个更为直观的名称是重叠布局权重的态密度 (overlap population-weighted density of states)，COOP可以很好的研究周期性体系中的局域化学键性质，但这种方法基于中心化的局域基组，不适用于平面波基组。因此在此基础上提出了COHP以便于处理平面波基组。目前最流行的COHP计算程序是Lobster，通过这个程序可以得到计算体系的COHP来分析材料的电子性质。计算COHP需要在静态计算时关掉对称性即设置ISYM=0或-1，然后增加参数NBANDS，计算完成后运行lobster可以生成COHPCAR.lobster文件用于作图。 该文件中第一列为能量，第二列为全部原子对的pCOHP，第三列为第二列的积分，第四列为No.1原子对的pCOHP，第五列为第四列的积分……示例：由于COHP计算引入了能量项，对于能量为负值的贡献是成键态，对于能量为正值的贡献是反键态，所以为了和COOP的计算结果看起来统一，一般在文章中看到的图都是-COHP，即右边的峰是成键贡献，左边的峰是反键贡献。若结构在费米能级以下的占据态中只有少量的反键态，大部分是成键态，则该结构比较稳定。</p>
+<h2 id="2-7-声子谱：-Phonon"><a href="#2-7-声子谱：-Phonon" class="headerlink" title="2.7 声子谱：(Phonon)"></a>2.7 声子谱：(Phonon)</h2><p>在第一性原理计算过程中考察体系稳定性是经常遇到的一个问题，通常使用声子谱研究体系的动力学稳定性，使用分子动力学研究体系的热稳定性。声子谱的计算主要有两种方法，一种是直接法，另一种是微扰密度泛函方法(DFPT)。直接法，或称frozen-phonon方法，计算声子谱需要高精度的结构优化，否则容易出现虚频，此外还需要处理软件phonopy。优化结束后用生成的CONTCAR扩胞生成多个超胞,准备band.conf文件之后对各个超胞进行静态计算生成vasprun.xml文件，最后通过phonopy软件处理得到声子谱数据文件band.dat。有些情况下计算得来的的声子谱会出现负的频率，即被称为虚频，声子谱出现虚频，说明结构不稳定。声子谱中包含3个声学支和3N-3个光学支，若计算出现一部分虚频，但是都相对很小，则该结构仍然是动力学稳定的。</p>
+<h2 id="2-8-电子化局域化函数：（ELF）"><a href="#2-8-电子化局域化函数：（ELF）" class="headerlink" title="2.8 电子化局域化函数：（ELF）"></a>2.8 电子化局域化函数：（ELF）</h2><p>ELF是研究电子结构的手段之一，数值范围在0至1之间。简而言之，数值较高的ELF的等值面包围的区域，电子在里面定域性较强，不容易跑出去，相对地，电子能够容易地在这样的区域内随意运动（在此区域里随意离域）。在那些ELF数值较低的区域，电子定域性弱，即如果把电子放在那里，就很容易离域到其它区域去。计算ELF需要在自洽计算结束后在INCAR中设置LELF=.TRUE.，其他不变。计算结束后，得到ELFCAR文件，通过ELFCAR文件在VESTA中作图。</p>
+<h2 id="2-9-Bader电荷：（BaderCharge）"><a href="#2-9-Bader电荷：（BaderCharge）" class="headerlink" title="2.9 Bader电荷：（BaderCharge）"></a>2.9 Bader电荷：（BaderCharge）</h2><p>Bader电荷分析在第一性原理计算中经常用到，利用VASP计算bader电荷，可以得到原子周围的电子数，从而近似得到原子的化合价。计算Bader电荷需要下载Bader执行程序，在自洽计算后在INCAR文件中增加输入参数LAECHG =.TRUE.，LCHARG =.TRUE.，然后提交计算，计算完成后生成文件 AECCAR0，AECCAR1，AECCAR2，最后运行Bader程序生成 ACF.dat 文件用于分析。注意：ACF.dat文件的CHARGE那一列对应的是每个原子上总的价电子数目，判断原子带电情况时需要用该列的数值减去该原子POTCAR中对应的价电子数目。</p>
+<h2 id="2-10-范德华修正：-VDW"><a href="#2-10-范德华修正：-VDW" class="headerlink" title="2.10 范德华修正：(VDW)"></a>2.10 范德华修正：(VDW)</h2><p>VDW即范德华修正，范德华力在化学中指分子之间非定向、无饱和性的，较弱的相互作用力。比化学键弱的多，来源主要有静电力，诱导力，色散力。范德华修正的主要作用是使计算过程中晶格常数以及原子位置算的更合理，特别是对于长程相互作用的体系，比如分子晶体，表面吸附和表面催化以及长链烷烃之类的大分子构象、弱极性分子团簇。范德华修正分为两种，一是基于半经验参数，在传统计算的Kohn-Sham总能基础上加上额外的能量修正项，即考虑了色散力的作用，二是vdW-DF,通过修改交换关联泛函来考虑范德华修正。</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/software/">software</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/vasp/">vasp</a>
+                    
+                  </div>
+                
+              </div>
+              <p class="note note-warning">
+                <strong>本文作者: </strong><a href="/">Uncle-yang</a> <br>
+                <strong>本文链接: </strong><a href="https://uncleleiy.github.io/2023/07/22/blog-vasp-1/">https://uncleleiy.github.io/2023/07/22/blog-vasp-1/</a> <br>
+                <strong>版权声明: </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                   </p>
+                   
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/07/24/blog-vasp-2/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">VASP 学习笔记</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/07/20/blog-software-installation/">
+                        <span class="hidden-mobile">QE 安装</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                
+    <div id="vcomments"></div>
+    <script type="text/javascript">
+      function loadValine() {
+        addScript('https://cdn.staticfile.org/valine/1.4.14/Valine.min.js', function () {
+          new Valine({
+            el: "#vcomments",
+            app_id: "lwlZyOoy7M5xcVwEqua7QNvD-MdYXbMMI",
+            app_key: "Y93AC3OrQlZFHIB1tygcqEwz",
+            placeholder: "宝贝儿，来跟我讲讲悄悄话喔，讲不出来吧，诶，就是玩儿~ ヾﾉ≧∀≦)o",
+            path: window.location.pathname,
+            avatar: "retro",
+            meta: ["nick","mail","link"],
+            pageSize: "10",
+            lang: "zh-CN",
+            highlight: true,
+            recordIP: false,
+            serverURLs: "https://lwlzyooy.api.lncldglobal.com",
+          });
+        });
+      }
+      waitElementVisible('vcomments', loadValine);
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://valine.js.org" rel="nofollow noopener">comments
+        powered by Valine.</a></noscript>
+  
+
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+
+
+    
+  </main>
+
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+    
+
+      
+
+          <!-- 在网页底部添加本站已运行的时间 -->
+          <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+          <script>
+            var now = new Date();
+            function createtime() {
+              var grt = new Date("06/06/2023 12:00:00");//在此处修改你的建站时间
+              now.setTime(now.getTime() + 250);
+              days = (now - grt) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+              hours = (now - grt) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+              if (String(hnum).length == 1) { hnum = "0" + hnum; } minutes = (now - grt) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);
+              mnum = Math.floor(minutes); if (String(mnum).length == 1) { mnum = "0" + mnum; }
+              seconds = (now - grt) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+              snum = Math.round(seconds); if (String(snum).length == 1) { snum = "0" + snum; }
+              document.getElementById("timeDate").innerHTML = "小站已勉强存活 " + dnum + " 天 ";
+              document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+            }
+            setInterval("createtime()", 250);
+          </script>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/js/clipboard-use.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+  
+<script src="/js/new.js"></script>
+
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '#post-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 0,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "VASP 学习笔记&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 125,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "left",
+      visible: "hover",
+      
+      icon: " ❡ "
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      searchFunc(path, 'local-search-input', 'local-search-result');
+      this.onclick = null
+    }
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+</body>
+</html>

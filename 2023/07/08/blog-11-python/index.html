@@ -1,0 +1,798 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+    <head>
+        <meta charset="UTF-8">
+        <!-- 通过cdn引入霞鹜文楷字体 -->
+        <link rel="stylesheet" href="https://npm.elemecdn.com/lxgw-wenkai-screen-webfont/style.css" media="print" onload="this.media='all'">
+        <link rel="apple-touch-icon" sizes="76x76" href="/img/self.gif">
+        <link rel="icon" type="image/png" href="/img/self.gif">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <!-- 谷歌广告 -->
+        <script data-ad-client="ca-pub-2387054913975173" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
+        </script>
+        
+                <meta name="baidu-site-verification" content="code-PdLAgt4JZr">
+                <meta name="theme-color" content="#2f4154">
+                <meta name="description" content="天行健，君子以自强不息；地势坤，君子以厚德载物">
+                <meta name="author" content="Uncle_yang">
+                <meta name="keywords" content="知识、管理">
+                <title>
+                    python 语法学习 - 诗意の理性
+                </title>
+
+                <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/gradient-dark.min.css" />
+    
+  
+
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+  
+<link rel="stylesheet" href="/css/csdn.css">
+<link rel="stylesheet" href="/css/red.css">
+<link rel="stylesheet" href="/css/new.css">
+
+
+
+                    <script  src="/js/utils.js" ></script>
+                        <script  src="/js/color-schema.js" ></script>
+    <meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="诗意の理性" type="application/atom+xml">
+</head>
+
+
+<body>
+  <header style="height: 100vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Uncle-yang</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/navigate/">
+                <i class="iconfont icon-map"></i>
+                导航
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/data/">
+                <i class="iconfont icon-bookmark-fill"></i>
+                书签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tests/">
+                <i class="iconfont icon-tumblr-fill"></i>
+                测试
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" false
+         style="background: url('/null') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0)">
+          <div class="container page-header text-center fade-in-up">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-author" aria-hidden="true"></i>
+      Uncle_yang
+    </span>
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2023-07-08 21:00" pubdate>
+        2023年7月8日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      770 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      15
+       分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto" id="post">
+            <!-- SEO header -->
+            <h1 style="display: none">python 语法学习</h1>
+            
+            <div class="markdown-body" id="post-body">
+              <h1 id="python基本语法归纳"><a href="#python基本语法归纳" class="headerlink" title="python基本语法归纳"></a>python基本语法归纳</h1><div class="hljs"><pre><code class="hljs python"><span class="hljs-comment">## how to comment in more than one line: using &quot;&quot;&quot; or &#x27;&#x27;&#x27; </span>
+<span class="hljs-comment">## in fact, &#x27; equall to &quot;</span>
+
+<span class="hljs-string">&#x27;&#x27;&#x27;</span>
+<span class="hljs-string">this is comment one</span>
+<span class="hljs-string">this is comment two</span>
+<span class="hljs-string">this is comment three </span>
+<span class="hljs-string">&#x27;&#x27;&#x27;</span>
+
+<span class="hljs-string">&quot;&quot;&quot;</span>
+<span class="hljs-string">this is comment one </span>
+<span class="hljs-string">this is comment two</span>
+<span class="hljs-string">this is comment three</span>
+<span class="hljs-string">&quot;&quot;&quot;</span>
+
+<span class="hljs-comment">## how to define variables </span>
+a = <span class="hljs-string">&quot;hello, dear ~&quot;</span>
+<span class="hljs-comment">## how to print it </span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;<span class="hljs-subst">&#123;a&#125;</span>, my pleasure to meet you here !&quot;</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;*&#x27;</span>*<span class="hljs-number">50</span>)
+
+<span class="hljs-comment">## how to write codes more than one line: using \</span>
+argv1 = <span class="hljs-number">1</span> ; argv2 = <span class="hljs-number">2</span> ; argv3 = <span class="hljs-number">3</span> ; argv4 = <span class="hljs-number">4</span> ;
+b = argv1 + \
+    argv2 + \
+    argv3 + \
+    argv4 
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;1 + 2 + 3 + 4 = <span class="hljs-subst">&#123;b&#125;</span>&quot;</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;*&#x27;</span>*<span class="hljs-number">50</span>)
+<span class="hljs-string">&#x27;&#x27;&#x27;</span>
+<span class="hljs-string">here be attention the order of define variables and use them !!!</span>
+<span class="hljs-string">don&#x27;t use the variable that you never define before !!! </span>
+<span class="hljs-string">&#x27;&#x27;&#x27;</span>
+
+<span class="hljs-comment">## there are four kinds of number: int, bool, float, complex(a + bi)</span>
+int1 = <span class="hljs-number">1</span>
+bool0 = <span class="hljs-literal">False</span>
+bool00 = <span class="hljs-string">&#x27;false&#x27;</span>
+float1 = <span class="hljs-number">2E5</span>
+complex1 = <span class="hljs-number">1</span> + <span class="hljs-number">1j</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;&quot;&quot;int1 = <span class="hljs-subst">&#123;int1&#125;</span>, </span>
+<span class="hljs-string">bool0 = <span class="hljs-subst">&#123;bool0&#125;</span>, </span>
+<span class="hljs-string">bool00 = <span class="hljs-subst">&#123;bool00&#125;</span>, </span>
+<span class="hljs-string">float1 = <span class="hljs-subst">&#123;float1&#125;</span>, </span>
+<span class="hljs-string">complex1 = <span class="hljs-subst">&#123;complex1&#125;</span>&quot;&quot;&quot;</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;*&#x27;</span>*<span class="hljs-number">50</span>)
+
+<span class="hljs-comment">## \ can be used to change initial meaning, but we add r in front of the string to avoid </span>
+a = <span class="hljs-string">&#x27;print(&quot;this is line with \\n&quot;)&#x27;</span>
+b = <span class="hljs-string">&#x27;print(r&quot;this is line with \\n&quot;)&#x27;</span> 
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;<span class="hljs-subst">&#123;a&#125;</span>:&quot;</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;this is line with \n&#x27;</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;<span class="hljs-subst">&#123;b&#125;</span>:&quot;</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">r&#x27;this is line with \n&#x27;</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;*&#x27;</span>*<span class="hljs-number">50</span>)
+
+<span class="hljs-comment">## how to conject strings using + and *</span>
+a = <span class="hljs-string">&#x27;this &#x27;</span>
+b = <span class="hljs-string">&#x27;is &#x27;</span>
+c = <span class="hljs-string">&#x27;a&#x27;</span>
+x = <span class="hljs-string">&#x27; &#x27;</span>
+d = <span class="hljs-string">&#x27;string&#x27;</span>
+
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;<span class="hljs-subst">&#123;a&#125;</span><span class="hljs-subst">&#123;b&#125;</span><span class="hljs-subst">&#123;c&#125;</span><span class="hljs-subst">&#123;x&#125;</span><span class="hljs-subst">&#123;d&#125;</span>&quot;</span>)
+<span class="hljs-built_in">print</span>(a + b + c + x + d)
+<span class="hljs-built_in">print</span>(a*<span class="hljs-number">2</span> + b*<span class="hljs-number">2</span> + c*<span class="hljs-number">2</span> + x + d*<span class="hljs-number">2</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;*&#x27;</span>*<span class="hljs-number">50</span>)
+
+<span class="hljs-comment">## how to print strings in different ways</span>
+strs=<span class="hljs-string">&#x27;1234567890&#x27;</span>
+
+<span class="hljs-built_in">print</span>(strs)
+<span class="hljs-built_in">print</span>(strs[<span class="hljs-number">0</span>:-<span class="hljs-number">1</span>])
+<span class="hljs-built_in">print</span>(strs[<span class="hljs-number">2</span>:<span class="hljs-number">5</span>])
+<span class="hljs-built_in">print</span>(strs[<span class="hljs-number">2</span>:])
+<span class="hljs-built_in">print</span>(strs[<span class="hljs-number">1</span>:<span class="hljs-number">5</span>:<span class="hljs-number">2</span>])
+<span class="hljs-built_in">print</span>(strs * <span class="hljs-number">3</span>)
+<span class="hljs-built_in">print</span>(strs + <span class="hljs-string">&#x27;love&#x27;</span>)
+<span class="hljs-built_in">print</span>(strs + <span class="hljs-string">&#x27;\\n&#x27;</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">r&#x27;\n&#x27;</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;\\n&#x27;</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;*&#x27;</span> * <span class="hljs-number">50</span>)
+
+<span class="hljs-comment">## how to write more statements in one line using &lt;;&gt;</span>
+<span class="hljs-keyword">import</span> sys; x = <span class="hljs-string">&#x27;love never fade away&#x27;</span>; sys.stdout.write(x + <span class="hljs-string">&#x27;\n&#x27;</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;*&#x27;</span> * <span class="hljs-number">50</span>)
+<span class="hljs-comment">## how to print without shifting using end=&quot; &quot;</span>
+x=<span class="hljs-string">&quot;love&quot;</span>
+y=<span class="hljs-string">&quot;never&quot;</span>
+z=<span class="hljs-string">&quot;fade&quot;</span>
+<span class="hljs-comment"># shift</span>
+<span class="hljs-built_in">print</span>(x)
+<span class="hljs-built_in">print</span>(y)
+<span class="hljs-built_in">print</span>(z)
+<span class="hljs-comment"># no shift</span>
+<span class="hljs-built_in">print</span>(x, end=<span class="hljs-string">&quot; &quot;</span>)
+<span class="hljs-built_in">print</span>(y, end=<span class="hljs-string">&quot; &quot;</span>)
+<span class="hljs-built_in">print</span>(z, end=<span class="hljs-string">&quot; &quot;</span>)
+<span class="hljs-built_in">print</span>()
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;*&#x27;</span> * <span class="hljs-number">50</span> + <span class="hljs-string">&#x27;\n&#x27;</span>)
+
+
+<span class="hljs-comment"># how to use &#x27;import&#x27; to input some functions that you need</span>
+<span class="hljs-comment"># here we are going to find the path of python3  </span>
+
+<span class="hljs-keyword">import</span> sys
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;*&#x27;</span> * <span class="hljs-number">25</span> + <span class="hljs-string">&quot; import module &quot;</span> + <span class="hljs-string">&#x27;*&#x27;</span> * <span class="hljs-number">25</span>) 
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;the arguments list as following: &quot;</span>)
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> sys.argv:
+    <span class="hljs-built_in">print</span>(i)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;\n the path of python:&#x27;</span>,sys.path)
+
+<span class="hljs-keyword">from</span> sys <span class="hljs-keyword">import</span> argv,path
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;*&#x27;</span> * <span class="hljs-number">25</span> + <span class="hljs-string">&quot; import module &quot;</span> + <span class="hljs-string">&#x27;*&#x27;</span> * <span class="hljs-number">25</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;path:&#x27;</span>,path)</code></pre></div>
+
+<h1 id="python调试结果展示"><a href="#python调试结果展示" class="headerlink" title="python调试结果展示"></a>python调试结果展示</h1><div class="hljs"><pre><code class="hljs markdown">hello, dear ~, my pleasure to meet you here !
+<span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span>**
+1 + 2 + 3 + 4 = 10
+<span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span>**
+int1 = 1,
+bool0 = False,
+bool00 = false,
+float1 = 200000.0,
+complex1 = (1+1j)
+<span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span>**
+print(&quot;this is line with \n&quot;):
+this is line with
+
+print(r&quot;this is line with \n&quot;):
+this is line with \n
+<span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span>**
+this is a string
+this is a string
+this this is is aa stringstring
+<span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span>**
+1234567890
+123456789
+345
+34567890
+24
+123456789012345678901234567890
+1234567890love
+1234567890\n
+\n
+\n
+<span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span>**
+love never fade away
+<span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span>**
+love
+never
+fade
+love never fade
+<span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span>**
+
+<span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span>* import module <span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span>*
+the arguments list as following:
+ex1.py
+
+ the path of python: [&#x27;/home/lei/tvp/ex&#x27;, &#x27;/usr/lib/python38.zip&#x27;, &#x27;/usr/lib/python3.8&#x27;, &#x27;/usr/lib/python3.8/lib-dynload&#x27;, &#x27;/usr/local/lib/python3.8/dist-packages&#x27;, &#x27;/usr/lib/python3/dist-packages&#x27;]
+<span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span>* import module <span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span>*
+path: [&#x27;/home/lei/tvp/ex&#x27;, &#x27;/usr/lib/python38.zip&#x27;, &#x27;/usr/lib/python3.8&#x27;, &#x27;/usr/lib/python3.8/lib-dynload&#x27;, &#x27;/usr/local/lib/python3.8/dist-packages&#x27;, &#x27;/usr/lib/python3/dist-packages&#x27;]</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/python/">python</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/python/">python</a>
+                    
+                  </div>
+                
+              </div>
+              <p class="note note-warning">
+                <strong>本文作者: </strong><a href="/">Uncle-yang</a> <br>
+                <strong>本文链接: </strong><a href="https://uncleleiy.github.io/2023/07/08/blog-11-python/">https://uncleleiy.github.io/2023/07/08/blog-11-python/</a> <br>
+                <strong>版权声明: </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                   </p>
+                   
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/07/10/blog-C-7/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">C++ 学习记录(1)</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/07/05/blog-10-python/">
+                        <span class="hidden-mobile">python 学习记录(21-30)</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                
+    <div id="vcomments"></div>
+    <script type="text/javascript">
+      function loadValine() {
+        addScript('https://cdn.staticfile.org/valine/1.4.14/Valine.min.js', function () {
+          new Valine({
+            el: "#vcomments",
+            app_id: "lwlZyOoy7M5xcVwEqua7QNvD-MdYXbMMI",
+            app_key: "Y93AC3OrQlZFHIB1tygcqEwz",
+            placeholder: "宝贝儿，来跟我讲讲悄悄话喔，讲不出来吧，诶，就是玩儿~ ヾﾉ≧∀≦)o",
+            path: window.location.pathname,
+            avatar: "retro",
+            meta: ["nick","mail","link"],
+            pageSize: "10",
+            lang: "zh-CN",
+            highlight: true,
+            recordIP: false,
+            serverURLs: "https://lwlzyooy.api.lncldglobal.com",
+          });
+        });
+      }
+      waitElementVisible('vcomments', loadValine);
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://valine.js.org" rel="nofollow noopener">comments
+        powered by Valine.</a></noscript>
+  
+
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+
+
+    
+  </main>
+
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+    
+
+      
+
+          <!-- 在网页底部添加本站已运行的时间 -->
+          <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+          <script>
+            var now = new Date();
+            function createtime() {
+              var grt = new Date("06/06/2023 12:00:00");//在此处修改你的建站时间
+              now.setTime(now.getTime() + 250);
+              days = (now - grt) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+              hours = (now - grt) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+              if (String(hnum).length == 1) { hnum = "0" + hnum; } minutes = (now - grt) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);
+              mnum = Math.floor(minutes); if (String(mnum).length == 1) { mnum = "0" + mnum; }
+              seconds = (now - grt) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+              snum = Math.round(seconds); if (String(snum).length == 1) { snum = "0" + snum; }
+              document.getElementById("timeDate").innerHTML = "小站已勉强存活 " + dnum + " 天 ";
+              document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+            }
+            setInterval("createtime()", 250);
+          </script>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/js/clipboard-use.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+  
+<script src="/js/new.js"></script>
+
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '#post-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 0,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "python 语法学习&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 125,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "left",
+      visible: "hover",
+      
+      icon: " ❡ "
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      searchFunc(path, 'local-search-input', 'local-search-result');
+      this.onclick = null
+    }
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+</body>
+</html>

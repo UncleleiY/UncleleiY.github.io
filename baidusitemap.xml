@@ -1,28 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://uncleleiy.github.io/2023/07/15/blog-kk-capital/</loc>
-    <lastmod>2023-07-24</lastmod>
+    <loc>https://uncleleiy.github.io/2023/06/20/blog-6-python/</loc>
+    <lastmod>2023-07-25</lastmod>
   </url>
   <url>
-    <loc>https://uncleleiy.github.io/2023/07/21/blog-vasp-1/</loc>
-    <lastmod>2023-07-23</lastmod>
+    <loc>https://uncleleiy.github.io/2023/06/25/blog-7-shell-python-scripts/</loc>
+    <lastmod>2023-07-25</lastmod>
   </url>
   <url>
-    <loc>https://uncleleiy.github.io/2023/07/22/blog-vasp-2/</loc>
-    <lastmod>2023-07-23</lastmod>
+    <loc>https://uncleleiy.github.io/2023/06/27/blog-8-shell-scripts/</loc>
+    <lastmod>2023-07-25</lastmod>
+  </url>
+  <url>
+    <loc>https://uncleleiy.github.io/2023/06/29/blog-9-shell-scripts/</loc>
+    <lastmod>2023-07-25</lastmod>
+  </url>
+  <url>
+    <loc>https://uncleleiy.github.io/2023/07/05/blog-10-python/</loc>
+    <lastmod>2023-07-25</lastmod>
+  </url>
+  <url>
+    <loc>https://uncleleiy.github.io/2023/07/08/blog-11-python/</loc>
+    <lastmod>2023-07-25</lastmod>
+  </url>
+  <url>
+    <loc>https://uncleleiy.github.io/2023/07/10/blog-C-7/</loc>
+    <lastmod>2023-07-25</lastmod>
+  </url>
+  <url>
+    <loc>https://uncleleiy.github.io/2023/07/12/blog-C-8/</loc>
+    <lastmod>2023-07-25</lastmod>
+  </url>
+  <url>
+    <loc>https://uncleleiy.github.io/2023/07/14/blog-C-9/</loc>
+    <lastmod>2023-07-25</lastmod>
+  </url>
+  <url>
+    <loc>https://uncleleiy.github.io/2023/07/18/blog-kk-capital/</loc>
+    <lastmod>2023-07-25</lastmod>
   </url>
   <url>
     <loc>https://uncleleiy.github.io/2023/07/20/blog-software-installation/</loc>
-    <lastmod>2023-07-23</lastmod>
+    <lastmod>2023-07-25</lastmod>
   </url>
   <url>
-    <loc>https://uncleleiy.github.io/2023/07/16/blog-python21/</loc>
-    <lastmod>2023-07-23</lastmod>
+    <loc>https://uncleleiy.github.io/2023/07/22/blog-vasp-1/</loc>
+    <lastmod>2023-07-25</lastmod>
   </url>
   <url>
-    <loc>https://uncleleiy.github.io/2023/07/17/blog-python22/</loc>
-    <lastmod>2023-07-23</lastmod>
+    <loc>https://uncleleiy.github.io/2023/07/24/blog-vasp-2/</loc>
+    <lastmod>2023-07-25</lastmod>
   </url>
   <url>
     <loc>https://uncleleiy.github.io/2023/06/06/blog-1-markdown/</loc>
@@ -42,38 +70,6 @@
   </url>
   <url>
     <loc>https://uncleleiy.github.io/2023/06/18/blog-5-wsl-debug/</loc>
-    <lastmod>2023-07-14</lastmod>
-  </url>
-  <url>
-    <loc>https://uncleleiy.github.io/2023/06/25/blog-6-python/</loc>
-    <lastmod>2023-07-14</lastmod>
-  </url>
-  <url>
-    <loc>https://uncleleiy.github.io/2023/06/28/blog-7-shell-python-scripts/</loc>
-    <lastmod>2023-07-14</lastmod>
-  </url>
-  <url>
-    <loc>https://uncleleiy.github.io/2023/06/30/blog-8-shell-scripts/</loc>
-    <lastmod>2023-07-14</lastmod>
-  </url>
-  <url>
-    <loc>https://uncleleiy.github.io/2023/07/02/blog-9-shell-scripts/</loc>
-    <lastmod>2023-07-14</lastmod>
-  </url>
-  <url>
-    <loc>https://uncleleiy.github.io/2023/07/05/blog-10-textbooks/</loc>
-    <lastmod>2023-07-14</lastmod>
-  </url>
-  <url>
-    <loc>https://uncleleiy.github.io/2023/07/09/blog-C-7/</loc>
-    <lastmod>2023-07-14</lastmod>
-  </url>
-  <url>
-    <loc>https://uncleleiy.github.io/2023/07/10/blog-C-8/</loc>
-    <lastmod>2023-07-14</lastmod>
-  </url>
-  <url>
-    <loc>https://uncleleiy.github.io/2023/07/11/blog-C-9/</loc>
     <lastmod>2023-07-14</lastmod>
   </url>
 </urlset> 

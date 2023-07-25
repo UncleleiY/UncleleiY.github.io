@@ -1,0 +1,1195 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+    <head>
+        <meta charset="UTF-8">
+        <!-- 通过cdn引入霞鹜文楷字体 -->
+        <link rel="stylesheet" href="https://npm.elemecdn.com/lxgw-wenkai-screen-webfont/style.css" media="print" onload="this.media='all'">
+        <link rel="apple-touch-icon" sizes="76x76" href="/img/self.gif">
+        <link rel="icon" type="image/png" href="/img/self.gif">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <!-- 谷歌广告 -->
+        <script data-ad-client="ca-pub-2387054913975173" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
+        </script>
+        
+                <meta name="baidu-site-verification" content="code-PdLAgt4JZr">
+                <meta name="theme-color" content="#2f4154">
+                <meta name="description" content="天行健，君子以自强不息；地势坤，君子以厚德载物">
+                <meta name="author" content="Uncle_yang">
+                <meta name="keywords" content="知识、管理">
+                <title>
+                    python 学习记录(21-30) - 诗意の理性
+                </title>
+
+                <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/gradient-dark.min.css" />
+    
+  
+
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+  
+<link rel="stylesheet" href="/css/csdn.css">
+<link rel="stylesheet" href="/css/red.css">
+<link rel="stylesheet" href="/css/new.css">
+
+
+
+                    <script  src="/js/utils.js" ></script>
+                        <script  src="/js/color-schema.js" ></script>
+    <meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="诗意の理性" type="application/atom+xml">
+</head>
+
+
+<body>
+  <header style="height: 100vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Uncle-yang</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/navigate/">
+                <i class="iconfont icon-map"></i>
+                导航
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/data/">
+                <i class="iconfont icon-bookmark-fill"></i>
+                书签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tests/">
+                <i class="iconfont icon-tumblr-fill"></i>
+                测试
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" false
+         style="background: url('/null') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0)">
+          <div class="container page-header text-center fade-in-up">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-author" aria-hidden="true"></i>
+      Uncle_yang
+    </span>
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2023-07-05 15:00" pubdate>
+        2023年7月5日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2.4k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      46
+       分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto" id="post">
+            <!-- SEO header -->
+            <h1 style="display: none">python 学习记录(21-30)</h1>
+            
+            <div class="markdown-body" id="post-body">
+              <h1 id="python-学习记录"><a href="#python-学习记录" class="headerlink" title="python 学习记录"></a>python 学习记录</h1><h2 id="21-1-使用return返回函数值"><a href="#21-1-使用return返回函数值" class="headerlink" title="21.1 使用return返回函数值"></a>21.1 使用return返回函数值</h2><div class="hljs"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">add</span>(<span class="hljs-params">a, b</span>):
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;add <span class="hljs-subst">&#123;a&#125;</span> + <span class="hljs-subst">&#123;b&#125;</span>&quot;</span>)
+    <span class="hljs-keyword">return</span> a + b
+    
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">subtract</span>(<span class="hljs-params">a, b</span>):
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;subtract <span class="hljs-subst">&#123;a&#125;</span> - <span class="hljs-subst">&#123;b&#125;</span>&quot;</span>)
+    <span class="hljs-keyword">return</span> a - b
+    
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">multiply</span>(<span class="hljs-params">a, b</span>):
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;multiply <span class="hljs-subst">&#123;a&#125;</span> * <span class="hljs-subst">&#123;b&#125;</span>&quot;</span>)
+    <span class="hljs-keyword">return</span> a * b
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">divide</span>(<span class="hljs-params">a, b</span>):
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;divide <span class="hljs-subst">&#123;a&#125;</span> / <span class="hljs-subst">&#123;b&#125;</span>&quot;</span>)
+    <span class="hljs-keyword">return</span> a / b
+    
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;let&#x27;s do some math with just functions !&quot;</span>)
+
+age = add(<span class="hljs-number">20</span>, <span class="hljs-number">3</span>)
+height = subtract(<span class="hljs-number">166</span>, <span class="hljs-number">0</span>)
+weight = multiply(<span class="hljs-number">45</span>, <span class="hljs-number">2</span>)
+IQ = divide(<span class="hljs-number">250</span>, <span class="hljs-number">2</span>)
+
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;age: <span class="hljs-subst">&#123;age&#125;</span>, height: <span class="hljs-subst">&#123;height&#125;</span>, weight: <span class="hljs-subst">&#123;weight&#125;</span>, IQ: <span class="hljs-subst">&#123;IQ&#125;</span>&quot;</span>)
+
+amazing = add(age, subtract(height, multiply(weight, divide(IQ, <span class="hljs-number">2</span>))))
+
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;wasn&#x27;t it amazing ?&quot;</span>, amazing, <span class="hljs-string">&quot;yeah, it&#x27;s funny !&quot;</span>)</code></pre></div>
+<div class="hljs"><pre><code class="hljs apache"><span class="hljs-attribute">let</span>&#x27;s do some math with just functions !
+<span class="hljs-attribute">add</span> <span class="hljs-number">20</span> + <span class="hljs-number">3</span>
+<span class="hljs-attribute">subtract</span> <span class="hljs-number">166</span> - <span class="hljs-number">0</span>
+<span class="hljs-attribute">multiply</span> <span class="hljs-number">45</span> * <span class="hljs-number">2</span>
+<span class="hljs-attribute">divide</span> <span class="hljs-number">250</span> / <span class="hljs-number">2</span>
+<span class="hljs-attribute">age</span>: <span class="hljs-number">23</span>, height: <span class="hljs-number">166</span>, weight: <span class="hljs-number">90</span>, IQ: <span class="hljs-number">125</span>.<span class="hljs-number">0</span>
+<span class="hljs-attribute">divide</span> <span class="hljs-number">125</span>.<span class="hljs-number">0</span> / <span class="hljs-number">2</span>
+<span class="hljs-attribute">multiply</span> <span class="hljs-number">90</span> * <span class="hljs-number">62</span>.<span class="hljs-number">5</span>
+<span class="hljs-attribute">subtract</span> <span class="hljs-number">166</span> - <span class="hljs-number">5625</span>.<span class="hljs-number">0</span>
+<span class="hljs-attribute">add</span> <span class="hljs-number">23</span> + -<span class="hljs-number">5459</span>.<span class="hljs-number">0</span>
+<span class="hljs-attribute">wasn</span>&#x27;t it amazing ? -<span class="hljs-number">5436</span>.<span class="hljs-number">0</span> yeah, it&#x27;s funny !</code></pre></div>
+<h3 id="21-2-返回计算后的值"><a href="#21-2-返回计算后的值" class="headerlink" title="21.2 返回计算后的值"></a>21.2 返回计算后的值</h3><div class="hljs"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">maths</span>(<span class="hljs-params">a, b</span>):
+    c = a + b; d = a - b; e = a * b; f = a / b;
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;a + - * / b = &quot;</span>, c, d, e, f)
+    <span class="hljs-keyword">return</span> c - d - e - f
+
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;*&quot;</span> * <span class="hljs-number">50</span>) 
+
+a = <span class="hljs-built_in">int</span>(<span class="hljs-built_in">input</span>(<span class="hljs-string">&quot;please enter 1first: \n&quot;</span>))
+b = <span class="hljs-built_in">int</span>(<span class="hljs-built_in">input</span>(<span class="hljs-string">&quot;please enter 2second: \n&quot;</span>))
+k = maths(a, b)
+
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;calculated successfully !&quot;</span>)
+<span class="hljs-built_in">print</span>(k)
+
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;*&quot;</span> * <span class="hljs-number">50</span>)</code></pre></div>
+<div class="hljs"><pre><code class="hljs markdown"><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span>**
+please enter 1first:
+13
+please enter 2second:
+23
+a + - * / b =  36 -10 299 0.5652173913043478
+calculated successfully !
+-253.56521739130434
+<span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">**</span></code></pre></div>
+
+<h2 id="22-1-归纳总结（略）"><a href="#22-1-归纳总结（略）" class="headerlink" title="22.1 归纳总结（略）"></a>22.1 归纳总结（略）</h2><h2 id="23-1-语言编码与解码"><a href="#23-1-语言编码与解码" class="headerlink" title="23.1 语言编码与解码"></a>23.1 语言编码与解码</h2><div class="hljs"><pre><code class="hljs python"><span class="hljs-keyword">import</span> sys 
+script, input_encoding, error = sys.argv
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">main</span>(<span class="hljs-params">language_file, encoding, errors</span>):
+    line = language_file.readline()
+    
+    <span class="hljs-keyword">if</span> line: 
+       print_line(line, encoding, errors)
+       <span class="hljs-keyword">return</span> main(language_file, encoding, errors)
+       
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">print_line</span>(<span class="hljs-params">line, encoding, errors</span>):
+    next_lang = line.strip()
+    raw_bytes = next_lang.encode(encoding, errors=errors)       
+    cooked_string = raw_bytes.decode(encoding, errors=errors)
+    
+    <span class="hljs-built_in">print</span>(raw_bytes, <span class="hljs-string">&quot;&lt;===&gt;&quot;</span>, cooked_string)
+    
+languages = <span class="hljs-built_in">open</span>(<span class="hljs-string">&quot;languages.txt&quot;</span>, encoding=<span class="hljs-string">&quot;utf-8&quot;</span>)
+
+main(languages, input_encoding, error)</code></pre></div>
+<blockquote>
+<p>测试语言文本</p>
+</blockquote>
+<div class="hljs"><pre><code class="hljs excel">Afrikaans
+አማርኛ
+Аҧсшәа
+العربية
+Aragonés
+Arpetan
+Azərbaycanca
+Bamanankan
+বাংলা
+Bâ<span class="hljs-built_in">n</span>-lâm-gú
+Беларуская
+Български
+Boarisch
+Bosanski
+Буряад
+Català
+Чӑвашла
+Čeština
+Cymraeg
+Dansk
+Deutsch
+Eesti
+Ελληνικά
+Español
+Esperanto
+فارسی
+Français
+Frysk
+Gaelg
+Gàidhlig
+Galego
+한국어
+Հայերեն
+हिन्दी
+Hrvatski
+Ido
+Interlingua
+Italiano
+עברית
+ಕನ್ನಡ
+Kapampangan
+ქართული
+Қазақша
+Kreyòl ayisyen
+Latgaļu
+Latina
+Latviešu
+Lëtzebuergesch
+Lietuvių
+Magyar
+Македонски
+Malti
+मराठी
+მარგალური
+مازِرونی
+Bahasa Melayu
+Монгол
+Nederlands
+नेपाल भाषा
+日本語
+Norsk bokmål
+Nouormand
+Occitan
+Oʻzbekcha/ўзбекча
+ਪੰਜਾਬੀ
+پنجابی
+پښتو
+Plattdüütsch
+Polski
+Português
+Româ<span class="hljs-built_in">n</span>ă
+Romani
+Русский
+Seeltersk
+Shqip
+Simple English
+Slovenčina
+کوردیی ناوەندی
+Српски / srpski
+Suomi
+Svenska
+Tagalog
+தமிழ்
+ภาษาไทย
+Taqbaylit
+Татарча/tatarça
+తెలుగు
+Тоҷикӣ
+<span class="hljs-built_in">T</span>ürkçe
+Українська
+اردو
+Tiếng Việ<span class="hljs-built_in">t</span>
+Võro
+文言
+吴语
+ייִדיש
+中文</code></pre></div>
+
+<h2 id="24-1-归纳总结（详）"><a href="#24-1-归纳总结（详）" class="headerlink" title="24.1 归纳总结（详）"></a>24.1 归纳总结（详）</h2><div class="hljs"><pre><code class="hljs python"><span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;let&#x27;s practice everyting,&quot;</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;you\&#x27;d need to know \&#x27;about escapes with \\ that do:&#x27;</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;\n newlines and \t tabs.&#x27;</span>)
+
+poem = <span class="hljs-string">&quot;&quot;&quot;</span>
+<span class="hljs-string">\tthe lovely world</span>
+<span class="hljs-string">with logic so firmly planted</span>
+<span class="hljs-string">can&#x27;t discern \n the needs of love</span>
+<span class="hljs-string">nor comprehend passion from intuition</span>
+<span class="hljs-string">and requires an explanation</span>
+<span class="hljs-string">\n\t\twhere there is none.</span>
+<span class="hljs-string">&quot;&quot;&quot;</span>
+
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;-&quot;</span> * <span class="hljs-number">50</span>)
+<span class="hljs-built_in">print</span>(poem)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;-&quot;</span> * <span class="hljs-number">50</span>)
+
+five = <span class="hljs-number">10</span> - <span class="hljs-number">2</span> + <span class="hljs-number">3</span> - <span class="hljs-number">6</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;this should be five : <span class="hljs-subst">&#123;five&#125;</span>&quot;</span>)
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">secret_formula</span>(<span class="hljs-params">started</span>):
+    jelly_beans = started * <span class="hljs-number">500</span>
+    jars = jelly_beans / <span class="hljs-number">1000</span>
+    crates = jars / <span class="hljs-number">100</span>
+    <span class="hljs-keyword">return</span> jelly_beans, jars, crates
+    
+start_point = <span class="hljs-number">10000</span>
+beans, jars, crates = secret_formula(start_point)
+
+<span class="hljs-comment"># remember that this is another way to format a string</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;wiht a starting point of : &#123;&#125;&quot;</span>.<span class="hljs-built_in">format</span>(start_point))
+<span class="hljs-comment"># it&#x27;s just like with an f&quot;&quot; string</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;we&#x27;d have <span class="hljs-subst">&#123;beans&#125;</span> beans, <span class="hljs-subst">&#123;jars&#125;</span> jars, and <span class="hljs-subst">&#123;crates&#125;</span> crates.&quot;</span>)
+
+start_point = start_point / <span class="hljs-number">10</span>
+
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;we can also do that this way:&quot;</span>)
+formula = secret_formula(start_point)
+<span class="hljs-comment"># this is an easy to apply a list to format string</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;we&#x27;d have &#123;&#125; beans, &#123;&#125; jars, and &#123;&#125; crates.&quot;</span>.<span class="hljs-built_in">format</span>(*formula))</code></pre></div>
+<div class="hljs"><pre><code class="hljs pgsql">let<span class="hljs-string">&#x27;s practice everyting,</span>
+<span class="hljs-string">you&#x27;</span>d need <span class="hljs-keyword">to</span> know <span class="hljs-string">&#x27;about escapes with \ that do:</span>
+<span class="hljs-string"></span>
+<span class="hljs-string"> newlines and    tabs.</span>
+<span class="hljs-string">--------------------------------------------------</span>
+<span class="hljs-string"></span>
+<span class="hljs-string">        the lovely world</span>
+<span class="hljs-string">with logic so firmly planted</span>
+<span class="hljs-string">can&#x27;</span>t discern
+ the needs <span class="hljs-keyword">of</span> love
+nor comprehend passion <span class="hljs-keyword">from</span> intuition
+<span class="hljs-keyword">and</span> requires an explanation
+
+                <span class="hljs-keyword">where</span> there <span class="hljs-keyword">is</span> <span class="hljs-keyword">none</span>.
+
+<span class="hljs-comment">--------------------------------------------------</span>
+this should be five : <span class="hljs-number">5</span>
+wiht a starting <span class="hljs-type">point</span> <span class="hljs-keyword">of</span> : <span class="hljs-number">10000</span>
+w<span class="hljs-string">e&#x27;d have 5000000 beans, 5000.0 jars, and 50.0 crates.</span>
+<span class="hljs-string">we can also do that this way:</span>
+<span class="hljs-string">we&#x27;</span>d have <span class="hljs-number">500000.0</span> beans, <span class="hljs-number">500.0</span> jars, <span class="hljs-keyword">and</span> <span class="hljs-number">5.0</span> crates.</code></pre></div>
+
+<h2 id="25-1-引入自定义函数-未知错误：找不到包！"><a href="#25-1-引入自定义函数-未知错误：找不到包！" class="headerlink" title="25.1 引入自定义函数 (未知错误：找不到包！)"></a>25.1 引入自定义函数 (未知错误：找不到包！)</h2><div class="hljs"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">break_words</span>(<span class="hljs-params">stuff</span>):
+    <span class="hljs-string">&quot;&quot;&quot;this function will break up words for us.&quot;&quot;&quot;</span>
+    words = stuff.split(<span class="hljs-string">&#x27; &#x27;</span>)
+    <span class="hljs-keyword">return</span> words
+    
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">sort_words</span>(<span class="hljs-params">words</span>):
+    <span class="hljs-string">&quot;&quot;&quot;sorts the words.&quot;&quot;&quot;</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">sorted</span>(words)
+    
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">print_first_word</span>(<span class="hljs-params">words</span>):
+    <span class="hljs-string">&quot;&quot;&quot;prints the first word after popping it off .&quot;&quot;&quot;</span>
+    word = words.pop(<span class="hljs-number">0</span>)
+    <span class="hljs-built_in">print</span>(word)
+    
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">print_last_word</span>(<span class="hljs-params">words</span>):
+    <span class="hljs-string">&quot;&quot;&quot;prints the last word after popping it off.&quot;&quot;&quot;</span>
+    word = words.pop(-<span class="hljs-number">1</span>)
+    <span class="hljs-built_in">print</span>(word)
+    
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">sort_sentence</span>(<span class="hljs-params">sentence</span>):
+    <span class="hljs-string">&quot;&quot;&quot;takes in a full sentence and returns the sorted words.&quot;&quot;&quot;</span>
+    words = break_words(sentence)
+    <span class="hljs-keyword">return</span> sort_words(words)
+    
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">print_first_and_last</span>(<span class="hljs-params">sentence</span>):
+    <span class="hljs-string">&quot;&quot;&quot;prints the first and last words of the sentence.&quot;&quot;&quot;</span>
+    print_first_word(words)
+    print_last_word(words)
+    
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">print_first_and_last_sorted</span>(<span class="hljs-params">sentence</span>):
+    <span class="hljs-string">&quot;&quot;&quot;sorts the words then prints the first and last one.&quot;&quot;&quot;</span>
+    words = sort_sentence(sentence)
+    print_first_word(words)
+    print_last_word(words)</code></pre></div>
+
+<h2 id="26-1-初识逻辑或非并"><a href="#26-1-初识逻辑或非并" class="headerlink" title="26.1 初识逻辑或非并"></a>26.1 初识逻辑或非并</h2><h2 id="27-1-简单学习逻辑语句"><a href="#27-1-简单学习逻辑语句" class="headerlink" title="27.1 简单学习逻辑语句"></a>27.1 简单学习逻辑语句</h2><h2 id="28-1-逻辑语句的练习"><a href="#28-1-逻辑语句的练习" class="headerlink" title="28.1 逻辑语句的练习"></a>28.1 逻辑语句的练习</h2><div class="hljs"><pre><code class="hljs python"><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;#&#x27;</span> * <span class="hljs-number">75</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;This script is to test true or false! &quot;</span>)
+
+<span class="hljs-built_in">input</span>(<span class="hljs-string">&quot;please enter: 1 == 1 \n&quot;</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-number">1</span> == <span class="hljs-number">1</span>)
+
+<span class="hljs-built_in">input</span>(<span class="hljs-string">&quot;please enter: 1 == 1 and &#x27;a&#x27; == &#x27;b&#x27; \n&quot;</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-number">1</span> == <span class="hljs-number">1</span> <span class="hljs-keyword">and</span> <span class="hljs-string">&#x27;a&#x27;</span> == <span class="hljs-string">&#x27;b&#x27;</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;#&#x27;</span> * <span class="hljs-number">75</span>)</code></pre></div>
+<div class="hljs"><pre><code class="hljs clean">###########################################################################
+This script is to test true or false!
+please enter: <span class="hljs-number">1</span> == <span class="hljs-number">1</span>
+<span class="hljs-number">1</span> == <span class="hljs-number">1</span>
+<span class="hljs-literal">True</span>
+please enter: <span class="hljs-number">1</span> == <span class="hljs-number">1</span> and <span class="hljs-string">&#x27;a&#x27;</span> == <span class="hljs-string">&#x27;b&#x27;</span>
+<span class="hljs-number">1</span> == <span class="hljs-number">1</span> and <span class="hljs-string">&#x27;a&#x27;</span> == <span class="hljs-string">&#x27;b&#x27;</span>
+<span class="hljs-literal">False</span>
+###########################################################################</code></pre></div>
+
+<h3 id="28-2-逻辑语句的强化练习"><a href="#28-2-逻辑语句的强化练习" class="headerlink" title="28.2 逻辑语句的强化练习"></a>28.2 逻辑语句的强化练习</h3><div class="hljs"><pre><code class="hljs python"><span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;#&quot;</span> * <span class="hljs-number">75</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;&#x27;&#x27;some key words for logic can be listed as follows:</span>
+<span class="hljs-string">and </span>
+<span class="hljs-string">or </span>
+<span class="hljs-string">not </span>
+<span class="hljs-string">!= (not equal) </span>
+<span class="hljs-string">== (equal) </span>
+<span class="hljs-string">&gt;= (greater-than-equal) </span>
+<span class="hljs-string">&lt;= (less-than-equal) </span>
+<span class="hljs-string">True </span>
+<span class="hljs-string">False&#x27;&#x27;&#x27;</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;#&quot;</span> * <span class="hljs-number">75</span>)
+
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;1 or 1 = &quot;</span> , <span class="hljs-number">1</span> <span class="hljs-keyword">or</span> <span class="hljs-number">1</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;not 1 = &quot;</span> , <span class="hljs-keyword">not</span> <span class="hljs-number">1</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;1 != 100 = &quot;</span> , <span class="hljs-number">1</span> != <span class="hljs-number">100</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;1 &gt;= 1 = &quot;</span> , <span class="hljs-number">1</span> &gt;= <span class="hljs-number">1</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;1 == &#x27;a&#x27; = &quot;</span> , <span class="hljs-number">1</span> == <span class="hljs-string">&#x27;a&#x27;</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;1 and 1 = &quot;</span> , <span class="hljs-number">1</span> <span class="hljs-keyword">and</span> <span class="hljs-number">1</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;&#x27;a&#x27; and &#x27;a&#x27; = &quot;</span> , <span class="hljs-string">&#x27;a&#x27;</span> <span class="hljs-keyword">and</span> <span class="hljs-string">&#x27;a&#x27;</span>)
+
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;#&quot;</span> * <span class="hljs-number">75</span>)</code></pre></div>
+<div class="hljs"><pre><code class="hljs clean">###########################################################################
+some key words for logic can be listed <span class="hljs-keyword">as</span> follows:
+and
+or
+not
+!= (not equal)
+== (equal)
+&gt;= (greater-than-equal)
+&lt;= (less-than-equal)
+<span class="hljs-literal">True</span>
+<span class="hljs-literal">False</span>
+###########################################################################
+<span class="hljs-number">1</span> or <span class="hljs-number">1</span> =  <span class="hljs-number">1</span>
+not <span class="hljs-number">1</span> =  <span class="hljs-literal">False</span>
+<span class="hljs-number">1</span> != <span class="hljs-number">100</span> =  <span class="hljs-literal">True</span>
+<span class="hljs-number">1</span> &gt;= <span class="hljs-number">1</span> =  <span class="hljs-literal">True</span>
+<span class="hljs-number">1</span> == <span class="hljs-string">&#x27;a&#x27;</span> =  <span class="hljs-literal">False</span>
+<span class="hljs-number">1</span> and <span class="hljs-number">1</span> =  <span class="hljs-number">1</span>
+<span class="hljs-string">&#x27;a&#x27;</span> and <span class="hljs-string">&#x27;a&#x27;</span> =  a
+###########################################################################</code></pre></div>
+
+<h2 id="29-1-if判断语句"><a href="#29-1-if判断语句" class="headerlink" title="29.1 if判断语句"></a>29.1 if判断语句</h2><div class="hljs"><pre><code class="hljs python">people = <span class="hljs-number">20</span>
+cats = <span class="hljs-number">30</span> 
+dogs = <span class="hljs-number">15</span>
+
+<span class="hljs-keyword">if</span> people &lt; cats:
+     <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;too many cats ! the world is doomed !&quot;</span>)
+     
+<span class="hljs-keyword">if</span> people &gt; cats:
+     <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;not many cats ! the world is saved !&quot;</span>)     
+
+<span class="hljs-keyword">if</span> people &lt; dogs:
+     <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;The world is drooled on !&quot;</span>)
+     
+<span class="hljs-keyword">if</span> people &gt; dogs:
+     <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;the world is dry !&quot;</span>)
+
+dogs += <span class="hljs-number">5</span>
+
+<span class="hljs-keyword">if</span> people &gt;= dogs:
+     <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;people are greater than or equal to dogs. &quot;</span>)
+   
+<span class="hljs-keyword">if</span> people &lt;= dogs:
+     <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;people are less than or equal to dogs. &quot;</span>)
+     
+<span class="hljs-keyword">if</span> people == dogs:
+     <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;people are dogs. &quot;</span>)</code></pre></div>
+<div class="hljs"><pre><code class="hljs applescript">too many cats ! <span class="hljs-keyword">the</span> world <span class="hljs-keyword">is</span> doomed !
+<span class="hljs-keyword">the</span> world <span class="hljs-keyword">is</span> dry !
+people are <span class="hljs-keyword">greater than</span> <span class="hljs-keyword">or</span> <span class="hljs-keyword">equal</span> <span class="hljs-keyword">to</span> dogs.
+people are <span class="hljs-keyword">less than or equal</span> <span class="hljs-keyword">to</span> dogs.
+people are dogs.</code></pre></div>
+
+<h3 id="29-2-if判断语句的强化练习"><a href="#29-2-if判断语句的强化练习" class="headerlink" title="29.2 if判断语句的强化练习"></a>29.2 if判断语句的强化练习</h3><div class="hljs"><pre><code class="hljs python"><span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;#&quot;</span> * <span class="hljs-number">75</span>)
+
+<span class="hljs-comment"># function : do math calculations</span>
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">math</span>(<span class="hljs-params">a , b</span>):
+    add = <span class="hljs-string">&quot;+&quot;</span>
+    minus = <span class="hljs-string">&quot;-&quot;</span>
+    mutiply = <span class="hljs-string">&quot;*&quot;</span>
+    division = <span class="hljs-string">&quot;/&quot;</span>
+    separator = <span class="hljs-string">&quot;...&quot;</span> * <span class="hljs-number">10</span>
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;calculation preparing now :<span class="hljs-subst">&#123;separator&#125;</span>&quot;</span>)
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;<span class="hljs-subst">&#123;a&#125;</span> <span class="hljs-subst">&#123;add&#125;</span> <span class="hljs-subst">&#123;b&#125;</span> = &quot;</span>,a + b)
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;<span class="hljs-subst">&#123;a&#125;</span> <span class="hljs-subst">&#123;minus&#125;</span> <span class="hljs-subst">&#123;b&#125;</span> = &quot;</span>,a - b)
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;<span class="hljs-subst">&#123;a&#125;</span> <span class="hljs-subst">&#123;mutiply&#125;</span> <span class="hljs-subst">&#123;b&#125;</span> = &quot;</span>,a * b)
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;<span class="hljs-subst">&#123;a&#125;</span> <span class="hljs-subst">&#123;division&#125;</span> <span class="hljs-subst">&#123;b&#125;</span> = &quot;</span>,a / b)
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;#&quot;</span> * <span class="hljs-number">75</span>)
+    
+<span class="hljs-comment"># function : do Boolean expressions</span>
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">boolean1</span>(<span class="hljs-params">a, b</span>):
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;<span class="hljs-subst">&#123;n1&#125;</span> and <span class="hljs-subst">&#123;n2&#125;</span> = &quot;</span>, n1 <span class="hljs-keyword">and</span> n2)
+    
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">boolean2</span>(<span class="hljs-params">a, b</span>):
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;not( <span class="hljs-subst">&#123;n1&#125;</span> and <span class="hljs-subst">&#123;n2&#125;</span> ) = &quot;</span>, <span class="hljs-keyword">not</span>(n1 <span class="hljs-keyword">and</span> n2))
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;#&quot;</span> * <span class="hljs-number">75</span>)
+
+n1 = <span class="hljs-built_in">int</span>(<span class="hljs-built_in">input</span>(<span class="hljs-string">&quot;please enter one number: \n---&gt; &quot;</span>))
+n2 = <span class="hljs-built_in">int</span>(<span class="hljs-built_in">input</span>(<span class="hljs-string">&quot;please enter another number: \n---&gt; &quot;</span>))
+
+<span class="hljs-keyword">if</span> n1 &gt; n2:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;<span class="hljs-subst">&#123;n1&#125;</span> &gt; <span class="hljs-subst">&#123;n2&#125;</span>&quot;</span>)
+    math(n1, n2)
+    
+<span class="hljs-keyword">if</span> n1 &lt; n2:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;<span class="hljs-subst">&#123;n1&#125;</span> &lt; <span class="hljs-subst">&#123;n2&#125;</span>&quot;</span>)
+    boolean1(n1, n2)
+    boolean2(n1, n2)
+    
+<span class="hljs-keyword">if</span> n1 == n2:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;<span class="hljs-subst">&#123;n1&#125;</span> = <span class="hljs-subst">&#123;n2&#125;</span>&quot;</span>)
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;#&quot;</span> * <span class="hljs-number">75</span>)</code></pre></div>
+<div class="hljs"><pre><code class="hljs clean">###########################################################################
+please enter one number:
+---&gt; <span class="hljs-number">9</span>
+please enter another number:
+---&gt; <span class="hljs-number">6</span>
+<span class="hljs-number">9</span> &gt; <span class="hljs-number">6</span>
+calculation preparing now :..............................
+<span class="hljs-number">9</span> + <span class="hljs-number">6</span> =  <span class="hljs-number">15</span>
+<span class="hljs-number">9</span> - <span class="hljs-number">6</span> =  <span class="hljs-number">3</span>
+<span class="hljs-number">9</span> * <span class="hljs-number">6</span> =  <span class="hljs-number">54</span>
+<span class="hljs-number">9</span> / <span class="hljs-number">6</span> =  <span class="hljs-number">1.5</span>
+###########################################################################
+
+###########################################################################
+please enter one number:
+---&gt; <span class="hljs-number">6</span>
+please enter another number:
+---&gt; <span class="hljs-number">9</span>
+<span class="hljs-number">6</span> &lt; <span class="hljs-number">9</span>
+<span class="hljs-number">6</span> and <span class="hljs-number">9</span> =  <span class="hljs-number">9</span>
+not( <span class="hljs-number">6</span> and <span class="hljs-number">9</span> ) =  <span class="hljs-literal">False</span>
+###########################################################################
+
+###########################################################################
+please enter one number:
+---&gt; <span class="hljs-number">6</span>
+please enter another number:
+---&gt; <span class="hljs-number">6</span>
+<span class="hljs-number">6</span> = <span class="hljs-number">6</span>
+###########################################################################</code></pre></div>
+
+<h2 id="30-1-if-else语句"><a href="#30-1-if-else语句" class="headerlink" title="30.1 if-else语句"></a>30.1 if-else语句</h2><div class="hljs"><pre><code class="hljs python">people = <span class="hljs-number">30</span>
+cars = <span class="hljs-number">40</span>
+trucks = <span class="hljs-number">15</span>
+
+<span class="hljs-keyword">if</span> cars &gt; people:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;we should take the cars.&quot;</span>)
+<span class="hljs-keyword">elif</span> cars &lt; people:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;we should not take the cars.&quot;</span>)
+<span class="hljs-keyword">else</span>:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;we can&#x27;t decide.&quot;</span>)
+
+<span class="hljs-keyword">if</span> trucks &gt; cars:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;that&#x27;s too many trucks.&quot;</span>)
+<span class="hljs-keyword">elif</span> trucks &lt; cars:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;maybe we could take the trucks.&quot;</span>)
+<span class="hljs-keyword">else</span>:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;we still can&#x27;t decide.&quot;</span>)
+    
+<span class="hljs-keyword">if</span> people &gt; trucks:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;alright, let&#x27;s just take the trucks.&quot;</span>)
+<span class="hljs-keyword">else</span>:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;fine, let&#x27;s stay home then.&quot;</span>)</code></pre></div>
+<div class="hljs"><pre><code class="hljs vbnet">we should <span class="hljs-keyword">take</span> the cars.
+maybe we could <span class="hljs-keyword">take</span> the trucks.
+alright, <span class="hljs-keyword">let</span><span class="hljs-comment">&#x27;s just take the trucks.</span></code></pre></div>
+
+<h3 id="30-2-if-else强化练习一（判断数字的大小）"><a href="#30-2-if-else强化练习一（判断数字的大小）" class="headerlink" title="30.2 if-else强化练习一（判断数字的大小）"></a>30.2 if-else强化练习一（判断数字的大小）</h3><div class="hljs"><pre><code class="hljs python"><span class="hljs-comment"># test1.py</span>
+people = <span class="hljs-built_in">int</span>(<span class="hljs-built_in">input</span>(<span class="hljs-string">&quot;enter the first number ---&gt; &quot;</span>))
+cars = <span class="hljs-built_in">int</span>(<span class="hljs-built_in">input</span>(<span class="hljs-string">&quot;enter the second number ---&gt; &quot;</span>))
+trucks = <span class="hljs-built_in">int</span>(<span class="hljs-built_in">input</span>(<span class="hljs-string">&quot;enter the third number ---&gt; &quot;</span>))
+
+<span class="hljs-keyword">if</span> cars &gt; people:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;we should take the cars.&quot;</span>)
+<span class="hljs-keyword">elif</span> cars &lt; people:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;we should not take the cars.&quot;</span>)
+<span class="hljs-keyword">else</span>:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;we can&#x27;t decide.&quot;</span>)
+
+<span class="hljs-keyword">if</span> trucks &gt; cars:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;that&#x27;s too many trucks.&quot;</span>)
+<span class="hljs-keyword">elif</span> trucks &lt; cars:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;maybe we could take the trucks.&quot;</span>)
+<span class="hljs-keyword">else</span>:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;we still can&#x27;t decide.&quot;</span>)
+    
+<span class="hljs-keyword">if</span> people &gt; trucks:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;alright, let&#x27;s just take the trucks.&quot;</span>)
+<span class="hljs-keyword">else</span>:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;fine, let&#x27;s stay home then.&quot;</span>)</code></pre></div>
+<div class="hljs"><pre><code class="hljs livecodeserver">enter <span class="hljs-keyword">the</span> <span class="hljs-keyword">first</span> <span class="hljs-built_in">number</span> <span class="hljs-comment">---&gt; 10</span>
+enter <span class="hljs-keyword">the</span> <span class="hljs-keyword">second</span> <span class="hljs-built_in">number</span> <span class="hljs-comment">---&gt; 20</span>
+enter <span class="hljs-keyword">the</span> <span class="hljs-keyword">third</span> <span class="hljs-built_in">number</span> <span class="hljs-comment">---&gt; 10</span>
+we should take <span class="hljs-keyword">the</span> cars.
+maybe we could take <span class="hljs-keyword">the</span> trucks.
+fine, let<span class="hljs-string">&#x27;s stay home then.</span></code></pre></div>
+
+<h3 id="30-3-if-else强化练习二（选择文件的处理方式并实现文件的读写删除）"><a href="#30-3-if-else强化练习二（选择文件的处理方式并实现文件的读写删除）" class="headerlink" title="30.3 if-else强化练习二（选择文件的处理方式并实现文件的读写删除）"></a>30.3 if-else强化练习二（选择文件的处理方式并实现文件的读写删除）</h3><div class="hljs"><pre><code class="hljs python"><span class="hljs-comment"># test2.py</span>
+choice = <span class="hljs-built_in">input</span>(<span class="hljs-string">&quot;choose the mode: (read/write/delete) \n---&gt; &quot;</span>)
+
+<span class="hljs-keyword">if</span> choice == <span class="hljs-string">&#x27;read&#x27;</span>:
+    
+    <span class="hljs-keyword">from</span> sys <span class="hljs-keyword">import</span> argv
+    script, filename = argv
+    
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;This is the file: <span class="hljs-subst">&#123;filename&#125;</span> \n&quot;</span>)
+    tar = <span class="hljs-built_in">open</span>(filename, mode=<span class="hljs-string">&#x27;r&#x27;</span>)
+    content = tar.read()
+    <span class="hljs-built_in">print</span>(content)
+    tar.close()
+    
+    <span class="hljs-comment"># AttributeError: &#x27;str&#x27; object has no attribute &#x27;close&#x27;</span>
+    <span class="hljs-comment"># Attention to the error from tar.read()</span>
+    
+<span class="hljs-keyword">elif</span> choice == <span class="hljs-string">&#x27;write&#x27;</span>:
+    <span class="hljs-keyword">from</span> sys <span class="hljs-keyword">import</span> argv
+    script, filename = argv
+    
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;This is the file: <span class="hljs-subst">&#123;filename&#125;</span>&quot;</span>)
+    tar = <span class="hljs-built_in">open</span>(filename, mode=<span class="hljs-string">&#x27;w&#x27;</span>)
+    add = <span class="hljs-built_in">input</span>(<span class="hljs-string">&quot;please write some additional words: \n ---&gt; &quot;</span>)
+    content1 = tar.write(add)
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;This is the length of the string: &quot;</span>, content1)
+    tar.close()
+    <span class="hljs-comment"># what happened ?</span>
+    tar = <span class="hljs-built_in">open</span>(filename, mode=<span class="hljs-string">&#x27;r&#x27;</span>)
+    content2 = tar.read()
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;This is the content of the string: &quot;</span>,content2)
+    tar.close()
+    
+<span class="hljs-keyword">elif</span> choice == <span class="hljs-string">&#x27;delete&#x27;</span>:
+    <span class="hljs-keyword">from</span> sys <span class="hljs-keyword">import</span> argv
+    script, filename = argv
+    
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;This is the file: <span class="hljs-subst">&#123;filename&#125;</span>&quot;</span>)
+    tar = <span class="hljs-built_in">open</span>(filename, mode=<span class="hljs-string">&#x27;w&#x27;</span>)
+    out = tar.truncate()
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;This is the length of the string: &quot;</span>, out)
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Empity the content successfully! &quot;</span>)
+    tar.close()
+
+<span class="hljs-keyword">else</span>:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;please check out the inputation ! &quot;</span>)</code></pre></div>
+
+<blockquote>
+<p>python test2.py txt</p>
+</blockquote>
+<div class="hljs"><pre><code class="hljs gradle">choose the mode: (<span class="hljs-keyword">read</span><span class="hljs-regexp">/write/</span><span class="hljs-keyword">delete</span>)
+---&gt; <span class="hljs-keyword">read</span>
+<span class="hljs-keyword">This</span> is the <span class="hljs-keyword">file</span>: txt
+
+I love you</code></pre></div>
+
+<div class="hljs"><pre><code class="hljs livecodeserver">choose <span class="hljs-keyword">the</span> mode: (<span class="hljs-built_in">read</span>/<span class="hljs-built_in">write</span>/<span class="hljs-built_in">delete</span>)
+<span class="hljs-comment">---&gt; write</span>
+This is <span class="hljs-keyword">the</span> <span class="hljs-built_in">file</span>: txt
+please <span class="hljs-built_in">write</span> some additional <span class="hljs-keyword">words</span>:
+ <span class="hljs-comment">---&gt; I love you , baby</span>
+This is <span class="hljs-keyword">the</span> <span class="hljs-built_in">length</span> <span class="hljs-keyword">of</span> <span class="hljs-keyword">the</span> <span class="hljs-keyword">string</span>:  <span class="hljs-number">17</span>
+This is <span class="hljs-keyword">the</span> content <span class="hljs-keyword">of</span> <span class="hljs-keyword">the</span> <span class="hljs-keyword">string</span>:  I love you , baby</code></pre></div>
+
+<div class="hljs"><pre><code class="hljs livecodeserver">choose <span class="hljs-keyword">the</span> mode: (<span class="hljs-built_in">read</span>/<span class="hljs-built_in">write</span>/<span class="hljs-built_in">delete</span>)
+<span class="hljs-comment">---&gt; delete</span>
+This is <span class="hljs-keyword">the</span> <span class="hljs-built_in">file</span>: txt
+This is <span class="hljs-keyword">the</span> <span class="hljs-built_in">length</span> <span class="hljs-keyword">of</span> <span class="hljs-keyword">the</span> <span class="hljs-keyword">string</span>:  <span class="hljs-number">0</span>
+Empity <span class="hljs-keyword">the</span> content successfully!</code></pre></div>
+
+<div class="hljs"><pre><code class="hljs smali">choose the mode: (read/write/delete)
+---&gt; none
+please<span class="hljs-built_in"> check </span>out the inputation !</code></pre></div>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/python/">python</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/python/">python</a>
+                    
+                  </div>
+                
+              </div>
+              <p class="note note-warning">
+                <strong>本文作者: </strong><a href="/">Uncle-yang</a> <br>
+                <strong>本文链接: </strong><a href="https://uncleleiy.github.io/2023/07/05/blog-10-python/">https://uncleleiy.github.io/2023/07/05/blog-10-python/</a> <br>
+                <strong>版权声明: </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                   </p>
+                   
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/07/08/blog-11-python/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">python 语法学习</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/06/29/blog-9-shell-scripts/">
+                        <span class="hidden-mobile">shell-vasp 任务目录脚本</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                
+    <div id="vcomments"></div>
+    <script type="text/javascript">
+      function loadValine() {
+        addScript('https://cdn.staticfile.org/valine/1.4.14/Valine.min.js', function () {
+          new Valine({
+            el: "#vcomments",
+            app_id: "lwlZyOoy7M5xcVwEqua7QNvD-MdYXbMMI",
+            app_key: "Y93AC3OrQlZFHIB1tygcqEwz",
+            placeholder: "宝贝儿，来跟我讲讲悄悄话喔，讲不出来吧，诶，就是玩儿~ ヾﾉ≧∀≦)o",
+            path: window.location.pathname,
+            avatar: "retro",
+            meta: ["nick","mail","link"],
+            pageSize: "10",
+            lang: "zh-CN",
+            highlight: true,
+            recordIP: false,
+            serverURLs: "https://lwlzyooy.api.lncldglobal.com",
+          });
+        });
+      }
+      waitElementVisible('vcomments', loadValine);
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://valine.js.org" rel="nofollow noopener">comments
+        powered by Valine.</a></noscript>
+  
+
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+
+
+    
+  </main>
+
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+    
+
+      
+
+          <!-- 在网页底部添加本站已运行的时间 -->
+          <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+          <script>
+            var now = new Date();
+            function createtime() {
+              var grt = new Date("06/06/2023 12:00:00");//在此处修改你的建站时间
+              now.setTime(now.getTime() + 250);
+              days = (now - grt) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+              hours = (now - grt) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+              if (String(hnum).length == 1) { hnum = "0" + hnum; } minutes = (now - grt) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);
+              mnum = Math.floor(minutes); if (String(mnum).length == 1) { mnum = "0" + mnum; }
+              seconds = (now - grt) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+              snum = Math.round(seconds); if (String(snum).length == 1) { snum = "0" + snum; }
+              document.getElementById("timeDate").innerHTML = "小站已勉强存活 " + dnum + " 天 ";
+              document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+            }
+            setInterval("createtime()", 250);
+          </script>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/js/clipboard-use.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+  
+<script src="/js/new.js"></script>
+
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '#post-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 0,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "python 学习记录(21-30)&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 125,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "left",
+      visible: "hover",
+      
+      icon: " ❡ "
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      searchFunc(path, 'local-search-input', 'local-search-result');
+      this.onclick = null
+    }
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+</body>
+</html>
