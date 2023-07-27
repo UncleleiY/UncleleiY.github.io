@@ -339,15 +339,29 @@
   <h2 id="小站简介"><a href="#小站简介" class="headerlink" title=" 小站简介"></a><img src="caigou.png" srcset="/img/loading.gif" alt="Alt text"> 小站简介</h2><p>小站诞生于2023年06月06日，用于记录个人当前所见所学所思所想，同时给岁月予以痕迹    </p>
 <h2 id="关注领域"><a href="#关注领域" class="headerlink" title=" 关注领域"></a><img src="aihao.png" srcset="/img/loading.gif" alt="Alt text"> 关注领域</h2><ul>
 <li>Programming</li>
-<li>Economics</li>
 <li>Calculation</li>
+<li>Economics</li>
 </ul>
+<h2 id="给我留言"><a href="#给我留言" class="headerlink" title=" 给我留言"></a><img src="ask.png" srcset="/img/loading.gif" alt="Alt text"> 给我留言</h2><div id="container"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+    var gitment = new Gitment({
+          id: ' ',                 //  默认为 location.href
+          owner: 'Uncle-yang',  
+          repo: 'UncleleiY/image',  // 储存评论的GitHub仓库
+          oauth: {
+            client_id: 'a0c83d9551135ca0a14a',
+            client_secret: '350b2bb6f56e540f0ec5ad81052c2df457c8defb', 
+            },
+            })
+        gitment.render('container')
+</script>
+
 <p class="note note-success">
 本文作者：Uncle-yang <br/>
 版权声明: 本博客所有文章除特别声明外，均采用 CC BY-SA 4.0 协议，转载请注明出处！
 </p>
-
-
 </div>
 
               </div>
