@@ -1,0 +1,44 @@
+---
+title: about
+date: 2023-06-05 17:00:00
+type: "about"
+layout: "about"
+---
+
+## ![Alt text](<caigou.png>) 小站简介
+
+小站诞生于2023年06月06日，用于记录个人当前所见所学所思所想，同时给岁月予以痕迹    
+
+## ![Alt text](<aihao.png>) 关注领域
+
+* Programming
+* Calculation
+* Economics
+
+## ![Alt text](<ask.png>) 留言板
+
+<font color="#a416af"> 此处可以登录GitHub账号给作者留言喔~ </font>
+
+
+<div id="container"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+    var gitment = new Gitment({
+          id: '',                 //  默认为 location.href
+          owner: 'UncleleiY',  
+          repo: 'UncleleiY.github.io',  // 储存评论的GitHub仓库
+          oauth: {
+            client_id: 'a0c83d9551135ca0a14a',
+            client_secret: '350b2bb6f56e540f0ec5ad81052c2df457c8defb', 
+            },
+            })
+        gitment.render('container')
+</script>
+
+<p class="note note-success">
+本文作者：Uncle-yang <br/>
+版权声明: 本博客所有文章除特别声明外，均采用 CC BY-SA 4.0 协议，转载请注明出处！
+</p>
+
+
