@@ -4,6 +4,56 @@
   
     
     <entry>
+      <title>mermaid 语法基础</title>
+      <link href="/2023/07/28/blog-mermaid/"/>
+      <url>/2023/07/28/blog-mermaid/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="Mermaid"><a href="#Mermaid" class="headerlink" title="Mermaid"></a>Mermaid</h1><p>Mermaid是一种基于Javascript的绘图工具，使用类似于Markdown的语法，使用户可以方便快捷地通过代码创建图表</p><h2 id="Mermaid绘图功能"><a href="#Mermaid绘图功能" class="headerlink" title="Mermaid绘图功能"></a>Mermaid绘图功能</h2><p>饼状图：使用pie关键字<br>流程图：使用graph关键字<br>序列图：使用sequenceDiagram关键字<br>甘特图：使用gantt关键字<br>类图：使用classDiagram关键字<br>状态图：使用stateDiagram关键字<br>用户旅程图：使用journey关键字</p><h2 id="Mermaid绘图示例"><a href="#Mermaid绘图示例" class="headerlink" title="Mermaid绘图示例"></a>Mermaid绘图示例</h2><h3 id="饼状图"><a href="#饼状图" class="headerlink" title="饼状图"></a>饼状图</h3><pre><code class="hljs ada">pie%%  注意冒号的格式！    title 为什么不喜欢做计算？    <span class="hljs-string">&quot;理论基础学不会&quot;</span> : 100    <span class="hljs-string">&quot;报错搞我心态&quot;</span> : 600    <span class="hljs-string">&quot;很喜欢做计算&quot;</span> : 50    <span class="hljs-string">&quot;不好找工作&quot;</span>: <span class="hljs-number">600</span></code></pre><pre><code class="hljs mermaid">pie    title 为什么不喜欢做计算？    &quot;理论基础学不会&quot; : 225    &quot;报错搞我心态&quot; : 255    &quot;很喜欢做计算&quot; : 100    &quot;不好找工作&quot; : 450</code></pre><h3 id="流程图"><a href="#流程图" class="headerlink" title="流程图"></a>流程图</h3><pre><code class="hljs css">%% graph LR：从左往右%% graph BT：从下往上graph LR    <span class="hljs-selector-tag">A</span><span class="hljs-selector-attr">[Start]</span>--&gt;<span class="hljs-selector-tag">B</span>&#123;Is it?&#125;;    <span class="hljs-selector-tag">B</span><span class="hljs-attr">--Yes--</span>&gt;C<span class="hljs-selector-attr">[OK]</span>;    C--&gt;D<span class="hljs-selector-attr">[Rethink]</span>;    D--&gt;<span class="hljs-selector-tag">B</span>;    <span class="hljs-selector-tag">B</span><span class="hljs-attr">--No----</span>&gt;E<span class="hljs-selector-attr">[End]</span>;</code></pre><pre><code class="hljs mermaid">%% graph LR：从左往右%% graph BT：从下往上flowchart LR     A[Start]--&gt;B&#123;Is it&#125;;    B--Yes--&gt;C[OK];    C--&gt;D[Rethink];    D--&gt;B;    B--No----&gt;E[End];</code></pre><h3 id="结点边框"><a href="#结点边框" class="headerlink" title="结点边框"></a>结点边框</h3><pre><code class="hljs scss">graph    默认方形    id1<span class="hljs-selector-attr">[方形]</span>    <span class="hljs-built_in">id2</span>(圆边矩形)    <span class="hljs-built_in">id3</span>([体育场形])    id4<span class="hljs-selector-attr">[[子程序形]</span>]    id5<span class="hljs-selector-attr">[(圆柱形)]</span>    <span class="hljs-built_in">id6</span>((圆形))</code></pre><pre><code class="hljs mermaid">graph    默认方形    id1[方形]    id2(圆边矩形)    id3([体育场形])    id4[[子程序形]]    id5[(圆柱形)]    id6((圆形))</code></pre><h3 id="多重链"><a href="#多重链" class="headerlink" title="多重链"></a>多重链</h3><pre><code class="hljs brainfuck"><span class="hljs-comment">graph</span>    <span class="hljs-comment">a</span> <span class="hljs-literal">--</span>&gt; <span class="hljs-comment">b &amp; c</span><span class="hljs-literal">--</span>&gt; <span class="hljs-comment">d</span>      <span class="hljs-comment">A &amp; B</span><span class="hljs-literal">--</span>&gt; <span class="hljs-comment">C &amp; D</span>       <span class="hljs-comment">X</span> <span class="hljs-literal">--</span>&gt; <span class="hljs-comment">M</span>    <span class="hljs-comment">X</span> <span class="hljs-literal">--</span>&gt; <span class="hljs-comment">N</span>    <span class="hljs-comment">Y</span> <span class="hljs-literal">--</span>&gt; <span class="hljs-comment">M</span>    <span class="hljs-comment">Y</span> <span class="hljs-literal">--</span>&gt; <span class="hljs-comment">N</span></code></pre><pre><code class="hljs mermaid">graph    a --&gt; b &amp; c--&gt; d      A &amp; B--&gt; C &amp; D       X --&gt; M    X --&gt; N    Y --&gt; M    Y --&gt; N</code></pre><p><em>参考链接：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/355997933">https://zhuanlan.zhihu.com/p/355997933</a></em><br><em>参考笔记（markdown高级用法）：<a target="_blank" rel="noopener" href="https://www.runoob.com/markdown/md-advance.html">https://www.runoob.com/markdown/md-advance.html</a></em></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> grammer </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Mermaid </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>数据流</title>
+      <link href="/2023/07/26/blog-data-flow/"/>
+      <url>/2023/07/26/blog-data-flow/</url>
+      
+        <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="密码错误，请重试." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">  <script id="hbeData" type="hbeData" data-hmacdigest="c2aa8b8b057ed3aa6c513b8256d6038f147a905929275d3917a7f878b0456961">29f3454c03c5428f51d8ff21195ddc569c79cba39e0883634a70b95d16aa20c958a080cd357a684c535ed4c706d7665065df4874d648f8c08aa8f06b4d594ef78e76b029e957105c1f25199e5f71b149a4aa88bc6c91517a7227106030895cb10dc778bacd8c0fe77f5e22423296afb98755f0570828230d8d02532a0a6e3c9e2712f27d7f4cf1375f1acb6129f83428b3403d716fde37670ad9ac3d2aa4106aa84c8cc03a5d94df4da11c601d45dfd942d51203ae57a7c00bec70f2f6669cafc4128b0a677272199cab26c8d18e80adb36e42baa7ceb84a547c3abb7ad165208dc6c26bffdae56c46cf57a6605c5f1214e247de431b4662f07ffe99916083c1fd8c7a9ec0f11cbefcc64d57cdfa7833936b7c015780e67ea9538ad5d5f01cfab95e1efc561a4c0cfaab9236493789f948ee22b613ce49ece7f78432237d7dc8120d1f9cd5820b210c14dda11df433ae62cd214602967f032d3bf839b6eef6f600de6c34425239bbf33e0e0f5fb4b07bf1bb0082c5857306b58355bb0bacc0761c0ac3fcca75006be54c6280e71e5b484e8bc4000d99798ce7ec72f653853913fc660f4abc92724ccf15b3c50f8390f973ed158684f78da461ee736a5c62a126f456ca7af64daa07fbdfee3c92da7071cc13ff4a043dae9b96143a7e77081dbed6c67c40a69391faf3f2dfdf7b97f500e07dd518a964cb2a3f50ebdeeea9d976f0d9d3852667b34a52ef69b7fe0a5b04617d1a71c62b9de1c0478b932dfbd97b3f4ede4882b549c0b2a95b7e70f07453f6f848d511791588b8031947f34740d691e56c8df3c98c518299024e9c2ed9ba5eeebc42ce5a22afeace365c2257ac510aadefe544942586d79b0a2942172636f66f5023268674c177c03fbd14edfad81049c36654b5742563f97f5a8d93bd3798dacb9c02eef34a83344ff0af6cf2d261acf634299e1ef439d9fce9dc2ddfb6a4295d78061886fd5301900e303a668d1e2e6976d4717951b1cd98723404308b35df3f69e67f220f3c75a8bf4a937a509c7529e0ca0a81872a014639aaf1222737f7a2cdba4ac61427d5cce895f46e502910f59ce6dd6c2e9a6ba6ec179085fc3bdfdb046e67f3ec89a52e0aca810a66f259a736864d4811ef9a2157850e506cf4c0230809a9c26c91bb372728785d23b405ea5bbb5c068a5454adb3fe6b45b97a308d871483e00481c221d27ce2b9e20e09b9ed67af6317cf01321103dfb4633d84cfbe0b77eb6b6946c5fdcf76e67f790c56284acca7b37151912375c11b5e6d1531c504a71dbc59620f926f03e6317e7fbb4291975605f1fae17e0b705b3af6ffe7149e8ce6ae210906ea49dccd27189f066f147da6092e455832d647ed38396a727fd70da1bdfe9a7a6ba294079a64b5a4b5a66e1ac37702d7b70af6872174ff0da28759669f92ed95b0cef10dd9ee1bf749f498adfe6880c393f30f8035cff949804238add1f011d8536e6053e38025e66d10b67a6ea82692208c9800294a403bbb6a03fb7044e3f8de0067255e404e443eb8b350423228271ffcc2ac457a4bd66e741983fde2499e91035bee452c89b70c2c0a070e40abc14a6ad80298a243778686872d30c1ccafc998348202d45feb657c80b226fff24c5c84c28dfce9d23e2eb4e6f10cadd453f33cb1e37132a9b46c0f93414978c79112df5021a90af04cdc0f8c8cacab1c38cc66d530bef82419329a1e8f325b88a897f7e9b33230fe0d845326fa14a91232c765fbbc0258874f73833878025f2a77a1cbe30f5ea0db16a40f163ceb7dc0f33eaabddceb5e5b56fc64bb14105cc1f25e2232f9d1c0cf4d05d2d0f3cc26ceee59a9904fad69bbc28356f52420c9f32d606cf68f49005883d1ec35face7838f17fbf610f58bcfd87f227c27e3e6b78b10d175eba0d1bd00c6e81f0e37a1ca9dd5e37a8688f0f3a2773575115da1fd696147fd893cb80c416601fe775c8c0acced48678a47bc277a0c25205e98de3bfe48a2ab46bd9ecb1244f1654cb4c3c0c9b8f3d42af8d7a64b2b00c592b43f41311d6cd9821fb19c8882c1227f6d8a47396cb323d910245424fe18a8ebeec26c629fd00f7f32b77c0e38dd1e1fea1084c8a819521116c020e59ec785f1782b04b701f8fd8e0978f803ec587aa054e035f8fbcd18ffa6c30b83017a3f0abe71677681454816461889011e1517c5e64dbe4654f86257ea7</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">请输入密码查看</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+      
+      
+      <categories>
+          
+          <category> grammer </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> grammer </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>VASP 学习笔记</title>
       <link href="/2023/07/24/blog-vasp-2/"/>
       <url>/2023/07/24/blog-vasp-2/</url>
