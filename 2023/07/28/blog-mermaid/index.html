@@ -23,7 +23,7 @@
                 <meta name="author" content="Uncle_yang">
                 <meta name="keywords" content="知识、管理">
                 <title>
-                    mermaid 语法基础 - 诗意の理性
+                    Mermaid 基础语法 - 诗意の理性
                 </title>
 
                 <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
@@ -232,7 +232,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      444 字
+      517 字
     </span>
   
 
@@ -242,7 +242,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      6
+      7
        分钟
     </span>
   
@@ -280,10 +280,14 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto" id="post">
             <!-- SEO header -->
-            <h1 style="display: none">mermaid 语法基础</h1>
+            <h1 style="display: none">Mermaid 基础语法</h1>
             
             <div class="markdown-body" id="post-body">
-              <h1 id="Mermaid"><a href="#Mermaid" class="headerlink" title="Mermaid"></a>Mermaid</h1><p>Mermaid是一种基于Javascript的绘图工具，使用类似于Markdown的语法，使用户可以方便快捷地通过代码创建图表</p>
+              <script type="module">
+      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    </script>
+
+<h1 id="Mermaid"><a href="#Mermaid" class="headerlink" title="Mermaid"></a>Mermaid</h1><p>Mermaid是一种基于Javascript的绘图工具，使用类似于Markdown的语法，使用户可以方便快捷地通过代码创建图表</p>
 <h2 id="Mermaid绘图功能"><a href="#Mermaid绘图功能" class="headerlink" title="Mermaid绘图功能"></a>Mermaid绘图功能</h2><p>饼状图：使用pie关键字<br>流程图：使用graph关键字<br>序列图：使用sequenceDiagram关键字<br>甘特图：使用gantt关键字<br>类图：使用classDiagram关键字<br>状态图：使用stateDiagram关键字<br>用户旅程图：使用journey关键字</p>
 <h2 id="Mermaid绘图示例"><a href="#Mermaid绘图示例" class="headerlink" title="Mermaid绘图示例"></a>Mermaid绘图示例</h2><h3 id="饼状图"><a href="#饼状图" class="headerlink" title="饼状图"></a>饼状图</h3><div class="hljs"><pre><code class="hljs ada">pie
 %%  注意冒号的格式！
@@ -300,22 +304,21 @@
     &quot;很喜欢做计算&quot; : 100
     &quot;不好找工作&quot; : 450</code></pre>
 
-<h3 id="流程图"><a href="#流程图" class="headerlink" title="流程图"></a>流程图</h3><div class="hljs"><pre><code class="hljs css">%% graph LR：从左往右
-%% graph BT：从下往上
-graph LR
-    <span class="hljs-selector-tag">A</span><span class="hljs-selector-attr">[Start]</span>--&gt;<span class="hljs-selector-tag">B</span>&#123;Is it?&#125;;
-    <span class="hljs-selector-tag">B</span><span class="hljs-attr">--Yes--</span>&gt;C<span class="hljs-selector-attr">[OK]</span>;
-    C--&gt;D<span class="hljs-selector-attr">[Rethink]</span>;
-    D--&gt;<span class="hljs-selector-tag">B</span>;
-    <span class="hljs-selector-tag">B</span><span class="hljs-attr">--No----</span>&gt;E<span class="hljs-selector-attr">[End]</span>;</code></pre></div>
-<pre><code class="hljs mermaid">%% graph LR：从左往右
-%% graph BT：从下往上
-flowchart LR 
-    A[Start]--&gt;B&#123;Is it&#125;;
-    B--Yes--&gt;C[OK];
-    C--&gt;D[Rethink];
-    D--&gt;B;
-    B--No----&gt;E[End];</code></pre>
+<h3 id="流程图"><a href="#流程图" class="headerlink" title="流程图"></a>流程图</h3><div class="hljs"><pre><code class="hljs erlang-repl"><span class="hljs-comment">%% LR：从左往右</span>
+<span class="hljs-comment">%% BT：从下往上</span>
+flowchart  LR;
+F--&gt;D;
+S--&gt;D;
+C--&gt;D;
+D&lt;--&gt;M;</code></pre></div>
+<pre><code class="hljs mermaid">%% LR：从左往右
+%% BT：从下往上
+flowchart  LR;
+F--&gt;D;
+S--&gt;D;
+C--&gt;D;
+D&lt;--&gt;M;</code></pre>
+
 <h3 id="结点边框"><a href="#结点边框" class="headerlink" title="结点边框"></a>结点边框</h3><div class="hljs"><pre><code class="hljs scss">graph
     默认方形
     id1<span class="hljs-selector-attr">[方形]</span>
@@ -350,9 +353,24 @@ flowchart LR
     X --&gt; N
     Y --&gt; M
     Y --&gt; N</code></pre>
+<h3 id="测试文本"><a href="#测试文本" class="headerlink" title="测试文本"></a>测试文本</h3><pre><code class="hljs xml"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;en&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">pre</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;mermaid&quot;</span>&gt;</span>
+  graph LR
+      A --- B
+      B--&gt;C[fa:fa-ban forbidden]
+      B--&gt;D(fa:fa-spinner);
+    <span class="hljs-tag">&lt;/<span class="hljs-name">pre</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;module&quot;</span>&gt;</span><span class="language-javascript"></span>
+<span class="language-javascript">      <span class="hljs-keyword">import</span> mermaid <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs&#x27;</span>;</span>
+<span class="language-javascript">    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></code></pre>
 
-
-
+<blockquote>
+<p>文本渲染存在问题</p>
+</blockquote>
 <p><em>参考链接：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/355997933">https://zhuanlan.zhihu.com/p/355997933</a></em><br><em>参考笔记（markdown高级用法）：<a target="_blank" rel="noopener" href="https://www.runoob.com/markdown/md-advance.html">https://www.runoob.com/markdown/md-advance.html</a></em></p>
 
             </div>
@@ -363,7 +381,7 @@ flowchart LR
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/grammer/">grammer</a>
+                      <a class="hover-with-bg" href="/categories/grammar/">grammar</a>
                     
                   </div>
                 
@@ -575,7 +593,7 @@ flowchart LR
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "mermaid 语法基础&nbsp;",
+        "Mermaid 基础语法&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 125,
@@ -632,7 +650,7 @@ flowchart LR
   <script  src="https://cdn.staticfile.org/mermaid/8.5.0/mermaid.min.js" ></script>
   <script>
     if (window.mermaid) {
-      mermaid.initialize({"theme":"forest"});
+      mermaid.initialize({"theme":"default"});
     }
   </script>
 
