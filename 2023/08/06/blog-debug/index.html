@@ -23,7 +23,7 @@
                 <meta name="author" content="Uncle_yang">
                 <meta name="keywords" content="知识、管理">
                 <title>
-                    Mermaid 基础语法 - 诗意の理性
+                    报错问题汇总 - 诗意の理性
                 </title>
 
                 <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
@@ -220,8 +220,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2023-07-28 22:00" pubdate>
-        2023年7月28日 晚上
+      <time datetime="2023-08-06 11:00" pubdate>
+        2023年8月6日 上午
       </time>
     </span>
   
@@ -232,7 +232,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      517 字
+      1k 字
     </span>
   
 
@@ -242,7 +242,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      7
+      12
        分钟
     </span>
   
@@ -280,98 +280,104 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto" id="post">
             <!-- SEO header -->
-            <h1 style="display: none">Mermaid 基础语法</h1>
+            <h1 style="display: none">报错问题汇总</h1>
             
             <div class="markdown-body" id="post-body">
-              <script type="module">
-      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-    </script>
+              <h1 id="报错"><a href="#报错" class="headerlink" title="报错"></a>报错</h1><h2 id="解决手段"><a href="#解决手段" class="headerlink" title="解决手段"></a>解决手段</h2><ul>
+<li><p>Youself</p>
+</li>
+<li><p>Google</p>
+</li>
+<li><p>ChatAI</p>
+</li>
+</ul>
+<h2 id="报错系列"><a href="#报错系列" class="headerlink" title="报错系列"></a><strong>报错系列</strong></h2><p>ModuleNotFoundError: No module named ‘matplotlib’ （vaspkit -211命令作图报错）</p>
+<ul>
+<li><p>问题发生的本源：使用 sudo 安装的 matplotlib 和 使用 conda 安装的 matplotlib 作用优先级不同（可以理解为干涉）</p>
+</li>
+<li><p>使用sudo pip install matplotlib（已换源），则安装的matplotlib具有全局优先级，会覆盖使用conda直接安装（没有建立虚拟环境）的matplotlib，导致vaspkit调用的matplotlib实质上是pip 安装的matplotlib，而vaspkit调用的matplotlib路径在conda里面，因此vaspkit在调用的时候会报错：找不到matplotlib</p>
+</li>
+<li><p>解决方案：卸载使用sudo pip强制安装的matplotlib，重新使用pip 直接安装（需要换源）</p>
+</li>
+<li><p>忽视 Defaulting to user installation because normal site-packages is not writeable，等待安装结束即可</p>
+</li>
+</ul>
+<p>command not found</p>
+<ul>
+<li><p>多半是拼写或者是路径的问题！</p>
+</li>
+<li><p>文件路径问题：绝对路径应该以一个斜杠 / 开始，比如 /home/lei/bin/bader</p>
+</li>
+</ul>
+<p>grep “TOTEN” OUTCAR | tail -1 | awk ‘{printf “%12.6f \n”, $5 }’</p>
+<ul>
+<li><p>awk处理文本，注意单引号不要忘记！注意区分符号，以及反引号转义字符！</p>
+</li>
+<li><p>关于case命令的函数，直接复制你设定的函数名，command not found，多半是拼写的问题！</p>
+</li>
+</ul>
+<p>Defaulting to user installation because normal site-packages is not writeable</p>
+<ul>
+<li><p>这个问题其实是安装权限问题，它告诉你默认选择当前用户安装，忽视即可，因此作用域也在你当前的用户</p>
+</li>
+<li><p>如果安装半天没反应，可以试试换源： <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/398020802">Python：Defaulting to user installation because normal site-packages is not writeable</a></p>
+</li>
+</ul>
+<p>pip install 之后没反应，多半是源的问题，需要换源来处理</p>
+<ul>
+<li><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/skyyzq/article/details/113417832">python pip 换国内源的办法（永久和临时两种办法）_pip换源</a></p>
+</li>
+<li><p>如果在使用pip安装软件时报错，根据报错补全相关依赖库即可，python的软件极度依赖相关库</p>
+</li>
+<li><p>在虚拟环境中安装的软件需要先打开虚拟环境才可以使用（比如conda的phonopy）</p>
+</li>
+</ul>
+<p>BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES = RANK 0 PID 283516 RUNNING AT DESKTOP-NS9R0G8 = KILLED BY SIGNAL: 9 (Killed)</p>
+<ul>
+<li>是由于本地计算机算力不够和内存不足导致。解决办法是减小k点至1 1 1，或者减小扩胞的数量。</li>
+</ul>
+<p>“FORCE_SETS” was not found“</p>
+<ul>
+<li>FORCE_CONSTANTS = WRITE问题在于这个应该是READ（密度泛函微扰法）</li>
+</ul>
+<p>Number of atoms in supercell (128) is not consistent with the matrix shape of force constants (16, 16) read from FORCE_CONSTANTS. Please carefully check DIM, FORCE_CONSTANTS, and CONTCAR.</p>
+<ul>
+<li><p>扩胞的问题，查看原子数，检查原胞与晶胞，其中超胞的原子数（初始晶胞✖扩胞xyz的倍数）</p>
+</li>
+<li><p>因为之前使用的CONTCAR，在DPFT提交运算之后会生成新的CONTCAR覆盖原来的CONTCAR导致扩胞之前的文件变成了跟超胞一样的文件，所以会出现超胞和力常数的不匹配现象！解决办法，从一开始就把CONTCAR命名为POSCAR.init，然后再扩胞进行计算</p>
+</li>
+</ul>
+<p>RuntimeError: Number of forces is not consistent with supercell setting.</p>
+<ul>
+<li>超胞设置有问题，根源在于文件命名CONTCAR发生覆盖，原胞和超胞对于计算声子谱是有影响的</li>
+</ul>
+<p>ValueError: too many values to unpack (expected 2)</p>
+<ul>
+<li>phonopy -fc vasprun.xml应该改为phonopy –fc vasprun.xml</li>
+</ul>
+<h2 id="安装系列"><a href="#安装系列" class="headerlink" title="安装系列"></a><strong>安装系列</strong></h2><p>安装包管理器（conda）：<a target="_blank" rel="noopener" href="https://docs.conda.io/en/latest/miniconda.html#installing">Miniconda — conda documentation</a></p>
+<p>pip与conda相关问题集合：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/IllidanStormrage/p/15787580.html">conda命令大全: 安装，更新，创建，激活，关闭，查看，卸载，删除，清理，重命名，换源，问题</a></p>
+<p>conda env list 查看现有环境</p>
+<p><strong>安装phonopy</strong></p>
+<p>安装完conda，开始使用conda安装phonopy。可以给phonopy创建一个专门的conda环境：</p>
+<div class="hljs"><pre><code class="hljs shell"><span class="hljs-meta prompt_">% </span><span class="language-bash">conda create -n myphonopy -c conda-forge   <span class="hljs-comment"># 创建虚拟环境myphonopy</span></span>
+<span class="hljs-meta prompt_">% </span><span class="language-bash">conda activate myphonopy                   <span class="hljs-comment"># 激活虚拟环境</span></span>
+<span class="hljs-meta prompt_">% </span><span class="language-bash">conda install -c conda-forge phonopy</span></code></pre></div>
 
-<h1 id="Mermaid"><a href="#Mermaid" class="headerlink" title="Mermaid"></a>Mermaid</h1><p>Mermaid是一种基于Javascript的绘图工具，使用类似于Markdown的语法，使用户可以方便快捷地通过代码创建图表</p>
-<h2 id="Mermaid绘图功能"><a href="#Mermaid绘图功能" class="headerlink" title="Mermaid绘图功能"></a>Mermaid绘图功能</h2><p>饼状图：使用pie关键字<br>流程图：使用graph关键字<br>序列图：使用sequenceDiagram关键字<br>甘特图：使用gantt关键字<br>类图：使用classDiagram关键字<br>状态图：使用stateDiagram关键字<br>用户旅程图：使用journey关键字</p>
-<h2 id="Mermaid绘图示例"><a href="#Mermaid绘图示例" class="headerlink" title="Mermaid绘图示例"></a>Mermaid绘图示例</h2><h3 id="饼状图"><a href="#饼状图" class="headerlink" title="饼状图"></a>饼状图</h3><div class="hljs"><pre><code class="hljs ada">pie
-%%  注意冒号的格式！
-    title 为什么不喜欢做计算？
-    <span class="hljs-string">&quot;理论基础学不会&quot;</span> : 100
-    <span class="hljs-string">&quot;报错搞我心态&quot;</span> : 600
-    <span class="hljs-string">&quot;很喜欢做计算&quot;</span> : 50
-    <span class="hljs-string">&quot;不好找工作&quot;</span>: <span class="hljs-number">600</span></code></pre></div>
+<p><strong>安装pymatgen</strong></p>
+<p>安装完conda，开始使用conda安装pymatgen。可以给pymatgen创建一个专门的conda环境：</p>
+<div class="hljs"><pre><code class="hljs crystal"><span class="hljs-variable">$ </span>conda create -n mypymatgen python           <span class="hljs-comment"># 创建虚拟环境mypymatgen</span>
+<span class="hljs-variable">$ </span>conda activate mypymatgen                   <span class="hljs-comment"># 激活虚拟环境</span>
+<span class="hljs-variable">$ </span>conda install --channel conda-forge pymatgen</code></pre></div>
 
-<pre><code class="hljs mermaid">pie
-    title 为什么不喜欢做计算？
-    &quot;理论基础学不会&quot; : 225
-    &quot;报错搞我心态&quot; : 255
-    &quot;很喜欢做计算&quot; : 100
-    &quot;不好找工作&quot; : 450</code></pre>
-
-<h3 id="流程图"><a href="#流程图" class="headerlink" title="流程图"></a>流程图</h3><div class="hljs"><pre><code class="hljs erlang-repl"><span class="hljs-comment">%% LR：从左往右</span>
-<span class="hljs-comment">%% BT：从下往上</span>
-flowchart  LR;
-F--&gt;D;
-S--&gt;D;
-C--&gt;D;
-D&lt;--&gt;M;</code></pre></div>
-<pre><code class="hljs mermaid">%% LR：从左往右
-%% BT：从下往上
-flowchart  LR;
-F--&gt;D;
-S--&gt;D;
-C--&gt;D;
-D&lt;--&gt;M;</code></pre>
-
-<h3 id="结点边框"><a href="#结点边框" class="headerlink" title="结点边框"></a>结点边框</h3><div class="hljs"><pre><code class="hljs scss">graph
-    默认方形
-    id1<span class="hljs-selector-attr">[方形]</span>
-    <span class="hljs-built_in">id2</span>(圆边矩形)
-    <span class="hljs-built_in">id3</span>([体育场形])
-    id4<span class="hljs-selector-attr">[[子程序形]</span>]
-    id5<span class="hljs-selector-attr">[(圆柱形)]</span>
-    <span class="hljs-built_in">id6</span>((圆形))</code></pre></div>
-<pre><code class="hljs mermaid">graph
-    默认方形
-    id1[方形]
-    id2(圆边矩形)
-    id3([体育场形])
-    id4[[子程序形]]
-    id5[(圆柱形)]
-    id6((圆形))</code></pre>
-<h3 id="多重链"><a href="#多重链" class="headerlink" title="多重链"></a>多重链</h3><div class="hljs"><pre><code class="hljs brainfuck"><span class="hljs-comment">graph</span> 
-   <span class="hljs-comment">a</span> <span class="hljs-literal">--</span>&gt; <span class="hljs-comment">b &amp; c</span><span class="hljs-literal">--</span>&gt; <span class="hljs-comment">d</span>
-   
-   <span class="hljs-comment">A &amp; B</span><span class="hljs-literal">--</span>&gt; <span class="hljs-comment">C &amp; D</span>
-   
-    <span class="hljs-comment">X</span> <span class="hljs-literal">--</span>&gt; <span class="hljs-comment">M</span>
-    <span class="hljs-comment">X</span> <span class="hljs-literal">--</span>&gt; <span class="hljs-comment">N</span>
-    <span class="hljs-comment">Y</span> <span class="hljs-literal">--</span>&gt; <span class="hljs-comment">M</span>
-    <span class="hljs-comment">Y</span> <span class="hljs-literal">--</span>&gt; <span class="hljs-comment">N</span></code></pre></div>
-<pre><code class="hljs mermaid">graph 
-   a --&gt; b &amp; c--&gt; d
-   
-   A &amp; B--&gt; C &amp; D
-   
-    X --&gt; M
-    X --&gt; N
-    Y --&gt; M
-    Y --&gt; N</code></pre>
-<h3 id="测试文本"><a href="#测试文本" class="headerlink" title="测试文本"></a>测试文本</h3><pre><code class="hljs xml"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;en&quot;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">pre</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;mermaid&quot;</span>&gt;</span>
-  graph LR
-      A --- B
-      B--&gt;C[fa:fa-ban forbidden]
-      B--&gt;D(fa:fa-spinner);
-    <span class="hljs-tag">&lt;/<span class="hljs-name">pre</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;module&quot;</span>&gt;</span><span class="language-javascript"></span>
-<span class="language-javascript">      <span class="hljs-keyword">import</span> mermaid <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs&#x27;</span>;</span>
-<span class="language-javascript">    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></code></pre>
-
-<blockquote>
-<p>文本渲染存在问题</p>
-</blockquote>
-<p><em>参考链接：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/355997933">https://zhuanlan.zhihu.com/p/355997933</a></em><br><em>参考笔记（markdown高级用法）：<a target="_blank" rel="noopener" href="https://www.runoob.com/markdown/md-advance.html">https://www.runoob.com/markdown/md-advance.html</a></em></p>
+<h2 id="linux知识"><a href="#linux知识" class="headerlink" title="linux知识"></a><strong>linux知识</strong></h2><ul>
+<li><p>ln -s f1 f2 软连接</p>
+</li>
+<li><p>ln f1 f2 硬链接</p>
+</li>
+<li><p>区别在于软连接依赖另外一个连接；硬链接没有依赖关系，都指向硬盘的一个区域</p>
+</li>
+</ul>
 
             </div>
             <hr>
@@ -381,7 +387,7 @@ D&lt;--&gt;M;</code></pre>
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/grammar/">grammar</a>
+                      <a class="hover-with-bg" href="/categories/debug/">debug</a>
                     
                   </div>
                 
@@ -389,14 +395,14 @@ D&lt;--&gt;M;</code></pre>
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/Mermaid/">Mermaid</a>
+                      <a class="hover-with-bg" href="/tags/linux/">linux</a>
                     
                   </div>
                 
               </div>
               <p class="note note-warning">
                 <strong>本文作者: </strong><a href="/">Uncle-yang</a> <br>
-                <strong>本文链接: </strong><a href="https://uncleleiy.github.io/2023/07/28/blog-mermaid/">https://uncleleiy.github.io/2023/07/28/blog-mermaid/</a> <br>
+                <strong>本文链接: </strong><a href="https://uncleleiy.github.io/2023/08/06/blog-debug/">https://uncleleiy.github.io/2023/08/06/blog-debug/</a> <br>
                 <strong>版权声明: </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
                    </p>
                    
@@ -405,18 +411,12 @@ D&lt;--&gt;M;</code></pre>
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/07/31/blog-10-shell-scripts/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">shell+python 作图脚本</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/07/26/blog-data-flow/">
-                        <span class="hidden-mobile">数据流</span>
+                      <a href="/2023/08/03/blog-linux-vasp/">
+                        <span class="hidden-mobile">命令行集成</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -599,7 +599,7 @@ D&lt;--&gt;M;</code></pre>
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "Mermaid 基础语法&nbsp;",
+        "报错问题汇总&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 125,
@@ -652,13 +652,6 @@ D&lt;--&gt;M;</code></pre>
 
 
 
-
-  <script  src="https://cdn.staticfile.org/mermaid/8.5.0/mermaid.min.js" ></script>
-  <script>
-    if (window.mermaid) {
-      mermaid.initialize({"theme":"default"});
-    }
-  </script>
 
 
 

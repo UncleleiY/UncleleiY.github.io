@@ -4,6 +4,87 @@
   
     
     <entry>
+      <title>报错问题汇总</title>
+      <link href="/2023/08/06/blog-debug/"/>
+      <url>/2023/08/06/blog-debug/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="报错"><a href="#报错" class="headerlink" title="报错"></a>报错</h1><h2 id="解决手段"><a href="#解决手段" class="headerlink" title="解决手段"></a>解决手段</h2><ul><li><p>Youself</p></li><li><p>Google</p></li><li><p>ChatAI</p></li></ul><h2 id="报错系列"><a href="#报错系列" class="headerlink" title="报错系列"></a><strong>报错系列</strong></h2><p>ModuleNotFoundError: No module named ‘matplotlib’ （vaspkit -211命令作图报错）</p><ul><li><p>问题发生的本源：使用 sudo 安装的 matplotlib 和 使用 conda 安装的 matplotlib 作用优先级不同（可以理解为干涉）</p></li><li><p>使用sudo pip install matplotlib（已换源），则安装的matplotlib具有全局优先级，会覆盖使用conda直接安装（没有建立虚拟环境）的matplotlib，导致vaspkit调用的matplotlib实质上是pip 安装的matplotlib，而vaspkit调用的matplotlib路径在conda里面，因此vaspkit在调用的时候会报错：找不到matplotlib</p></li><li><p>解决方案：卸载使用sudo pip强制安装的matplotlib，重新使用pip 直接安装（需要换源）</p></li><li><p>忽视 Defaulting to user installation because normal site-packages is not writeable，等待安装结束即可</p></li></ul><p>command not found</p><ul><li><p>多半是拼写或者是路径的问题！</p></li><li><p>文件路径问题：绝对路径应该以一个斜杠 / 开始，比如 /home/lei/bin/bader</p></li></ul><p>grep “TOTEN” OUTCAR | tail -1 | awk ‘{printf “%12.6f \n”, $5 }’</p><ul><li><p>awk处理文本，注意单引号不要忘记！注意区分符号，以及反引号转义字符！</p></li><li><p>关于case命令的函数，直接复制你设定的函数名，command not found，多半是拼写的问题！</p></li></ul><p>Defaulting to user installation because normal site-packages is not writeable</p><ul><li><p>这个问题其实是安装权限问题，它告诉你默认选择当前用户安装，忽视即可，因此作用域也在你当前的用户</p></li><li><p>如果安装半天没反应，可以试试换源： <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/398020802">Python：Defaulting to user installation because normal site-packages is not writeable</a></p></li></ul><p>pip install 之后没反应，多半是源的问题，需要换源来处理</p><ul><li><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/skyyzq/article/details/113417832">python pip 换国内源的办法（永久和临时两种办法）_pip换源</a></p></li><li><p>如果在使用pip安装软件时报错，根据报错补全相关依赖库即可，python的软件极度依赖相关库</p></li><li><p>在虚拟环境中安装的软件需要先打开虚拟环境才可以使用（比如conda的phonopy）</p></li></ul><p>BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES = RANK 0 PID 283516 RUNNING AT DESKTOP-NS9R0G8 = KILLED BY SIGNAL: 9 (Killed)</p><ul><li>是由于本地计算机算力不够和内存不足导致。解决办法是减小k点至1 1 1，或者减小扩胞的数量。</li></ul><p>“FORCE_SETS” was not found“</p><ul><li>FORCE_CONSTANTS = WRITE问题在于这个应该是READ（密度泛函微扰法）</li></ul><p>Number of atoms in supercell (128) is not consistent with the matrix shape of force constants (16, 16) read from FORCE_CONSTANTS. Please carefully check DIM, FORCE_CONSTANTS, and CONTCAR.</p><ul><li><p>扩胞的问题，查看原子数，检查原胞与晶胞，其中超胞的原子数（初始晶胞✖扩胞xyz的倍数）</p></li><li><p>因为之前使用的CONTCAR，在DPFT提交运算之后会生成新的CONTCAR覆盖原来的CONTCAR导致扩胞之前的文件变成了跟超胞一样的文件，所以会出现超胞和力常数的不匹配现象！解决办法，从一开始就把CONTCAR命名为POSCAR.init，然后再扩胞进行计算</p></li></ul><p>RuntimeError: Number of forces is not consistent with supercell setting.</p><ul><li>超胞设置有问题，根源在于文件命名CONTCAR发生覆盖，原胞和超胞对于计算声子谱是有影响的</li></ul><p>ValueError: too many values to unpack (expected 2)</p><ul><li>phonopy -fc vasprun.xml应该改为phonopy –fc vasprun.xml</li></ul><h2 id="安装系列"><a href="#安装系列" class="headerlink" title="安装系列"></a><strong>安装系列</strong></h2><p>安装包管理器（conda）：<a target="_blank" rel="noopener" href="https://docs.conda.io/en/latest/miniconda.html#installing">Miniconda — conda documentation</a></p><p>pip与conda相关问题集合：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/IllidanStormrage/p/15787580.html">conda命令大全: 安装，更新，创建，激活，关闭，查看，卸载，删除，清理，重命名，换源，问题</a></p><p>conda env list 查看现有环境</p><p><strong>安装phonopy</strong></p><p>安装完conda，开始使用conda安装phonopy。可以给phonopy创建一个专门的conda环境：</p><pre><code class="hljs shell"><span class="hljs-meta prompt_">% </span><span class="language-bash">conda create -n myphonopy -c conda-forge   <span class="hljs-comment"># 创建虚拟环境myphonopy</span></span><span class="hljs-meta prompt_">% </span><span class="language-bash">conda activate myphonopy                   <span class="hljs-comment"># 激活虚拟环境</span></span><span class="hljs-meta prompt_">% </span><span class="language-bash">conda install -c conda-forge phonopy</span></code></pre><p><strong>安装pymatgen</strong></p><p>安装完conda，开始使用conda安装pymatgen。可以给pymatgen创建一个专门的conda环境：</p><pre><code class="hljs crystal"><span class="hljs-variable">$ </span>conda create -n mypymatgen python           <span class="hljs-comment"># 创建虚拟环境mypymatgen</span><span class="hljs-variable">$ </span>conda activate mypymatgen                   <span class="hljs-comment"># 激活虚拟环境</span><span class="hljs-variable">$ </span>conda install --channel conda-forge pymatgen</code></pre><h2 id="linux知识"><a href="#linux知识" class="headerlink" title="linux知识"></a><strong>linux知识</strong></h2><ul><li><p>ln -s f1 f2 软连接</p></li><li><p>ln f1 f2 硬链接</p></li><li><p>区别在于软连接依赖另外一个连接；硬链接没有依赖关系，都指向硬盘的一个区域</p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> debug </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>命令行集成</title>
+      <link href="/2023/08/03/blog-linux-vasp/"/>
+      <url>/2023/08/03/blog-linux-vasp/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="命令行集成"><a href="#命令行集成" class="headerlink" title="命令行集成"></a><strong>命令行集成</strong></h1><h2 id="slurm"><a href="#slurm" class="headerlink" title="slurm"></a>slurm</h2><ul><li><p>tail OUTCAR                                            查看任务运行情况，暂停终端ctrl+s，继续终端ctrl+q，退出命令ctrl+c</p></li><li><p>squeue                                                   查看作业号：JOBID下面的数字</p></li><li><p>scancel JOBID                                         取消作业号：JOBID下面的数字</p></li><li><p>sbatch slurm.sh                                       批处理作业（命令行终端关闭不影响作业运行）</p></li><li><p>srun slurm.sh（？）                                 交互式提交作业（命令行终端关闭则作业终止）</p></li><li><p>salloc （？）                                           为分配资源并启动一个shell，然后用此shell执行srun命令去执行并行任务</p></li><li><p>sacct                                                      显示已完成作业或作业的记账信息</p></li><li><p>scontrol  show job                                   查看作业、节点和队列等信息</p></li><li><p>sattach [options] &lt;jobid.stepid&gt;               监测到运行中的作业步的标准输入、输出及出错，监控运行中的作业步的IO等</p></li><li><p>speek JOBID                                           默认显示正常屏幕输出，如加-f参数，则连续监测输出；如加-e参数，则监测错误日志                </p></li><li><p><a target="_blank" rel="noopener" href="https://scc.ustc.edu.cn/zlsc/user_doc/html/slurm/index.html">Slurm作业调度系统 — 中国科大超级计算中心用户使用手册 ：2023-06-29版 文档 (ustc.edu.cn)</a></p></li></ul><h2 id="linux"><a href="#linux" class="headerlink" title="linux"></a>linux</h2><ul><li><p>display file / eog file / xdg-open file              直接通过终端的命令打开图片img，关闭窗口：Alt+F4</p></li><li><p>evince filename                                          直接通过终端的命令打开pdf，关闭窗口：Alt+F4</p></li><li><p>cp ~/XXXX .                                               复制家目录下的XXXX到当前文件夹下</p></li><li><p>cp ../XXXX .                                               复制上一级的XXXX到当前文件夹下</p></li><li><p>vim：gg / shift+g                                       vi模式下快捷跳到首行 / 末行</p></li><li><p>head -n 10                                                显示首页十行</p></li><li><p>tail -n 10                                                   显示末尾十行</p></li><li><p>|| and |                                                     || 运算符：命令执行失败仍继续执行后续命令。| 运算符：命令执行完毕的结果往后传递</p></li><li><p>&amp; and &amp;&amp;                                                  &amp;&amp;运算符：命令执行失败则停止执行后续命令。&amp;描述符：&amp;&gt;file 标准输出和标准错误输出都重定向到file</p></li><li><p>$()  &lt;=&gt;  ``                                             $()与反引号``等价，都用于命令替换</p></li><li><p>$a   &lt;=&gt;  ${}                                           $a与${}等价，都用于变量替换</p></li></ul><h2 id="vaspkit"><a href="#vaspkit" class="headerlink" title="vaspkit"></a>vaspkit</h2><ul><li><p>vaspkit：→ 1 → 101 → SR/ST                     生成INCAR（选择合适的类型再修改）</p></li><li><p>vaspkit：→ 1 → 103/104                            生成POTCAR（特殊的类型需要指定）</p></li><li><p>vaspkit：→ 1 → 102 → 1/2/3                      生成KPOINTS（需要指定精度）</p></li><li><p>vaspkit：→ 3 → 301/302/303                      生成能带计算所需的K点路径（1D/2D/Bulk）</p></li><li><p>vaspkit：→ 21 → 211                                 生成TDOS.dat</p></li><li><p>vaspkit：→ 21 → 211                                 生成BAND.dat</p></li></ul><h2 id="phonopy"><a href="#phonopy" class="headerlink" title="phonopy"></a>phonopy</h2><ul><li><p>phonopy –symmetry POSCAR                       原胞晶胞转换（BP：PP：）</p></li><li><p>phonopy -d –dim=”5 5 5” -c POSCAR.init      扩胞，其中-c表示晶胞的名字</p></li></ul><p>有限位移法：</p><ul><li><p>phonopy -f */vasprun.xml                            提取动力学矩阵，进入上一级文件夹，生成FORCE_SET  </p></li><li><p>phonopy -c POSCAR-unitcell band.conf -p -s   计算声子谱并保存为pdf格式,同时生成FORCE_CONSTANTS</p></li><li><p>phonopy-bandplot –gnuplot &gt; phonon.out     将声子谱进一步输出为数据文件，用于其它软件画图</p></li></ul><p>密度泛函微扰法：  </p><ul><li><p>phonopy –fc vasprun.xml                            提取力常数，得到FORCE_CONSTANTS文件</p></li><li><p>phonopy -c POSCAR-unitcell band.conf -p -s  计算声子谱并保存为pdf格式（-p:plot,-s:save as PDF）</p></li><li><p>phonopy-bandplot –gnuplot &gt; phonon.out    将声子谱进一步输出为数据文件，用于其它软件画图</p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> programming </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> linux </tag>
+            
+            <tag> vasp </tag>
+            
+            <tag> slurm </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>shell+python 作图脚本</title>
+      <link href="/2023/07/31/blog-10-shell-scripts/"/>
+      <url>/2023/07/31/blog-10-shell-scripts/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="plot-by-pymatgen"><a href="#plot-by-pymatgen" class="headerlink" title="plot by pymatgen"></a>plot by pymatgen</h1><h2 id="dosplot"><a href="#dosplot" class="headerlink" title="dosplot"></a>dosplot</h2><pre><code class="hljs bash"><span class="hljs-meta">#!/bin/env bash</span><span class="hljs-built_in">cat</span> &gt; dosplot.py &lt;&lt;!import matplotlib.pyplot as pltfrom pymatgen.io.vasp.outputs import Vasprunfrom pymatgen.electronic_structure.plotter import BSDOSPlotter,BSPlotter,BSPlotterProjected,DosPlotter<span class="hljs-comment"># read vasprun.xml，get band and dos information</span>bs_vasprun=Vasprun(<span class="hljs-string">&quot;./vasprun.xml&quot;</span>,parse_projected_eigen=True)bs_data=bs_vasprun.get_band_structure(line_mode=False)dos_vasprun=Vasprun(<span class="hljs-string">&quot;./vasprun.xml&quot;</span>)dos_data=dos_vasprun.complete_dos<span class="hljs-comment"># set figure parameters, draw figure</span>plt_dos = DosPlotter(stack=False)        <span class="hljs-comment"># plt_dos = DosPlotter(stack=False,sigma=0.5), here you can choose sigma</span>plt_dos.add_dos(<span class="hljs-string">&#x27;total dos&#x27;</span>,dos=dos_data)plt_dos.add_dos_dict(dos_data.get_spd_dos())plt_dos.save_plot(<span class="hljs-string">&#x27;dosspd.pdf&#x27;</span>,img_format=<span class="hljs-string">&#x27;pdf&#x27;</span>)!python3 dosplot.pyevince dosspd.pdf</code></pre><h2 id="bandplot"><a href="#bandplot" class="headerlink" title="bandplot"></a>bandplot</h2><pre><code class="hljs bash"><span class="hljs-meta">#!/bin/env bash</span><span class="hljs-built_in">cat</span> &gt; bandplot.py &lt;&lt;!import matplotlib.pyplot as pltfrom pymatgen.io.vasp.outputs import Vasprunfrom pymatgen.electronic_structure.plotter import BSDOSPlotter,\BSPlotter,BSPlotterProjected,DosPlotter<span class="hljs-comment"># read vasprun.xml，get band and dos information</span>bs_vasprun = Vasprun(<span class="hljs-string">&quot;./vasprun.xml&quot;</span>,parse_projected_eigen=True)bs_data = bs_vasprun.get_band_structure(line_mode=True)dos_vasprun=Vasprun(<span class="hljs-string">&quot;./vasprun.xml&quot;</span>)dos_data=dos_vasprun.complete_dos<span class="hljs-comment"># set figure parameters, draw figure</span>banddos_fig = BSDOSPlotter(bs_projection=None, dos_projection=None, vb_energy_range=5, fixed_cb_energy=5)banddos_fig.get_plot(bs=bs_data, dos=dos_data)plt.savefig(<span class="hljs-string">&#x27;banddos.png&#x27;</span>)!python3 bandplot.pydisplay banddos.png</code></pre><p><em>reference：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/y7if55laqS-R16It-QGUiw">https://mp.weixin.qq.com/s/y7if55laqS-R16It-QGUiw</a></em></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> scripts </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> shell </tag>
+            
+            <tag> python </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Mermaid 基础语法</title>
       <link href="/2023/07/28/blog-mermaid/"/>
       <url>/2023/07/28/blog-mermaid/</url>
@@ -283,7 +364,7 @@
       <link href="/2023/06/29/blog-9-shell-scripts/"/>
       <url>/2023/06/29/blog-9-shell-scripts/</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="vasp生成任务目录的脚本"><a href="#vasp生成任务目录的脚本" class="headerlink" title="vasp生成任务目录的脚本"></a>vasp生成任务目录的脚本</h1><pre><code class="hljs bash"><span class="hljs-meta">#!/usr/bin/env bash</span><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;&quot;</span><span class="hljs-string">&quot;</span><span class="hljs-string">This script is used to make some new directories </span><span class="hljs-string">and then execute different calculation-tasks for you choose</span><span class="hljs-string">Now the following tasks can be executed: (scf) (dos) (band) </span><span class="hljs-string">&quot;</span><span class="hljs-string">&quot;&quot;</span><span class="hljs-function"><span class="hljs-title">function_scf</span></span>()&#123;<span class="hljs-built_in">mkdir</span> scf &amp;&amp; tar czvf chg.tgz CHG* &amp;&amp;<span class="hljs-built_in">cp</span> INCAR KPOINTS POSCAR OUTCAR chg.tgz scf/.&#125;<span class="hljs-function"><span class="hljs-title">function_dos</span></span>()&#123;<span class="hljs-built_in">mkdir</span> dos &amp;&amp;  <span class="hljs-built_in">cp</span> INCAR KPOINTS POSCAR OUTCAR DOSCAR dos/.&#125;<span class="hljs-function"><span class="hljs-title">function_band</span></span>()&#123;<span class="hljs-built_in">mkdir</span> band &amp;&amp;  <span class="hljs-built_in">cp</span> INCAR KPOINTS POSCAR OUTCAR EIGENVAL band/.&#125;<span class="hljs-built_in">echo</span> -n <span class="hljs-string">&quot;Please choose which kind of task you&#x27;re going to do: &quot;</span><span class="hljs-built_in">read</span> taska=scf b=dosc=band<span class="hljs-keyword">if</span> [ <span class="hljs-variable">$a</span> == <span class="hljs-variable">$task</span> ]<span class="hljs-keyword">then</span>    function_scf    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;scf directory writing successfully !&quot;</span><span class="hljs-keyword">elif</span> [ <span class="hljs-variable">$b</span> == <span class="hljs-variable">$task</span> ]<span class="hljs-keyword">then</span>     function_dos    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;dos directory writing successfully !&quot;</span><span class="hljs-keyword">elif</span> [ <span class="hljs-variable">$c</span> == <span class="hljs-variable">$task</span> ]<span class="hljs-keyword">then</span>    function_band    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;band directory writing successfully !&quot;</span><span class="hljs-keyword">fi</span></code></pre>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="vasp生成任务目录的脚本（taskin）"><a href="#vasp生成任务目录的脚本（taskin）" class="headerlink" title="vasp生成任务目录的脚本（taskin）"></a>vasp生成任务目录的脚本（taskin）</h1><pre><code class="hljs bash"><span class="hljs-meta">#!/usr/bin/env bash</span><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;This script is used to make some new directories !&quot;</span><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;&quot;</span><span class="hljs-string">&quot;--------------------------------------------------</span><span class="hljs-string">1) scf</span><span class="hljs-string">2) dos</span><span class="hljs-string">3) band</span><span class="hljs-string">4) ELF</span><span class="hljs-string">5) bader</span><span class="hljs-string">6) phonon</span><span class="hljs-string">--------------------------------------------------&quot;</span><span class="hljs-string">&quot;&quot;</span><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Here you can choose the tasks as shown above ----&gt; &quot;</span><span class="hljs-built_in">read</span> task<span class="hljs-keyword">case</span> <span class="hljs-variable">$task</span> <span class="hljs-keyword">in</span>     1)       <span class="hljs-built_in">mkdir</span> scf       <span class="hljs-built_in">cp</span> INCAR KPOINTS CONTCAR POTCAR slurm.sh scf/.       <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;scf directory writing successfully !&quot;</span>     ;;     2)       <span class="hljs-built_in">mkdir</span> dos       <span class="hljs-built_in">cp</span> INCAR KPOINTS POSCAR POTCAR WAVECAR CHGCAR slurm.sh dos/.       <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;dos directory writing successfully !&quot;</span>       <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Attention ! copy INCAR from band&quot;</span>     ;;     3)       <span class="hljs-built_in">mkdir</span> band       <span class="hljs-built_in">cp</span> INCAR POSCAR POTCAR WAVECAR CHGCAR slurm.sh band/.       <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;band directory writing successfully !&quot;</span>     ;;     4)       <span class="hljs-built_in">mkdir</span> ELF       <span class="hljs-built_in">cp</span> INCAR POSCAR POTCAR WAVECAR slurm.sh ELF/.       <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;ELF directory writing successfully !&quot;</span>     ;;     5)       <span class="hljs-built_in">mkdir</span> bader       <span class="hljs-built_in">cp</span> POSCAR POTCAR slurm.sh bader/.       <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;bader directory writing successfully !&quot;</span>     ;;     6)     <span class="hljs-built_in">mkdir</span> phonon       <span class="hljs-built_in">cp</span> CONTCAR POTCAR KPOINTS slurm.sh phonon/.       <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;phonon directory writing successfully !&quot;</span>     ;;<span class="hljs-keyword">esac</span></code></pre>]]></content>
       
       
       <categories>
@@ -295,9 +376,9 @@
       
         <tags>
             
-            <tag> vasp </tag>
-            
             <tag> shell </tag>
+            
+            <tag> vasp </tag>
             
         </tags>
       
@@ -347,9 +428,9 @@
       
         <tags>
             
-            <tag> python </tag>
-            
             <tag> shell </tag>
+            
+            <tag> python </tag>
             
         </tags>
       

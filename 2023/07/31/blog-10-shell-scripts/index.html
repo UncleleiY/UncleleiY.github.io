@@ -23,11 +23,24 @@
                 <meta name="author" content="Uncle_yang">
                 <meta name="keywords" content="知识、管理">
                 <title>
-                    标签 - vasp - 诗意の理性
+                    shell+python 作图脚本 - 诗意の理性
                 </title>
 
                 <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/gradient-dark.min.css" />
+    
+  
+
+  
 
 
 <!-- 主题依赖的图标库，不要自行修改 -->
@@ -197,6 +210,56 @@
             </span>
 
             
+              <div class="mt-3">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-author" aria-hidden="true"></i>
+      Uncle_yang
+    </span>
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2023-07-31 15:00" pubdate>
+        2023年7月31日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      216 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      4
+       分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
+</div>
+
+            
           </div>
 
           
@@ -207,61 +270,141 @@
 
   <main>
     
-      <div class="container nopadding-md">
-        <div class="py-5" id="board"
-          >
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-<div class="list-group">
-  <p class="h4">共计 5 篇文章</p>
-  <hr>
-  
-    
       
-      <p class="h5">2023</p>
-    
-    <a href="/2023/08/03/blog-linux-vasp/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">命令行集成</span>
-      <time style="float: right;">08-03</time>
-    </a>
-  
-    
-    <a href="/2023/07/24/blog-vasp-2/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">VASP 学习笔记</span>
-      <time style="float: right;">07-24</time>
-    </a>
-  
-    
-    <a href="/2023/07/22/blog-vasp-1/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">VASP 学习笔记</span>
-      <time style="float: right;">07-22</time>
-    </a>
-  
-    
-    <a href="/2023/06/29/blog-9-shell-scripts/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">shell-vasp 任务目录脚本</span>
-      <time style="float: right;">06-29</time>
-    </a>
-  
-    
-    <a href="/2023/06/08/blog-2-linux-vasp/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">linux 基础命令</span>
-      <time style="float: right;">06-08</time>
-    </a>
-  
-</div>
 
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto" id="post">
+            <!-- SEO header -->
+            <h1 style="display: none">shell+python 作图脚本</h1>
+            
+            <div class="markdown-body" id="post-body">
+              <h1 id="plot-by-pymatgen"><a href="#plot-by-pymatgen" class="headerlink" title="plot by pymatgen"></a>plot by pymatgen</h1><h2 id="dosplot"><a href="#dosplot" class="headerlink" title="dosplot"></a>dosplot</h2><div class="hljs"><pre><code class="hljs bash"><span class="hljs-meta">#!/bin/env bash</span>
+<span class="hljs-built_in">cat</span> &gt; dosplot.py &lt;&lt;!
+import matplotlib.pyplot as plt
+from pymatgen.io.vasp.outputs import Vasprun
+from pymatgen.electronic_structure.plotter import BSDOSPlotter,BSPlotter,BSPlotterProjected,DosPlotter
 
+<span class="hljs-comment"># read vasprun.xml，get band and dos information</span>
+bs_vasprun=Vasprun(<span class="hljs-string">&quot;./vasprun.xml&quot;</span>,parse_projected_eigen=True)
+bs_data=bs_vasprun.get_band_structure(line_mode=False)
+dos_vasprun=Vasprun(<span class="hljs-string">&quot;./vasprun.xml&quot;</span>)
+dos_data=dos_vasprun.complete_dos
 
-              </div>
+<span class="hljs-comment"># set figure parameters, draw figure</span>
+plt_dos = DosPlotter(stack=False)        <span class="hljs-comment"># plt_dos = DosPlotter(stack=False,sigma=0.5), here you can choose sigma</span>
+plt_dos.add_dos(<span class="hljs-string">&#x27;total dos&#x27;</span>,dos=dos_data)
+plt_dos.add_dos_dict(dos_data.get_spd_dos())
+plt_dos.save_plot(<span class="hljs-string">&#x27;dosspd.pdf&#x27;</span>,img_format=<span class="hljs-string">&#x27;pdf&#x27;</span>)
+!
+python3 dosplot.py
+evince dosspd.pdf</code></pre></div>
+
+<h2 id="bandplot"><a href="#bandplot" class="headerlink" title="bandplot"></a>bandplot</h2><div class="hljs"><pre><code class="hljs bash"><span class="hljs-meta">#!/bin/env bash</span>
+<span class="hljs-built_in">cat</span> &gt; bandplot.py &lt;&lt;!
+import matplotlib.pyplot as plt
+from pymatgen.io.vasp.outputs import Vasprun
+from pymatgen.electronic_structure.plotter import BSDOSPlotter,\
+BSPlotter,BSPlotterProjected,DosPlotter
+
+<span class="hljs-comment"># read vasprun.xml，get band and dos information</span>
+bs_vasprun = Vasprun(<span class="hljs-string">&quot;./vasprun.xml&quot;</span>,parse_projected_eigen=True)
+bs_data = bs_vasprun.get_band_structure(line_mode=True)
+
+dos_vasprun=Vasprun(<span class="hljs-string">&quot;./vasprun.xml&quot;</span>)
+dos_data=dos_vasprun.complete_dos
+
+<span class="hljs-comment"># set figure parameters, draw figure</span>
+banddos_fig = BSDOSPlotter(bs_projection=None, dos_projection=None, vb_energy_range=5, fixed_cb_energy=5)
+banddos_fig.get_plot(bs=bs_data, dos=dos_data)
+plt.savefig(<span class="hljs-string">&#x27;banddos.png&#x27;</span>)
+!
+python3 bandplot.py
+display banddos.png</code></pre></div>
+
+<p><em>reference：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/y7if55laqS-R16It-QGUiw">https://mp.weixin.qq.com/s/y7if55laqS-R16It-QGUiw</a></em></p>
+
             </div>
-          </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/scripts/">scripts</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/shell/">shell</a>
+                    
+                      <a class="hover-with-bg" href="/tags/python/">python</a>
+                    
+                  </div>
+                
+              </div>
+              <p class="note note-warning">
+                <strong>本文作者: </strong><a href="/">Uncle-yang</a> <br>
+                <strong>本文链接: </strong><a href="https://uncleleiy.github.io/2023/07/31/blog-10-shell-scripts/">https://uncleleiy.github.io/2023/07/31/blog-10-shell-scripts/</a> <br>
+                <strong>版权声明: </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                   </p>
+                   
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/08/03/blog-linux-vasp/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">命令行集成</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/07/28/blog-mermaid/">
+                        <span class="hidden-mobile">Mermaid 基础语法</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
         </div>
       </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+
+
     
   </main>
 
@@ -381,6 +524,31 @@
 
 
 
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '#post-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 0,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
 
 
   <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
@@ -388,7 +556,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "标签 - vasp&nbsp;",
+        "shell+python 作图脚本&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 125,
@@ -402,6 +570,23 @@
   </script>
 
 
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "left",
+      visible: "hover",
+      
+      icon: " ❡ "
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
 
 
 

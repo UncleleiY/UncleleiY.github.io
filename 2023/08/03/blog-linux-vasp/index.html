@@ -23,7 +23,7 @@
                 <meta name="author" content="Uncle_yang">
                 <meta name="keywords" content="知识、管理">
                 <title>
-                    Mermaid 基础语法 - 诗意の理性
+                    命令行集成 - 诗意の理性
                 </title>
 
                 <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
@@ -220,8 +220,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2023-07-28 22:00" pubdate>
-        2023年7月28日 晚上
+      <time datetime="2023-08-03 19:00" pubdate>
+        2023年8月3日 晚上
       </time>
     </span>
   
@@ -232,7 +232,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      517 字
+      768 字
     </span>
   
 
@@ -242,7 +242,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      7
+      9
        分钟
     </span>
   
@@ -280,98 +280,95 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto" id="post">
             <!-- SEO header -->
-            <h1 style="display: none">Mermaid 基础语法</h1>
+            <h1 style="display: none">命令行集成</h1>
             
             <div class="markdown-body" id="post-body">
-              <script type="module">
-      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-    </script>
-
-<h1 id="Mermaid"><a href="#Mermaid" class="headerlink" title="Mermaid"></a>Mermaid</h1><p>Mermaid是一种基于Javascript的绘图工具，使用类似于Markdown的语法，使用户可以方便快捷地通过代码创建图表</p>
-<h2 id="Mermaid绘图功能"><a href="#Mermaid绘图功能" class="headerlink" title="Mermaid绘图功能"></a>Mermaid绘图功能</h2><p>饼状图：使用pie关键字<br>流程图：使用graph关键字<br>序列图：使用sequenceDiagram关键字<br>甘特图：使用gantt关键字<br>类图：使用classDiagram关键字<br>状态图：使用stateDiagram关键字<br>用户旅程图：使用journey关键字</p>
-<h2 id="Mermaid绘图示例"><a href="#Mermaid绘图示例" class="headerlink" title="Mermaid绘图示例"></a>Mermaid绘图示例</h2><h3 id="饼状图"><a href="#饼状图" class="headerlink" title="饼状图"></a>饼状图</h3><div class="hljs"><pre><code class="hljs ada">pie
-%%  注意冒号的格式！
-    title 为什么不喜欢做计算？
-    <span class="hljs-string">&quot;理论基础学不会&quot;</span> : 100
-    <span class="hljs-string">&quot;报错搞我心态&quot;</span> : 600
-    <span class="hljs-string">&quot;很喜欢做计算&quot;</span> : 50
-    <span class="hljs-string">&quot;不好找工作&quot;</span>: <span class="hljs-number">600</span></code></pre></div>
-
-<pre><code class="hljs mermaid">pie
-    title 为什么不喜欢做计算？
-    &quot;理论基础学不会&quot; : 225
-    &quot;报错搞我心态&quot; : 255
-    &quot;很喜欢做计算&quot; : 100
-    &quot;不好找工作&quot; : 450</code></pre>
-
-<h3 id="流程图"><a href="#流程图" class="headerlink" title="流程图"></a>流程图</h3><div class="hljs"><pre><code class="hljs erlang-repl"><span class="hljs-comment">%% LR：从左往右</span>
-<span class="hljs-comment">%% BT：从下往上</span>
-flowchart  LR;
-F--&gt;D;
-S--&gt;D;
-C--&gt;D;
-D&lt;--&gt;M;</code></pre></div>
-<pre><code class="hljs mermaid">%% LR：从左往右
-%% BT：从下往上
-flowchart  LR;
-F--&gt;D;
-S--&gt;D;
-C--&gt;D;
-D&lt;--&gt;M;</code></pre>
-
-<h3 id="结点边框"><a href="#结点边框" class="headerlink" title="结点边框"></a>结点边框</h3><div class="hljs"><pre><code class="hljs scss">graph
-    默认方形
-    id1<span class="hljs-selector-attr">[方形]</span>
-    <span class="hljs-built_in">id2</span>(圆边矩形)
-    <span class="hljs-built_in">id3</span>([体育场形])
-    id4<span class="hljs-selector-attr">[[子程序形]</span>]
-    id5<span class="hljs-selector-attr">[(圆柱形)]</span>
-    <span class="hljs-built_in">id6</span>((圆形))</code></pre></div>
-<pre><code class="hljs mermaid">graph
-    默认方形
-    id1[方形]
-    id2(圆边矩形)
-    id3([体育场形])
-    id4[[子程序形]]
-    id5[(圆柱形)]
-    id6((圆形))</code></pre>
-<h3 id="多重链"><a href="#多重链" class="headerlink" title="多重链"></a>多重链</h3><div class="hljs"><pre><code class="hljs brainfuck"><span class="hljs-comment">graph</span> 
-   <span class="hljs-comment">a</span> <span class="hljs-literal">--</span>&gt; <span class="hljs-comment">b &amp; c</span><span class="hljs-literal">--</span>&gt; <span class="hljs-comment">d</span>
-   
-   <span class="hljs-comment">A &amp; B</span><span class="hljs-literal">--</span>&gt; <span class="hljs-comment">C &amp; D</span>
-   
-    <span class="hljs-comment">X</span> <span class="hljs-literal">--</span>&gt; <span class="hljs-comment">M</span>
-    <span class="hljs-comment">X</span> <span class="hljs-literal">--</span>&gt; <span class="hljs-comment">N</span>
-    <span class="hljs-comment">Y</span> <span class="hljs-literal">--</span>&gt; <span class="hljs-comment">M</span>
-    <span class="hljs-comment">Y</span> <span class="hljs-literal">--</span>&gt; <span class="hljs-comment">N</span></code></pre></div>
-<pre><code class="hljs mermaid">graph 
-   a --&gt; b &amp; c--&gt; d
-   
-   A &amp; B--&gt; C &amp; D
-   
-    X --&gt; M
-    X --&gt; N
-    Y --&gt; M
-    Y --&gt; N</code></pre>
-<h3 id="测试文本"><a href="#测试文本" class="headerlink" title="测试文本"></a>测试文本</h3><pre><code class="hljs xml"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;en&quot;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">pre</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;mermaid&quot;</span>&gt;</span>
-  graph LR
-      A --- B
-      B--&gt;C[fa:fa-ban forbidden]
-      B--&gt;D(fa:fa-spinner);
-    <span class="hljs-tag">&lt;/<span class="hljs-name">pre</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;module&quot;</span>&gt;</span><span class="language-javascript"></span>
-<span class="language-javascript">      <span class="hljs-keyword">import</span> mermaid <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs&#x27;</span>;</span>
-<span class="language-javascript">    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></code></pre>
-
-<blockquote>
-<p>文本渲染存在问题</p>
-</blockquote>
-<p><em>参考链接：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/355997933">https://zhuanlan.zhihu.com/p/355997933</a></em><br><em>参考笔记（markdown高级用法）：<a target="_blank" rel="noopener" href="https://www.runoob.com/markdown/md-advance.html">https://www.runoob.com/markdown/md-advance.html</a></em></p>
+              <h1 id="命令行集成"><a href="#命令行集成" class="headerlink" title="命令行集成"></a><strong>命令行集成</strong></h1><h2 id="slurm"><a href="#slurm" class="headerlink" title="slurm"></a>slurm</h2><ul>
+<li><p>tail OUTCAR                                            查看任务运行情况，暂停终端ctrl+s，继续终端ctrl+q，退出命令ctrl+c</p>
+</li>
+<li><p>squeue                                                   查看作业号：JOBID下面的数字</p>
+</li>
+<li><p>scancel JOBID                                         取消作业号：JOBID下面的数字</p>
+</li>
+<li><p>sbatch slurm.sh                                       批处理作业（命令行终端关闭不影响作业运行）</p>
+</li>
+<li><p>srun slurm.sh（？）                                 交互式提交作业（命令行终端关闭则作业终止）</p>
+</li>
+<li><p>salloc （？）                                           为分配资源并启动一个shell，然后用此shell执行srun命令去执行并行任务</p>
+</li>
+<li><p>sacct                                                      显示已完成作业或作业的记账信息</p>
+</li>
+<li><p>scontrol  show job                                   查看作业、节点和队列等信息</p>
+</li>
+<li><p>sattach [options] &lt;jobid.stepid&gt;               监测到运行中的作业步的标准输入、输出及出错，监控运行中的作业步的IO等</p>
+</li>
+<li><p>speek JOBID                                           默认显示正常屏幕输出，如加-f参数，则连续监测输出；如加-e参数，则监测错误日志                </p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://scc.ustc.edu.cn/zlsc/user_doc/html/slurm/index.html">Slurm作业调度系统 — 中国科大超级计算中心用户使用手册 ：2023-06-29版 文档 (ustc.edu.cn)</a></p>
+</li>
+</ul>
+<h2 id="linux"><a href="#linux" class="headerlink" title="linux"></a>linux</h2><ul>
+<li><p>display file / eog file / xdg-open file              直接通过终端的命令打开图片img，关闭窗口：Alt+F4</p>
+</li>
+<li><p>evince filename                                          直接通过终端的命令打开pdf，关闭窗口：Alt+F4</p>
+</li>
+<li><p>cp ~/XXXX .                                               复制家目录下的XXXX到当前文件夹下</p>
+</li>
+<li><p>cp ../XXXX .                                               复制上一级的XXXX到当前文件夹下</p>
+</li>
+<li><p>vim：gg / shift+g                                       vi模式下快捷跳到首行 / 末行</p>
+</li>
+<li><p>head -n 10                                                显示首页十行</p>
+</li>
+<li><p>tail -n 10                                                   显示末尾十行</p>
+</li>
+<li><p>|| and |                                                     || 运算符：命令执行失败仍继续执行后续命令。| 运算符：命令执行完毕的结果往后传递</p>
+</li>
+<li><p>&amp; and &amp;&amp;                                                  &amp;&amp;运算符：命令执行失败则停止执行后续命令。&amp;描述符：&amp;&gt;file 标准输出和标准错误输出都重定向到file</p>
+</li>
+<li><p>$()  &lt;=&gt;  ``                                             $()与反引号``等价，都用于命令替换</p>
+</li>
+<li><p>$a   &lt;=&gt;  ${}                                           $a与${}等价，都用于变量替换</p>
+</li>
+</ul>
+<h2 id="vaspkit"><a href="#vaspkit" class="headerlink" title="vaspkit"></a>vaspkit</h2><ul>
+<li><p>vaspkit：→ 1 → 101 → SR/ST                     生成INCAR（选择合适的类型再修改）</p>
+</li>
+<li><p>vaspkit：→ 1 → 103/104                            生成POTCAR（特殊的类型需要指定）</p>
+</li>
+<li><p>vaspkit：→ 1 → 102 → 1/2/3                      生成KPOINTS（需要指定精度）</p>
+</li>
+<li><p>vaspkit：→ 3 → 301/302/303                      生成能带计算所需的K点路径（1D/2D/Bulk）</p>
+</li>
+<li><p>vaspkit：→ 21 → 211                                 生成TDOS.dat</p>
+</li>
+<li><p>vaspkit：→ 21 → 211                                 生成BAND.dat</p>
+</li>
+</ul>
+<h2 id="phonopy"><a href="#phonopy" class="headerlink" title="phonopy"></a>phonopy</h2><ul>
+<li><p>phonopy –symmetry POSCAR                       原胞晶胞转换（BP：PP：）</p>
+</li>
+<li><p>phonopy -d –dim=”5 5 5” -c POSCAR.init      扩胞，其中-c表示晶胞的名字</p>
+</li>
+</ul>
+<p>有限位移法：</p>
+<ul>
+<li><p>phonopy -f */vasprun.xml                            提取动力学矩阵，进入上一级文件夹，生成FORCE_SET  </p>
+</li>
+<li><p>phonopy -c POSCAR-unitcell band.conf -p -s   计算声子谱并保存为pdf格式,同时生成FORCE_CONSTANTS</p>
+</li>
+<li><p>phonopy-bandplot –gnuplot &gt; phonon.out     将声子谱进一步输出为数据文件，用于其它软件画图</p>
+</li>
+</ul>
+<p>密度泛函微扰法：  </p>
+<ul>
+<li><p>phonopy –fc vasprun.xml                            提取力常数，得到FORCE_CONSTANTS文件</p>
+</li>
+<li><p>phonopy -c POSCAR-unitcell band.conf -p -s  计算声子谱并保存为pdf格式（-p:plot,-s:save as PDF）</p>
+</li>
+<li><p>phonopy-bandplot –gnuplot &gt; phonon.out    将声子谱进一步输出为数据文件，用于其它软件画图</p>
+</li>
+</ul>
 
             </div>
             <hr>
@@ -381,7 +378,7 @@ D&lt;--&gt;M;</code></pre>
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/grammar/">grammar</a>
+                      <a class="hover-with-bg" href="/categories/programming/">programming</a>
                     
                   </div>
                 
@@ -389,14 +386,18 @@ D&lt;--&gt;M;</code></pre>
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/Mermaid/">Mermaid</a>
+                      <a class="hover-with-bg" href="/tags/linux/">linux</a>
+                    
+                      <a class="hover-with-bg" href="/tags/vasp/">vasp</a>
+                    
+                      <a class="hover-with-bg" href="/tags/slurm/">slurm</a>
                     
                   </div>
                 
               </div>
               <p class="note note-warning">
                 <strong>本文作者: </strong><a href="/">Uncle-yang</a> <br>
-                <strong>本文链接: </strong><a href="https://uncleleiy.github.io/2023/07/28/blog-mermaid/">https://uncleleiy.github.io/2023/07/28/blog-mermaid/</a> <br>
+                <strong>本文链接: </strong><a href="https://uncleleiy.github.io/2023/08/03/blog-linux-vasp/">https://uncleleiy.github.io/2023/08/03/blog-linux-vasp/</a> <br>
                 <strong>版权声明: </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
                    </p>
                    
@@ -405,9 +406,9 @@ D&lt;--&gt;M;</code></pre>
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/07/31/blog-10-shell-scripts/">
+                      <a href="/2023/08/06/blog-debug/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">shell+python 作图脚本</span>
+                        <span class="hidden-mobile">报错问题汇总</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -415,8 +416,8 @@ D&lt;--&gt;M;</code></pre>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/07/26/blog-data-flow/">
-                        <span class="hidden-mobile">数据流</span>
+                      <a href="/2023/07/31/blog-10-shell-scripts/">
+                        <span class="hidden-mobile">shell+python 作图脚本</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -599,7 +600,7 @@ D&lt;--&gt;M;</code></pre>
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "Mermaid 基础语法&nbsp;",
+        "命令行集成&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 125,
@@ -652,13 +653,6 @@ D&lt;--&gt;M;</code></pre>
 
 
 
-
-  <script  src="https://cdn.staticfile.org/mermaid/8.5.0/mermaid.min.js" ></script>
-  <script>
-    if (window.mermaid) {
-      mermaid.initialize({"theme":"default"});
-    }
-  </script>
 
 
 

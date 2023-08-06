@@ -232,7 +232,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      160 字
+      181 字
     </span>
   
 
@@ -283,51 +283,53 @@
             <h1 style="display: none">shell-vasp 任务目录脚本</h1>
             
             <div class="markdown-body" id="post-body">
-              <h1 id="vasp生成任务目录的脚本"><a href="#vasp生成任务目录的脚本" class="headerlink" title="vasp生成任务目录的脚本"></a>vasp生成任务目录的脚本</h1><div class="hljs"><pre><code class="hljs bash"><span class="hljs-meta">#!/usr/bin/env bash</span>
-<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;&quot;</span><span class="hljs-string">&quot;</span>
-<span class="hljs-string">This script is used to make some new directories </span>
-<span class="hljs-string">and then execute different calculation-tasks for you choose</span>
-<span class="hljs-string">Now the following tasks can be executed: (scf) (dos) (band) </span>
-<span class="hljs-string">&quot;</span><span class="hljs-string">&quot;&quot;</span>
+              <h1 id="vasp生成任务目录的脚本（taskin）"><a href="#vasp生成任务目录的脚本（taskin）" class="headerlink" title="vasp生成任务目录的脚本（taskin）"></a>vasp生成任务目录的脚本（taskin）</h1><div class="hljs"><pre><code class="hljs bash"><span class="hljs-meta">#!/usr/bin/env bash</span>
 
-<span class="hljs-function"><span class="hljs-title">function_scf</span></span>()
-&#123;
-<span class="hljs-built_in">mkdir</span> scf &amp;&amp; tar czvf chg.tgz CHG* &amp;&amp;
-<span class="hljs-built_in">cp</span> INCAR KPOINTS POSCAR OUTCAR chg.tgz scf/.
-&#125;
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;This script is used to make some new directories !&quot;</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;&quot;</span><span class="hljs-string">&quot;--------------------------------------------------</span>
+<span class="hljs-string">1) scf</span>
+<span class="hljs-string">2) dos</span>
+<span class="hljs-string">3) band</span>
+<span class="hljs-string">4) ELF</span>
+<span class="hljs-string">5) bader</span>
+<span class="hljs-string">6) phonon</span>
+<span class="hljs-string">--------------------------------------------------&quot;</span><span class="hljs-string">&quot;&quot;</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Here you can choose the tasks as shown above ----&gt; &quot;</span>
 
-<span class="hljs-function"><span class="hljs-title">function_dos</span></span>()
-&#123;
-<span class="hljs-built_in">mkdir</span> dos &amp;&amp;  
-<span class="hljs-built_in">cp</span> INCAR KPOINTS POSCAR OUTCAR DOSCAR dos/.
-&#125;
-
-<span class="hljs-function"><span class="hljs-title">function_band</span></span>()
-&#123;
-<span class="hljs-built_in">mkdir</span> band &amp;&amp;  
-<span class="hljs-built_in">cp</span> INCAR KPOINTS POSCAR OUTCAR EIGENVAL band/.
-&#125;
-
-<span class="hljs-built_in">echo</span> -n <span class="hljs-string">&quot;Please choose which kind of task you&#x27;re going to do: &quot;</span>
 <span class="hljs-built_in">read</span> task
-
-a=scf 
-b=dos
-c=band
-
-<span class="hljs-keyword">if</span> [ <span class="hljs-variable">$a</span> == <span class="hljs-variable">$task</span> ]
-<span class="hljs-keyword">then</span>
-    function_scf
-    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;scf directory writing successfully !&quot;</span>
-<span class="hljs-keyword">elif</span> [ <span class="hljs-variable">$b</span> == <span class="hljs-variable">$task</span> ]
-<span class="hljs-keyword">then</span> 
-    function_dos
-    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;dos directory writing successfully !&quot;</span>
-<span class="hljs-keyword">elif</span> [ <span class="hljs-variable">$c</span> == <span class="hljs-variable">$task</span> ]
-<span class="hljs-keyword">then</span>
-    function_band
-    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;band directory writing successfully !&quot;</span>
-<span class="hljs-keyword">fi</span></code></pre></div>
+<span class="hljs-keyword">case</span> <span class="hljs-variable">$task</span> <span class="hljs-keyword">in</span>
+     1)
+       <span class="hljs-built_in">mkdir</span> scf
+       <span class="hljs-built_in">cp</span> INCAR KPOINTS CONTCAR POTCAR slurm.sh scf/.
+       <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;scf directory writing successfully !&quot;</span>
+     ;;
+     2)
+       <span class="hljs-built_in">mkdir</span> dos
+       <span class="hljs-built_in">cp</span> INCAR KPOINTS POSCAR POTCAR WAVECAR CHGCAR slurm.sh dos/.
+       <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;dos directory writing successfully !&quot;</span>
+       <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Attention ! copy INCAR from band&quot;</span>
+     ;;
+     3)
+       <span class="hljs-built_in">mkdir</span> band
+       <span class="hljs-built_in">cp</span> INCAR POSCAR POTCAR WAVECAR CHGCAR slurm.sh band/.
+       <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;band directory writing successfully !&quot;</span>
+     ;;
+     4)
+       <span class="hljs-built_in">mkdir</span> ELF
+       <span class="hljs-built_in">cp</span> INCAR POSCAR POTCAR WAVECAR slurm.sh ELF/.
+       <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;ELF directory writing successfully !&quot;</span>
+     ;;
+     5)
+       <span class="hljs-built_in">mkdir</span> bader
+       <span class="hljs-built_in">cp</span> POSCAR POTCAR slurm.sh bader/.
+       <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;bader directory writing successfully !&quot;</span>
+     ;;
+     6)
+     <span class="hljs-built_in">mkdir</span> phonon
+       <span class="hljs-built_in">cp</span> CONTCAR POTCAR KPOINTS slurm.sh phonon/.
+       <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;phonon directory writing successfully !&quot;</span>
+     ;;
+<span class="hljs-keyword">esac</span></code></pre></div>
             </div>
             <hr>
             <div>
@@ -344,9 +346,9 @@ c=band
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/vasp/">vasp</a>
-                    
                       <a class="hover-with-bg" href="/tags/shell/">shell</a>
+                    
+                      <a class="hover-with-bg" href="/tags/vasp/">vasp</a>
                     
                   </div>
                 
