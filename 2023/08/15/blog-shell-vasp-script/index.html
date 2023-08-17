@@ -1,0 +1,902 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;dark&#34;>
+
+
+
+    <head>
+        <meta charset="UTF-8">
+        <!-- 通过cdn引入霞鹜文楷字体 -->
+        <link rel="stylesheet" href="https://npm.elemecdn.com/lxgw-wenkai-screen-webfont/style.css" media="print" onload="this.media='all'">
+        <link rel="apple-touch-icon" sizes="76x76" href="/img/self.gif">
+        <link rel="icon" type="image/png" href="/img/self.gif">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <!-- 谷歌广告 -->
+        <script data-ad-client="ca-pub-2387054913975173" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
+        </script>
+        
+                <meta name="baidu-site-verification" content="code-PdLAgt4JZr">
+                <meta name="theme-color" content="#2f4154">
+                <meta name="description" content="天行健，君子以自强不息；地势坤，君子以厚德载物">
+                <meta name="author" content="Uncle_yang">
+                <meta name="keywords" content="知识、管理">
+                <title>
+                    shell 摸鱼脚本 - 诗意の理性
+                </title>
+
+                <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/gradient-dark.min.css" />
+    
+  
+
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+  
+<link rel="stylesheet" href="/css/csdn.css">
+<link rel="stylesheet" href="/css/red.css">
+<link rel="stylesheet" href="/css/new.css">
+
+
+
+                    <script  src="/js/utils.js" ></script>
+                        <script  src="/js/color-schema.js" ></script>
+    <meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="诗意の理性" type="application/atom+xml">
+</head>
+
+
+<body>
+  <header style="height: 100vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Uncle-yang</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/navigate/">
+                <i class="iconfont icon-map"></i>
+                导航
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/data/">
+                <i class="iconfont icon-bookmark-fill"></i>
+                书签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tests/">
+                <i class="iconfont icon-tumblr-fill"></i>
+                测试
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" false
+         style="background: url('/null') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0)">
+          <div class="container page-header text-center fade-in-up">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-author" aria-hidden="true"></i>
+      Uncle_yang
+    </span>
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2023-08-15 15:00" pubdate>
+        2023年8月15日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.5k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      29
+       分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto" id="post">
+            <!-- SEO header -->
+            <h1 style="display: none">shell 摸鱼脚本</h1>
+            
+            <div class="markdown-body" id="post-body">
+              <h1 id="辅助脚本（by-Uncle-yang）"><a href="#辅助脚本（by-Uncle-yang）" class="headerlink" title="辅助脚本（by Uncle-yang）"></a>辅助脚本（by Uncle-yang）</h1><div class="hljs"><pre><code class="hljs shell"><span class="hljs-meta prompt_">#</span><span class="language-bash">!/bin/bash</span>
+<span class="hljs-meta prompt_"></span>
+<span class="hljs-meta prompt_">#</span><span class="language-bash"><span class="hljs-comment">#######################################&lt;&lt;&lt;&lt;slurm-script&gt;&gt;&gt;&gt;#####################################</span></span>
+f11()&#123;
+cat &gt; slurm.sh &lt;&lt;EOF
+<span class="hljs-meta prompt_">#</span><span class="language-bash">!/bin/bash</span>
+<span class="hljs-meta prompt_">#</span><span class="language-bash">SBATCH -J vasp                                 <span class="hljs-comment">## Job name</span></span>
+<span class="hljs-meta prompt_">#</span><span class="language-bash">SBATCH -o %j.out                               <span class="hljs-comment">## standard output</span></span> 
+<span class="hljs-meta prompt_">#</span><span class="language-bash">SBATCH -e %j.err                               <span class="hljs-comment">## standard error</span></span>
+<span class="hljs-meta prompt_">#</span><span class="language-bash">SBATCH -N 1                                    <span class="hljs-comment">## Number of nodes</span></span>
+<span class="hljs-meta prompt_">#</span><span class="language-bash">SBATCH --ntasks-per-node=16                    <span class="hljs-comment">## Each node has 16 tasks</span></span>
+<span class="hljs-meta prompt_">#</span><span class="language-bash">SBATCH -p xahcnormal                           <span class="hljs-comment">## operation Partition</span></span>
+<span class="hljs-meta prompt_">#</span><span class="language-bash">SBATCH -t 02:00:00                             <span class="hljs-comment">## time for your job eg:02-02:02:02 means 2d2h2min2s</span></span>
+module purge
+module load compiler/intel/2017.5.239
+module load mpi/intelmpi/2017.4.239
+export MKL_DEBUG_CPU_TYPE=5  
+export MKL_CBWR=AVX2      
+export I_MPI_PIN_DOMAIN=numa   
+<span class="hljs-meta prompt_">#</span><span class="language-bash">srun --mpi=pmi2  /path/to/vasp_std</span>
+srun --mpi=pmi2 /work/home/Uncleyang/software/vasp.5.4.4/bin/vasp_std
+EOF
+&#125;
+<span class="hljs-meta prompt_">#</span><span class="language-bash"><span class="hljs-comment">#######################################&lt;&lt;&lt;&lt;slurm-script&gt;&gt;&gt;&gt;#####################################</span></span>
+<span class="hljs-meta prompt_"></span>
+<span class="hljs-meta prompt_"></span>
+<span class="hljs-meta prompt_">#</span><span class="language-bash"><span class="hljs-comment">#######################################&lt;&lt;&lt;&lt;encut-script&gt;&gt;&gt;&gt;#####################################</span></span>
+f21()&#123;
+cat &gt; encut.sh &lt;&lt;&#x27;EOF&#x27;
+<span class="hljs-meta prompt_">#</span><span class="language-bash">!/bin/bash</span>
+
+num=&quot;300 350 400 450 500&quot;
+<span class="hljs-meta prompt_"></span>
+<span class="hljs-meta prompt_"># </span><span class="language-bash">remove the old <span class="hljs-built_in">dirs</span></span>
+for i in $num ; do rm -rf Encut$i; done
+<span class="hljs-meta prompt_"></span>
+<span class="hljs-meta prompt_"># </span><span class="language-bash">make a <span class="hljs-built_in">set</span> of <span class="hljs-built_in">dirs</span> <span class="hljs-keyword">for</span> encut <span class="hljs-built_in">test</span></span>
+for i in $num ; do
+mkdir Encut$i &amp;&amp; cd Encut$i
+cp ../INCAR .
+cp ../POTCAR .
+cp ../POSCAR .
+cp ../KPOINTS .
+cp ../slurm.sh .
+sed -i &quot;s/^.*\\bENCUT\\b.*$/ENCUT = $i/&quot; INCAR
+
+sbatch slurm.sh 
+cd ..
+done
+EOF
+&#125;
+
+f22()&#123;
+rm encut.dat
+for dir in Encut*; do
+	Encut=$(grep &quot;ENCUT&quot; $dir/INCAR | tail -1 | awk &#x27;&#123;print $3&#125;&#x27;)
+	Energy=$(grep &quot;  without&quot; $dir/OUTCAR | tail -1 | awk &#x27;&#123;printf &quot;%12.6f\n&quot;, $4&#125;&#x27;)
+	echo $Encut $Energy &gt;&gt; encut.dat
+done
+
+cat encut.dat
+
+cat &gt; encut.py &lt;&lt;EOF
+<span class="hljs-meta prompt_">#</span><span class="language-bash">!/usr/bin/env python3</span>
+import matplotlib.pyplot as plt
+import numpy as np
+x,y = np.loadtxt(&#x27;encut.dat&#x27;, delimiter = &#x27; &#x27;, usecols=(0, 1), unpack=True)
+plt.xlabel(&#x27;ENCUT/eV&#x27;)
+plt.ylabel(&#x27;Total energy/eV&#x27;)
+plt.plot(x,y, &#x27;rs-&#x27;, linewidth=2.0)
+plt.savefig(&#x27;encut.png&#x27;)
+plt.show()
+EOF
+python3 encut.py
+&#125;
+<span class="hljs-meta prompt_">#</span><span class="language-bash"><span class="hljs-comment">#######################################&lt;&lt;&lt;&lt;encut-script&gt;&gt;&gt;&gt;#####################################</span></span>
+<span class="hljs-meta prompt_"></span>
+<span class="hljs-meta prompt_"></span>
+<span class="hljs-meta prompt_">#</span><span class="language-bash"><span class="hljs-comment">#######################################&lt;&lt;&lt;&lt;sigma-script&gt;&gt;&gt;&gt;#####################################</span></span>
+f31()&#123;
+cat &gt; sigma.sh &lt;&lt;&#x27;EOF&#x27;
+<span class="hljs-meta prompt_">#</span><span class="language-bash">!/bin/bash</span>
+<span class="hljs-meta prompt_"># </span><span class="language-bash">remove the old <span class="hljs-built_in">dirs</span></span>
+start=0.01
+step=0.01
+end=0.09
+sequence=$(seq $start $step $end)
+
+for i in $sequence ; do rm -rf Sigma$i; done
+<span class="hljs-meta prompt_"></span>
+<span class="hljs-meta prompt_"># </span><span class="language-bash">make a <span class="hljs-built_in">set</span> of <span class="hljs-built_in">dirs</span> <span class="hljs-keyword">for</span> sigma <span class="hljs-built_in">test</span></span>
+for i in $sequence ; do
+mkdir Sigma$i &amp;&amp; cd Sigma$i
+cp ../INCAR .
+cp ../POTCAR .
+cp ../POSCAR .
+cp ../KPOINTS .
+cp ../slurm.sh .
+sed -i &quot;s/^.*\\bSIGMA\\b.*$/SIGMA = $i/&quot; INCAR
+
+sbatch slurm.sh 
+cd ..
+done
+EOF
+&#125;
+
+f32()&#123;
+rm sigma.dat
+for dir in Sigma*; do
+	r=$(grep &quot;SIGMA&quot; $dir/INCAR | tail -1 | awk &#x27;&#123;print $3&#125;&#x27;)
+	TS=$(grep &quot;entropy T&quot; $dir/OUTCAR | tail -1 | awk &#x27;&#123;printf &quot;%12.8f \n&quot;, $5&#125;&#x27;)
+	echo $r $TS &gt;&gt; sigma.dat
+done
+
+cat sigma.dat
+
+cat &gt; sigma.py &lt;&lt;EOF
+<span class="hljs-meta prompt_">#</span><span class="language-bash">!/usr/bin/env python3</span>
+import matplotlib.pyplot as plt
+import numpy as np
+x,y = np.loadtxt(&#x27;sigma.dat&#x27;, delimiter = &#x27; &#x27;, usecols=(0, 1), unpack=True)
+plt.xlabel(&#x27;sigma/eV&#x27;)
+plt.ylabel(&#x27;total energy/eV&#x27;)
+plt.plot(x,y, &#x27;rs-&#x27;, linewidth=2.0)
+plt.savefig(&#x27;sigma.png&#x27;)
+plt.show()
+EOF
+python3 sigma.py
+&#125;
+<span class="hljs-meta prompt_">#</span><span class="language-bash"><span class="hljs-comment">#######################################&lt;&lt;&lt;&lt;sigma-script&gt;&gt;&gt;&gt;#####################################</span></span>
+<span class="hljs-meta prompt_"></span>
+<span class="hljs-meta prompt_"></span>
+<span class="hljs-meta prompt_">#</span><span class="language-bash"><span class="hljs-comment">#######################################&lt;&lt;&lt;&lt;kpoints-script&gt;&gt;&gt;&gt;#####################################</span></span>
+f41()&#123;
+cat &gt; kpoints.sh &lt;&lt;&#x27;EOF&#x27;
+<span class="hljs-meta prompt_">#</span><span class="language-bash">!/bin/bash</span>
+
+num=&quot;3 4 5 6 7&quot;
+<span class="hljs-meta prompt_"></span>
+<span class="hljs-meta prompt_"># </span><span class="language-bash">remove the old <span class="hljs-built_in">dirs</span></span>
+for i in $num ; do rm -rf $&#123;i&#125;$&#123;i&#125;$&#123;i&#125;; done
+<span class="hljs-meta prompt_"></span>
+<span class="hljs-meta prompt_"># </span><span class="language-bash">make a <span class="hljs-built_in">set</span> of <span class="hljs-built_in">dirs</span> <span class="hljs-keyword">for</span> kpoints <span class="hljs-built_in">test</span></span>
+for i in $num ; do
+mkdir $&#123;i&#125;$&#123;i&#125;$&#123;i&#125; &amp;&amp; cd $&#123;i&#125;$&#123;i&#125;$&#123;i&#125;
+cp ../INCAR .
+cp ../POTCAR .
+cp ../POSCAR .
+cp ../KPOINTS .
+cp ../slurm.sh .
+<span class="hljs-meta prompt_"></span>
+<span class="hljs-meta prompt_"># </span><span class="language-bash">here you need to modify</span> 
+
+sed -i &quot;4s/3 3 3/$i $i $i/g&quot; KPOINTS
+
+sbatch slurm.sh 
+cd ..
+done
+EOF
+&#125;
+
+f42()&#123;
+rm kpoints.dat
+for dir in */ ; do
+	TS=$(grep &quot;irreducible&quot; $dir/OUTCAR | tail -1 | awk &#x27;&#123;printf &quot;%5i \n&quot;, $2&#125;&#x27;)
+	En=$(grep &quot;  without&quot; $dir/OUTCAR | tail -1 | awk &#x27;&#123;printf &quot;%12.6f \n&quot;, $4&#125;&#x27;)
+	echo $TS $En &gt;&gt; kpoints.dat
+done
+
+cat kpoints.dat
+
+cat &gt; kpoints.py &lt;&lt;EOF
+<span class="hljs-meta prompt_">#</span><span class="language-bash">!/usr/bin/env python3</span>
+import matplotlib.pyplot as plt
+import numpy as np
+x,y = np.loadtxt(&#x27;kpoints.dat&#x27;, delimiter = &#x27; &#x27;, usecols=(0, 1), unpack=True)
+plt.xlabel(&#x27;kpoints/number&#x27;)
+plt.ylabel(&#x27;total energy/eV&#x27;)
+plt.plot(x,y, &#x27;rs-&#x27;, linewidth=2.0)
+plt.savefig(&#x27;kpoints.png&#x27;)
+plt.show()
+EOF
+python3 kpoints.py
+&#125;
+<span class="hljs-meta prompt_">#</span><span class="language-bash"><span class="hljs-comment">#######################################&lt;&lt;&lt;&lt;kpoints-script&gt;&gt;&gt;&gt;#####################################</span></span>
+<span class="hljs-meta prompt_"></span>
+<span class="hljs-meta prompt_"></span>
+<span class="hljs-meta prompt_">#</span><span class="language-bash"><span class="hljs-comment">#######################################&lt;&lt;&lt;&lt;director-script&gt;&gt;&gt;&gt;#####################################</span></span>
+f51()&#123;
+echo &quot;This script is used to make some new directories !&quot;
+echo &quot;Make sure to stay in the GeoOpt directory right now !&quot;
+echo &quot;&quot;&quot;-----------------------------------------------------
+1) scf
+2) dos
+3) band
+4) ELF
+5) bader
+6) phonon
+-----------------------------------------------------&quot;&quot;&quot;
+echo &quot;Here you can choose tasks as shown above ----&gt; &quot;
+read inputs
+case $inputs in 
+	1)
+	mkdir scf
+	cp INCAR KPOINTS CONTCAR POTCAR slurm.sh scf/
+	mv scf/CONTCAR scf/POSCAR
+	echo &quot;scf directory writing successfully !&quot;
+	;;
+	2)
+	mkdir dos
+	cp INCAR KPOINTS POSCAR POTCAR WAVECAR CHGCAR slurm.sh dos/
+	echo &quot;dos directory writing successfully !&quot;
+	;;
+	3)
+	mkdir band
+	cp INCAR POSCAR POTCAR WAVECAR CHGCAR slurm.sh band/
+	echo &quot;band directory writing successfully !&quot;
+	;;
+	4)
+	mkdir ELF
+	cp INCAR POSCAR POTCAR WAVECAR slurm.sh ELF/
+	echo &quot;ELF directory writing successfully !&quot;
+	;;
+	5)
+	mkdir bader
+	cp POSCAR POTCAR slurm.sh bader/
+	echo &quot;bader directory writing successfully !&quot;
+	;;
+	6)
+	mkdir phonon
+	cp CONTCAR POTCAR KPOINTS slurm.sh phonon/
+	echo &quot;phonon directory writing successfully !&quot;
+	;;
+esac
+&#125;
+<span class="hljs-meta prompt_">#</span><span class="language-bash"><span class="hljs-comment">#######################################&lt;&lt;&lt;&lt;director-script&gt;&gt;&gt;&gt;#####################################</span></span>
+<span class="hljs-meta prompt_"></span>
+<span class="hljs-meta prompt_"></span>
+<span class="hljs-meta prompt_">#</span><span class="language-bash"><span class="hljs-comment">#######################################&lt;&lt;&lt;&lt;bandplot-script&gt;&gt;&gt;&gt;#####################################</span></span>
+f61()&#123;
+cat &gt; bandplot.py &lt;&lt;EOF
+<span class="hljs-meta prompt_">#</span><span class="language-bash">!/bin/env bash</span>
+import matplotlib.pyplot as plt
+from pymatgen.io.vasp.outputs import Vasprun
+from pymatgen.electronic_structure.plotter import BSDOSPlotter,\
+BSPlotter,BSPlotterProjected,DosPlotter
+<span class="hljs-meta prompt_"></span>
+<span class="hljs-meta prompt_"># </span><span class="language-bash"><span class="hljs-built_in">read</span> vasprun.xml and get band and dos information</span>
+bs_vasprun = Vasprun(&quot;./vasprun.xml&quot;,parse_projected_eigen=True)
+bs_data = bs_vasprun.get_band_structure(line_mode=True)
+
+dos_vasprun=Vasprun(&quot;./vasprun.xml&quot;)
+dos_data=dos_vasprun.complete_dos
+<span class="hljs-meta prompt_"></span>
+<span class="hljs-meta prompt_"># </span><span class="language-bash"><span class="hljs-built_in">set</span> figure parameters, draw figure</span>
+banddos_fig = BSDOSPlotter(bs_projection=None, dos_projection=None, vb_energy_range=5, fixed_cb_energy=5)
+banddos_fig.get_plot(bs=bs_data, dos=dos_data)
+plt.savefig(&#x27;banddos.png&#x27;)
+EOF
+python3 bandplot.py
+&#125;
+<span class="hljs-meta prompt_">#</span><span class="language-bash"><span class="hljs-comment">#######################################&lt;&lt;&lt;&lt;bandplot-script&gt;&gt;&gt;&gt;#####################################</span></span>
+<span class="hljs-meta prompt_"></span>
+<span class="hljs-meta prompt_"></span>
+<span class="hljs-meta prompt_">#</span><span class="language-bash"><span class="hljs-comment">#######################################&lt;&lt;&lt;&lt;dosplot-script&gt;&gt;&gt;&gt;######################################</span></span>
+f71()&#123;
+cat &gt; dosplot.py &lt;&lt;EOF
+<span class="hljs-meta prompt_">#</span><span class="language-bash">!/bin/env bash</span>
+import matplotlib.pyplot as plt
+from pymatgen.io.vasp.outputs import Vasprun
+from pymatgen.electronic_structure.plotter import BSDOSPlotter,BSPlotter,BSPlotterProjected,DosPlotter
+<span class="hljs-meta prompt_"></span>
+<span class="hljs-meta prompt_"># </span><span class="language-bash"><span class="hljs-built_in">read</span> vasprun.xml and get band and dos information</span>
+bs_vasprun=Vasprun(&quot;./vasprun.xml&quot;,parse_projected_eigen=True)
+bs_data=bs_vasprun.get_band_structure(line_mode=False)
+dos_vasprun=Vasprun(&quot;./vasprun.xml&quot;)
+dos_data=dos_vasprun.complete_dos
+<span class="hljs-meta prompt_"></span>
+<span class="hljs-meta prompt_"># </span><span class="language-bash"><span class="hljs-built_in">set</span> figure parameters, draw figure</span>
+plt_dos = DosPlotter(stack=False)     # plt_dos = DosPlotter(stack=False,sigma=0.5), sigma is changable
+plt_dos.add_dos(&#x27;total dos&#x27;,dos=dos_data)
+plt_dos.add_dos_dict(dos_data.get_spd_dos())
+plt_dos.save_plot(&#x27;dosspd.pdf&#x27;,img_format=&#x27;pdf&#x27;)
+EOF
+python3 dosplot.py
+&#125;
+<span class="hljs-meta prompt_">#</span><span class="language-bash"><span class="hljs-comment">#######################################&lt;&lt;&lt;&lt;dosplot-script&gt;&gt;&gt;&gt;######################################</span></span>
+<span class="hljs-meta prompt_"></span>
+<span class="hljs-meta prompt_"></span>
+<span class="hljs-meta prompt_">#</span><span class="language-bash"><span class="hljs-comment">#######################################&lt;&lt;&lt;&lt;control-script&gt;&gt;&gt;&gt;######################################</span></span>
+echo &quot;This script is used to help do some tasks !&quot;
+echo &quot;&quot;&quot;---------------------------------------------------------
+11) generate slurm.sh
+21) generate encut.sh          22) encut-data-process
+31) generate sigma.sh          32) sigma-data-process
+41) generate kpoints.sh        42) kpoints-data-process                            
+51) taskin-script                
+61) band-plot.py                
+71) dosspd-plot.py 
+81) task-managemant-for-2D-material-in-super-computer
+91) task-managemant-for-3D-material-in-super-computer  
+00) task-managemant-in-local-computer-to-debug-and-update                                             
+---------------------------------------------------------&quot;&quot;&quot;
+echo &quot;Here you can choose the tasks as shown above ----&gt; &quot;
+
+read task
+case $task in
+    11) f11 ;;
+    21) f21 &amp;&amp; f11 ;;
+    22) f22 ;;
+    31) f31 &amp;&amp; f11 ;;
+    32) f32 ;;
+    41) f41 &amp;&amp; f11 ;;
+    42) f42 ;;
+    51) f51 ;;
+    61) f61 ;;
+    71) f71 ;;
+    81) exec ~/bin/auto2d ;;
+    91) exec ~/bin/auto3d ;;
+    00) exec ~/bin/autovasp ;;
+    *)  echo &quot;please check the inputation !&quot; ;;
+esac
+<span class="hljs-meta prompt_">#</span><span class="language-bash"><span class="hljs-comment">#######################################&lt;&lt;&lt;&lt;control-script&gt;&gt;&gt;&gt;######################################</span></span></code></pre></div>
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/scripts/">scripts</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/shell/">shell</a>
+                    
+                  </div>
+                
+              </div>
+              <p class="note note-warning">
+                <strong>本文作者: </strong><a href="/">Uncle-yang</a> <br>
+                <strong>本文链接: </strong><a href="https://uncleleiy.github.io/2023/08/15/blog-shell-vasp-script/">https://uncleleiy.github.io/2023/08/15/blog-shell-vasp-script/</a> <br>
+                <strong>版权声明: </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                   </p>
+                   
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/08/06/blog-debug/">
+                        <span class="hidden-mobile">报错问题汇总</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+
+
+    
+  </main>
+
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href=" " target="_blank" rel="nofollow noopener"><span>Study</span></a> <i class="iconfont icon-book"></i> <a href=" " target="_blank" rel="nofollow noopener"><span>Notes</span></a> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+    
+
+      
+
+          <!-- 在网页底部添加本站已运行的时间 -->
+          <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+          <script>
+            var now = new Date();
+            function createtime() {
+              var grt = new Date("06/06/2023 12:00:00");//在此处修改你的建站时间
+              now.setTime(now.getTime() + 250);
+              days = (now - grt) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+              hours = (now - grt) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+              if (String(hnum).length == 1) { hnum = "0" + hnum; } minutes = (now - grt) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);
+              mnum = Math.floor(minutes); if (String(mnum).length == 1) { mnum = "0" + mnum; }
+              seconds = (now - grt) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+              snum = Math.round(seconds); if (String(snum).length == 1) { snum = "0" + snum; }
+              document.getElementById("timeDate").innerHTML = "小站已勉强存活 " + dnum + " 天 ";
+              document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+            }
+            setInterval("createtime()", 250);
+          </script>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/js/clipboard-use.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+  
+<script src="/js/new.js"></script>
+
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '#post-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 0,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "shell 摸鱼脚本&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 125,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "left",
+      visible: "hover",
+      
+      icon: " ❡ "
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      searchFunc(path, 'local-search-input', 'local-search-result');
+      this.onclick = null
+    }
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+</body>
+</html>
