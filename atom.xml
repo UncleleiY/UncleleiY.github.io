@@ -6,7 +6,7 @@
   <link href="https://uncleleiy.github.io/atom.xml" rel="self"/>
   
   <link href="https://uncleleiy.github.io/"/>
-  <updated>2023-08-17T14:20:03.626Z</updated>
+  <updated>2023-08-24T10:41:07.454Z</updated>
   <id>https://uncleleiy.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>QE 自动化安装</title>
+    <link href="https://uncleleiy.github.io/2023/08/24/blog-qe-installation/"/>
+    <id>https://uncleleiy.github.io/2023/08/24/blog-qe-installation/</id>
+    <published>2023-08-24T07:00:00.000Z</published>
+    <updated>2023-08-24T10:41:07.454Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>考虑到有蛮多小兄弟在安装QE上犯愁，笔者在此写了一个安装脚本，实现一键部署安装QE以及自动测试.</p><p>执行命令：bash qe.sh<br>测试版本：QE-7.2<br>测试环境：Ubuntu 18.04.6 LTS<br>压缩包名称：qe-7.2-ReleasePack.tar.gz<br>测试例子文件夹名称：exam-si</p><p>备注：由于时间关系只测试了安装 pw ph pp pwcond neb 这几个模块<br>备注：全套文件百度网盘可下载: <em><a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1RV2nHVsyAa0BH5bMSnX1Jg?pwd=6666">https://pan.baidu.com/s/1RV2nHVsyAa0BH5bMSnX1Jg?pwd=6666</a> 提取码: 6666</em></p><p>脚本: qe.sh </p><pre><code class="hljs bash"><span class="hljs-meta">#!/bin/bash</span><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;This script is used to help install qe-7.2, if you meet any problem please copy your question to Goolge or Bing !&quot;</span><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Just install these modules: pw ph pp pwcond neb !&quot;</span><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Understand ? (yes/no)&quot;</span><span class="hljs-built_in">read</span> <span class="hljs-built_in">yes</span><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;ok, then it&#x27;s time to install now -------------------------------------------------------&quot;</span><span class="hljs-function"><span class="hljs-title">f_clear</span></span>()&#123;<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;clear environment for installation !&quot;</span><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;here you need to enter your password !&quot;</span>sudo apt autoremove gfortran -ysudo apt autoremove libblas-dev -ysudo apt autoremove liblapack-dev -ysudo apt autoremove libfftw3-dev -ysudo apt autoremove openmpi-bin libopenmpi-dev -ysudo apt autoremove make -y<span class="hljs-built_in">wait</span>&#125;<span class="hljs-function"><span class="hljs-title">f_build</span></span>()&#123;<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;build environment for installation !&quot;</span>sudo apt install gfortran -ysudo apt install libblas-dev -ysudo apt install liblapack-dev -ysudo apt install libfftw3-dev -ysudo apt install openmpi-bin libopenmpi-dev -ysudo apt install make -y<span class="hljs-built_in">wait</span> &#125;<span class="hljs-function"><span class="hljs-title">f_install</span></span>()&#123;<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;be ready to install qe-7.2 !&quot;</span>tar -zxvf qe-7.2-ReleasePack.tar.gz<span class="hljs-built_in">wait</span><span class="hljs-built_in">cd</span> qe-7.2 &amp;&amp; make vearyclean./configure<span class="hljs-built_in">wait</span>make pwall<span class="hljs-built_in">cd</span> ~<span class="hljs-built_in">wait</span>&#125;<span class="hljs-function"><span class="hljs-title">f_path</span></span>()&#123;<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;export PATH=\$PATH:~/qe-7.2/bin&quot;</span> &gt;&gt; ~/.bashrc<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;export PATH=\$PATH:/usr/lib/x86_64-linux-gnu/openmpi/bin&quot;</span> &gt;&gt; ~/.bashrc<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;export LD_LIBRARY_PATH=\$LD_LIBRARY_PATH:/usr/lib/x86_64-linux-gnu/openmpi/lib&quot;</span>&gt;&gt; ~/.bashrc<span class="hljs-built_in">wait</span>. ~/.bashrc&#125;<span class="hljs-built_in">cd</span> ~<span class="hljs-built_in">rm</span> -rf qe-7.2<span class="hljs-built_in">rm</span> -rf exam-si<span class="hljs-built_in">wait</span><span class="hljs-built_in">cd</span> qexx/<span class="hljs-built_in">cp</span> -r exam-si ~<span class="hljs-built_in">cp</span> qe-7.2-ReleasePack.tar.gz ~<span class="hljs-built_in">wait</span><span class="hljs-built_in">cd</span> ~f_clear &amp;&amp; f_build &amp;&amp; f_install &amp;&amp; f_path<span class="hljs-built_in">rm</span> qe-7.2-ReleasePack.tar.gz<span class="hljs-built_in">wait</span> <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;This is an example for testing installation !&quot;</span><span class="hljs-built_in">cd</span> ~/exam-si/mpirun -np 4 pw.x &lt; si | <span class="hljs-built_in">tee</span> si.out<span class="hljs-built_in">cd</span> ~<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;install successfully !&quot;</span></code></pre><p>例子文件夹exam-si所包含文件： si  Si_r.upf<br>赝势文件可直接复制: cp qe-7.2/pseudo/Si_r.upf ~</p><pre><code class="hljs java">&amp;<span class="hljs-type">CONTROL</span>    <span class="hljs-variable">calculation</span>  <span class="hljs-operator">=</span> <span class="hljs-string">&quot;scf&quot;</span>    restart_mode =<span class="hljs-string">&#x27;from_scratch&#x27;</span>    prefix = <span class="hljs-string">&#x27;si&#x27;</span>    outdir = <span class="hljs-string">&#x27;./outdir&#x27;</span>    pseudo_dir   = <span class="hljs-string">&quot;./&quot;</span>    tstress = .<span class="hljs-literal">true</span>.    tprnfor = .<span class="hljs-literal">true</span>./&amp;<span class="hljs-type">SYSTEM</span>    <span class="hljs-variable">ibrav</span>       <span class="hljs-operator">=</span> <span class="hljs-number">2</span> , celldm(<span class="hljs-number">1</span>) = <span class="hljs-number">10.3356908159</span>,    nat         = <span class="hljs-number">2</span>    ntyp        = <span class="hljs-number">1</span>    ecutwfc     = <span class="hljs-number">40</span>    ecutrho     = <span class="hljs-number">320</span>/&amp;<span class="hljs-type">ELECTRONS</span>    <span class="hljs-variable">mixing_beta</span> <span class="hljs-operator">=</span> <span class="hljs-number">0.7</span>    conv_thr = <span class="hljs-number">1e-8</span>/K_POINTS &#123;automatic&#125;  <span class="hljs-number">10</span> <span class="hljs-number">10</span> <span class="hljs-number">10</span> <span class="hljs-number">1</span> <span class="hljs-number">1</span> <span class="hljs-number">1</span>ATOMIC_SPECIESSi     <span class="hljs-number">28.08550</span>  Si_r.upfATOMIC_POSITIONS &#123;alat&#125;Si      <span class="hljs-number">0.000000</span>   <span class="hljs-number">0.000000</span>   <span class="hljs-number">0.000000</span>Si      <span class="hljs-number">0.250000</span>   <span class="hljs-number">0.250000</span>   <span class="hljs-number">0.250000</span></code></pre>]]></content>
+    
+    
+    <summary type="html">QE自动化安装及测试脚本（懒狗模式）</summary>
+    
+    
+    
+    <category term="software" scheme="https://uncleleiy.github.io/categories/software/"/>
+    
+    
+    <category term="QE" scheme="https://uncleleiy.github.io/tags/QE/"/>
+    
+  </entry>
   
   <entry>
     <title>shell 摸鱼脚本</title>
@@ -422,27 +443,6 @@
     
     
     <category term="python" scheme="https://uncleleiy.github.io/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>wsl 备份问题</title>
-    <link href="https://uncleleiy.github.io/2023/06/18/blog-5-wsl-debug/"/>
-    <id>https://uncleleiy.github.io/2023/06/18/blog-5-wsl-debug/</id>
-    <published>2023-06-18T08:00:00.000Z</published>
-    <updated>2023-07-14T09:29:08.539Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="备份乌班图子系统时出的一点小问题"><a href="#备份乌班图子系统时出的一点小问题" class="headerlink" title="备份乌班图子系统时出的一点小问题"></a>备份乌班图子系统时出的一点小问题</h1><pre><code class="hljs shell">C:\Users\uncle&gt;wsl -l -v  NAME            STATE           VERSION* Ubuntu-22.04    Running         2  Ubuntu-20.04    Stopped         2C:\Users\uncle&gt;shutdown Ubuntu-22.04 NAME            STATE           VERSION* Ubuntu-22.04    Stopped         2  Ubuntu-20.04    Stopped         2C:\Users\uncle&gt;wsl --export  Ubuntu-22.04 d:\linux拒绝访问。Error code: Wsl/E_ACCESSDENIED</code></pre><p>网上搜了一通，有人说是权限问题，我就用管理员身份打开了powershell，依旧无济于事……</p><p>后面才发觉，是输入的时候没有指定备份文件的名称（上次也没指定但是却可以……）</p><p>于是做以下修改：</p><pre><code class="hljs shell">C:\Users\uncle&gt;wsl --export  Ubuntu-22.04 d:\linux\Ubuntu-22.04.tar</code></pre><p>ok，问题解决，成功备份到D盘！</p><h4 id="关于文件压缩：http-sobereva-com-672"><a href="#关于文件压缩：http-sobereva-com-672" class="headerlink" title="关于文件压缩：http://sobereva.com/672"></a>关于文件压缩：<a target="_blank" rel="noopener" href="http://sobereva.com/672">http://sobereva.com/672</a></h4>]]></content>
-    
-    
-    <summary type="html">Ubuntu系统配置相关问题、window11系统配置相关问题</summary>
-    
-    
-    
-    <category term="debug" scheme="https://uncleleiy.github.io/categories/debug/"/>
-    
-    
-    <category term="wsl" scheme="https://uncleleiy.github.io/tags/wsl/"/>
     
   </entry>
   

@@ -23,7 +23,7 @@
                 <meta name="author" content="Uncle_yang">
                 <meta name="keywords" content="知识、管理">
                 <title>
-                    归档 - 诗意の理性
+                    诗意の理性
                 </title>
 
                 <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
@@ -216,38 +216,68 @@
               <div class="col-12 col-md-10 m-auto">
                 
 
-<div class="list-group">
-  <p class="h4">共计 25 篇文章</p>
-  <hr>
-  
+
+  <div class="row mx-auto index-card">
     
-      
-      <p class="h5">2023</p>
     
-    <a href="/2023/08/24/blog-qe-installation/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">QE 自动化安装</span>
-      <time style="float: right;">08-24</time>
-    </a>
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/06/06/blog-1-markdown/">Markdown 基础语法</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2023/06/06/blog-1-markdown/">
+          
+          
+            
+          
+          Markdown——文本标记语言
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-06-06 15:00" pubdate>
+              2023-06-06
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/grammar/">grammar</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Markdown/">Markdown</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+
+
+  <nav aria-label="navigation">
+    <span class="pagination" id="pagination">
+      <a class="extend prev" rel="prev" href="/page/3/"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span>
+    </span>
+  </nav>
   
-    
-    <a href="/2023/08/15/blog-shell-vasp-script/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">shell 摸鱼脚本</span>
-      <time style="float: right;">08-15</time>
-    </a>
-  
-    
-    <a href="/2023/08/06/blog-debug/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">报错问题汇总</span>
-      <time style="float: right;">08-06</time>
-    </a>
-  
-    
-    <a href="/2023/08/03/blog-linux-vasp/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">命令行集成</span>
-      <time style="float: right;">08-03</time>
-    </a>
-  
-</div>
+  <script>
+    for (ele of document.getElementById("pagination").getElementsByTagName("a")) {
+      ele.href += '#board';
+    }
+  </script>
 
 
 
@@ -382,7 +412,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "生于忧患，死于安乐&nbsp;",
+        "千里之行，始于足下&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 125,
