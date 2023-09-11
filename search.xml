@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>shell脚本：专治强迫症患者</title>
+      <link href="/2023/09/10/blog-vasp-script/"/>
+      <url>/2023/09/10/blog-vasp-script/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>想起来有个脚本没有优化，今追加一个自动对齐费米能级的脚本，成功解决了强迫症</p><pre><code class="hljs sh"><span class="hljs-meta">#!/bin/bash</span><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;check your directory : scf/ band/ dos/ , all of them are existing in the same directory GeoOpt/&quot;</span><span class="hljs-comment"># Fermi level of scf</span>fermi=`grep E-fermi ../scf/OUTCAR | awk <span class="hljs-string">&#x27;&#123;printf &quot;%12.6f \n&quot;, $3 &#125;&#x27;</span>`fermi_number=`grep efermi ../scf/vasprun.xml -n | awk <span class="hljs-string">&#x27;&#123;printf &quot;%d\n&quot;, $1&#125;&#x27;</span>`<span class="hljs-built_in">echo</span> -e <span class="hljs-string">&quot;fermi level of scf : \n <span class="hljs-variable">$fermi_number</span> <span class="hljs-variable">$fermi</span>&quot;</span><span class="hljs-comment"># Fermi level of dos</span><span class="hljs-built_in">cp</span> ../dos/vasprun.xml dos_vasprun.xmldosfermi1_number=`grep efermi dos_vasprun.xml -n | awk <span class="hljs-string">&#x27;&#123;printf &quot;%d\n&quot;, $1&#125;&#x27;</span>`dosfermi1=`grep efermi dos_vasprun.xml | awk <span class="hljs-string">&#x27;&#123;printf &quot;%12.6f \n&quot;, $3 &#125;&#x27;</span>`<span class="hljs-built_in">echo</span> -e <span class="hljs-string">&quot;fermi level of dos : \n <span class="hljs-variable">$dosfermi1_number</span> <span class="hljs-variable">$dosfermi1</span>&quot;</span>sed -i <span class="hljs-string">&quot;/\befermi\b/s/.*/ &lt;i name=\&quot;efermi\&quot;&gt;      <span class="hljs-variable">$fermi</span> &lt;\/i&gt; /&quot;</span> dos_vasprun.xml<span class="hljs-built_in">sleep</span> 1sdosfermi2=`grep efermi dos_vasprun.xml | awk <span class="hljs-string">&#x27;&#123;printf &quot;%12.6f \n&quot;, $3 &#125;&#x27;</span>`<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;After modfied, fermi level of dos : <span class="hljs-variable">$dosfermi2</span>&quot;</span><span class="hljs-comment"># Fermi level of band</span><span class="hljs-built_in">cp</span> vasprun.xml band_vasprun.xmlbandfermi1_number=`grep efermi band_vasprun.xml -n | awk <span class="hljs-string">&#x27;&#123;printf &quot;%d\n&quot;, $1&#125;&#x27;</span>`bandfermi1=`grep efermi band_vasprun.xml | awk <span class="hljs-string">&#x27;&#123;printf &quot;%12.6f \n&quot;, $3 &#125;&#x27;</span>`<span class="hljs-built_in">echo</span> -e <span class="hljs-string">&quot;fermi level of band : \n <span class="hljs-variable">$bandfermi1_number</span> <span class="hljs-variable">$bandfermi1</span>&quot;</span>sed -i <span class="hljs-string">&quot;/\befermi\b/s/.*/ &lt;i name=\&quot;efermi\&quot;&gt;      <span class="hljs-variable">$fermi</span> &lt;\/i&gt; /&quot;</span> band_vasprun.xml<span class="hljs-built_in">sleep</span> 1sbandfermi2=`grep efermi band_vasprun.xml | awk <span class="hljs-string">&#x27;&#123;printf &quot;%12.6f \n&quot;, $3 &#125;&#x27;</span>`<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;After modfied, fermi level of band : <span class="hljs-variable">$bandfermi2</span>&quot;</span><span class="hljs-comment"># plot the banddos</span><span class="hljs-built_in">cat</span> &gt; xxbanddosxx &lt;&lt;!import matplotlib.pyplot as pltfrom pymatgen.electronic_structure.plotter import (BSDOSPlotter, BSPlotter,                                                   BSPlotterProjected,                                                   DosPlotter)from pymatgen.io.vasp.outputs import Vasprun<span class="hljs-comment"># read vasprun.xml，get band and dos information</span>bs_vasprun = Vasprun(<span class="hljs-string">&quot;band_vasprun.xml&quot;</span>,parse_projected_eigen=True)bs_data = bs_vasprun.get_band_structure(line_mode=True)dos_vasprun=Vasprun(<span class="hljs-string">&quot;dos_vasprun.xml&quot;</span>)dos_data=dos_vasprun.complete_dos<span class="hljs-comment"># set figure parameters, draw figure</span>banddos_fig = BSDOSPlotter(bs_projection=<span class="hljs-string">&quot;elements&quot;</span>,                           dos_projection=<span class="hljs-string">&quot;elements&quot;</span>,                           vb_energy_range=4,                           cb_energy_range=3,                           font = <span class="hljs-string">&#x27;Times New Roman&#x27;</span>,                           axis_fontsize = 36,                           tick_fontsize = 28,                           legend_fontsize = 28,                           fig_size = (30,20))banddos_fig.get_plot(bs=bs_data, dos=dos_data)plt.savefig(<span class="hljs-string">&#x27;banddos.pdf&#x27;</span>)plt.savefig(<span class="hljs-string">&#x27;banddos.svg&#x27;</span>)!python3 xxbanddosxx</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> scripts </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> shell </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>VASP 学习笔记</title>
       <link href="/2023/08/27/blog-vasp-3/"/>
       <url>/2023/08/27/blog-vasp-3/</url>

@@ -23,11 +23,24 @@
                 <meta name="author" content="Uncle_yang">
                 <meta name="keywords" content="知识、管理">
                 <title>
-                    归档 - 诗意の理性
+                    shell脚本：专治强迫症患者 - 诗意の理性
                 </title>
 
                 <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/gradient-dark.min.css" />
+    
+  
+
+  
 
 
 <!-- 主题依赖的图标库，不要自行修改 -->
@@ -197,6 +210,56 @@
             </span>
 
             
+              <div class="mt-3">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-author" aria-hidden="true"></i>
+      Uncle_yang
+    </span>
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2023-09-10 15:00" pubdate>
+        2023年9月10日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      427 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      8
+       分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
+</div>
+
+            
           </div>
 
           
@@ -207,85 +270,145 @@
 
   <main>
     
-      <div class="container nopadding-md">
-        <div class="py-5" id="board"
-          >
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-<div class="list-group">
-  <p class="h4">共计 27 篇文章</p>
-  <hr>
-  
-    
       
-      <p class="h5">2023</p>
-    
-    <a href="/2023/06/25/blog-7-shell-python-scripts/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">shell+python 作图脚本</span>
-      <time style="float: right;">06-25</time>
-    </a>
-  
-    
-    <a href="/2023/06/20/blog-6-python/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">python 学习记录(11-20)</span>
-      <time style="float: right;">06-20</time>
-    </a>
-  
-    
-    <a href="/2023/06/18/blog-5-wsl-debug/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">wsl 备份问题</span>
-      <time style="float: right;">06-18</time>
-    </a>
-  
-    
-    <a href="/2023/06/15/blog-4-python/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">python 学习记录(1-10)</span>
-      <time style="float: right;">06-15</time>
-    </a>
-  
-    
-    <a href="/2023/06/10/blog-3-hexo-debug/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">hexo 配置问题</span>
-      <time style="float: right;">06-10</time>
-    </a>
-  
-    
-    <a href="/2023/06/08/blog-2-linux-vasp/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">linux 基础命令</span>
-      <time style="float: right;">06-08</time>
-    </a>
-  
-    
-    <a href="/2023/06/06/blog-1-markdown/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">Markdown 基础语法</span>
-      <time style="float: right;">06-06</time>
-    </a>
-  
-</div>
 
-  <nav aria-label="navigation">
-    <span class="pagination" id="pagination">
-      <a class="extend prev" rel="prev" href="/archives/2023/"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/archives/2023/">1</a><span class="page-number current">2</span>
-    </span>
-  </nav>
-  
-  <script>
-    for (ele of document.getElementById("pagination").getElementsByTagName("a")) {
-      ele.href += '#board';
-    }
-  </script>
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto" id="post">
+            <!-- SEO header -->
+            <h1 style="display: none">shell脚本：专治强迫症患者</h1>
+            
+            <div class="markdown-body" id="post-body">
+              <p>想起来有个脚本没有优化，今追加一个自动对齐费米能级的脚本，成功解决了强迫症</p>
+<div class="hljs"><pre><code class="hljs sh"><span class="hljs-meta">#!/bin/bash</span>
 
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;check your directory : scf/ band/ dos/ , all of them are existing in the same directory GeoOpt/&quot;</span>
 
+<span class="hljs-comment"># Fermi level of scf</span>
+fermi=`grep E-fermi ../scf/OUTCAR | awk <span class="hljs-string">&#x27;&#123;printf &quot;%12.6f \n&quot;, $3 &#125;&#x27;</span>`
+fermi_number=`grep efermi ../scf/vasprun.xml -n | awk <span class="hljs-string">&#x27;&#123;printf &quot;%d\n&quot;, $1&#125;&#x27;</span>`
+<span class="hljs-built_in">echo</span> -e <span class="hljs-string">&quot;fermi level of scf : \n <span class="hljs-variable">$fermi_number</span> <span class="hljs-variable">$fermi</span>&quot;</span>
 
-              </div>
+<span class="hljs-comment"># Fermi level of dos</span>
+<span class="hljs-built_in">cp</span> ../dos/vasprun.xml dos_vasprun.xml
+dosfermi1_number=`grep efermi dos_vasprun.xml -n | awk <span class="hljs-string">&#x27;&#123;printf &quot;%d\n&quot;, $1&#125;&#x27;</span>`
+dosfermi1=`grep efermi dos_vasprun.xml | awk <span class="hljs-string">&#x27;&#123;printf &quot;%12.6f \n&quot;, $3 &#125;&#x27;</span>`
+<span class="hljs-built_in">echo</span> -e <span class="hljs-string">&quot;fermi level of dos : \n <span class="hljs-variable">$dosfermi1_number</span> <span class="hljs-variable">$dosfermi1</span>&quot;</span>
+sed -i <span class="hljs-string">&quot;/\befermi\b/s/.*/ &lt;i name=\&quot;efermi\&quot;&gt;      <span class="hljs-variable">$fermi</span> &lt;\/i&gt; /&quot;</span> dos_vasprun.xml
+<span class="hljs-built_in">sleep</span> 1s
+dosfermi2=`grep efermi dos_vasprun.xml | awk <span class="hljs-string">&#x27;&#123;printf &quot;%12.6f \n&quot;, $3 &#125;&#x27;</span>`
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;After modfied, fermi level of dos : <span class="hljs-variable">$dosfermi2</span>&quot;</span>
+
+<span class="hljs-comment"># Fermi level of band</span>
+<span class="hljs-built_in">cp</span> vasprun.xml band_vasprun.xml
+bandfermi1_number=`grep efermi band_vasprun.xml -n | awk <span class="hljs-string">&#x27;&#123;printf &quot;%d\n&quot;, $1&#125;&#x27;</span>`
+bandfermi1=`grep efermi band_vasprun.xml | awk <span class="hljs-string">&#x27;&#123;printf &quot;%12.6f \n&quot;, $3 &#125;&#x27;</span>`
+<span class="hljs-built_in">echo</span> -e <span class="hljs-string">&quot;fermi level of band : \n <span class="hljs-variable">$bandfermi1_number</span> <span class="hljs-variable">$bandfermi1</span>&quot;</span>
+sed -i <span class="hljs-string">&quot;/\befermi\b/s/.*/ &lt;i name=\&quot;efermi\&quot;&gt;      <span class="hljs-variable">$fermi</span> &lt;\/i&gt; /&quot;</span> band_vasprun.xml
+<span class="hljs-built_in">sleep</span> 1s
+bandfermi2=`grep efermi band_vasprun.xml | awk <span class="hljs-string">&#x27;&#123;printf &quot;%12.6f \n&quot;, $3 &#125;&#x27;</span>`
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;After modfied, fermi level of band : <span class="hljs-variable">$bandfermi2</span>&quot;</span>
+
+<span class="hljs-comment"># plot the banddos</span>
+<span class="hljs-built_in">cat</span> &gt; xxbanddosxx &lt;&lt;!
+import matplotlib.pyplot as plt
+from pymatgen.electronic_structure.plotter import (BSDOSPlotter, BSPlotter,
+                                                   BSPlotterProjected,
+                                                   DosPlotter)
+from pymatgen.io.vasp.outputs import Vasprun
+<span class="hljs-comment"># read vasprun.xml，get band and dos information</span>
+bs_vasprun = Vasprun(<span class="hljs-string">&quot;band_vasprun.xml&quot;</span>,parse_projected_eigen=True)
+bs_data = bs_vasprun.get_band_structure(line_mode=True)
+dos_vasprun=Vasprun(<span class="hljs-string">&quot;dos_vasprun.xml&quot;</span>)
+dos_data=dos_vasprun.complete_dos
+<span class="hljs-comment"># set figure parameters, draw figure</span>
+banddos_fig = BSDOSPlotter(bs_projection=<span class="hljs-string">&quot;elements&quot;</span>,
+                           dos_projection=<span class="hljs-string">&quot;elements&quot;</span>,
+                           vb_energy_range=4,
+                           cb_energy_range=3,
+                           font = <span class="hljs-string">&#x27;Times New Roman&#x27;</span>,
+                           axis_fontsize = 36,
+                           tick_fontsize = 28,
+                           legend_fontsize = 28,
+                           fig_size = (30,20))
+banddos_fig.get_plot(bs=bs_data, dos=dos_data)
+plt.savefig(<span class="hljs-string">&#x27;banddos.pdf&#x27;</span>)
+plt.savefig(<span class="hljs-string">&#x27;banddos.svg&#x27;</span>)
+!
+python3 xxbanddosxx</code></pre></div>
             </div>
-          </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/scripts/">scripts</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/shell/">shell</a>
+                    
+                  </div>
+                
+              </div>
+              <p class="note note-warning">
+                <strong>本文作者: </strong><a href="/">Uncle-yang</a> <br>
+                <strong>本文链接: </strong><a href="https://uncleleiy.github.io/2023/09/10/blog-vasp-script/">https://uncleleiy.github.io/2023/09/10/blog-vasp-script/</a> <br>
+                <strong>版权声明: </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                   </p>
+                   
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/08/27/blog-vasp-3/">
+                        <span class="hidden-mobile">VASP 学习笔记</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
         </div>
       </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+
+
     
   </main>
 
@@ -405,6 +528,31 @@
 
 
 
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '#post-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 0,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
 
 
   <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
@@ -412,7 +560,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "生于忧患，死于安乐&nbsp;",
+        "shell脚本：专治强迫症患者&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 125,
@@ -426,6 +574,23 @@
   </script>
 
 
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "left",
+      visible: "hover",
+      
+      icon: " ❡ "
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
 
 
 

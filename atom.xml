@@ -6,7 +6,7 @@
   <link href="https://uncleleiy.github.io/atom.xml" rel="self"/>
   
   <link href="https://uncleleiy.github.io/"/>
-  <updated>2023-08-27T03:17:57.448Z</updated>
+  <updated>2023-09-11T12:30:09.054Z</updated>
   <id>https://uncleleiy.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>shell脚本：专治强迫症患者</title>
+    <link href="https://uncleleiy.github.io/2023/09/10/blog-vasp-script/"/>
+    <id>https://uncleleiy.github.io/2023/09/10/blog-vasp-script/</id>
+    <published>2023-09-10T07:00:00.000Z</published>
+    <updated>2023-09-11T12:30:09.054Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>想起来有个脚本没有优化，今追加一个自动对齐费米能级的脚本，成功解决了强迫症</p><pre><code class="hljs sh"><span class="hljs-meta">#!/bin/bash</span><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;check your directory : scf/ band/ dos/ , all of them are existing in the same directory GeoOpt/&quot;</span><span class="hljs-comment"># Fermi level of scf</span>fermi=`grep E-fermi ../scf/OUTCAR | awk <span class="hljs-string">&#x27;&#123;printf &quot;%12.6f \n&quot;, $3 &#125;&#x27;</span>`fermi_number=`grep efermi ../scf/vasprun.xml -n | awk <span class="hljs-string">&#x27;&#123;printf &quot;%d\n&quot;, $1&#125;&#x27;</span>`<span class="hljs-built_in">echo</span> -e <span class="hljs-string">&quot;fermi level of scf : \n <span class="hljs-variable">$fermi_number</span> <span class="hljs-variable">$fermi</span>&quot;</span><span class="hljs-comment"># Fermi level of dos</span><span class="hljs-built_in">cp</span> ../dos/vasprun.xml dos_vasprun.xmldosfermi1_number=`grep efermi dos_vasprun.xml -n | awk <span class="hljs-string">&#x27;&#123;printf &quot;%d\n&quot;, $1&#125;&#x27;</span>`dosfermi1=`grep efermi dos_vasprun.xml | awk <span class="hljs-string">&#x27;&#123;printf &quot;%12.6f \n&quot;, $3 &#125;&#x27;</span>`<span class="hljs-built_in">echo</span> -e <span class="hljs-string">&quot;fermi level of dos : \n <span class="hljs-variable">$dosfermi1_number</span> <span class="hljs-variable">$dosfermi1</span>&quot;</span>sed -i <span class="hljs-string">&quot;/\befermi\b/s/.*/ &lt;i name=\&quot;efermi\&quot;&gt;      <span class="hljs-variable">$fermi</span> &lt;\/i&gt; /&quot;</span> dos_vasprun.xml<span class="hljs-built_in">sleep</span> 1sdosfermi2=`grep efermi dos_vasprun.xml | awk <span class="hljs-string">&#x27;&#123;printf &quot;%12.6f \n&quot;, $3 &#125;&#x27;</span>`<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;After modfied, fermi level of dos : <span class="hljs-variable">$dosfermi2</span>&quot;</span><span class="hljs-comment"># Fermi level of band</span><span class="hljs-built_in">cp</span> vasprun.xml band_vasprun.xmlbandfermi1_number=`grep efermi band_vasprun.xml -n | awk <span class="hljs-string">&#x27;&#123;printf &quot;%d\n&quot;, $1&#125;&#x27;</span>`bandfermi1=`grep efermi band_vasprun.xml | awk <span class="hljs-string">&#x27;&#123;printf &quot;%12.6f \n&quot;, $3 &#125;&#x27;</span>`<span class="hljs-built_in">echo</span> -e <span class="hljs-string">&quot;fermi level of band : \n <span class="hljs-variable">$bandfermi1_number</span> <span class="hljs-variable">$bandfermi1</span>&quot;</span>sed -i <span class="hljs-string">&quot;/\befermi\b/s/.*/ &lt;i name=\&quot;efermi\&quot;&gt;      <span class="hljs-variable">$fermi</span> &lt;\/i&gt; /&quot;</span> band_vasprun.xml<span class="hljs-built_in">sleep</span> 1sbandfermi2=`grep efermi band_vasprun.xml | awk <span class="hljs-string">&#x27;&#123;printf &quot;%12.6f \n&quot;, $3 &#125;&#x27;</span>`<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;After modfied, fermi level of band : <span class="hljs-variable">$bandfermi2</span>&quot;</span><span class="hljs-comment"># plot the banddos</span><span class="hljs-built_in">cat</span> &gt; xxbanddosxx &lt;&lt;!import matplotlib.pyplot as pltfrom pymatgen.electronic_structure.plotter import (BSDOSPlotter, BSPlotter,                                                   BSPlotterProjected,                                                   DosPlotter)from pymatgen.io.vasp.outputs import Vasprun<span class="hljs-comment"># read vasprun.xml，get band and dos information</span>bs_vasprun = Vasprun(<span class="hljs-string">&quot;band_vasprun.xml&quot;</span>,parse_projected_eigen=True)bs_data = bs_vasprun.get_band_structure(line_mode=True)dos_vasprun=Vasprun(<span class="hljs-string">&quot;dos_vasprun.xml&quot;</span>)dos_data=dos_vasprun.complete_dos<span class="hljs-comment"># set figure parameters, draw figure</span>banddos_fig = BSDOSPlotter(bs_projection=<span class="hljs-string">&quot;elements&quot;</span>,                           dos_projection=<span class="hljs-string">&quot;elements&quot;</span>,                           vb_energy_range=4,                           cb_energy_range=3,                           font = <span class="hljs-string">&#x27;Times New Roman&#x27;</span>,                           axis_fontsize = 36,                           tick_fontsize = 28,                           legend_fontsize = 28,                           fig_size = (30,20))banddos_fig.get_plot(bs=bs_data, dos=dos_data)plt.savefig(<span class="hljs-string">&#x27;banddos.pdf&#x27;</span>)plt.savefig(<span class="hljs-string">&#x27;banddos.svg&#x27;</span>)!python3 xxbanddosxx</code></pre>]]></content>
+    
+    
+    <summary type="html">shell计算脚本-自动对齐费米能级并输出能带态密度图</summary>
+    
+    
+    
+    <category term="scripts" scheme="https://uncleleiy.github.io/categories/scripts/"/>
+    
+    
+    <category term="shell" scheme="https://uncleleiy.github.io/tags/shell/"/>
+    
+  </entry>
   
   <entry>
     <title>VASP 学习笔记</title>
@@ -418,29 +439,6 @@
     
     <category term="scripts" scheme="https://uncleleiy.github.io/categories/scripts/"/>
     
-    
-    <category term="shell" scheme="https://uncleleiy.github.io/tags/shell/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>shell+python 作图脚本</title>
-    <link href="https://uncleleiy.github.io/2023/06/25/blog-7-shell-python-scripts/"/>
-    <id>https://uncleleiy.github.io/2023/06/25/blog-7-shell-python-scripts/</id>
-    <published>2023-06-25T07:00:00.000Z</published>
-    <updated>2023-07-25T03:57:17.001Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="1-使用python作图的脚本-一"><a href="#1-使用python作图的脚本-一" class="headerlink" title="1.使用python作图的脚本(一)"></a>1.使用python作图的脚本(一)</h1><pre><code class="hljs python"><span class="hljs-comment">#!/usr/bin/python3 python3</span><span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt<span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> npx,y = np.loadtxt(<span class="hljs-string">&#x27;input.dat&#x27;</span>, delimiter = <span class="hljs-string">&#x27;,&#x27;</span>, usecols=(<span class="hljs-number">0</span>, <span class="hljs-number">1</span>), unpack=<span class="hljs-literal">True</span>)plt.xlabel(<span class="hljs-string">&#x27;x / units&#x27;</span>)plt.ylabel(<span class="hljs-string">&#x27;y / units&#x27;</span>)plt.plot(x,y, <span class="hljs-string">&#x27;rs-&#x27;</span>, linewidth=<span class="hljs-number">2.0</span>)plt.show()</code></pre><h1 id="2-使用python作图的脚本-二"><a href="#2-使用python作图的脚本-二" class="headerlink" title="2.使用python作图的脚本(二)"></a>2.使用python作图的脚本(二)</h1><pre><code class="hljs python"><span class="hljs-comment">#!/usr/bin/python3 python3</span><span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt<span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> npx,y,z = np.loadtxt(<span class="hljs-string">&#x27;input.dat&#x27;</span>, delimiter = <span class="hljs-string">&#x27;,&#x27;</span>, usecols=(<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>), unpack=<span class="hljs-literal">True</span>)plt.xlabel(<span class="hljs-string">&#x27;x / s&#x27;</span>)plt.ylabel(<span class="hljs-string">&#x27;y / s&#x27;</span>)plt.plot(x,y, <span class="hljs-string">&#x27;rs-&#x27;</span>, linewidth=<span class="hljs-number">2.0</span>)plt.plot(x,z*<span class="hljs-number">4</span>, <span class="hljs-string">&#x27;bs-&#x27;</span>, linewidth=<span class="hljs-number">2.0</span>)plt.show()``` <span class="hljs-comment"># 3.二维两列数据作图的脚本(一)</span>```bash<span class="hljs-comment">#!/usr/bin/env bash</span>echo <span class="hljs-string">&quot;This script is used to plot 2D diagram&quot;</span>function_input()&#123;echo -n <span class="hljs-string">&quot;Please name the plot script: (.py)&quot;</span>read nameecho -n <span class="hljs-string">&quot;Please enter the plot data file: &quot;</span>read dataecho -n <span class="hljs-string">&quot;Please name the xlabel(&#x27; / &#x27;): &quot;</span>read xlabelecho -n <span class="hljs-string">&quot;Please name the ylabel(&#x27; / &#x27;): &quot;</span>read ylabel&#125;function_input $name $data $xlabel $ylabelcat &gt; $name &lt;&lt;!<span class="hljs-comment">#!/usr/bin/env python3</span><span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt<span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> npx,y = np.loadtxt(<span class="hljs-string">&#x27;$data&#x27;</span>, delimiter = <span class="hljs-string">&#x27; &#x27;</span>, usecols=(<span class="hljs-number">0</span>, <span class="hljs-number">1</span>), unpack=<span class="hljs-literal">True</span>)plt.xlabel(<span class="hljs-string">&#x27;$xlabel&#x27;</span>)plt.ylabel(<span class="hljs-string">&#x27;$ylabel&#x27;</span>)plt.plot(x,y, <span class="hljs-string">&#x27;rs-&#x27;</span>, linewidth=<span class="hljs-number">2.0</span>)plt.show() !python3 $name</code></pre><h1 id="4-二维三列数据作图的脚本-二"><a href="#4-二维三列数据作图的脚本-二" class="headerlink" title="4.二维三列数据作图的脚本(二)"></a>4.二维三列数据作图的脚本(二)</h1><pre><code class="hljs bash"><span class="hljs-meta">#!/usr/bin/env bash</span><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;This script is used to plot 3D diagram&quot;</span><span class="hljs-built_in">echo</span> -n <span class="hljs-string">&quot;Please name the plot script(.py): &quot;</span><span class="hljs-built_in">read</span> name<span class="hljs-built_in">echo</span> -n <span class="hljs-string">&quot;Please enter the plot data file: &quot;</span><span class="hljs-built_in">read</span> data<span class="hljs-built_in">echo</span> -n <span class="hljs-string">&quot;Please name the xlabel(&#x27; / &#x27;): &quot;</span><span class="hljs-built_in">read</span> xlabel<span class="hljs-built_in">echo</span> -n <span class="hljs-string">&quot;Please name the ylabel(&#x27; / &#x27;): &quot;</span><span class="hljs-built_in">read</span> ylabel<span class="hljs-built_in">cat</span> &gt; <span class="hljs-variable">$name</span> &lt;&lt;!<span class="hljs-comment">#!/usr/bin/env python3</span>import matplotlib.pyplot as pltimport numpy as npx,y,z = np.loadtxt(<span class="hljs-string">&#x27;$data&#x27;</span>, delimiter = <span class="hljs-string">&#x27; &#x27;</span>, usecols=(0, 1, 2), unpack=True)plt.xlabel(<span class="hljs-string">&#x27;$xlabel&#x27;</span>)plt.ylabel(<span class="hljs-string">&#x27;$ylabel&#x27;</span>)plt.plot(x,y, <span class="hljs-string">&#x27;rs-&#x27;</span>, linewidth=2.0)plt.plot(x,z*4, <span class="hljs-string">&#x27;bs-&#x27;</span>, linewidth=2.0)plt.show() !python3 <span class="hljs-variable">$name</span></code></pre>]]></content>
-    
-    
-    <summary type="html">shell配合python实现多列数据绘图</summary>
-    
-    
-    
-    <category term="scripts" scheme="https://uncleleiy.github.io/categories/scripts/"/>
-    
-    
-    <category term="python" scheme="https://uncleleiy.github.io/tags/python/"/>
     
     <category term="shell" scheme="https://uncleleiy.github.io/tags/shell/"/>
     
