@@ -6,7 +6,7 @@
   <link href="https://uncleleiy.github.io/atom.xml" rel="self"/>
   
   <link href="https://uncleleiy.github.io/"/>
-  <updated>2023-11-05T05:17:18.282Z</updated>
+  <updated>2023-11-05T09:55:32.373Z</updated>
   <id>https://uncleleiy.github.io/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://uncleleiy.github.io/2023/11/05/blog-pictures/"/>
     <id>https://uncleleiy.github.io/2023/11/05/blog-pictures/</id>
     <published>2023-11-05T04:00:00.000Z</published>
-    <updated>2023-11-05T05:17:18.282Z</updated>
+    <updated>2023-11-05T09:55:32.373Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><!DOCTYPE html><html lang="zh"><style>    body {text-align: center;}    p, font {line-height: 5em;}</style><body>    <div><img src="./love.jpg"></div>    <font color="#30acf4" style="font-weight:bolder;"> 阿弥陀佛 </font></body></html>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><!DOCTYPE html><html lang="zh"><style>    body {text-align: center;}    p, font {line-height: 5em;}</style><body>    <div><img src="https://cdn.jsdelivr.net/gh/UncleleiY/image@main/blog/images/she.jpg"></div>    <font color="#30acf4" style="font-weight:bolder;"> 阿弥陀佛，罪过罪过 </font></body></html>]]></content>
     
     
     <summary type="html">阿弥陀佛</summary>
@@ -226,9 +226,9 @@
     <category term="scripts" scheme="https://uncleleiy.github.io/categories/scripts/"/>
     
     
-    <category term="shell" scheme="https://uncleleiy.github.io/tags/shell/"/>
-    
     <category term="python" scheme="https://uncleleiy.github.io/tags/python/"/>
+    
+    <category term="shell" scheme="https://uncleleiy.github.io/tags/shell/"/>
     
   </entry>
   
