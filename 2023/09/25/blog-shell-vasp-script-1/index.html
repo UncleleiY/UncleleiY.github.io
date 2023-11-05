@@ -23,7 +23,7 @@
                 <meta name="author" content="Uncle_yang">
                 <meta name="keywords" content="知识、管理">
                 <title>
-                    shell 摸鱼脚本 - 诗意の理性
+                    懒狗科研（一） - 诗意の理性
                 </title>
 
                 <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
@@ -220,8 +220,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2023-08-15 15:00" pubdate>
-        2023年8月15日 下午
+      <time datetime="2023-09-25 15:00" pubdate>
+        2023年9月25日 下午
       </time>
     </span>
   
@@ -232,7 +232,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1.5k 字
+      1.8k 字
     </span>
   
 
@@ -242,7 +242,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      29
+      36
        分钟
     </span>
   
@@ -280,30 +280,34 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto" id="post">
             <!-- SEO header -->
-            <h1 style="display: none">shell 摸鱼脚本</h1>
+            <h1 style="display: none">懒狗科研（一）</h1>
             
             <div class="markdown-body" id="post-body">
-              <h1 id="辅助脚本（by-Uncle-yang）"><a href="#辅助脚本（by-Uncle-yang）" class="headerlink" title="辅助脚本（by Uncle-yang）"></a>辅助脚本（by Uncle-yang）</h1><div class="hljs"><pre><code class="hljs shell"><span class="hljs-meta prompt_">#</span><span class="language-bash">!/bin/bash</span>
+              <h1 id="辅助脚本（by-Uncle-yang）"><a href="#辅助脚本（by-Uncle-yang）" class="headerlink" title="辅助脚本（by Uncle-yang）"></a>辅助脚本（by Uncle-yang）</h1><p>自己写的一个小脚本，用于免除大量重复操作：</p>
+<ul>
+<li>参数测试脚本生成及简单数据处理</li>
+<li>创建任务目录以及复制相关文件</li>
+<li>调度其他辅助脚本的操作主盘</li>
+</ul>
+<div class="hljs"><pre><code class="hljs shell"><span class="hljs-meta prompt_">#</span><span class="language-bash">!/bin/bash</span>
 <span class="hljs-meta prompt_"></span>
 <span class="hljs-meta prompt_">#</span><span class="language-bash"><span class="hljs-comment">#######################################&lt;&lt;&lt;&lt;slurm-script&gt;&gt;&gt;&gt;#####################################</span></span>
 f11()&#123;
 cat &gt; slurm.sh &lt;&lt;EOF
 <span class="hljs-meta prompt_">#</span><span class="language-bash">!/bin/bash</span>
-<span class="hljs-meta prompt_">#</span><span class="language-bash">SBATCH -J vasp                                 <span class="hljs-comment">## Job name</span></span>
-<span class="hljs-meta prompt_">#</span><span class="language-bash">SBATCH -o %j.out                               <span class="hljs-comment">## standard output</span></span> 
-<span class="hljs-meta prompt_">#</span><span class="language-bash">SBATCH -e %j.err                               <span class="hljs-comment">## standard error</span></span>
-<span class="hljs-meta prompt_">#</span><span class="language-bash">SBATCH -N 1                                    <span class="hljs-comment">## Number of nodes</span></span>
-<span class="hljs-meta prompt_">#</span><span class="language-bash">SBATCH --ntasks-per-node=16                    <span class="hljs-comment">## Each node has 16 tasks</span></span>
-<span class="hljs-meta prompt_">#</span><span class="language-bash">SBATCH -p xahcnormal                           <span class="hljs-comment">## operation Partition</span></span>
-<span class="hljs-meta prompt_">#</span><span class="language-bash">SBATCH -t 02:00:00                             <span class="hljs-comment">## time for your job eg:02-02:02:02 means 2d2h2min2s</span></span>
+<span class="hljs-meta prompt_">#</span><span class="language-bash">SBATCH -J vasp                                 <span class="hljs-comment">## Job name</span></span>
+<span class="hljs-meta prompt_">#</span><span class="language-bash">SBATCH -N 1                                    <span class="hljs-comment">## Number of nodes</span></span>
+<span class="hljs-meta prompt_">#</span><span class="language-bash">SBATCH --ntasks-per-node=64                    <span class="hljs-comment">## Each node has 64 tasks</span></span>
+<span class="hljs-meta prompt_">#</span><span class="language-bash">SBATCH -p xahcnormal                           <span class="hljs-comment">## operation Partition</span></span>
+<span class="hljs-meta prompt_">#</span><span class="language-bash">SBATCH -t 10:00:00                             <span class="hljs-comment">## time for your job eg:02-02:02:02 means 2d2h2min2s</span></span>
 module purge
 module load compiler/intel/2017.5.239
 module load mpi/intelmpi/2017.4.239
-export MKL_DEBUG_CPU_TYPE=5  
-export MKL_CBWR=AVX2      
-export I_MPI_PIN_DOMAIN=numa   
-<span class="hljs-meta prompt_">#</span><span class="language-bash">srun --mpi=pmi2  /path/to/vasp_std</span>
-srun --mpi=pmi2 /work/home/Uncleyang/software/vasp.5.4.4/bin/vasp_std
+export MKL_DEBUG_CPU_TYPE=5  
+export MKL_CBWR=AVX2      
+export I_MPI_PIN_DOMAIN=numa   
+<span class="hljs-meta prompt_">#</span><span class="language-bash">srun --mpi=pmi2  /path/to/vasp_std</span>
+srun --mpi=pmi2 /work/home/yanglei1/software/vasp.5.4.4/bin/vasp_std
 EOF
 &#125;
 <span class="hljs-meta prompt_">#</span><span class="language-bash"><span class="hljs-comment">#######################################&lt;&lt;&lt;&lt;slurm-script&gt;&gt;&gt;&gt;#####################################</span></span>
@@ -338,9 +342,9 @@ EOF
 f22()&#123;
 rm encut.dat
 for dir in Encut*; do
-	Encut=$(grep &quot;ENCUT&quot; $dir/INCAR | tail -1 | awk &#x27;&#123;print $3&#125;&#x27;)
-	Energy=$(grep &quot;  without&quot; $dir/OUTCAR | tail -1 | awk &#x27;&#123;printf &quot;%12.6f\n&quot;, $4&#125;&#x27;)
-	echo $Encut $Energy &gt;&gt; encut.dat
+        Encut=$(grep &quot;ENCUT&quot; $dir/INCAR | tail -1 | awk &#x27;&#123;print $3&#125;&#x27;)
+        Energy=$(grep &quot;  without&quot; $dir/OUTCAR | tail -1 | awk &#x27;&#123;printf &quot;%12.6f\n&quot;, $4&#125;&#x27;)
+        echo $Encut $Energy &gt;&gt; encut.dat
 done
 
 cat encut.dat
@@ -392,9 +396,9 @@ EOF
 f32()&#123;
 rm sigma.dat
 for dir in Sigma*; do
-	r=$(grep &quot;SIGMA&quot; $dir/INCAR | tail -1 | awk &#x27;&#123;print $3&#125;&#x27;)
-	TS=$(grep &quot;entropy T&quot; $dir/OUTCAR | tail -1 | awk &#x27;&#123;printf &quot;%12.8f \n&quot;, $5&#125;&#x27;)
-	echo $r $TS &gt;&gt; sigma.dat
+        r=$(grep &quot;SIGMA&quot; $dir/INCAR | tail -1 | awk &#x27;&#123;print $3&#125;&#x27;)
+        TS=$(grep &quot;entropy T&quot; $dir/OUTCAR | tail -1 | awk &#x27;&#123;printf &quot;%12.8f \n&quot;, $5&#125;&#x27;)
+        echo $r $TS &gt;&gt; sigma.dat
 done
 
 cat sigma.dat
@@ -447,9 +451,9 @@ EOF
 f42()&#123;
 rm kpoints.dat
 for dir in */ ; do
-	TS=$(grep &quot;irreducible&quot; $dir/OUTCAR | tail -1 | awk &#x27;&#123;printf &quot;%5i \n&quot;, $2&#125;&#x27;)
-	En=$(grep &quot;  without&quot; $dir/OUTCAR | tail -1 | awk &#x27;&#123;printf &quot;%12.6f \n&quot;, $4&#125;&#x27;)
-	echo $TS $En &gt;&gt; kpoints.dat
+        TS=$(grep &quot;irreducible&quot; $dir/OUTCAR | tail -1 | awk &#x27;&#123;printf &quot;%5i \n&quot;, $2&#125;&#x27;)
+        En=$(grep &quot;  without&quot; $dir/OUTCAR | tail -1 | awk &#x27;&#123;printf &quot;%12.6f \n&quot;, $4&#125;&#x27;)
+        echo $TS $En &gt;&gt; kpoints.dat
 done
 
 cat kpoints.dat
@@ -485,37 +489,37 @@ echo &quot;&quot;&quot;-----------------------------------------------------
 echo &quot;Here you can choose tasks as shown above ----&gt; &quot;
 read inputs
 case $inputs in 
-	1)
-	mkdir scf
-	cp INCAR KPOINTS CONTCAR POTCAR slurm.sh scf/
-	mv scf/CONTCAR scf/POSCAR
-	echo &quot;scf directory writing successfully !&quot;
-	;;
-	2)
-	mkdir dos
-	cp INCAR KPOINTS POSCAR POTCAR WAVECAR CHGCAR slurm.sh dos/
-	echo &quot;dos directory writing successfully !&quot;
-	;;
-	3)
-	mkdir band
-	cp INCAR POSCAR POTCAR WAVECAR CHGCAR slurm.sh band/
-	echo &quot;band directory writing successfully !&quot;
-	;;
-	4)
-	mkdir ELF
-	cp INCAR POSCAR POTCAR WAVECAR slurm.sh ELF/
-	echo &quot;ELF directory writing successfully !&quot;
-	;;
-	5)
-	mkdir bader
-	cp POSCAR POTCAR slurm.sh bader/
-	echo &quot;bader directory writing successfully !&quot;
-	;;
-	6)
-	mkdir phonon
-	cp CONTCAR POTCAR KPOINTS slurm.sh phonon/
-	echo &quot;phonon directory writing successfully !&quot;
-	;;
+        1)
+        mkdir scf
+        cp INCAR KPOINTS CONTCAR POTCAR slurm.sh scf/
+        mv scf/CONTCAR scf/POSCAR
+        echo &quot;scf directory writing successfully !&quot;
+        ;;
+        2)
+        mkdir dos
+        cp INCAR KPOINTS POSCAR POTCAR WAVECAR CHGCAR slurm.sh dos/
+        echo &quot;dos directory writing successfully !&quot;
+        ;;
+        3)
+        mkdir band
+        cp INCAR POSCAR POTCAR WAVECAR CHGCAR slurm.sh band/
+        echo &quot;band directory writing successfully !&quot;
+        ;;
+        4)
+        mkdir ELF
+        cp INCAR POSCAR POTCAR WAVECAR slurm.sh ELF/
+        echo &quot;ELF directory writing successfully !&quot;
+        ;;
+        5)
+        mkdir bader
+        cp POSCAR POTCAR slurm.sh bader/
+        echo &quot;bader directory writing successfully !&quot;
+        ;;
+        6)
+        mkdir phonon
+        cp CONTCAR POTCAR KPOINTS slurm.sh phonon/
+        echo &quot;phonon directory writing successfully !&quot;
+        ;;
 esac
 &#125;
 <span class="hljs-meta prompt_">#</span><span class="language-bash"><span class="hljs-comment">#######################################&lt;&lt;&lt;&lt;director-script&gt;&gt;&gt;&gt;#####################################</span></span>
@@ -523,26 +527,61 @@ esac
 <span class="hljs-meta prompt_"></span>
 <span class="hljs-meta prompt_">#</span><span class="language-bash"><span class="hljs-comment">#######################################&lt;&lt;&lt;&lt;bandplot-script&gt;&gt;&gt;&gt;#####################################</span></span>
 f61()&#123;
-cat &gt; bandplot.py &lt;&lt;EOF
-<span class="hljs-meta prompt_">#</span><span class="language-bash">!/bin/env bash</span>
+<span class="hljs-meta prompt_">#</span><span class="language-bash">!/bin/bash</span>
+echo -e &quot;check your directory : scf/ band/ dos/ , all of them are existing in the same directory GeoOpt/ \n &quot;
+<span class="hljs-meta prompt_"># </span><span class="language-bash">Fermi level of scf</span>
+fermi=`grep E-fermi ../scf/OUTCAR | awk &#x27;&#123;printf &quot;%12.6f \n&quot;, $3 &#125;&#x27;`
+fermi_number=`grep efermi ../scf/vasprun.xml -n | awk &#x27;&#123;printf &quot;%d\n&quot;, $1&#125;&#x27;`
+echo -e &quot;fermi level of scf : \n $fermi_number $fermi&quot;
+<span class="hljs-meta prompt_"></span>
+<span class="hljs-meta prompt_"># </span><span class="language-bash">Fermi level of dos</span>
+cp ../dos/vasprun.xml dos_vasprun.xml
+dosfermi1_number=`grep efermi dos_vasprun.xml -n | awk &#x27;&#123;printf &quot;%d\n&quot;, $1&#125;&#x27;`
+dosfermi1=`grep efermi dos_vasprun.xml | awk &#x27;&#123;printf &quot;%12.6f \n&quot;, $3 &#125;&#x27;`
+echo -e &quot;fermi level of dos : \n $dosfermi1_number $dosfermi1&quot;
+sed -i &quot;/\befermi\b/s/.*/ &lt;i name=\&quot;efermi\&quot;&gt;      $fermi &lt;\/i&gt; /&quot; dos_vasprun.xml
+sleep 1s
+dosfermi2=`grep efermi dos_vasprun.xml | awk &#x27;&#123;printf &quot;%12.6f \n&quot;, $3 &#125;&#x27;`
+echo &quot;After modfied, fermi level of dos : $dosfermi2&quot;
+<span class="hljs-meta prompt_"></span>
+<span class="hljs-meta prompt_"># </span><span class="language-bash">Fermi level of band</span>
+cp vasprun.xml band_vasprun.xml
+bandfermi1_number=`grep efermi band_vasprun.xml -n | awk &#x27;&#123;printf &quot;%d\n&quot;, $1&#125;&#x27;`
+bandfermi1=`grep efermi band_vasprun.xml | awk &#x27;&#123;printf &quot;%12.6f \n&quot;, $3 &#125;&#x27;`
+echo -e &quot;fermi level of band : \n $bandfermi1_number $bandfermi1&quot;
+sed -i &quot;/\befermi\b/s/.*/ &lt;i name=\&quot;efermi\&quot;&gt;      $fermi &lt;\/i&gt; /&quot; band_vasprun.xml
+sleep 1s
+bandfermi2=`grep efermi band_vasprun.xml | awk &#x27;&#123;printf &quot;%12.6f \n&quot;, $3 &#125;&#x27;`
+echo -e &quot;After modfied, fermi level of band : $bandfermi2 \n&quot;
+<span class="hljs-meta prompt_"></span>
+<span class="hljs-meta prompt_"></span>
+<span class="hljs-meta prompt_"># </span><span class="language-bash">plot the banddos</span>
+cat &gt; xxx_banddos_plot_py_xxx &lt;&lt;EOF
 import matplotlib.pyplot as plt
+from pymatgen.electronic_structure.plotter import (BSDOSPlotter, BSPlotter,
+                                                   BSPlotterProjected,
+                                                   DosPlotter)
 from pymatgen.io.vasp.outputs import Vasprun
-from pymatgen.electronic_structure.plotter import BSDOSPlotter,\
-BSPlotter,BSPlotterProjected,DosPlotter
-<span class="hljs-meta prompt_"></span>
-<span class="hljs-meta prompt_"># </span><span class="language-bash"><span class="hljs-built_in">read</span> vasprun.xml and get band and dos information</span>
-bs_vasprun = Vasprun(&quot;./vasprun.xml&quot;,parse_projected_eigen=True)
+<span class="hljs-meta prompt_"># </span><span class="language-bash"><span class="hljs-built_in">read</span> vasprun.xml，get band and dos information</span>
+bs_vasprun = Vasprun(&quot;band_vasprun.xml&quot;,parse_projected_eigen=True)
 bs_data = bs_vasprun.get_band_structure(line_mode=True)
-
-dos_vasprun=Vasprun(&quot;./vasprun.xml&quot;)
+dos_vasprun=Vasprun(&quot;dos_vasprun.xml&quot;)
 dos_data=dos_vasprun.complete_dos
-<span class="hljs-meta prompt_"></span>
 <span class="hljs-meta prompt_"># </span><span class="language-bash"><span class="hljs-built_in">set</span> figure parameters, draw figure</span>
-banddos_fig = BSDOSPlotter(bs_projection=None, dos_projection=None, vb_energy_range=5, fixed_cb_energy=5)
+banddos_fig = BSDOSPlotter(bs_projection=&quot;elements&quot;,
+                           dos_projection=&quot;elements&quot;,
+                           vb_energy_range=4,
+                           cb_energy_range=3,
+                           font = &#x27;Times New Roman&#x27;,
+                           axis_fontsize = 36,
+                           tick_fontsize = 28,
+                           legend_fontsize = 28,
+                           fig_size = (30,20))
 banddos_fig.get_plot(bs=bs_data, dos=dos_data)
-plt.savefig(&#x27;banddos.png&#x27;)
+plt.savefig(&#x27;banddos.pdf&#x27;)
+plt.savefig(&#x27;banddos.svg&#x27;)
 EOF
-python3 bandplot.py
+python3 xxx_banddos_plot_py_xxx
 &#125;
 <span class="hljs-meta prompt_">#</span><span class="language-bash"><span class="hljs-comment">#######################################&lt;&lt;&lt;&lt;bandplot-script&gt;&gt;&gt;&gt;#####################################</span></span>
 <span class="hljs-meta prompt_"></span>
@@ -562,7 +601,7 @@ dos_vasprun=Vasprun(&quot;./vasprun.xml&quot;)
 dos_data=dos_vasprun.complete_dos
 <span class="hljs-meta prompt_"></span>
 <span class="hljs-meta prompt_"># </span><span class="language-bash"><span class="hljs-built_in">set</span> figure parameters, draw figure</span>
-plt_dos = DosPlotter(stack=False)     # plt_dos = DosPlotter(stack=False,sigma=0.5), sigma is changable
+plt_dos = DosPlotter(stack=False, sigma=0.5) # sigma is changable
 plt_dos.add_dos(&#x27;total dos&#x27;,dos=dos_data)
 plt_dos.add_dos_dict(dos_data.get_spd_dos())
 plt_dos.save_plot(&#x27;dosspd.pdf&#x27;,img_format=&#x27;pdf&#x27;)
@@ -573,39 +612,39 @@ python3 dosplot.py
 <span class="hljs-meta prompt_"></span>
 <span class="hljs-meta prompt_"></span>
 <span class="hljs-meta prompt_">#</span><span class="language-bash"><span class="hljs-comment">#######################################&lt;&lt;&lt;&lt;control-script&gt;&gt;&gt;&gt;######################################</span></span>
-echo &quot;This script is used to help do some tasks !&quot;
+echo &quot;This script is for helping to do some tasks !&quot;
 echo &quot;&quot;&quot;---------------------------------------------------------
 11) generate slurm.sh
-21) generate encut.sh          22) encut-data-process
-31) generate sigma.sh          32) sigma-data-process
-41) generate kpoints.sh        42) kpoints-data-process                            
-51) taskin-script                
-61) band-plot.py                
+21) generate encut.sh          22) encut-data-process
+31) generate sigma.sh          32) sigma-data-process
+41) generate kpoints.sh        42) kpoints-data-process                            
+51) taskin-script                
+61) band-plot.py                
 71) dosspd-plot.py 
-81) task-managemant-for-2D-material-in-super-computer
-91) task-managemant-for-3D-material-in-super-computer  
-00) task-managemant-in-local-computer-to-debug-and-update                                             
+81) task-managemant-for-2D-material
+91) task-managemant-for-3D-material                                              
+01) task-managemant-for-monitoring-GeoOpt-process
 ---------------------------------------------------------&quot;&quot;&quot;
 echo &quot;Here you can choose the tasks as shown above ----&gt; &quot;
 
 read task
 case $task in
-    11) f11 ;;
-    21) f21 &amp;&amp; f11 ;;
-    22) f22 ;;
-    31) f31 &amp;&amp; f11 ;;
-    32) f32 ;;
-    41) f41 &amp;&amp; f11 ;;
-    42) f42 ;;
-    51) f51 ;;
-    61) f61 ;;
-    71) f71 ;;
-    81) exec ~/bin/auto2d ;;
-    91) exec ~/bin/auto3d ;;
-    00) exec ~/bin/autovasp ;;
-    *)  echo &quot;please check the inputation !&quot; ;;
+    11) f11 ;;
+    21) f21 &amp;&amp; f11 ;;
+    22) f22 ;;
+    31) f31 &amp;&amp; f11 ;;
+    32) f32 ;;
+    41) f41 &amp;&amp; f11 ;;
+    42) f42 ;;
+    51) f51 ;;
+    61) f61 ;;
+    71) f71 ;;
+    81) exec ~/bin/auto2d ;;
+    91) exec ~/bin/auto3d ;;
+    01) exec ~/bin/looks ;; 
+    *)  echo &quot;please check the inputation !&quot; ;;
 esac
-<span class="hljs-meta prompt_">#</span><span class="language-bash"><span class="hljs-comment">#######################################&lt;&lt;&lt;&lt;control-script&gt;&gt;&gt;&gt;######################################</span></span></code></pre></div>
+<span class="hljs-meta prompt_">#</span><span class="language-bash"><span class="hljs-comment">#######################################&lt;&lt;&lt;&lt;control-script&gt;&gt;&gt;&gt;#####################################</span></span></code></pre></div>
             </div>
             <hr>
             <div>
@@ -629,7 +668,7 @@ esac
               </div>
               <p class="note note-warning">
                 <strong>本文作者: </strong><a href="/">Uncle-yang</a> <br>
-                <strong>本文链接: </strong><a href="https://uncleleiy.github.io/2023/08/15/blog-shell-vasp-script/">https://uncleleiy.github.io/2023/08/15/blog-shell-vasp-script/</a> <br>
+                <strong>本文链接: </strong><a href="https://uncleleiy.github.io/2023/09/25/blog-shell-vasp-script-1/">https://uncleleiy.github.io/2023/09/25/blog-shell-vasp-script-1/</a> <br>
                 <strong>版权声明: </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
                    </p>
                    
@@ -638,9 +677,9 @@ esac
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/08/24/blog-qe-installation/">
+                      <a href="/2023/10/10/blog-shell-vasp-script-2/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">QE 自动化安装</span>
+                        <span class="hidden-mobile">懒狗科研（二）</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -648,8 +687,8 @@ esac
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/08/06/blog-debug/">
-                        <span class="hidden-mobile">报错问题汇总</span>
+                      <a href="/2023/09/10/blog-vasp-script-1/">
+                        <span class="hidden-mobile">shell脚本：费米能级对齐</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -832,7 +871,7 @@ esac
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "shell 摸鱼脚本&nbsp;",
+        "懒狗科研（一）&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 125,

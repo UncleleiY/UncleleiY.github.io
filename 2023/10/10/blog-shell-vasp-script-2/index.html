@@ -23,7 +23,7 @@
                 <meta name="author" content="Uncle_yang">
                 <meta name="keywords" content="知识、管理">
                 <title>
-                    闭关 - 诗意の理性
+                    懒狗科研（二） - 诗意の理性
                 </title>
 
                 <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
@@ -220,8 +220,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2023-11-05 12:00" pubdate>
-        2023年11月5日 中午
+      <time datetime="2023-10-10 12:00" pubdate>
+        2023年10月10日 中午
       </time>
     </span>
   
@@ -232,7 +232,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      13 字
+      929 字
     </span>
   
 
@@ -242,7 +242,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1
+      17
        分钟
     </span>
   
@@ -280,21 +280,196 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto" id="post">
             <!-- SEO header -->
-            <h1 style="display: none">闭关</h1>
+            <h1 style="display: none">懒狗科研（二）</h1>
             
             <div class="markdown-body" id="post-body">
-              <!DOCTYPE html>
-<html lang="zh">
-<style>
-    body {text-align: center;}
-    p, font {line-height: 5em;}
-</style>
-<body>
-    <div><img src="./love.jpg" srcset="/img/loading.gif"></div>
-    <font color="#30acf4" style="font-weight:bolder;"> 阿弥陀佛 </font>
-</body>
-</html>
+              <h1 id="辅助脚本（by-Uncle-yang）"><a href="#辅助脚本（by-Uncle-yang）" class="headerlink" title="辅助脚本（by Uncle-yang）"></a>辅助脚本（by Uncle-yang）</h1><p>自己写的一个小脚本，用于免除大量重复操作：</p>
+<ul>
+<li>结构优化后自洽的参数辅助修改</li>
+<li>自洽完成后能带态密度参数辅助修改以及后处理</li>
+<li>自洽完成后bader和ELF计算参数修改以及后处理</li>
+</ul>
+<div class="hljs"><pre><code class="hljs bash"><span class="hljs-comment">#！/bin/bash</span>
 
+<span class="hljs-comment"># Attention ! Make sure you finished GeoOpt calculation and stay in the GeoOpt directory waiting for the next step !</span>
+<span class="hljs-comment">#############################################&lt;&lt;&lt;&lt;scf-script&gt;&gt;&gt;&gt;#######################################################</span>
+<span class="hljs-function"><span class="hljs-title">scf</span></span>()&#123;
+<span class="hljs-built_in">mkdir</span> scf
+<span class="hljs-built_in">cp</span> INCAR KPOINTS POTCAR slurm.sh scf/
+<span class="hljs-built_in">cp</span> CONTCAR scf/POSCAR
+<span class="hljs-built_in">cd</span> scf/
+sed -i <span class="hljs-string">&#x27;/\bISTART\b/s/.*/ISTART = 0/&#x27;</span> INCAR
+sed -i <span class="hljs-string">&#x27;/\bICHARG\b/s/.*/ICHARG = 2/&#x27;</span> INCAR
+sed -i <span class="hljs-string">&#x27;/\bLWAVE\b/s/.*/LWAVE = .TRUE./&#x27;</span> INCAR
+sed -i <span class="hljs-string">&#x27;/\bLCHARG\b/s/.*/LCHARG = .TRUE./&#x27;</span> INCAR
+sed -i <span class="hljs-string">&#x27;/\bIBRION\b/s/.*/IBRION = -1/&#x27;</span> INCAR
+sed -i <span class="hljs-string">&#x27;/\bNSW\b/s/.*/NSW = 0/&#x27;</span> INCAR
+<span class="hljs-built_in">cd</span> ..
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Attention ! All arguments rely on your calculation system !&quot;</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Attention ! Check the value of IBRION, NSW, ENCUT, ISMEAR, SIGMA, KPOINTS !&quot;</span>
+&#125;
+<span class="hljs-comment">#############################################&lt;&lt;&lt;&lt;scf-script&gt;&gt;&gt;&gt;#######################################################</span>
+
+
+<span class="hljs-comment">#############################################&lt;&lt;&lt;&lt;band-script&gt;&gt;&gt;&gt;######################################################</span>
+<span class="hljs-function"><span class="hljs-title">band</span></span>()&#123;
+<span class="hljs-built_in">cd</span> scf/
+<span class="hljs-built_in">mkdir</span> band
+<span class="hljs-built_in">cp</span> INCAR POSCAR POTCAR WAVECAR CHGCAR slurm.sh band/
+<span class="hljs-built_in">mv</span> band/ ..
+<span class="hljs-built_in">cd</span> ../band/
+sed -i <span class="hljs-string">&#x27;/\bISTART\b/s/.*/ISTART = 1/&#x27;</span> INCAR
+sed -i <span class="hljs-string">&#x27;/\bICHARG\b/s/.*/ICHARG = 11/&#x27;</span> INCAR
+sed -i <span class="hljs-string">&#x27;/\bLWAVE\b/s/.*/LWAVE = .FALSE./&#x27;</span> INCAR
+sed -i <span class="hljs-string">&#x27;/\bLCHARG\b/s/.*/LCHARG = .FALSE./&#x27;</span> INCAR
+sed -i <span class="hljs-string">&#x27;/\bISMEAR\b/s/.*/ISMEAR = 0/&#x27;</span> INCAR
+sed -i <span class="hljs-string">&#x27;/\bSIGMA\b/s/.*/SIGMA = 0.05/&#x27;</span> INCAR
+sed -i <span class="hljs-string">&#x27;/\bLORBIT\b/s/.*/LORBIT = 11/&#x27;</span> INCAR
+<span class="hljs-built_in">echo</span> -e <span class="hljs-string">&quot;3\n302\n&quot;</span> | vaspkit &gt; information
+<span class="hljs-built_in">cp</span> KPATH.<span class="hljs-keyword">in</span> KPOINTS
+<span class="hljs-built_in">cd</span> ..
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Attention ! Check the value of SIGMA, LORBIT, NBANDS !&quot;</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Attention ! Use primitive-cell to do band calculation !&quot;</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Attention ! Check the KPATH whether it meets your system !&quot;</span>
+&#125;
+
+<span class="hljs-function"><span class="hljs-title">band_data_process</span></span>()&#123;
+<span class="hljs-built_in">cd</span> band/
+<span class="hljs-built_in">echo</span> -e <span class="hljs-string">&quot;21\n211\n1\n&quot;</span>| vaspkit &gt; information
+<span class="hljs-built_in">echo</span> -e <span class="hljs-string">&quot;61\n&quot;</span>| yang
+<span class="hljs-built_in">cd</span> ..
+&#125;
+<span class="hljs-comment">#############################################&lt;&lt;&lt;&lt;band-script&gt;&gt;&gt;&gt;######################################################</span>
+
+
+<span class="hljs-comment">#############################################&lt;&lt;&lt;&lt;dos-script&gt;&gt;&gt;&gt;######################################################</span>
+<span class="hljs-function"><span class="hljs-title">dos</span></span>()&#123;
+<span class="hljs-built_in">cd</span> scf/
+<span class="hljs-built_in">mkdir</span> dos
+<span class="hljs-built_in">cp</span> INCAR KPOINTS POSCAR POTCAR WAVECAR CHGCAR slurm.sh dos/
+<span class="hljs-built_in">mv</span> dos/ ..
+<span class="hljs-built_in">cd</span> ../dos/
+sed -i <span class="hljs-string">&#x27;/\bISTART\b/s/.*/ISTART = 1/&#x27;</span> INCAR
+sed -i <span class="hljs-string">&#x27;/\bICHARG\b/s/.*/ICHARG = 11/&#x27;</span> INCAR
+sed -i <span class="hljs-string">&#x27;/\bLWAVE\b/s/.*/LWAVE = .FALSE./&#x27;</span> INCAR
+sed -i <span class="hljs-string">&#x27;/\bLCHARG\b/s/.*/LCHARG = .FALSE./&#x27;</span> INCAR
+sed -i <span class="hljs-string">&#x27;/\bISMEAR\b/s/.*/ISMEAR = -5/&#x27;</span> INCAR
+sed -i <span class="hljs-string">&#x27;/\bLORBIT\b/s/.*/LORBIT = 11/&#x27;</span> INCAR
+<span class="hljs-built_in">cd</span> ..
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Attention ! Check the value of LORBIT, NEDOS, ISMEAR !&quot;</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Attention ! All arguments rely on your calculation system !&quot;</span>
+&#125;
+
+<span class="hljs-function"><span class="hljs-title">dos_data_process</span></span>()&#123;
+<span class="hljs-built_in">cd</span> dos/
+<span class="hljs-built_in">echo</span> -e <span class="hljs-string">&quot;11\n111\n1\n&quot;</span>| vaspkit &gt; information
+<span class="hljs-built_in">echo</span> -e <span class="hljs-string">&quot;71\n&quot;</span>| yang 
+<span class="hljs-built_in">cd</span> ..
+&#125;
+<span class="hljs-comment">#############################################&lt;&lt;&lt;&lt;dos-script&gt;&gt;&gt;&gt;######################################################</span>
+
+
+<span class="hljs-comment">#############################################&lt;&lt;&lt;&lt;ELF-script&gt;&gt;&gt;&gt;######################################################</span>
+<span class="hljs-function"><span class="hljs-title">ELF</span></span>()&#123;
+<span class="hljs-built_in">cd</span> scf/
+<span class="hljs-built_in">mkdir</span> ELF
+<span class="hljs-built_in">cp</span> POSCAR POTCAR WAVECAR slurm.sh ELF/
+<span class="hljs-built_in">mv</span> ELF/ ..
+<span class="hljs-built_in">cd</span> ../ELF/
+<span class="hljs-built_in">echo</span> -e <span class="hljs-string">&quot;1\n101\nEL\n&quot;</span>| vaspkit &gt; information
+<span class="hljs-built_in">cd</span> ..
+&#125;
+<span class="hljs-comment">#############################################&lt;&lt;&lt;&lt;ELF-script&gt;&gt;&gt;&gt;######################################################</span>
+
+
+<span class="hljs-comment">#############################################&lt;&lt;&lt;&lt;bader-script&gt;&gt;&gt;&gt;####################################################</span>
+<span class="hljs-function"><span class="hljs-title">bader_charge</span></span>()&#123;
+<span class="hljs-built_in">cd</span> scf/
+<span class="hljs-built_in">mkdir</span> bader
+<span class="hljs-built_in">cp</span> POSCAR POTCAR slurm.sh bader/
+<span class="hljs-built_in">mv</span> bader/ ..
+<span class="hljs-built_in">cd</span> ../bader/
+<span class="hljs-built_in">echo</span> -e <span class="hljs-string">&quot;1\n101\nBD\n&quot;</span>| vaspkit &gt; information
+<span class="hljs-built_in">cd</span> ..
+&#125;
+
+<span class="hljs-function"><span class="hljs-title">bader_data_process</span></span>()&#123;
+<span class="hljs-built_in">cd</span> bader/
+chgsum.pl AECCAR0 AECCAR2 
+<span class="hljs-built_in">wait</span>
+bader CHGCAR -ref CHGCAR_sum 
+<span class="hljs-built_in">cd</span> ..
+&#125;
+<span class="hljs-comment">#############################################&lt;&lt;&lt;&lt;bader-script&gt;&gt;&gt;&gt;#####################################################</span>
+
+
+<span class="hljs-comment">#############################################&lt;&lt;&lt;&lt;auto-script&gt;&gt;&gt;&gt;#####################################################</span>
+<span class="hljs-function"><span class="hljs-title">auto_submit</span></span>()&#123;
+<span class="hljs-built_in">cd</span> band/ 
+sbatch slurm.sh
+<span class="hljs-built_in">cd</span> ..
+<span class="hljs-built_in">cd</span> dos/
+sbatch slurm.sh
+<span class="hljs-built_in">cd</span> ..
+<span class="hljs-comment">## cd ELF/</span>
+<span class="hljs-comment">## sbatch slurm.sh</span>
+<span class="hljs-comment">## cd ..</span>
+<span class="hljs-comment">## cd bader/</span>
+<span class="hljs-comment">## sbatch slurm.sh</span>
+<span class="hljs-comment">## cd ..</span>
+&#125;
+
+<span class="hljs-function"><span class="hljs-title">auto_process</span></span>()&#123;
+<span class="hljs-built_in">cd</span> band/ 
+<span class="hljs-built_in">echo</span> -e <span class="hljs-string">&quot;21\n211\n1\n&quot;</span>| vaspkit &gt; information
+<span class="hljs-built_in">echo</span> -e <span class="hljs-string">&quot;61\n&quot;</span>| yang
+<span class="hljs-built_in">cd</span> ..
+<span class="hljs-built_in">cd</span> dos/
+<span class="hljs-built_in">echo</span> -e <span class="hljs-string">&quot;11\n111\n1\n&quot;</span>| vaspkit &gt; information
+<span class="hljs-built_in">echo</span> -e <span class="hljs-string">&quot;71\n&quot;</span>| yang 
+<span class="hljs-built_in">cd</span> ..
+<span class="hljs-comment">## cd bader/</span>
+<span class="hljs-comment">## chgsum.pl AECCAR0 AECCAR2 </span>
+<span class="hljs-comment">## wait</span>
+<span class="hljs-comment">## bader CHGCAR -ref CHGCAR_sum </span>
+<span class="hljs-comment">## cd ..</span>
+&#125;
+<span class="hljs-comment">#############################################&lt;&lt;&lt;&lt;auto-script&gt;&gt;&gt;&gt;#####################################################</span>
+
+
+<span class="hljs-comment">#############################################&lt;&lt;&lt;&lt;control-script&gt;&gt;&gt;&gt;###################################################</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;This script is used to help you to be a lazy dog !&quot;</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Attention ! Make sure you finished GeoOpt calculation and stay in the GeoOpt directory !&quot;</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Attention ! SCF calculation must be the first step before you start NONSCF calculation !&quot;</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;&quot;</span><span class="hljs-string">&quot;-----------------------------------------------------------------------------------------</span>
+<span class="hljs-string">1) scf                                               </span>
+<span class="hljs-string">2) band(2D)                                            </span>
+<span class="hljs-string">3) band-plot(simple view)                                  </span>
+<span class="hljs-string">4) dos(2D)                                                       </span>
+<span class="hljs-string">5) dos-plot(simple view)                                            </span>
+<span class="hljs-string">6) ELF                                                             </span>
+<span class="hljs-string">7) bader                                                             </span>
+<span class="hljs-string">8) bader_data_process                                </span>
+<span class="hljs-string">9)  auto_submit(band&amp;&amp;dos)                                            </span>
+<span class="hljs-string">10) auto_process(band&amp;&amp;dos)                                           </span>
+<span class="hljs-string">-----------------------------------------------------------------------------------------&quot;</span><span class="hljs-string">&quot;&quot;</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Here you can choose the tasks as shown above ----&gt; &quot;</span>
+
+<span class="hljs-built_in">read</span> task
+<span class="hljs-keyword">case</span> <span class="hljs-variable">$task</span> <span class="hljs-keyword">in</span>
+    1) scf ;;
+    2) band ;;
+    3) band_data_process ;;
+    4) dos ;;
+    5) dos_data_process ;;
+    6) ELF ;;
+    7) bader_charge ;;
+    8) bader_data_process ;;
+    9) auto_submit ;;
+    10) auto_process ;;
+    *) <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;please check the inputation !&quot;</span> ;;
+<span class="hljs-keyword">esac</span>
+<span class="hljs-comment">#############################################&lt;&lt;&lt;&lt;control-script&gt;&gt;&gt;&gt;###################################################</span></code></pre></div>
             </div>
             <hr>
             <div>
@@ -303,7 +478,7 @@
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/none/">none</a>
+                      <a class="hover-with-bg" href="/categories/scripts/">scripts</a>
                     
                   </div>
                 
@@ -311,14 +486,14 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/none/">none</a>
+                      <a class="hover-with-bg" href="/tags/shell/">shell</a>
                     
                   </div>
                 
               </div>
               <p class="note note-warning">
                 <strong>本文作者: </strong><a href="/">Uncle-yang</a> <br>
-                <strong>本文链接: </strong><a href="https://uncleleiy.github.io/2023/11/05/blog-pictures/">https://uncleleiy.github.io/2023/11/05/blog-pictures/</a> <br>
+                <strong>本文链接: </strong><a href="https://uncleleiy.github.io/2023/10/10/blog-shell-vasp-script-2/">https://uncleleiy.github.io/2023/10/10/blog-shell-vasp-script-2/</a> <br>
                 <strong>版权声明: </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
                    </p>
                    
@@ -327,12 +502,18 @@
                   <article class="post-prev col-6">
                     
                     
+                      <a href="/2023/10/25/blog-shell-vasp-script-3/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">懒狗科研（三）</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/10/25/blog-shell-vasp-script-3/">
-                        <span class="hidden-mobile">懒狗科研（三）</span>
+                      <a href="/2023/09/25/blog-shell-vasp-script-1/">
+                        <span class="hidden-mobile">懒狗科研（一）</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -515,7 +696,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "闭关&nbsp;",
+        "懒狗科研（二）&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 125,
