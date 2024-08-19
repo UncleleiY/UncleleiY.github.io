@@ -54,6 +54,19 @@
   
   
   <entry>
+    <title>汇报</title>
+    <link href="/2023/10/24/blog/"/>
+    <url>/2023/10/24/blog/</url>
+    
+    <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="密码错误，请重试." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">  <script id="hbeData" type="hbeData" data-hmacdigest="ff405cf813ddc9eff919b42b8f45bc22d8162f46cfc7d781a660d9ff9d9571cf">79c116dae3ff78dc0c6ecaa66eeb607abb4e355787e9f87ad4bb1ad41a4e3c9574dd529aceb3989137001ce40b820658c02051006c40b4ebf386a04ea797a9e18fcf30fa826174f44d36b2c99c792ad28e833231cdf732657ccf377914de0b3e56b38d606ea797ab5655bd6e9cb4a63d175d03a761fd0b4efb8b17fcacb07d0e91040cef3a0018074c8b70bce6e201d37720daa38ae7409bb2418ab45d86f4eafe8dee772e872911bf26ab1b0b607fcda3f5cbc9aef7fa250964c68ae24c2f5a45686e655106d26fbf950f584dd829257393ae78eb7e10d6e9175931b5cd61843ff82a29886c492a9f9e44683a040045d54a094efd5c2fc2c5bfd7feb2475cc20f5ad0ce400baff4c1dedb6e3bfd009f63591785066d7fc044424d4757a70a933d07e0251bda8136def90579fd92944319c326de6269d0e5f9012dfbab2a081aa6af6742b564571ffca13691292172626d644b32c27f78ac2aee8c58459f76adca22eae057b985ffcb8e69359e313e4a46c77e4ede0bd0f7797edc00d67a07c4bbe77bbf74ae6e3e504d1702c5d6dbe974028c60f25acc300d237a0ff166bb9f6bbca7d78e22741c14247436cd0f836c</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">请输入密码查看</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>懒狗科研（二）</title>
     <link href="/2023/10/10/blog-shell-vasp-script-2/"/>
     <url>/2023/10/10/blog-shell-vasp-script-2/</url>
@@ -526,9 +539,9 @@
     
     <tags>
       
-      <tag>shell</tag>
-      
       <tag>vasp</tag>
+      
+      <tag>shell</tag>
       
     </tags>
     
