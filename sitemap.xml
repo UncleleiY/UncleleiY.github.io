@@ -367,6 +367,13 @@
   </url>
   
   <url>
+    <loc>https://uncleleiy.github.io/tags/shell/</loc>
+    <lastmod>2024-08-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://uncleleiy.github.io/tags/linux/</loc>
     <lastmod>2024-08-19</lastmod>
     <changefreq>weekly</changefreq>
@@ -375,13 +382,6 @@
   
   <url>
     <loc>https://uncleleiy.github.io/tags/vasp/</loc>
-    <lastmod>2024-08-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://uncleleiy.github.io/tags/shell/</loc>
     <lastmod>2024-08-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

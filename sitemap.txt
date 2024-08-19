@@ -39,9 +39,9 @@ https://uncleleiy.github.io/tags/index.html
 https://uncleleiy.github.io/
 https://uncleleiy.github.io/tags/Markdown/
 https://uncleleiy.github.io/tags/python/
+https://uncleleiy.github.io/tags/shell/
 https://uncleleiy.github.io/tags/linux/
 https://uncleleiy.github.io/tags/vasp/
-https://uncleleiy.github.io/tags/shell/
 https://uncleleiy.github.io/tags/hexo/
 https://uncleleiy.github.io/tags/wsl/
 https://uncleleiy.github.io/tags/C/
