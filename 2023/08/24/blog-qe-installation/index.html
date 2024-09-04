@@ -91,21 +91,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/">
-                <i class="iconfont icon-home-fill"></i>
-                首页
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/archives/">
-                <i class="iconfont icon-archive-fill"></i>
-                归档
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
               </a>
             </li>
           
@@ -122,71 +110,6 @@
             </li>
           
         
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/tags/">
-                <i class="iconfont icon-tags-fill"></i>
-                标签
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/about/">
-                <i class="iconfont icon-user-fill"></i>
-                关于
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/navigate/">
-                <i class="iconfont icon-map"></i>
-                导航
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/data/">
-                <i class="iconfont icon-bookmark-fill"></i>
-                书签
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/tests/">
-                <i class="iconfont icon-tumblr-fill"></i>
-                测试
-              </a>
-            </li>
-          
-        
-        
-          <li class="nav-item" id="search-btn">
-            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
-                class="iconfont icon-search"></i>&nbsp;</a>
-          </li>
         
         
           <li class="nav-item" id="color-toggle-btn">
@@ -206,6 +129,8 @@
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0)">
           <div class="container page-header text-center fade-in-up">
             <span class="h2" id="subtitle">
+              
+                QE 自动化安装
               
             </span>
 
@@ -232,7 +157,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      578 字
+      548 字
     </span>
   
 
@@ -283,7 +208,7 @@
             <h1 style="display: none">QE 自动化安装</h1>
             
             <div class="markdown-body" id="post-body">
-              <p>考虑到有蛮多小兄弟在安装QE上犯愁，笔者在此写了一个安装脚本，实现一键部署安装QE以及自动测试.</p>
+              <p>一键部署安装QE以及自动测试.</p>
 <p>执行命令：bash qe.sh<br>测试版本：QE-7.2<br>测试环境：Ubuntu 18.04.6 LTS<br>压缩包名称：qe-7.2-ReleasePack.tar.gz<br>测试例子文件夹名称：exam-si</p>
 <p>备注：由于时间关系只测试了安装 pw ph pp pwcond neb 这几个模块<br>备注：全套文件百度网盘可下载: <em><a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1RV2nHVsyAa0BH5bMSnX1Jg?pwd=6666">https://pan.baidu.com/s/1RV2nHVsyAa0BH5bMSnX1Jg?pwd=6666</a> 提取码: 6666</em></p>
 <p>脚本: qe.sh </p>
@@ -470,28 +395,6 @@ Si      <span class="hljs-number">0.250000</span>   <span class="hljs-number">0.
   
 
   
-    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
-     aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
-        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body mx-3">
-        <div class="md-form mb-5">
-          <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v"
-                 for="local-search-input">关键词</label>
-        </div>
-        <div class="list-group" id="local-search-result"></div>
-      </div>
-    </div>
-  </div>
-</div>
-  
 
   
 
@@ -610,24 +513,6 @@ Si      <span class="hljs-number">0.250000</span>   <span class="hljs-number">0.
 
 
 
-  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
-  <script>
-    var typed = new Typed('#subtitle', {
-      strings: [
-        '  ',
-        "QE 自动化安装&nbsp;",
-      ],
-      cursorChar: "_",
-      typeSpeed: 125,
-      loop: false,
-    });
-    typed.stop();
-    $(document).ready(function () {
-      $(".typed-cursor").addClass("h2");
-      typed.start();
-    });
-  </script>
-
 
 
   <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
@@ -648,16 +533,6 @@ Si      <span class="hljs-number">0.250000</span>   <span class="hljs-number">0.
   </script>
 
 
-
-  <script  src="/js/local-search.js" ></script>
-  <script>
-    var path = "/local-search.xml";
-    var inputArea = document.querySelector("#local-search-input");
-    inputArea.onclick = function () {
-      searchFunc(path, 'local-search-input', 'local-search-result');
-      this.onclick = null
-    }
-  </script>
 
 
 

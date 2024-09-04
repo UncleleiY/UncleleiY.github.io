@@ -91,21 +91,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/">
-                <i class="iconfont icon-home-fill"></i>
-                首页
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/archives/">
-                <i class="iconfont icon-archive-fill"></i>
-                归档
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
               </a>
             </li>
           
@@ -122,71 +110,6 @@
             </li>
           
         
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/tags/">
-                <i class="iconfont icon-tags-fill"></i>
-                标签
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/about/">
-                <i class="iconfont icon-user-fill"></i>
-                关于
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/navigate/">
-                <i class="iconfont icon-map"></i>
-                导航
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/data/">
-                <i class="iconfont icon-bookmark-fill"></i>
-                书签
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/tests/">
-                <i class="iconfont icon-tumblr-fill"></i>
-                测试
-              </a>
-            </li>
-          
-        
-        
-          <li class="nav-item" id="search-btn">
-            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
-                class="iconfont icon-search"></i>&nbsp;</a>
-          </li>
         
         
           <li class="nav-item" id="color-toggle-btn">
@@ -206,6 +129,8 @@
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0)">
           <div class="container page-header text-center fade-in-up">
             <span class="h2" id="subtitle">
+              
+                未来
               
             </span>
 
@@ -311,7 +236,7 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/none/">none</a>
+                      <a class="hover-with-bg" href="/tags/Here/">Here</a>
                     
                   </div>
                 
@@ -327,12 +252,18 @@
                   <article class="post-prev col-6">
                     
                     
+                      <a href="/2024/01/01/blog-PDF-1/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">资料</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
                   </article>
                   <article class="post-next col-6">
                     
                     
                       <a href="/2023/10/25/blog-shell-vasp-script-3/">
-                        <span class="hidden-mobile">懒狗科研（三）</span>
+                        <span class="hidden-mobile">shell脚本：查看任务执行</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -369,28 +300,6 @@
 
   
 
-  
-    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
-     aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
-        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body mx-3">
-        <div class="md-form mb-5">
-          <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v"
-                 for="local-search-input">关键词</label>
-        </div>
-        <div class="list-group" id="local-search-result"></div>
-      </div>
-    </div>
-  </div>
-</div>
   
 
   
@@ -510,24 +419,6 @@
 
 
 
-  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
-  <script>
-    var typed = new Typed('#subtitle', {
-      strings: [
-        '  ',
-        "未来&nbsp;",
-      ],
-      cursorChar: "_",
-      typeSpeed: 125,
-      loop: false,
-    });
-    typed.stop();
-    $(document).ready(function () {
-      $(".typed-cursor").addClass("h2");
-      typed.start();
-    });
-  </script>
-
 
 
   <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
@@ -548,16 +439,6 @@
   </script>
 
 
-
-  <script  src="/js/local-search.js" ></script>
-  <script>
-    var path = "/local-search.xml";
-    var inputArea = document.querySelector("#local-search-input");
-    inputArea.onclick = function () {
-      searchFunc(path, 'local-search-input', 'local-search-result');
-      this.onclick = null
-    }
-  </script>
 
 
 
