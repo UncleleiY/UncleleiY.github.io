@@ -6,7 +6,7 @@
   <link href="https://uncleleiy.github.io/atom.xml" rel="self"/>
   
   <link href="https://uncleleiy.github.io/"/>
-  <updated>2024-09-06T15:26:56.626Z</updated>
+  <updated>2024-09-09T16:49:06.283Z</updated>
   <id>https://uncleleiy.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Project Profile</title>
+    <link href="https://uncleleiy.github.io/2024/06/06/blog-PDF-6/"/>
+    <id>https://uncleleiy.github.io/2024/06/06/blog-PDF-6/</id>
+    <published>2024-06-05T17:01:06.000Z</published>
+    <updated>2024-09-09T16:49:06.283Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="TOC"><a href="#TOC" class="headerlink" title=" TOC"></a><font color="#5050ff" style="font-weight:600;"> TOC</h1><div class="row">    <embed src="/pdf/project.pdf" width="100%" height="550" type="application/pdf"></div>]]></content>
+    
+    
+    <summary type="html">PDF</summary>
+    
+    
+    
+    <category term="document" scheme="https://uncleleiy.github.io/categories/document/"/>
+    
+    
+    <category term="none" scheme="https://uncleleiy.github.io/tags/none/"/>
+    
+  </entry>
   
   <entry>
     <title>Table of Content</title>
@@ -418,27 +439,6 @@
     
     
     <category term="vasp" scheme="https://uncleleiy.github.io/tags/vasp/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>QE 安装</title>
-    <link href="https://uncleleiy.github.io/2023/07/20/blog-software-installation/"/>
-    <id>https://uncleleiy.github.io/2023/07/20/blog-software-installation/</id>
-    <published>2023-07-20T13:00:00.000Z</published>
-    <updated>2023-07-31T01:30:48.786Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="两种安装方法（Ubuntu：quantum-espresso）"><a href="#两种安装方法（Ubuntu：quantum-espresso）" class="headerlink" title="两种安装方法（Ubuntu：quantum-espresso）"></a>两种安装方法（Ubuntu：quantum-espresso）</h1><h2 id="1-GNU-compile"><a href="#1-GNU-compile" class="headerlink" title="1. GNU(compile)"></a>1. GNU(compile)</h2><pre><code class="hljs elixir">sudo apt-get install - gfortran （<span class="hljs-title class_">Compiler</span>）- libblas-dev（<span class="hljs-title class_">Math</span> library）- liblapack-dev（<span class="hljs-title class_">Math</span> library）- libfftw3-dev （<span class="hljs-title class_">Math</span> library）- openmpi-bin libopenmpi-dev （<span class="hljs-title class_">Parallel</span> library）- gedit （<span class="hljs-title class_">Text</span> editor）- make （linux make）<span class="hljs-title class_">Download</span> <span class="hljs-title class_">QE</span>（wget + http）tar -zxvf qe-raleasepack.tar.gz./configure make all <span class="hljs-title class_">Environment</span> configuration of <span class="hljs-title class_">QE</span> &amp; openmpi whereis : find path of <span class="hljs-title class_">QE</span> &amp; openmpigedit ~/.bashrcexport <span class="hljs-title class_">PATH</span>=<span class="hljs-variable">$PATH</span><span class="hljs-symbol">:/home/lei/qe/bin</span>export <span class="hljs-title class_">PATH</span>=<span class="hljs-variable">$PATH</span><span class="hljs-symbol">:/usr/lib/x86_64-linux-gnu/openmpi/bin</span>export <span class="hljs-title class_">LD_LIBRARY_PATH</span>=<span class="hljs-variable">$LD_LIBRARY_PATH</span><span class="hljs-symbol">:/usr/lib/x86_64-linux-gnu/openmpi/lib</span>source ~/.bashrc<span class="hljs-title class_">Then</span> find some examples online to start your first project of <span class="hljs-title class_">QE</span> （successfully）</code></pre><h2 id="2-intel-compile"><a href="#2-intel-compile" class="headerlink" title="2. intel(compile)"></a>2. intel(compile)</h2><pre><code class="hljs gradle">Download   oneMKL + oneHPC （wget + http ）bash l_HPCKit_p_2021.<span class="hljs-number">3.0</span>.<span class="hljs-number">3219</span>_offline.sh bash l_onemkl_p_2021.<span class="hljs-number">3.0</span>.<span class="hljs-number">3219</span>_offline.sh<span class="hljs-number">1</span>.oneMKL （Math library）<span class="hljs-number">2</span>.oneMPI（Parallel library）included in oneHPC <span class="hljs-number">3</span>.compiler （ifort、icc、icpc）included in oneHPCEnvironment configuration of  oneMKL + oneHPCgedit ~/.bashrc <span class="hljs-keyword">source</span> ~<span class="hljs-regexp">/intel/</span>oneapi/setvars.sh intel64 --force<span class="hljs-keyword">source</span> ~/.bashrcDownload QE（wget + http）tar -zxvf qe-raleasepack.tar.gz.<span class="hljs-regexp">/configure --prefix=/</span>home<span class="hljs-regexp">/lei/</span>qe CC=icc CXX=icpc FC=ifortmake all Environment configuration of  QEgedit ~/.bashrc export PATH=$PATH:<span class="hljs-regexp">/home/</span>lei<span class="hljs-regexp">/qe/</span>bin <span class="hljs-keyword">source</span> ~/.bashrc<span class="hljs-keyword">source</span> ~/.bashrcThen <span class="hljs-keyword">find</span> some examples online to start your first <span class="hljs-keyword">project</span> of QE（successfully）</code></pre>]]></content>
-    
-    
-    <summary type="html">第一性原理计算软件安装教程（quantum-espresso）</summary>
-    
-    
-    
-    <category term="software" scheme="https://uncleleiy.github.io/categories/software/"/>
-    
-    
-    <category term="QE" scheme="https://uncleleiy.github.io/tags/QE/"/>
     
   </entry>
   
