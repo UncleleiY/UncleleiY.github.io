@@ -405,14 +405,14 @@
   </url>
   
   <url>
-    <loc>https://uncleleiy.github.io/tags/shell/</loc>
+    <loc>https://uncleleiy.github.io/tags/python/</loc>
     <lastmod>2024-09-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://uncleleiy.github.io/tags/python/</loc>
+    <loc>https://uncleleiy.github.io/tags/shell/</loc>
     <lastmod>2024-09-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -468,14 +468,14 @@
   </url>
   
   <url>
-    <loc>https://uncleleiy.github.io/tags/slurm/</loc>
+    <loc>https://uncleleiy.github.io/tags/Mermaid/</loc>
     <lastmod>2024-09-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://uncleleiy.github.io/tags/Mermaid/</loc>
+    <loc>https://uncleleiy.github.io/tags/slurm/</loc>
     <lastmod>2024-09-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -505,14 +505,14 @@
   </url>
   
   <url>
-    <loc>https://uncleleiy.github.io/categories/scripts/</loc>
+    <loc>https://uncleleiy.github.io/categories/programming/</loc>
     <lastmod>2024-09-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://uncleleiy.github.io/categories/programming/</loc>
+    <loc>https://uncleleiy.github.io/categories/scripts/</loc>
     <lastmod>2024-09-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
