@@ -43,8 +43,8 @@ https://uncleleiy.github.io/friends/index.html
 https://uncleleiy.github.io/tags/index.html
 https://uncleleiy.github.io/
 https://uncleleiy.github.io/tags/Markdown/
-https://uncleleiy.github.io/tags/python/
 https://uncleleiy.github.io/tags/shell/
+https://uncleleiy.github.io/tags/python/
 https://uncleleiy.github.io/tags/linux/
 https://uncleleiy.github.io/tags/vasp/
 https://uncleleiy.github.io/tags/hexo/
@@ -57,8 +57,8 @@ https://uncleleiy.github.io/tags/Mermaid/
 https://uncleleiy.github.io/tags/Here/
 https://uncleleiy.github.io/tags/QE/
 https://uncleleiy.github.io/categories/grammar/
-https://uncleleiy.github.io/categories/programming/
 https://uncleleiy.github.io/categories/scripts/
+https://uncleleiy.github.io/categories/programming/
 https://uncleleiy.github.io/categories/debug/
 https://uncleleiy.github.io/categories/document/
 https://uncleleiy.github.io/categories/none/
