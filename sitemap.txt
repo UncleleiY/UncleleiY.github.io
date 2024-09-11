@@ -52,8 +52,8 @@ https://uncleleiy.github.io/tags/wsl/
 https://uncleleiy.github.io/tags/C/
 https://uncleleiy.github.io/tags/none/
 https://uncleleiy.github.io/tags/dataflow/
-https://uncleleiy.github.io/tags/Mermaid/
 https://uncleleiy.github.io/tags/slurm/
+https://uncleleiy.github.io/tags/Mermaid/
 https://uncleleiy.github.io/tags/Here/
 https://uncleleiy.github.io/tags/QE/
 https://uncleleiy.github.io/categories/grammar/
