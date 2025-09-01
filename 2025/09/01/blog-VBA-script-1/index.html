@@ -1,0 +1,710 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;dark&#34;>
+
+
+
+    <head>
+        <meta charset="UTF-8">
+        <!-- 通过cdn引入霞鹜文楷字体 -->
+        <link rel="stylesheet" href="https://npm.elemecdn.com/lxgw-wenkai-screen-webfont/style.css" media="print" onload="this.media='all'">
+        <link rel="apple-touch-icon" sizes="76x76" href="/img/mine.jpg">
+        <link rel="icon" type="image/png" href="/img/mine.jpg">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <!-- 谷歌广告 -->
+        <script data-ad-client="ca-pub-2387054913975173" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
+        </script>
+        
+                <meta name="baidu-site-verification" content="code-PdLAgt4JZr">
+                <meta name="theme-color" content="#2f4154">
+                <meta name="description" content="天行健，君子以自强不息；地势坤，君子以厚德载物">
+                <meta name="author" content="Uncle_yang">
+                <meta name="keywords" content="知识、管理">
+                <title>
+                    VBA脚本：用于数据清洗 - 诗意の理性
+                </title>
+
+                <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/gradient-dark.min.css" />
+    
+  
+
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+  
+<link rel="stylesheet" href="/css/csdn.css">
+<link rel="stylesheet" href="/css/red.css">
+<link rel="stylesheet" href="/css/new.css">
+
+
+
+                    <script  src="/js/utils.js" ></script>
+                        <script  src="/js/color-schema.js" ></script>
+    <meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="诗意の理性" type="application/atom+xml">
+</head>
+
+
+<body>
+  <header style="height: 100vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Uncle-yang</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/navigate/">
+                <i class="iconfont icon-map"></i>
+                导航
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/data/">
+                <i class="iconfont icon-bookmark-fill"></i>
+                书签
+              </a>
+            </li>
+          
+        
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" false
+         style="background: url('/null') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0)">
+          <div class="container page-header text-center fade-in-up">
+            <span class="h2" id="subtitle">
+              
+                VBA脚本：用于数据清洗
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-author" aria-hidden="true"></i>
+      Uncle_yang
+    </span>
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2025-09-01 22:57" pubdate>
+        2025年9月1日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      32
+       分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto" id="post">
+            <!-- SEO header -->
+            <h1 style="display: none">VBA脚本：用于数据清洗</h1>
+            
+            <div class="markdown-body" id="post-body">
+              <h1 id="辅助脚本（by-Uncle-yang）"><a href="#辅助脚本（by-Uncle-yang）" class="headerlink" title="辅助脚本（by Uncle-yang）"></a>辅助脚本（by Uncle-yang）</h1><p>借助AI写的一个小脚本，用于自动筛选异常类型并分类：</p>
+<div class="hljs"><pre><code class="hljs reasonml">&#x27; ================================================================
+&#x27; 主程序：添加分类列并进行数据分类处理
+&#x27; 功能：根据异常说明内容自动为数据行添加分类标记
+&#x27; ================================================================
+Sub <span class="hljs-constructor">AddClassificationColumn()</span>
+    &#x27; 声明变量
+    Dim ws As Worksheet          &#x27; 工作表对象
+    Dim lastCol As Long, lastRow As Long                 &#x27; 最后列和最后行号
+    Dim i As Long, j As Long                            &#x27; 循环计数器
+    Dim classificationCol As Long, exceptionCol As Long, stepNameCol As Long, handlingCol As Long &#x27; 列位置
+    Dim exceptionText As String, stepNameText As String, handlingText As String &#x27; 文本内容
+    
+    &#x27; 设置工作表对象 - 使用当前活动工作表
+    Set ws = ThisWorkbook.ActiveSheet
+    
+    &#x27; 查找关键列位置（在表头行中查找指定列名）
+    lastCol = ws.<span class="hljs-constructor">Cells(1, <span class="hljs-params">ws</span>.Columns.Count)</span>.<span class="hljs-constructor">End(<span class="hljs-params">xlToLeft</span>)</span>.Column
+    For i = <span class="hljs-number">1</span> To lastCol
+        Select Case ws.<span class="hljs-constructor">Cells(1, <span class="hljs-params">i</span>)</span>.Value
+            Case <span class="hljs-string">&quot;分类&quot;</span>: classificationCol = i           &#x27; 分类列位置
+            Case <span class="hljs-string">&quot;异常说明&quot;</span>: exceptionCol = i           &#x27; 异常说明列位置
+            Case <span class="hljs-string">&quot;步骤名称&quot;</span>: stepNameCol = i            &#x27; 步骤名称列位置
+            Case <span class="hljs-string">&quot;处置说明&quot;</span>: handling = i               &#x27; 处置说明列位置
+        End Select
+    Next i
+    
+    &#x27; 检查必要列是否存在，如果不存在则创建或报错
+    If classificationCol = <span class="hljs-number">0</span> Then
+        &#x27; 如果分类列不存在，在最后一列右侧创建新列
+        classificationCol = lastCol + <span class="hljs-number">1</span>
+        ws.<span class="hljs-constructor">Cells(1, <span class="hljs-params">classificationCol</span>)</span>.Value = <span class="hljs-string">&quot;分类&quot;</span>   &#x27; 设置列标题
+    End If
+    
+    &#x27; 检查异常说明和步骤名称列是否都存在
+    If exceptionCol = <span class="hljs-number">0</span> Or stepNameCol = <span class="hljs-number">0</span> Then
+        MsgBox <span class="hljs-string">&quot;请确保数据表包含&#x27;异常说明&#x27;和&#x27;步骤名称&#x27;列&quot;</span>, vbExclamation
+        Exit Sub  &#x27; 如果缺少必要列，退出程序
+    End If
+    
+    &#x27; 获取数据总行数（从第<span class="hljs-number">2</span>行开始是数据）
+    lastRow = ws.<span class="hljs-constructor">Cells(<span class="hljs-params">ws</span>.Rows.Count, 1)</span>.<span class="hljs-constructor">End(<span class="hljs-params">xlUp</span>)</span>.Row
+    
+    &#x27; ==================== 主要分类处理逻辑 ====================
+    &#x27; 按优先级顺序处理每一行数据（优先级从高到低）
+    For i = <span class="hljs-number">2</span> To lastRow
+        &#x27; 只处理分类列为空的行（避免重复处理）
+        If <span class="hljs-constructor">IsEmpty(<span class="hljs-params">ws</span>.Cells(<span class="hljs-params">i</span>, <span class="hljs-params">classificationCol</span>)</span>.Value) Then
+            exceptionText = <span class="hljs-constructor">CStr(<span class="hljs-params">ws</span>.Cells(<span class="hljs-params">i</span>, <span class="hljs-params">exceptionCol</span>)</span>.Value)    &#x27; 获取异常说明文本
+            stepNameText = <span class="hljs-constructor">CStr(<span class="hljs-params">ws</span>.Cells(<span class="hljs-params">i</span>, <span class="hljs-params">stepNameCol</span>)</span>.Value)      &#x27; 获取步骤名称文本
+            
+            &#x27; <span class="hljs-number">1.</span> 禁run
+            If <span class="hljs-constructor">InStr(1, <span class="hljs-params">exceptionText</span>, <span class="hljs-string">&quot;禁run&quot;</span>, <span class="hljs-params">vbTextCompare</span>)</span> &gt; <span class="hljs-number">0</span> Or _
+               <span class="hljs-constructor">InStr(1, <span class="hljs-params">exceptionText</span>, <span class="hljs-string">&quot;禁 run&quot;</span>, <span class="hljs-params">vbTextCompare</span>)</span> &gt; <span class="hljs-number">0</span> Or _
+               <span class="hljs-constructor">InStr(1, <span class="hljs-params">exceptionText</span>, <span class="hljs-string">&quot;禁RUN&quot;</span>, <span class="hljs-params">vbTextCompare</span>)</span> &gt; <span class="hljs-number">0</span> Or _
+               <span class="hljs-constructor">InStr(1, <span class="hljs-params">exceptionText</span>, <span class="hljs-string">&quot;禁 RUN&quot;</span>, <span class="hljs-params">vbTextCompare</span>)</span> &gt; <span class="hljs-number">0</span> Or _
+               <span class="hljs-constructor">InStr(1, <span class="hljs-params">exceptionText</span>, <span class="hljs-string">&quot;设备EAP异常&quot;</span>, <span class="hljs-params">vbTextCompare</span>)</span> &gt; <span class="hljs-number">0</span> Or _
+               <span class="hljs-constructor">InStr(1, <span class="hljs-params">exceptionText</span>, <span class="hljs-string">&quot;换液卡控&quot;</span>, <span class="hljs-params">vbTextCompare</span>)</span> &gt; <span class="hljs-number">0</span> Or _
+               <span class="hljs-constructor">InStr(1, <span class="hljs-params">exceptionText</span>, <span class="hljs-string">&quot;EQP Constraint&quot;</span>, <span class="hljs-params">vbTextCompare</span>)</span> &gt; <span class="hljs-number">0</span> Or _
+               <span class="hljs-constructor">InStr(1, <span class="hljs-params">exceptionText</span>, <span class="hljs-string">&quot;Lot Abnormal End&quot;</span>, <span class="hljs-params">vbTextCompare</span>)</span> &gt; <span class="hljs-number">0</span> Then
+                ws.<span class="hljs-constructor">Cells(<span class="hljs-params">i</span>, <span class="hljs-params">classificationCol</span>)</span>.Value = <span class="hljs-string">&quot;禁run&quot;</span>
+                GoTo NextRow  &#x27; 跳转到下一行，确保优先级
+            End If
+            
+            &#x27; <span class="hljs-number">2.</span> OOS
+            If <span class="hljs-constructor">InStr(1, <span class="hljs-params">exceptionText</span>, <span class="hljs-string">&quot;OOS&quot;</span>, <span class="hljs-params">vbTextCompare</span>)</span> &gt; <span class="hljs-number">0</span> Then
+                ws.<span class="hljs-constructor">Cells(<span class="hljs-params">i</span>, <span class="hljs-params">classificationCol</span>)</span>.Value = <span class="hljs-string">&quot;OOS&quot;</span>
+                GoTo NextRow
+            End If
+            
+            &#x27; <span class="hljs-number">3.</span> OOC
+            If <span class="hljs-constructor">InStr(1, <span class="hljs-params">exceptionText</span>, <span class="hljs-string">&quot;OOC&quot;</span>, <span class="hljs-params">vbTextCompare</span>)</span> &gt; <span class="hljs-number">0</span> Or _
+            <span class="hljs-constructor">InStr(1, <span class="hljs-params">exceptionText</span>, <span class="hljs-string">&quot;连续七点向上或向下趋势&quot;</span>, <span class="hljs-params">vbTextCompare</span>)</span> &gt; <span class="hljs-number">0</span> Then
+                ws.<span class="hljs-constructor">Cells(<span class="hljs-params">i</span>, <span class="hljs-params">classificationCol</span>)</span>.Value = <span class="hljs-string">&quot;OOC&quot;</span>
+                GoTo NextRow
+            End If
+            
+            &#x27; <span class="hljs-number">4.</span> STH
+           If <span class="hljs-constructor">InStr(1, <span class="hljs-params">exceptionText</span>, <span class="hljs-string">&quot;找点异常&quot;</span>, <span class="hljs-params">vbTextCompare</span>)</span> &gt; <span class="hljs-number">0</span> Or _
+              <span class="hljs-constructor">InStr(1, <span class="hljs-params">exceptionText</span>, <span class="hljs-string">&quot;STH&quot;</span>, <span class="hljs-params">vbTextCompare</span>)</span> &gt; <span class="hljs-number">0</span> Or _
+              <span class="hljs-constructor">InStr(1, <span class="hljs-params">exceptionText</span>, <span class="hljs-string">&quot;sth&quot;</span>, <span class="hljs-params">vbTextCompare</span>)</span> &gt; <span class="hljs-number">0</span> Or _
+              <span class="hljs-constructor">InStr(1, <span class="hljs-params">exceptionText</span>, <span class="hljs-string">&quot;Sth&quot;</span>, <span class="hljs-params">vbTextCompare</span>)</span> &gt; <span class="hljs-number">0</span> Or _
+              ((<span class="hljs-constructor">InStr(1, <span class="hljs-params">exceptionText</span>, <span class="hljs-string">&quot;没有菜单&quot;</span>, <span class="hljs-params">vbTextCompare</span>)</span> &gt; <span class="hljs-number">0</span> Or _
+              <span class="hljs-constructor">InStr(1, <span class="hljs-params">exceptionText</span>, <span class="hljs-string">&quot;recipe&quot;</span>, <span class="hljs-params">vbTextCompare</span>)</span> &gt; <span class="hljs-number">0</span> Or _
+              <span class="hljs-constructor">InStr(1, <span class="hljs-params">exceptionText</span>, <span class="hljs-string">&quot;Recipe&quot;</span>, <span class="hljs-params">vbTextCompare</span>)</span> &gt; <span class="hljs-number">0</span>) And _
+              <span class="hljs-constructor">InStr(1, <span class="hljs-params">stepNameText</span>, <span class="hljs-string">&quot;厚度量测&quot;</span>, <span class="hljs-params">vbTextCompare</span>)</span> &gt; <span class="hljs-number">0</span>) Then
+               ws.<span class="hljs-constructor">Cells(<span class="hljs-params">i</span>, <span class="hljs-params">classificationCol</span>)</span>.Value = <span class="hljs-string">&quot;STH&quot;</span>
+               GoTo NextRow
+            End If
+            
+            &#x27; <span class="hljs-number">5.</span> RMS
+            If <span class="hljs-constructor">InStr(1, <span class="hljs-params">exceptionText</span>, <span class="hljs-string">&quot;RMS&quot;</span>, <span class="hljs-params">vbTextCompare</span>)</span> &gt; <span class="hljs-number">0</span> Or _
+               ((<span class="hljs-constructor">InStr(1, <span class="hljs-params">exceptionText</span>, <span class="hljs-string">&quot;Recipe&quot;</span>, <span class="hljs-params">vbTextCompare</span>)</span> &gt; <span class="hljs-number">0</span> Or _
+               <span class="hljs-constructor">InStr(1, <span class="hljs-params">exceptionText</span>, <span class="hljs-string">&quot;recipe&quot;</span>, <span class="hljs-params">vbTextCompare</span>)</span> &gt; <span class="hljs-number">0</span>) And _
+               <span class="hljs-constructor">InStr(1, <span class="hljs-params">stepNameText</span>, <span class="hljs-string">&quot;刻蚀&quot;</span>, <span class="hljs-params">vbTextCompare</span>)</span> &gt; <span class="hljs-number">0</span>) Then
+                ws.<span class="hljs-constructor">Cells(<span class="hljs-params">i</span>, <span class="hljs-params">classificationCol</span>)</span>.Value = <span class="hljs-string">&quot;RMS&quot;</span>
+                GoTo NextRow
+            End If
+            
+            &#x27; <span class="hljs-number">6.</span> SRS
+            If <span class="hljs-constructor">InStr(1, <span class="hljs-params">exceptionText</span>, <span class="hljs-string">&quot;SRS流程结束&quot;</span>, <span class="hljs-params">vbTextCompare</span>)</span> &gt; <span class="hljs-number">0</span> And _
+               <span class="hljs-constructor">InStr(1, <span class="hljs-params">exceptionText</span>, <span class="hljs-string">&quot;Owner&quot;</span>, <span class="hljs-params">vbTextCompare</span>)</span> &gt; <span class="hljs-number">0</span> Then
+                ws.<span class="hljs-constructor">Cells(<span class="hljs-params">i</span>, <span class="hljs-params">classificationCol</span>)</span>.Value = <span class="hljs-string">&quot;SRS&quot;</span>
+                GoTo NextRow
+            End If
+            
+            &#x27; <span class="hljs-number">7.</span> STR
+            If <span class="hljs-constructor">InStr(1, <span class="hljs-params">exceptionText</span>, <span class="hljs-string">&quot;MSTR&quot;</span>, <span class="hljs-params">vbTextCompare</span>)</span> &gt; <span class="hljs-number">0</span> Or _
+               <span class="hljs-constructor">InStr(1, <span class="hljs-params">exceptionText</span>, <span class="hljs-string">&quot;STR&quot;</span>, <span class="hljs-params">vbTextCompare</span>)</span> &gt; <span class="hljs-number">0</span> Then
+                ws.<span class="hljs-constructor">Cells(<span class="hljs-params">i</span>, <span class="hljs-params">classificationCol</span>)</span>.Value = <span class="hljs-string">&quot;STR&quot;</span>
+                GoTo NextRow
+            End If
+            
+            &#x27; <span class="hljs-number">8.</span> Qtime
+            If <span class="hljs-constructor">InStr(1, <span class="hljs-params">exceptionText</span>, <span class="hljs-string">&quot;从&quot;</span>, <span class="hljs-params">vbTextCompare</span>)</span> &gt; <span class="hljs-number">0</span> And _
+               <span class="hljs-constructor">InStr(1, <span class="hljs-params">exceptionText</span>, <span class="hljs-string">&quot;到&quot;</span>, <span class="hljs-params">vbTextCompare</span>)</span> &gt; <span class="hljs-number">0</span> And _
+               <span class="hljs-constructor">InStr(1, <span class="hljs-params">exceptionText</span>, <span class="hljs-string">&quot;超时&quot;</span>, <span class="hljs-params">vbTextCompare</span>)</span> &gt; <span class="hljs-number">0</span> Then
+                ws.<span class="hljs-constructor">Cells(<span class="hljs-params">i</span>, <span class="hljs-params">classificationCol</span>)</span>.Value = <span class="hljs-string">&quot;Qtime&quot;</span>
+                GoTo NextRow
+            End If
+            
+            &#x27; <span class="hljs-number">9.</span> 机台报警
+            If <span class="hljs-constructor">InStr(1, <span class="hljs-params">exceptionText</span>, <span class="hljs-string">&quot;Run货过程中出现异常&quot;</span>, <span class="hljs-params">vbTextCompare</span>)</span> &gt; <span class="hljs-number">0</span> Or _
+               <span class="hljs-constructor">InStr(1, <span class="hljs-params">exceptionText</span>, <span class="hljs-string">&quot;报警&quot;</span>, <span class="hljs-params">vbTextCompare</span>)</span> &gt; <span class="hljs-number">0</span> Or _
+               <span class="hljs-constructor">InStr(1, <span class="hljs-params">exceptionText</span>, <span class="hljs-string">&quot;宕机&quot;</span>, <span class="hljs-params">vbTextCompare</span>)</span> &gt; <span class="hljs-number">0</span> Or _
+               <span class="hljs-constructor">InStr(1, <span class="hljs-params">exceptionText</span>, <span class="hljs-string">&quot;设备异常&quot;</span>, <span class="hljs-params">vbTextCompare</span>)</span> &gt; <span class="hljs-number">0</span> Then
+                ws.<span class="hljs-constructor">Cells(<span class="hljs-params">i</span>, <span class="hljs-params">classificationCol</span>)</span>.Value = <span class="hljs-string">&quot;机台报警&quot;</span>
+                GoTo NextRow
+            End If
+            
+            &#x27; <span class="hljs-number">10.</span> PIRUN
+            If <span class="hljs-constructor">InStr(1, <span class="hljs-params">exceptionText</span>, <span class="hljs-string">&quot;PIRUN&quot;</span>, <span class="hljs-params">vbTextCompare</span>)</span> &gt; <span class="hljs-number">0</span> Or _
+               <span class="hljs-constructor">InStr(1, <span class="hljs-params">exceptionText</span>, <span class="hljs-string">&quot;pi-run&quot;</span>, <span class="hljs-params">vbTextCompare</span>)</span> &gt; <span class="hljs-number">0</span> Or _
+               <span class="hljs-constructor">InStr(1, <span class="hljs-params">exceptionText</span>, <span class="hljs-string">&quot;Pirun&quot;</span>, <span class="hljs-params">vbTextCompare</span>)</span> &gt; <span class="hljs-number">0</span> Then
+                ws.<span class="hljs-constructor">Cells(<span class="hljs-params">i</span>, <span class="hljs-params">classificationCol</span>)</span>.Value = <span class="hljs-string">&quot;PIRUN&quot;</span>
+                GoTo NextRow
+            End If
+            
+            &#x27; <span class="hljs-number">11.</span> 表界面
+            If <span class="hljs-constructor">InStr(1, <span class="hljs-params">exceptionText</span>, <span class="hljs-string">&quot;脏污&quot;</span>, <span class="hljs-params">vbTextCompare</span>)</span> &gt; <span class="hljs-number">0</span> Or _
+               <span class="hljs-constructor">InStr(1, <span class="hljs-params">exceptionText</span>, <span class="hljs-string">&quot;撕金不净&quot;</span>, <span class="hljs-params">vbTextCompare</span>)</span> &gt; <span class="hljs-number">0</span> Or _
+               <span class="hljs-constructor">InStr(1, <span class="hljs-params">exceptionText</span>, <span class="hljs-string">&quot;糊胶&quot;</span>, <span class="hljs-params">vbTextCompare</span>)</span> &gt; <span class="hljs-number">0</span> Or _
+               (<span class="hljs-constructor">InStr(1, <span class="hljs-params">exceptionText</span>, <span class="hljs-string">&quot;目检&quot;</span>, <span class="hljs-params">vbTextCompare</span>)</span> &gt; <span class="hljs-number">0</span> And _
+                <span class="hljs-constructor">InStr(1, <span class="hljs-params">exceptionText</span>, <span class="hljs-string">&quot;异常&quot;</span>, <span class="hljs-params">vbTextCompare</span>)</span> &gt; <span class="hljs-number">0</span>) Or _
+                (<span class="hljs-constructor">InStr(1, <span class="hljs-params">stepNameText</span>, <span class="hljs-string">&quot;量测&quot;</span>, <span class="hljs-params">vbTextCompare</span>)</span> &gt; <span class="hljs-number">0</span> And _
+                <span class="hljs-constructor">InStr(1, <span class="hljs-params">exceptionText</span>, <span class="hljs-string">&quot;图形不一致&quot;</span>, <span class="hljs-params">vbTextCompare</span>)</span> &gt; <span class="hljs-number">0</span>) Or _
+               (<span class="hljs-constructor">InStr(1, <span class="hljs-params">stepNameText</span>, <span class="hljs-string">&quot;目检&quot;</span>, <span class="hljs-params">vbTextCompare</span>)</span> &gt; <span class="hljs-number">0</span> And _
+                <span class="hljs-constructor">InStr(1, <span class="hljs-params">exceptionText</span>, <span class="hljs-string">&quot;异常&quot;</span>, <span class="hljs-params">vbTextCompare</span>)</span> &gt; <span class="hljs-number">0</span>) Then
+                ws.<span class="hljs-constructor">Cells(<span class="hljs-params">i</span>, <span class="hljs-params">classificationCol</span>)</span>.Value = <span class="hljs-string">&quot;表界面&quot;</span>
+                GoTo NextRow
+            End If
+            
+            &#x27; <span class="hljs-number">12.</span> 过账异常 - 数据过账和处理异常
+            If <span class="hljs-constructor">InStr(1, <span class="hljs-params">exceptionText</span>, <span class="hljs-string">&quot;分批&quot;</span>, <span class="hljs-params">vbTextCompare</span>)</span> &gt; <span class="hljs-number">0</span> Or _
+               <span class="hljs-constructor">InStr(1, <span class="hljs-params">exceptionText</span>, <span class="hljs-string">&quot;合批&quot;</span>, <span class="hljs-params">vbTextCompare</span>)</span> &gt; <span class="hljs-number">0</span> Or _
+               <span class="hljs-constructor">InStr(1, <span class="hljs-params">exceptionText</span>, <span class="hljs-string">&quot;跳站&quot;</span>, <span class="hljs-params">vbTextCompare</span>)</span> &gt; <span class="hljs-number">0</span> Or _
+               <span class="hljs-constructor">InStr(1, <span class="hljs-params">exceptionText</span>, <span class="hljs-string">&quot;切帐&quot;</span>, <span class="hljs-params">vbTextCompare</span>)</span> &gt; <span class="hljs-number">0</span> Or _
+               <span class="hljs-constructor">InStr(1, <span class="hljs-params">exceptionText</span>, <span class="hljs-string">&quot;TZ&quot;</span>, <span class="hljs-params">vbTextCompare</span>)</span> &gt; <span class="hljs-number">0</span> Or _
+               <span class="hljs-constructor">InStr(1, <span class="hljs-params">exceptionText</span>, <span class="hljs-string">&quot;批次异常结束&quot;</span>, <span class="hljs-params">vbTextCompare</span>)</span> &gt; <span class="hljs-number">0</span> Or _
+               <span class="hljs-constructor">InStr(1, <span class="hljs-params">exceptionText</span>, <span class="hljs-string">&quot;Hold回，待蚀刻课工程师处理&quot;</span>, <span class="hljs-params">vbTextCompare</span>)</span> &gt; <span class="hljs-number">0</span> Or _
+               <span class="hljs-constructor">InStr(1, <span class="hljs-params">exceptionText</span>, <span class="hljs-string">&quot;check in&quot;</span>, <span class="hljs-params">vbTextCompare</span>)</span> &gt; <span class="hljs-number">0</span> Or _
+               <span class="hljs-constructor">InStr(1, <span class="hljs-params">exceptionText</span>, <span class="hljs-string">&quot;check out&quot;</span>, <span class="hljs-params">vbTextCompare</span>)</span> &gt; <span class="hljs-number">0</span> Or _
+               (<span class="hljs-constructor">InStr(1, <span class="hljs-params">exceptionText</span>, <span class="hljs-string">&quot;R:MFG姓名&quot;</span>, <span class="hljs-params">vbTextCompare</span>)</span> &gt; <span class="hljs-number">0</span> And _
+               <span class="hljs-constructor">InStr(1, <span class="hljs-params">exceptionText</span>, <span class="hljs-string">&quot;Lot Hold 待蚀刻课工程师处理&quot;</span>, <span class="hljs-params">vbTextCompare</span>)</span> &gt; <span class="hljs-number">0</span>) Or _
+               (<span class="hljs-constructor">InStr(1, <span class="hljs-params">exceptionText</span>, <span class="hljs-string">&quot;R:MFG姓名&quot;</span>, <span class="hljs-params">vbTextCompare</span>)</span> &gt; <span class="hljs-number">0</span> And _
+               <span class="hljs-constructor">InStr(1, <span class="hljs-params">exceptionText</span>, <span class="hljs-string">&quot;无法正常进入SRS流程，等待蚀刻课工程师处理&quot;</span>, <span class="hljs-params">vbTextCompare</span>)</span> &gt; <span class="hljs-number">0</span>) Or _
+               <span class="hljs-constructor">InStr(1, <span class="hljs-params">exceptionText</span>, <span class="hljs-string">&quot;待确认是否作业完成&quot;</span>, <span class="hljs-params">vbTextCompare</span>)</span> &gt; <span class="hljs-number">0</span> Or _
+               <span class="hljs-constructor">InStr(1, <span class="hljs-params">exceptionText</span>, <span class="hljs-string">&quot;待工程师跳至下一站点&quot;</span>, <span class="hljs-params">vbTextCompare</span>)</span> &gt; <span class="hljs-number">0</span> Then
+                ws.<span class="hljs-constructor">Cells(<span class="hljs-params">i</span>, <span class="hljs-params">classificationCol</span>)</span>.Value = <span class="hljs-string">&quot;过账异常&quot;</span>
+                GoTo NextRow
+            End If
+            
+            &#x27; <span class="hljs-number">13.</span> 实验 - 实验相关异常
+            If <span class="hljs-constructor">InStr(1, <span class="hljs-params">exceptionText</span>, <span class="hljs-string">&quot;实验片&quot;</span>, <span class="hljs-params">vbTextCompare</span>)</span> &gt; <span class="hljs-number">0</span> Or _
+               <span class="hljs-constructor">InStr(1, <span class="hljs-params">exceptionText</span>, <span class="hljs-string">&quot;报废&quot;</span>, <span class="hljs-params">vbTextCompare</span>)</span> &gt; <span class="hljs-number">0</span> Or _
+               <span class="hljs-constructor">InStr(1, <span class="hljs-params">exceptionText</span>, <span class="hljs-string">&quot;试验&quot;</span>, <span class="hljs-params">vbTextCompare</span>)</span> &gt; <span class="hljs-number">0</span> Or _
+               <span class="hljs-constructor">InStr(1, <span class="hljs-params">exceptionText</span>, <span class="hljs-string">&quot;实验&quot;</span>, <span class="hljs-params">vbTextCompare</span>)</span> &gt; <span class="hljs-number">0</span> Then
+                ws.<span class="hljs-constructor">Cells(<span class="hljs-params">i</span>, <span class="hljs-params">classificationCol</span>)</span>.Value = <span class="hljs-string">&quot;实验&quot;</span>
+                GoTo NextRow
+            End If
+            
+            &#x27; <span class="hljs-number">14.</span> 其他 - 以上都不匹配的归为其他
+            ws.<span class="hljs-constructor">Cells(<span class="hljs-params">i</span>, <span class="hljs-params">classificationCol</span>)</span>.Value = <span class="hljs-string">&quot;其他&quot;</span>
+        End If
+        
+NextRow:  &#x27; 跳转标签，用于跳过已处理的行
+    Next i
+    &#x27; 自动调整分类列的列宽以适应内容
+    ws.<span class="hljs-constructor">Columns(<span class="hljs-params">classificationCol</span>)</span>.AutoFit
+    
+    &#x27; 显示处理结果消息框
+    ShowResultsInMessageBox ws, lastRow - <span class="hljs-number">1</span>, classificationCol
+End Sub
+
+&#x27; ================================================================
+&#x27; 子程序：显示结果消息框
+&#x27; 功能：弹出窗口显示分类处理结果摘要
+&#x27; ================================================================
+Sub <span class="hljs-constructor">ShowResultsInMessageBox(<span class="hljs-params">ws</span> As Worksheet, <span class="hljs-params">totalRows</span> As Long, <span class="hljs-params">classificationCol</span> As Long)</span>
+    Dim resultMsg As String       &#x27; 消息文本
+    Dim categories As Variant     &#x27; 分类类型数组
+    Dim counts<span class="hljs-literal">()</span> As Long          &#x27; 数量统计数组
+    Dim i As Long                 &#x27; 循环计数器
+    
+    &#x27; 定义分类顺序
+    categories = <span class="hljs-constructor">Array(<span class="hljs-string">&quot;禁run&quot;</span>, <span class="hljs-string">&quot;OOS&quot;</span>, <span class="hljs-string">&quot;OOC&quot;</span>, <span class="hljs-string">&quot;STH&quot;</span>, <span class="hljs-string">&quot;RMS&quot;</span>, <span class="hljs-string">&quot;SRS&quot;</span>, <span class="hljs-string">&quot;STR&quot;</span>, <span class="hljs-string">&quot;Qtime&quot;</span>, <span class="hljs-string">&quot;机台报警&quot;</span>, <span class="hljs-string">&quot;PIRUN&quot;</span>, <span class="hljs-string">&quot;表界面&quot;</span>, <span class="hljs-string">&quot;过账异常&quot;</span>, <span class="hljs-string">&quot;实验&quot;</span>, <span class="hljs-string">&quot;其他&quot;</span>)</span>
+    ReDim counts(<span class="hljs-constructor">LBound(<span class="hljs-params">categories</span>)</span> To <span class="hljs-constructor">UBound(<span class="hljs-params">categories</span>)</span>)  &#x27; 重新定义数组大小
+    
+    &#x27; 统计每个分类的数量
+    For i = <span class="hljs-constructor">LBound(<span class="hljs-params">categories</span>)</span> To <span class="hljs-constructor">UBound(<span class="hljs-params">categories</span>)</span>
+        counts(i) = Application.<span class="hljs-constructor">CountIf(<span class="hljs-params">ws</span>.Columns(<span class="hljs-params">classificationCol</span>)</span>, categories(i))
+    Next i
+    
+    &#x27; 构建消息文本内容
+    resultMsg = <span class="hljs-string">&quot;分类标记完成：&quot;</span> &amp; vbNewLine &amp; _
+               <span class="hljs-string">&quot;? 共处理 &quot;</span> &amp; totalRows &amp; <span class="hljs-string">&quot; 行数据&quot;</span> &amp; vbNewLine
+               
+    &#x27; 添加每个分类的统计结果
+    For i = <span class="hljs-constructor">LBound(<span class="hljs-params">categories</span>)</span> To <span class="hljs-constructor">UBound(<span class="hljs-params">categories</span>)</span>
+        resultMsg = resultMsg &amp; <span class="hljs-string">&quot;? 标记&quot;</span> &amp; categories(i) &amp; <span class="hljs-string">&quot; &quot;</span> &amp; counts(i) &amp; <span class="hljs-string">&quot; 条&quot;</span> &amp; vbNewLine
+    Next i
+    
+    &#x27; 显示消息框（带信息图标和确定按钮）
+    MsgBox resultMsg, vbInformation + vbOKOnly, <span class="hljs-string">&quot;分类结果&quot;</span>
+End Sub
+</code></pre></div>
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/scripts/">scripts</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/VBA/">VBA</a>
+                    
+                  </div>
+                
+              </div>
+              <p class="note note-warning">
+                <strong>本文作者: </strong><a href="/">Uncle-yang</a> <br>
+                <strong>本文链接: </strong><a href="https://uncleleiy.github.io/2025/09/01/blog-VBA-script-1/">https://uncleleiy.github.io/2025/09/01/blog-VBA-script-1/</a> <br>
+                <strong>版权声明: </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                   </p>
+                   
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2025/09/01/blog-VBA-script-2/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">VBA脚本：用于数据二次清洗</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2024/06/06/blog-PDF-6/">
+                        <span class="hidden-mobile">Project Profile</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+
+
+    
+  </main>
+
+  
+
+  
+
+  
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href=" " target="_blank" rel="nofollow noopener"><span>Study</span></a> <i class="iconfont icon-book"></i> <a href=" " target="_blank" rel="nofollow noopener"><span>Notes</span></a> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+    
+
+      
+
+          <!-- 在网页底部添加本站已运行的时间 -->
+          <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+          <script>
+            var now = new Date();
+            function createtime() {
+              var grt = new Date("06/06/2023 12:00:00");//在此处修改你的建站时间
+              now.setTime(now.getTime() + 250);
+              days = (now - grt) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+              hours = (now - grt) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+              if (String(hnum).length == 1) { hnum = "0" + hnum; } minutes = (now - grt) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);
+              mnum = Math.floor(minutes); if (String(mnum).length == 1) { mnum = "0" + mnum; }
+              seconds = (now - grt) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+              snum = Math.round(seconds); if (String(snum).length == 1) { snum = "0" + snum; }
+              document.getElementById("timeDate").innerHTML = "小站已勉强存活 " + dnum + " 天 ";
+              document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+            }
+            setInterval("createtime()", 250);
+          </script>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/js/clipboard-use.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+  
+<script src="/js/new.js"></script>
+
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '#post-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 0,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "left",
+      visible: "hover",
+      
+      icon: " ❡ "
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+</body>
+</html>

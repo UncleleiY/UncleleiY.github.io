@@ -1,3 +1,5 @@
+https://uncleleiy.github.io/2025/09/01/blog-VBA-script-2/
+https://uncleleiy.github.io/2025/09/01/blog-VBA-script-1/
 https://uncleleiy.github.io/2024/06/06/blog-PDF-6/
 https://uncleleiy.github.io/2024/06/06/blog-PDF-5/
 https://uncleleiy.github.io/2024/06/06/blog-PDF-4/
@@ -39,8 +41,8 @@ https://uncleleiy.github.io/2023/06/06/blog-1-markdown/
 https://uncleleiy.github.io/2023/06/10/blog-3-hexo-debug/
 https://uncleleiy.github.io/2023/06/18/blog-5-wsl-debug/
 https://uncleleiy.github.io/contact/index.html
-https://uncleleiy.github.io/friends/index.html
 https://uncleleiy.github.io/tags/index.html
+https://uncleleiy.github.io/friends/index.html
 https://uncleleiy.github.io/
 https://uncleleiy.github.io/tags/Markdown/
 https://uncleleiy.github.io/tags/python/
@@ -51,11 +53,12 @@ https://uncleleiy.github.io/tags/hexo/
 https://uncleleiy.github.io/tags/wsl/
 https://uncleleiy.github.io/tags/C/
 https://uncleleiy.github.io/tags/none/
+https://uncleleiy.github.io/tags/VBA/
 https://uncleleiy.github.io/tags/dataflow/
 https://uncleleiy.github.io/tags/slurm/
-https://uncleleiy.github.io/tags/Mermaid/
 https://uncleleiy.github.io/tags/Here/
 https://uncleleiy.github.io/tags/QE/
+https://uncleleiy.github.io/tags/Mermaid/
 https://uncleleiy.github.io/categories/grammar/
 https://uncleleiy.github.io/categories/programming/
 https://uncleleiy.github.io/categories/scripts/
